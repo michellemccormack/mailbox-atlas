@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://michellemccormack.github.io/mailbox-atlas/sitemap.xml
