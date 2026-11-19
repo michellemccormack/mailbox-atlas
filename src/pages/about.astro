@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+const title = 'About Mailbox Atlas and how we research';
+const description = 'What Mailbox Atlas covers, where every price comes from, how unverified items are marked, and how the site makes money.';
+---
+<Base title={title} description={description}>
+  <h1>About Mailbox Atlas</h1>
+  <p class="lede">A price reference for virtual mailbox and mail-scanning services, for people who want to know the monthly total before they sign up.</p>
+  <h2>How we source things</h2>
+  <ul>
+    <li>Prices and fees come only from each provider's own pricing, FAQ or help pages, with a link next to every number.</li>
+    <li>USPS rules are quoted from usps.com (the Postal Bulletin and PS Form 1583).</li>
+    <li>Anything we couldn't confirm is marked <span class="unverified">unverified</span>, and anything we didn't capture says so.</li>
+    <li>Every page shows the date we last checked it. Mail centers that set their own prices (iPostal1, Anytime Mailbox, PostScan Mail locations) can charge more than the advertised minimum.</li>
+  </ul>
+  <h2>How the site makes money</h2>
+  <p>We plan to join affiliate programs for some providers. None are active today. See the <a href="/affiliate-disclosure/">affiliate disclosure</a>. Affiliate status will never change a price, a fact, or the order of a table.</p>
+</Base>
