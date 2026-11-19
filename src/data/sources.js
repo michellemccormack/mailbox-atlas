@@ -1,0 +1,22 @@
+// Every URL below was fetched on 2026-11-19. Raw captures for some are in /research.
+export const S = {
+  ip: 'https://ipostal1.com/',
+  ipFaq: 'https://ipostal1.com/faq-mailbox-account.php',
+  atm: 'https://www.anytimemailbox.com/',
+  atmFaq: 'https://www.anytimemailbox.com/faq',
+  tmb: 'https://www.travelingmailbox.com/pricing',
+  tmb1583: 'https://travelingmailbox.com/the-usps-form-1583',
+  tmbKb: 'https://kb.travelingmailbox.com/how-do-i-complete-the-usps-form-1583/',
+  psm: 'https://www.postscanmail.com/pricing.html',
+  psmFaq: 'https://www.postscanmail.com/faq.html',
+  ecm: 'https://www.earthclassmail.com/pricing',
+  ecm1583: 'https://help.earthclassmail.com/hc/en-us/articles/25619300469143-Activate-your-Virtual-Mail-service',
+  ecmNonSsn: 'https://help.earthclassmail.com/hc/en-us/articles/360035551454-Acceptable-Identification-for-USPS-1583-Non-SSN-Holders',
+  stable: 'https://www.usestable.com/pricing',
+  stable1583: 'https://support.usestable.com/en/articles/8236356-why-are-my-ids-being-verified-for-the-usps-1583',
+  usgm: 'https://www.usglobalmail.com/pricing/',
+  usgm1583: 'https://www.usglobalmail.com/usps-form-1583/',
+  opus: 'https://www.opusvirtualoffices.com/',
+  uspsBulletin: 'https://about.usps.com/postal-bulletin/2024/pb22648/html/updt_001.htm',
+  usps1583: 'https://about.usps.com/forms/ps1583.pdf',
+};
