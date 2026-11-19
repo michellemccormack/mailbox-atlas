@@ -1,0 +1,56 @@
+---
+import Base from '../layouts/Base.astro';
+import Src from '../components/Src.astro';
+import Aff from '../components/Aff.astro';
+import { S } from '../data/sources.js';
+const title = 'Traveling Mailbox vs PostScan Mail: Price, Scans, Forwarding and Form 1583';
+const description = 'Traveling Mailbox ($15/mo, 35 page scans included, no notary) vs PostScan Mail (from $10/mo, $2 per open-and-scan, $20 notary). The fee-by-fee comparison, from both companies\' own pricing pages.';
+const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-19"};
+---
+<Base title={title} description={description} schema={schema}>
+  <h1>Traveling Mailbox vs PostScan Mail</h1>
+  <p class="lede">PostScan Mail is cheaper if you just want envelope images. Traveling Mailbox is cheaper as soon as you want letters opened, and it skips the notary. Here's every published fee from both, checked November 19, 2026.</p>
+
+  <div class="tablewrap"><table>
+    <thead><tr><th></th><th>Traveling Mailbox</th><th>PostScan Mail</th></tr></thead>
+    <tbody>
+      <tr><td>Entry plan</td><td>Basic $15/mo <Src href={S.tmb} /></td><td>Starter "as low as $10/mo," or $8.33/mo billed annually; price varies by location <Src href={S.psm} /></td></tr>
+      <tr><td>Mail included</td><td>40 envelopes/mo, junk mail doesn't count <Src href={S.tmb} /></td><td>30 items/mo, and junk mail counts <Src href={S.psm} /> <Src href={S.psmFaq} label="FAQ" /></td></tr>
+      <tr><td>Opening and scanning</td><td>35 page scans/mo included; $0.50 per extra page <Src href={S.tmb} /></td><td>$2.00 per envelope up to 10 pages, then $0.25 per page. Standard ($20+) includes 5 free <Src href={S.psm} /></td></tr>
+      <tr><td>Extra mail</td><td>$0.25 per envelope over the allowance <Src href={S.tmb} /></td><td>$0.50 per item over the limit <Src href={S.psm} /></td></tr>
+      <tr><td>Forwarding</td><td>Postage + $2 per shipment, not per item <Src href={S.tmb} /></td><td>$2.00 first item + $0.50 each additional, plus shipping <Src href={S.psm} /></td></tr>
+      <tr><td>Shredding</td><td>Free <Src href={S.tmb} /></td><td>$1.00 per item for the first 10 pages <Src href={S.psm} /></td></tr>
+      <tr><td>Free mail storage</td><td>30 days, then $1 per envelope per month to hold <Src href={S.tmb} /></td><td>14 days (30 on annual), then $0.05 per envelope per day <Src href={S.psm} /></td></tr>
+      <tr><td>Check deposit</td><td>$4.95 per check + postage <Src href={S.tmb} /></td><td>Not listed on the pricing page</td></tr>
+      <tr><td>Recipients on entry plan</td><td>3 <Src href={S.tmb} /></td><td>1 (extra: $5/mo each) <Src href={S.psm} /></td></tr>
+      <tr><td>Form 1583</td><td>Video call with staff; no notary <Src href={S.tmbKb} /></td><td>Notarized; partner online notary $20 <Src href={S.psmFaq} /></td></tr>
+      <tr><td>Local pickup</td><td>Not mentioned on the pricing page</td><td>Free at most locations <Src href={S.psm} /></td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>Worked example</h2>
+  <p>Take 25 letters a month, with 8 opened (about 3 pages each) and 5 shredded:</p>
+  <ul>
+    <li><strong>Traveling Mailbox Basic:</strong> $15. 25 envelopes and 24 pages are inside the allowance, and shredding is free <Src href={S.tmb} />.</li>
+    <li><strong>PostScan Mail Starter:</strong> $10 + 8 × $2.00 for open-and-scan + 5 × $1.00 for shredding = <strong>$31</strong>. On Standard at $20 (5 free scans), it's $20 + 3 × $2.00 + $5 = $31 <Src href={S.psm} />.</li>
+  </ul>
+  <p>Add the $20 notary at PostScan in your first month <Src href={S.psmFaq} />.</p>
+
+  <h2>When PostScan Mail wins</h2>
+  <ul>
+    <li>You want an address in a particular city and to pick up mail in person, which is free at most PostScan locations <Src href={S.psm} />.</li>
+    <li>You rarely open mail and want the lowest monthly bill.</li>
+    <li>You need extras like HIPAA compliance ($25/mo billed annually) <Src href={S.psm} />.</li>
+  </ul>
+  <h2>When Traveling Mailbox wins</h2>
+  <ul>
+    <li>You want most mail opened and scanned.</li>
+    <li>You'd rather skip the notary.</li>
+    <li>You forward in batches, since it's $2 per shipment no matter how many pieces are in it <Src href={S.tmb} />.</li>
+  </ul>
+  <ul>
+    <li><Aff id="travelingmailbox" href="https://www.travelingmailbox.com/" text="Traveling Mailbox" /></li>
+    <li><Aff id="postscanmail" href="https://www.postscanmail.com/" text="PostScan Mail" /></li>
+  </ul>
+  <p>More: <a href="/virtual-mailbox-pricing-comparison/">all providers compared</a> · <a href="/cheapest-virtual-mailbox/">cheapest virtual mailbox</a></p>
+</Base>
