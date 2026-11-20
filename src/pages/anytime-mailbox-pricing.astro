@@ -1,0 +1,101 @@
+---
+import Base from '../layouts/Base.astro';
+import Src from '../components/Src.astro';
+import Aff from '../components/Aff.astro';
+import Unverified from '../components/Unverified.astro';
+import { S } from '../data/sources.js';
+const title = 'Anytime Mailbox Pricing: Why It Ranges From $4.99 to $99.99 a Month';
+const description = 'We read the starting price of all 2,095 U.S. Anytime Mailbox locations: median $10.99, about half at $9.99 or less, one at $4.99. Why prices differ, and what the plans at five real locations include.';
+const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-20"};
+---
+<Base title={title} description={description} updated="2026-11-20" schema={schema}>
+  <h1>Anytime Mailbox pricing: why it ranges so widely</h1>
+  <p class="lede">Anytime Mailbox doesn't have one price list. Each location is run by an independent mail center operator who sets their own plans and per-item fees. So "from $9.99" can mean 15 or 100 items a month, and $0.18 or $1.00 per scanned page. On November 20, 2026 we read the "starting from" price of every U.S. location on Anytime Mailbox's state pages, and the full plans at five of them.</p>
+
+  <h2>What Anytime Mailbox itself says</h2>
+  <ul>
+    <li>"Our cheapest virtual mailbox plans are $4.99. On average, our plans cost $9.99 per month. Some of our vanity addresses can cost up to $50" <Src href={S.atm} /></li>
+    <li>"All service plans show what the included services are for each plan before you sign up, and what the fees are for any additional actions you request beyond your chosen plan from your mail center operator" <Src href={S.atm} /></li>
+    <li>Each location page names its "Mail Center Operator" <Src href={S.atmArlington} /></li>
+  </ul>
+
+  <h2>Starting prices across all U.S. locations</h2>
+  <p>The state pages list 2,095 U.S. locations with a "Starting from" price <Src href={S.atmLocations} label="locations" />. 2,089 quote a monthly price. Six quote only a yearly price (covered below). For the 2,089 monthly prices:</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Starting price</th><th>Locations</th><th>Share</th></tr></thead>
+    <tbody>
+      <tr><td>Under $8.00</td><td>26</td><td>1.2%</td></tr>
+      <tr><td>$8.00–$9.99</td><td>1,001</td><td>47.9%</td></tr>
+      <tr><td>$10.00–$14.99</td><td>652</td><td>31.2%</td></tr>
+      <tr><td>$15.00–$19.99</td><td>214</td><td>10.2%</td></tr>
+      <tr><td>$20.00–$50.00</td><td>167</td><td>8.0%</td></tr>
+      <tr><td>Over $50.00</td><td>29</td><td>1.4%</td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li>The median is <strong>$10.99</strong>. Exactly $9.99 is the most common price, at 944 locations.</li>
+    <li>We found only one $4.99 location: Arlington, VA (1550 Wilson Blvd) <Src href={S.atmArlington} />. The next cheapest was $5.99, in Fort Walton Beach, FL.</li>
+    <li>The highest monthly starting price was $99.99, in Denver (Fiddlers Green Cir). 29 locations start above the "up to $50" mentioned in the FAQ.</li>
+  </ul>
+  <p class="meta">Method: we parsed the location cards on each of Anytime Mailbox's U.S. state pages on 2026-11-20. Counts are a snapshot, and the site's own location count can differ slightly from the number of cards shown.</p>
+
+  <h3>Cheapest and median starting price by state</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>State</th><th>Locations (monthly-priced)</th><th>Cheapest</th><th>Median</th><th>Highest</th></tr></thead>
+    <tbody>
+      <tr><td>California</td><td>396</td><td>$7.99</td><td>$9.99</td><td>$75.00</td></tr>
+      <tr><td>Texas</td><td>290</td><td>$7.99</td><td>$11.99</td><td>$59.99</td></tr>
+      <tr><td>Florida</td><td>242</td><td>$5.99</td><td>$10.49</td><td>$69.00</td></tr>
+      <tr><td>Georgia</td><td>100</td><td>$7.99</td><td>$10.99</td><td>$49.99</td></tr>
+      <tr><td>New York</td><td>96</td><td>$8.99</td><td>$11.99</td><td>$84.99</td></tr>
+      <tr><td>Nevada</td><td>47</td><td>$7.99</td><td>$9.99</td><td>$49.99</td></tr>
+      <tr><td>Massachusetts</td><td>22</td><td>$8.99</td><td>$11.99</td><td>$49.99</td></tr>
+      <tr><td>Delaware</td><td>18</td><td>$6.99</td><td>$9.99</td><td>$15.99</td></tr>
+      <tr><td>Wyoming</td><td>6</td><td>$7.99</td><td>$9.99</td><td>$19.99</td></tr>
+    </tbody>
+  </table></div>
+  <p>Source: each state's location list, e.g. <a href="https://www.anytimemailbox.com/l/usa/texas" target="_blank" rel="noopener">Texas</a>, <a href="https://www.anytimemailbox.com/l/usa/florida" target="_blank" rel="noopener">Florida</a>, <a href="https://www.anytimemailbox.com/l/usa/delaware" target="_blank" rel="noopener">Delaware</a>. Florida's median falls between two locations, which is why it isn't a typical price ending.</p>
+
+  <h2>Same price, different plan: five real locations</h2>
+  <p>The starting price tells you little about what's included. Here are the cheapest plans at five locations, copied from their Anytime Mailbox pages:</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Location (operator)</th><th>Cheapest plan</th><th>Mail included</th><th>Open &amp; scan</th><th>Forwarding</th><th>Recipients</th></tr></thead>
+    <tbody>
+      <tr><td>Arlington, VA (TKO Suites)</td><td>Bronze $4.99/mo or $56.99/yr</td><td>15/mo</td><td>$1.00 per page</td><td>"No handling fees"</td><td>1 <Src href={S.atmArlington} /></td></tr>
+      <tr><td>Austin, TX, 9th St (Virtual Mail Hub)</td><td>"Just an Address" $7.99/mo or $79.90/yr</td><td>None: $1.44 per incoming item</td><td>$0.18 each</td><td>$5.00 each</td><td>1 <Src href={S.atmAustin} /></td></tr>
+      <tr><td>Omaha, NE (Advance Tax Solutions)</td><td>Bronze $9.99/mo or $109.99/yr</td><td>30/mo</td><td>$0.50 per page</td><td>$5.00 per shipping bundle</td><td>1 <Src href={S.atmOmaha} /></td></tr>
+      <tr><td>Washington, DC, H St NE (Gold Spot Pack and Ship)</td><td>Bronze $9.99/mo or $109.99/yr</td><td>30/mo</td><td>$0.50 per page</td><td>$3.00 each</td><td>1 <Src href={S.atmDc} /></td></tr>
+      <tr><td>Astoria, NY (Astorias Hub)</td><td>Bronze $9.99/mo or $109.99/yr</td><td>15/mo</td><td>10 pages/mo included</td><td>Unlimited</td><td>5 <Src href={S.atmAstoria} /></td></tr>
+    </tbody>
+  </table></div>
+  <p>What stands out:</p>
+  <ul>
+    <li><strong>The $4.99 plan has the priciest scans.</strong> Opening one 3-page letter at Arlington costs $3.00. That's more than half the monthly fee <Src href={S.atmArlington} />.</li>
+    <li><strong>"Just an Address" charges for every piece of mail.</strong> At Austin 9th St, 10 letters a month adds $14.40 to the $7.99 fee, for a total of $22.39. The $12.99 "Address Pro" plan at the same location includes 60 items and 60 scans <Src href={S.atmAustin} />.</li>
+    <li><strong>Plan names aren't standard.</strong> "Bronze" means 15 items in Arlington and Astoria, but 30 in Omaha and DC <Src href={S.atmArlington} /> <Src href={S.atmOmaha} />.</li>
+    <li><strong>Yearly billing doesn't always save the same amount.</strong> Omaha's $109.99 a year compares with $119.88 for 12 monthly payments. Arlington's $56.99 compares with $59.88 <Src href={S.atmOmaha} /> <Src href={S.atmArlington} />.</li>
+  </ul>
+
+  <h2>The yearly-only locations</h2>
+  <p>Six U.S. locations show only a yearly price, so their "starting from" number looks very high next to monthly prices. Examples are Brooklyn (495 Henry St) and Beverly Hills (Santa Monica Blvd), both at $399.99, and Overland Park, KS at $319.99. At 495 Henry St, the single plan is "Gold" at $399.99 a year. It includes 240 items a month, $0.25 per scanned page, $2.00 per forward and 5 recipients <Src href={S.atmBrooklyn} />. That's about $33 a month, not $400.</p>
+
+  <h2>Fees that aren't on the location card</h2>
+  <ul>
+    <li><strong>Form 1583 notarization.</strong> Anytime Mailbox uses an online notary partner "for a nominal fee," or you can see your operator in person <Src href={S.atm1583} />. We couldn't find a published amount <Unverified note="notary fee not published" />.</li>
+    <li><strong>Overage, storage, shredding and check deposit</strong> are set per plan by the operator and shown under "Full Details" before sign-up <Src href={S.atm} />. They aren't on a central price list <Unverified note="varies by location" />.</li>
+  </ul>
+
+  <h2>How to pick an Anytime Mailbox location without overpaying</h2>
+  <ol>
+    <li>Estimate your mail: items a month, and how many you'll want opened.</li>
+    <li>Compare the full plan at two or three nearby locations, not the "starting from" price.</li>
+    <li>Multiply the per-page or per-item scan fee by your usual openings. That's where cheap plans get expensive.</li>
+    <li>Check whether you need more than one recipient name, since many Bronze plans include just one <Src href={S.atmDc} />.</li>
+  </ol>
+  <p>Comparing with iPostal1, which publishes one price list for all locations? See <a href="/ipostal1-vs-anytime-mailbox/">iPostal1 vs Anytime Mailbox</a> and <a href="/ipostal1-pricing/">iPostal1 pricing explained</a>.</p>
+
+  <ul>
+    <li><Aff id="anytimemailbox" href="https://www.anytimemailbox.com/" text="Anytime Mailbox locations" /></li>
+  </ul>
+  <p>More: <a href="/cheapest-virtual-mailbox/">cheapest virtual mailbox</a> · <a href="/virtual-mailbox-pricing-comparison/">all providers compared</a> · <a href="/">Mailbox Atlas home</a></p>
+</Base>

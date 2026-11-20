@@ -1,0 +1,61 @@
+---
+import Base from '../layouts/Base.astro';
+import Src from '../components/Src.astro';
+import Aff from '../components/Aff.astro';
+import Unverified from '../components/Unverified.astro';
+import { S } from '../data/sources.js';
+const title = 'iPostal1 vs Anytime Mailbox: Which Is Cheaper for Your Mail?';
+const description = 'Both advertise $9.99 plans, but iPostal1 uses one national fee schedule ($2.25 per scan, $0.35 per extra item) while every Anytime Mailbox operator sets their own. Side by side, with worked monthly costs, from both companies\' own pages.';
+const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-20"};
+---
+<Base title={title} description={description} updated="2026-11-20" schema={schema}>
+  <h1>iPostal1 vs Anytime Mailbox</h1>
+  <p class="lede">These two have the biggest location networks, and both start around $9.99. The real difference is how they price. iPostal1 has one national fee schedule. At Anytime Mailbox, each mail center operator writes their own plans. So the answer to "which is cheaper" depends on the specific address you choose and how much mail you open. Checked November 20, 2026.</p>
+
+  <h2>Side by side</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th></th><th>iPostal1</th><th>Anytime Mailbox</th></tr></thead>
+    <tbody>
+      <tr><td>Locations (as advertised)</td><td>4,250+ <Src href={S.ip} /></td><td>2,500+ <Src href={S.atm} /></td></tr>
+      <tr><td>Who sets prices</td><td>iPostal1, one price list. Addresses cost more if they're Select (+$10), Premium (+$20) or Prestige (+$30) <Src href={S.ipFaq} label="FAQ" /></td><td>The mail center operator at each location <Src href={S.atm} /></td></tr>
+      <tr><td>Entry price</td><td>$9.99/mo for 30 items, personal use only. $14.99 to receive mail in a business name <Src href={S.ipVma} /> <Src href={S.ipVba} /></td><td>Lowest U.S. location $4.99. Median starting price $10.99 across 2,089 monthly-priced U.S. locations (<a href="/anytime-mailbox-pricing/">our count</a>) <Src href={S.atmArlington} /></td></tr>
+      <tr><td>Opening and scanning a letter</td><td>$2.25 per envelope up to 10 pages, then $0.25/page. Bundles bring it to $1.50–$2.00 per order <Src href={S.ipVma} /></td><td>Set by the location. Examples: $0.18 each (Austin 9th St), $0.50/page (Omaha, DC), $1.00/page (Arlington), or 10 pages a month included (Astoria) <Src href={S.atmAustin} /> <Src href={S.atmOmaha} /> <Src href={S.atmArlington} /> <Src href={S.atmAstoria} /></td></tr>
+      <tr><td>Mail over the plan limit</td><td>$0.35 per item <Src href={S.ipVma} /></td><td>Set per plan; shown under "Full Details" <Src href={S.atm} /> <Unverified note="varies" /></td></tr>
+      <tr><td>Forwarding</td><td>Live shipping rates. Letter consolidation free, $1.95 per package consolidated <Src href={S.ipVma} /></td><td>Examples: "No handling fees" (Arlington), $3.00 each (DC), $5.00 per bundle (Omaha) <Src href={S.atmArlington} /> <Src href={S.atmDc} /> <Src href={S.atmOmaha} /></td></tr>
+      <tr><td>Recipients on entry plan</td><td>Up to 6 names <Src href={S.ipVma} /></td><td>Often 1 (Arlington, Omaha, DC); 5 at Astoria <Src href={S.atmDc} /> <Src href={S.atmAstoria} /></td></tr>
+      <tr><td>Free storage</td><td>30 days for letters and small packages <Src href={S.ipVma} /></td><td>Set per location <Unverified note="not published centrally" /></td></tr>
+      <tr><td>Check deposit</td><td>$4.95 for up to 5 checks, plus scans and shipping (most locations) <Src href={S.ipVma} /></td><td>Listed as a service on location pages; fee set by the operator <Src href={S.atmArlington} /> <Unverified note="fee varies" /></td></tr>
+      <tr><td>Form 1583</td><td>$25 online notary, or sign in person at many mail centers (some charge) <Src href={S.ipFaq} label="FAQ" /></td><td>Online notary partner "for a nominal fee," or in person with the operator <Src href={S.atm1583} /> <Unverified note="fee not published" /></td></tr>
+      <tr><td>Business add-ons</td><td>Registered agent $99/yr in 25 states + DC; phone/fax plans from $39.99/mo <Src href={S.ip} /> <Src href={S.ipVo} /></td><td>Virtual business address and business formation pages; pricing per location <Src href={S.atm} /></td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>Worked examples</h2>
+  <p>These use published prices only, at Standard iPostal1 addresses and the actual Anytime Mailbox locations named. Postage isn't included.</p>
+  <h3>Light user: 12 letters a month, open 2 (3 pages each)</h3>
+  <ul>
+    <li>iPostal1 personal 30-item plan: $9.99 + 2 × $2.25 = <strong>$14.49</strong> <Src href={S.ipVma} /></li>
+    <li>Anytime Mailbox, Arlington VA Bronze (15 items): $4.99 + 6 pages × $1.00 = <strong>$10.99</strong> <Src href={S.atmArlington} /></li>
+    <li>Anytime Mailbox, Omaha NE Bronze (30 items): $9.99 + 6 pages × $0.50 = <strong>$12.99</strong> <Src href={S.atmOmaha} /></li>
+  </ul>
+  <h3>Heavier user: 28 letters a month, open 10 (3 pages each)</h3>
+  <ul>
+    <li>iPostal1 personal 30-item plan: $9.99 + 10 × $2.25 = <strong>$32.49</strong>. Prepaying with the 10-pack ($18) instead gives <strong>$27.99</strong> <Src href={S.ipVma} />.</li>
+    <li>Anytime Mailbox, Omaha Bronze: $9.99 + 30 pages × $0.50 = <strong>$24.99</strong> <Src href={S.atmOmaha} /></li>
+    <li>Anytime Mailbox, Arlington: 28 items is over Bronze's 15. Silver is $14.99 for 60 items, + $10.00 for 10 letters at "$1.00 each" = <strong>$24.99</strong> <Src href={S.atmArlington} /></li>
+  </ul>
+  <p>Both examples assume letters of 10 pages or fewer. Add the one-time Form 1583 cost in month one: $25 at iPostal1 if you use its online notary <Src href={S.ipFaq} label="FAQ" />.</p>
+
+  <h2>Which should you pick?</h2>
+  <div class="cards">
+    <div class="card"><h3>Pick iPostal1 if…</h3><p>you want the same fees wherever your address is, need several recipient names on a cheap plan, or want a registered agent and mailbox on one login.</p></div>
+    <div class="card"><h3>Pick Anytime Mailbox if…</h3><p>you'll compare a few locations' full plans. A good operator can be cheaper than iPostal1's $2.25 per scan, especially if you open a lot of short letters.</p></div>
+    <div class="card"><h3>Pick neither if…</h3><p>you'd rather skip the notary. Traveling Mailbox, Stable and US Global Mail do Form 1583 without one (<a href="/usps-form-1583-online-notarization/">details</a>).</p></div>
+  </div>
+
+  <ul>
+    <li><Aff id="ipostal1" href="https://ipostal1.com/" text="iPostal1" /></li>
+    <li><Aff id="anytimemailbox" href="https://www.anytimemailbox.com/" text="Anytime Mailbox" /></li>
+  </ul>
+  <p>Deep dives: <a href="/ipostal1-pricing/">iPostal1 pricing explained</a> · <a href="/anytime-mailbox-pricing/">Anytime Mailbox pricing</a> · <a href="/virtual-mailbox-pricing-comparison/">all providers compared</a> · <a href="/">home</a></p>
+</Base>
