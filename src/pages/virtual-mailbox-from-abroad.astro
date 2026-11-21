@@ -1,0 +1,73 @@
+---
+import Base from '../layouts/Base.astro';
+import Src from '../components/Src.astro';
+import Aff from '../components/Aff.astro';
+import Unverified from '../components/Unverified.astro';
+import { S } from '../data/sources.js';
+const title = 'Getting a U.S. Virtual Mailbox While Living Abroad: Form 1583 With a Foreign Passport and Address';
+const description = 'Expats and digital nomads can sign USPS Form 1583 from outside the U.S. What USPS accepts (foreign passport, I-94, a lease), why a local notary abroad usually won\'t do, and how Traveling Mailbox, US Global Mail, Stable, Earth Class Mail, iPostal1, Anytime Mailbox and PostScan handle overseas customers.';
+const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-21"};
+---
+<Base title={title} description={description} updated="2026-11-21" schema={schema}>
+  <h1>Getting a U.S. virtual mailbox while living abroad</h1>
+  <p class="lede">You can open a U.S. virtual mailbox from another country, but the USPS Form 1583 step works differently for you. Your ID, your proof of address and the person who witnesses your signature all have to meet USPS rules, and each provider adds its own. Here's what USPS says and what seven providers require, checked November 21, 2026.</p>
+
+  <h2>What USPS requires, wherever you live</h2>
+  <ul>
+    <li><strong>Who can witness your signature:</strong> the mail center (CMRA) owner, manager or an authorized employee, in person or "in real-time audio and video," or "a notary public commissioned in a United States state, territory, possession, or the District of Columbia" <Src href={S.dmm508} label="DMM 508.1.8.3" />. A notary commissioned only in another country isn't on that list, which is why providers steer overseas customers to a video call or a U.S. online notary.</li>
+    <li><strong>Photo ID:</strong> a passport counts, and USPS defines it as "a U.S. passport, U.S. passport card, or foreign passport." A Mexican Matricula Consular card is also listed <Src href={S.dmm608} label="DMM 608.10.3" />.</li>
+    <li><strong>Address ID:</strong> a lease, mortgage or deed of trust; a voter or vehicle registration card; a home or vehicle insurance policy; Form I-94; or a second acceptable photo ID <Src href={S.dmm608} label="DMM 608.10.4" />.</li>
+    <li><strong>Not accepted:</strong> Social Security cards, birth certificates and credit cards <Src href={S.dmm608} label="DMM 608.10.5" />.</li>
+    <li><strong>Your address must match.</strong> The mail center has to confirm you live at the permanent address on the form, and "if information on the application does not match the identification, the CMRA must deny the application" <Src href={S.dmm508} label="DMM 508.1.8.3" />. The form asks for a country, so a foreign home address is expected <Src href={S.usps1583} label="PS 1583" />.</li>
+  </ul>
+
+  <h2>How each provider handles overseas customers</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Provider</th><th>How you sign from abroad</th><th>Cost to sign</th><th>ID rules worth knowing</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Traveling Mailbox</strong></td><td>Video call with their team, including for customers "living outside of the United States." Takes "as little as 5 to 10 minutes" <Src href={S.tmb1583} /></td><td>Included. Asked whether the form must be notarized, the company answers "No!" <Src href={S.tmb1583} /></td><td>Lists passport and alien registration card among accepted IDs <Src href={S.tmb1583} /></td></tr>
+      <tr><td><strong>US Global Mail</strong></td><td>Verified online during setup, with a pre-filled form <Src href={S.usgm1583} /></td><td>Included ("No need to find a notary separately") <Src href={S.usgm1583} /></td><td>Proof of address "from any country"; for Box 9, "international addresses are allowed" <Src href={S.usgm1583} /></td></tr>
+      <tr><td><strong>Stable</strong></td><td>ID photos and a verification selfie, reviewed by Stable in "about 1 business day or less" <Src href={S.stable1583} />. Says it works with "many business owners and founders located outside of the United States" <Src href={S.stable} /></td><td>Included <Src href={S.stable1583} /></td><td>Your address ID must show your street address and "cannot be a private mailbox" <Src href={S.stable1583} /></td></tr>
+      <tr><td><strong>Earth Class Mail</strong> (LegalZoom)</td><td>Without a Social Security number you must use their online notary partner, Proof. Self-verification isn't an option <Src href={S.ecm1583} /></td><td>LegalZoom calls it a "free notarization service" <Src href={S.lzPersonal} /></td><td>Foreign passport, Matricula Consular or NEXUS. IDs must use the Latin alphabet, and notary sessions run in English or Spanish. Billing starts when you create the account, before the form is approved <Src href={S.ecmNonSsn} /></td></tr>
+      <tr><td><strong>iPostal1</strong></td><td>"Customers living outside the U.S, who sign up for a U.S. address MUST use our online notary service" <Src href={S.ipFaq} /></td><td>$25 <Src href={S.ipFaq} /></td><td>Foreign passport listed as a photo ID <Src href={S.ipFaq} /></td></tr>
+      <tr><td><strong>Anytime Mailbox</strong></td><td>Online notary partner by video, "for domestic and international applicants" <Src href={S.atm1583} /></td><td>"A nominal fee" <Src href={S.atm1583} /> <Unverified note="amount not published" /></td><td>"Foreign IDs are accepted as long as they correspond to one of the abovementioned IDs and are in English" <Src href={S.atm1583} /></td></tr>
+      <tr><td><strong>PostScan Mail</strong></td><td>Notarize online or in person, then upload <Src href={S.psmFaq} /></td><td>$20 partner online notary <Src href={S.psmFaq} /></td><td>"Foreign driver's licenses, national ID cards, foreign university ID cards, etc., are not acceptable." Documents must be "in English or English-translated" <Src href={S.psmFaq} /></td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>The address-proof problem, and how people solve it</h2>
+  <p>Your passport is usually the easy part. The second document is harder, because it has to show the home address you put on the form <Src href={S.dmm508} label="DMM" />. Here's what the rules allow:</p>
+  <ul>
+    <li><strong>A foreign lease or home insurance policy</strong> fits the USPS list <Src href={S.dmm608} label="DMM 608.10.4" />. Check language rules first: Anytime Mailbox and PostScan want English (or an English translation at PostScan) <Src href={S.atm1583} /> <Src href={S.psmFaq} label="PostScan" />, and Earth Class Mail wants the Latin alphabet <Src href={S.ecmNonSsn} />.</li>
+    <li><strong>A second photo ID</strong> can serve as the address ID under USPS rules <Src href={S.dmm608} label="DMM 608.10.4" />. Whether a given provider accepts, for example, a second passport in place of a lease is up to that provider <Unverified note="provider-specific" />.</li>
+    <li><strong>Form I-94</strong> is on the USPS list of address IDs <Src href={S.dmm608} label="DMM 608.10.4" />. Not every provider's own list includes it (Earth Class Mail's non-SSN list doesn't, for example) <Src href={S.ecmNonSsn} />.</li>
+    <li><strong>A national ID card</strong> isn't on the USPS photo-ID list, and PostScan explicitly rejects it <Src href={S.dmm608} label="DMM" /> <Src href={S.psmFaq} label="PostScan" />.</li>
+  </ul>
+
+  <h2>Getting mail to you overseas</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Provider</th><th>International forwarding fee</th></tr></thead>
+    <tbody>
+      <tr><td>Traveling Mailbox</td><td>Postage + $2 per shipment. Ships "anywhere in the world" by USPS, FedEx or UPS <Src href={S.tmb} /></td></tr>
+      <tr><td>US Global Mail</td><td>No handling fee. Carrier rates the company says are discounted up to 80% off retail (USPS excepted). Repacking $5 per box or $2 per letter <Src href={S.usgmFeatures} /> <Src href={S.usgmShipCost} label="2" /></td></tr>
+      <tr><td>Earth Class Mail</td><td>$5 per shipment + postage + $1 per item <Src href={S.lzVm} /></td></tr>
+      <tr><td>PostScan Mail</td><td>The pricing page lists one forwarding fee with no separate international rate: $2.00 for the first item, $0.50 each after that, plus shipping. Customs forms and duties may apply to packages <Src href={S.psm} /> <Src href={S.psmFaq} label="FAQ" /></td></tr>
+      <tr><td>iPostal1</td><td>Live rates set by each mail center. Certain locations advertise up to 80% off international shipping <Src href={S.ipFaq} /></td></tr>
+      <tr><td>Stable</td><td>Ships "anywhere in the world" at the cost of postage <Src href={S.stable} /></td></tr>
+    </tbody>
+  </table></div>
+  <p>For letters, a per-shipment fee keeps a monthly international box cheap. Twenty letters cost $2 in fees at Traveling Mailbox and $25 at Earth Class Mail ($5 + 20 × $1), postage extra at both <Src href={S.tmb} /> <Src href={S.lzVm} label="LZ" />. Better still, ask for open-and-scan and only ship what you need on paper.</p>
+
+  <h2>Quick picks</h2>
+  <ul>
+    <li><strong>No notary, quick video call from any time zone:</strong> Traveling Mailbox <Src href={S.tmb1583} /></li>
+    <li><strong>Proof of address from your country explicitly allowed:</strong> US Global Mail <Src href={S.usgm1583} /></li>
+    <li><strong>A cheap address in a specific U.S. city, and a $25 notary is fine:</strong> iPostal1 <Src href={S.ipFaq} /></li>
+  </ul>
+  <ul>
+    <li><Aff id="travelingmailbox" href="https://www.travelingmailbox.com/" text="Traveling Mailbox" /></li>
+    <li><Aff id="usglobalmail" href="https://www.usglobalmail.com/" text="US Global Mail" /></li>
+    <li><Aff id="ipostal1" href="https://ipostal1.com/" text="iPostal1" /></li>
+  </ul>
+  <p>More: <a href="/usps-form-1583-online-notarization/">Form 1583 and online notarization</a> · <a href="/virtual-mailbox-for-rvers/">mail for full-time RVers</a> · <a href="/virtual-mailbox-pricing-comparison/">all providers compared</a> · <a href="/">Mailbox Atlas home</a></p>
+</Base>

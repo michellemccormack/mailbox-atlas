@@ -1,0 +1,62 @@
+---
+import Base from '../layouts/Base.astro';
+import Src from '../components/Src.astro';
+import Aff from '../components/Aff.astro';
+import Unverified from '../components/Unverified.astro';
+import { S } from '../data/sources.js';
+const title = 'US Global Mail vs Traveling Mailbox: $65 vs $15 a Month, and What the Difference Buys';
+const description = 'US Global Mail Scale ($65/mo, or $49 billed annually) vs Traveling Mailbox Basic ($15/mo): included scans, overage, forwarding, storage, check deposits, recipients and Form 1583, from both companies\' own pages. Checked Nov 21, 2026.';
+const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-21"};
+---
+<Base title={title} description={description} updated="2026-11-21" schema={schema}>
+  <h1>US Global Mail vs Traveling Mailbox</h1>
+  <p class="lede">Both scan your mail, forward it worldwide and skip the notary for Form 1583. The gap is price. Traveling Mailbox starts at $15 a month. US Global Mail's cheapest current plan is $65 a month, or $49 billed annually. Here's what the extra money gets you, using both companies' own pages on November 21, 2026.</p>
+
+  <h2>Fee by fee</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th></th><th>US Global Mail</th><th>Traveling Mailbox</th></tr></thead>
+    <tbody>
+      <tr><td>Entry plan</td><td>Scale: $65/mo monthly, or $49/mo billed annually. Prices are marked "*varies by address" <Src href={S.usgm} /></td><td>Basic: $15/mo. Annual plans "get 2 months free" <Src href={S.tmb} /></td></tr>
+      <tr><td>Higher plans</td><td>Teams $129/mo, or $99/mo annually; Enterprise custom <Src href={S.usgm} /></td><td>Extended $25/mo; Small Business $55/mo <Src href={S.tmb} /></td></tr>
+      <tr><td>Envelope (outside) scans</td><td>"Always free and unlimited on every plan" <Src href={S.usgm} /></td><td>40 incoming envelopes/mo on Basic. Junk you mark doesn't count <Src href={S.tmb} /></td></tr>
+      <tr><td>Opening and scanning contents</td><td>360 envelopes opened and scanned a year on Scale, "subject to our fair use policy" <Src href={S.usgm} /></td><td>35 page scans/mo on Basic. Envelope scans don't use up page scans <Src href={S.tmb} /></td></tr>
+      <tr><td>Overage</td><td>$3 per extra open-and-scan; discounted scan bundles available <Src href={S.usgm} /></td><td>$0.25 per extra envelope, $0.50 per extra page scan <Src href={S.tmb} /></td></tr>
+      <tr><td>Recipients (names)</td><td>10 on Scale, 25 on Teams; $5 each after that <Src href={S.usgm} /></td><td>3 on Basic, 5 on Extended, 10 on Small Business <Src href={S.tmb} /></td></tr>
+      <tr><td>Extra logins</td><td>$25 per user (billed monthly) <Src href={S.usgm} /></td><td>Not listed on the pricing page <Unverified note="not published" /></td></tr>
+      <tr><td>Forwarding fee</td><td>No handling fee. You pay the shipping rate, which the company says is discounted up to 80% off retail (USPS isn't discounted). Repacking is $5 per box or $2 per letter <Src href={S.usgmFeatures} /> <Src href={S.usgmShipCost} label="2" /></td><td>Postage + $2 per shipment, not per piece. Consolidation is free <Src href={S.tmb} /></td></tr>
+      <tr><td>Free mail storage</td><td>30 days on Scale, 60 on Teams. After that, $0.05 per mail item per day; packages $0.10/day (and $0.10 per lb per day from Jan 1, 2027) <Src href={S.usgm} /></td><td>Envelopes 30 days, then $1 per envelope per month to hold (otherwise shredded). Packages 30 days, then $0.10 per lb per day <Src href={S.tmb} /></td></tr>
+      <tr><td>Digital scan storage</td><td>180 days on Scale, unlimited on Teams <Src href={S.usgm} /></td><td>Unlimited <Src href={S.tmb} /></td></tr>
+      <tr><td>Check deposit</td><td>No handling fee, by mail or by uploading the scan to your bank; you pay shipping <Src href={S.usgmCheck} /></td><td>$4.95 per check + postage <Src href={S.tmb} /></td></tr>
+      <tr><td>Form 1583</td><td>Pre-filled. "No need to find a notary separately" <Src href={S.usgm1583} /></td><td>Video call with staff. Asked whether the form must be notarized, the company answers "No!" <Src href={S.tmb1583} /></td></tr>
+      <tr><td>Refund / contract</td><td>No long-term contract; 30-day money-back guarantee <Src href={S.usgm} /></td><td>Month to month. Annual plans are "refundable on a monthly schedule" <Src href={S.tmb} /></td></tr>
+      <tr><td>Other</td><td>SOC 2 audited; HIPAA with BAA on Teams; AI summaries; API on Teams <Src href={S.usgm} /></td><td>10% monthly discount for active-duty military and veterans <Src href={S.tmb} /></td></tr>
+    </tbody>
+  </table></div>
+  <p class="meta">Traveling Mailbox's plan cards list "Your Scans Rollover" on Basic too, but the footnote says only "Extended, Small Business, and Enterprise Plans rollover unused Envelope and Page Scans" <Src href={S.tmb} /> <Unverified note="Basic rollover unclear" />.</p>
+
+  <h2>Worked example: a typical household</h2>
+  <p>25 letters a month, 10 opened (about 3 pages each, so 30 pages), one forwarded batch a month:</p>
+  <ul>
+    <li><strong>Traveling Mailbox Basic:</strong> $15 + $2 for the shipment = <strong>$17 + postage</strong>. 25 envelopes and 30 pages both fit inside 40 / 35 <Src href={S.tmb} />.</li>
+    <li><strong>US Global Mail Scale:</strong> <strong>$65 + shipping</strong> monthly, or $49 + shipping billed annually. 10 opens a month is 120 a year, well under 360, and there's no handling fee <Src href={S.usgm} /> <Src href={S.usgmFeatures} label="2" />.</li>
+  </ul>
+  <p>At this volume Traveling Mailbox costs about a quarter as much. Add 3 paper checks a month and Traveling Mailbox goes up by 3 × $4.95 = $14.85 plus postage, while US Global Mail adds only shipping <Src href={S.tmb} /> <Src href={S.usgmCheck} label="USGM" />. That still leaves Traveling Mailbox far cheaper.</p>
+
+  <h2>When US Global Mail is worth it</h2>
+  <ul>
+    <li>Several businesses or family members on one box. Scale includes 10 recipients, against 3 on Traveling Mailbox Basic <Src href={S.usgm} /> <Src href={S.tmb} label="TMB" />.</li>
+    <li>You need HIPAA with a BAA, SOC 2, team permissions or an API <Src href={S.usgm} />.</li>
+    <li>You ship lots of packages internationally and want the consolidation and carrier discounts US Global Mail advertises <Src href={S.usgmFeatures} />. Compare quotes. The discount claim is the company's own.</li>
+  </ul>
+  <h2>When Traveling Mailbox is the better buy</h2>
+  <ul>
+    <li>You mainly want letters scanned and the occasional batch forwarded. $15 covers most single households, and the company says most customers fit on Basic <Src href={S.tmb} />.</li>
+    <li>You want to keep scans forever without paying for a higher tier (unlimited cloud storage on every plan) <Src href={S.tmb} />.</li>
+    <li>You're military or a veteran (10% off) <Src href={S.tmb} />.</li>
+  </ul>
+  <ul>
+    <li><Aff id="usglobalmail" href="https://www.usglobalmail.com/" text="US Global Mail" /></li>
+    <li><Aff id="travelingmailbox" href="https://www.travelingmailbox.com/" text="Traveling Mailbox" /></li>
+  </ul>
+  <p>More: <a href="/traveling-mailbox-vs-postscan-mail/">Traveling Mailbox vs PostScan Mail</a> · <a href="/virtual-mailbox-for-rvers/">mail for full-time RVers</a> · <a href="/virtual-mailbox-check-deposit-fees/">check deposit fees</a> · <a href="/virtual-mailbox-pricing-comparison/">all providers compared</a> · <a href="/">Mailbox Atlas home</a></p>
+</Base>

@@ -1,0 +1,67 @@
+---
+import Base from '../layouts/Base.astro';
+import Src from '../components/Src.astro';
+import Aff from '../components/Aff.astro';
+import Unverified from '../components/Unverified.astro';
+import { S } from '../data/sources.js';
+const title = 'Mail for Full-Time RVers: Virtual Mailbox vs USPS Premium Forwarding vs General Delivery';
+const description = 'How full-time RVers and travelers get mail: a virtual mailbox with forwarding (from $2 a shipment), USPS Premium Forwarding ($26.40 plus $29.70 a week, up to 1 year), or General Delivery (held 30 days). Plus South Dakota\'s mail-forwarding residency rules. Checked Nov 21, 2026.';
+const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-21"};
+---
+<Base title={title} description={description} updated="2026-11-21" schema={schema}>
+  <h1>Mail for full-time RVers and travelers</h1>
+  <p class="lede">Once you've sold the house, mail needs a fixed address to land at and a way to reach you on the road. There are three real options: a virtual mailbox that forwards in batches, USPS Premium Forwarding, and USPS General Delivery. Here's what each costs and where each falls short, from USPS and provider pages checked November 21, 2026.</p>
+
+  <h2>The three options</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th></th><th>Virtual mailbox (CMRA)</th><th>USPS Premium Forwarding (Residential)</th><th>USPS General Delivery</th></tr></thead>
+    <tbody>
+      <tr><td>What it is</td><td>A private street address. Staff scan the envelopes and ship mail to you when you ask <Src href={S.dmm508} label="DMM 508.1.8" /></td><td>USPS boxes up mail addressed to your <em>primary address</em> and ships it to a temporary address once a week by Priority Mail <Src href={S.uspsPfs} label="USPS" /></td><td>Mail held at one Post Office for you to collect in person <Src href={S.dmm508} label="DMM 508.6" /></td></tr>
+      <tr><td>Who it's for</td><td>Anyone who signs USPS Form 1583 with two IDs <Src href={S.dmm508} label="DMM" /></td><td>Residential customers who still have a primary address. Temporary only <Src href={S.uspsPfs} /></td><td>"Transients and customers not permanently located," as a temporary means of delivery <Src href={S.dmm508} label="DMM 508.6.1" /></td></tr>
+      <tr><td>Cost</td><td>Plan fee plus a forwarding fee and postage (see below)</td><td>$26.40 to enroll online ($28.70 at a Post Office), plus $29.70 for each week <Src href={S.uspsPfs} /></td><td>DMM 508.6 lists no fee <Src href={S.dmm508} label="DMM" /> <Unverified note="confirm locally" /></td></tr>
+      <tr><td>How long</td><td>As long as you pay</td><td>At least 2 weeks and at most 1 year <Src href={S.dmm508} label="DMM 508.7.2" /></td><td>Each piece is held no more than 30 days <Src href={S.dmm508} label="DMM 508.6.4" /></td></tr>
+      <tr><td>See your mail before it ships?</td><td>Yes, envelope scans</td><td>No. Everything comes in the weekly box <Src href={S.uspsPfs} /></td><td>No</td></tr>
+      <tr><td>Catches</td><td>"Some states and institutions may have restrictions" on these addresses <Src href={S.atm} label="Anytime Mailbox" /> (see South Dakota below)</td><td>Domestic addresses only. Not available for APO/FPO/DPO or Guam <Src href={S.uspsPfs} /></td><td>Normally offered at only one facility per Post Office, and you can use only one. The postmaster can refuse without ID, or if your mail volume can't be accommodated <Src href={S.dmm508} label="DMM 508.6.2" /></td></tr>
+    </tbody>
+  </table></div>
+  <p><strong>What a year of Premium Forwarding costs:</strong> $26.40 + 52 × $29.70 = <strong>$1,570.80</strong> if you enroll online <Src href={S.uspsPfs} />. It also only works while you still have a primary address for USPS to forward from, so it suits a long trip more than full-time life on the road <Src href={S.dmm508} label="DMM 508.7" />.</p>
+
+  <h2>What forwarding costs at each virtual mailbox</h2>
+  <p>On the road, what matters is the fee every time you have a batch shipped to a campground or a friend's house. Here's one monthly batch of 20 letters, before postage:</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Provider</th><th>Forwarding fee rule</th><th>20 letters in one box</th><th>Free physical storage</th></tr></thead>
+    <tbody>
+      <tr><td>Traveling Mailbox</td><td>Postage + $2 per shipment, not per piece <Src href={S.tmb} /></td><td><strong>$2</strong></td><td>Envelopes 30 days, then shredded unless you pay $1 per envelope per month to hold them <Src href={S.tmb} /></td></tr>
+      <tr><td>US Global Mail</td><td>No handling fee. Optional repacking is $2 per letter or $5 per box <Src href={S.usgmFeatures} /></td><td><strong>$0</strong> (repacking, if you ask for it, is extra)</td><td>30 days on Scale, then $0.05 per item per day <Src href={S.usgm} /></td></tr>
+      <tr><td>Stable</td><td>"Add cost of postage" <Src href={S.stable} /></td><td><strong>$0</strong> + postage</td><td>30 days, then securely disposed of <Src href={S.stable} /></td></tr>
+      <tr><td>PostScan Mail</td><td>$2.00 for the first item, $0.50 each after that, plus shipping <Src href={S.psm} /></td><td><strong>$11.50</strong></td><td>14 days (30 with an annual plan), then $0.05 per envelope per day <Src href={S.psm} /></td></tr>
+      <tr><td>Earth Class Mail (LegalZoom)</td><td>$1.25 per shipment + $1 per item + postage <Src href={S.lzVm} /></td><td><strong>$21.25</strong></td><td>Letters 30 days, then $1.50 per month <Src href={S.lzVm} /></td></tr>
+      <tr><td>iPostal1</td><td>Real-time rates set by each mail center <Src href={S.ipFaq} /></td><td>Varies by location <Unverified note="not published centrally" /></td><td>Not captured <Unverified /></td></tr>
+    </tbody>
+  </table></div>
+  <p>The storage window sets your rhythm. With 30 days free at most of these, a monthly batch fits. At PostScan Mail on a monthly plan, letters start costing $0.05 a day after 14 days <Src href={S.psm} />. At Stable, mail you haven't forwarded within 30 days is destroyed <Src href={S.stable} />, so scan or forward anything you need to keep. Automatic shipping of all mail is a Scale and Custom plan feature at Stable <Src href={S.stable} />.</p>
+
+  <h2>Using a mailbox address as your legal residence: South Dakota's rules</h2>
+  <p>Many full-timers pick a "domicile" state and use a mail-forwarding address there. Each state sets its own rules for driver's licenses. South Dakota publishes its rules for full-time travelers. Its Department of Public Safety requires:</p>
+  <ul>
+    <li>A completed <strong>Residency Affidavit</strong>, signed in front of a notary or a South Dakota driver license examiner <Src href={S.sdAffidavit} label="SD affidavit" /></li>
+    <li>A receipt for <strong>one night's stay</strong> at a South Dakota hotel, motel, campground or RV park within the last year <Src href={S.sdDlManual} label="SD DPS" /></li>
+    <li>Your South Dakota personal mailbox contract, plus one document no more than a year old showing your PMB address (a receipt from the PMB business or a piece of mail) <Src href={S.sdDlManual} label="SD DPS" /></li>
+  </ul>
+  <p>Two lines in the affidavit matter when you choose a provider. You swear that "My personal mailbox service (PMB) is a mail forwarding service, and not a virtual only mail service," and that you don't "stay, live in, or maintain a residence in any another state" <Src href={S.sdAffidavit} label="SD affidavit" />. The manual adds: "if you maintain a residence in another state, you do not qualify as a full-time traveler" <Src href={S.sdDlManual} label="SD DPS" />. The affidavit also warns that a South Dakota license or ID means you'll be called for jury duty in South Dakota <Src href={S.sdAffidavit} label="SD affidavit" />.</p>
+  <div class="warnbox">South Dakota's forms don't define "virtual only mail service." Earth Class Mail and Stable both list a Sioux Falls address <Src href={S.lzVm} label="LZ" /> <Src href={S.stable} label="Stable" />, but whether either counts as a "mail forwarding service" for the affidavit is something to confirm with SD DPS (DPSLicensingInfo@state.sd.us, 605-773-6883, the contacts listed in the manual) before you rely on it <Src href={S.sdDlManual} label="SD DPS" /> <Unverified note="SD acceptance of specific providers" />. A driver's license is also only one part of domicile. Taxes, voting and insurance each have their own rules, which we don't cover here.</div>
+  <p>Other states: iPostal1 says customers have used its addresses "for their DMV needs" but that "the laws vary by state and change periodically" <Src href={S.ipFaq} />. Check your own state's DMV before you sign up.</p>
+
+  <h2>A setup that works for most full-timers</h2>
+  <ol>
+    <li>Pick a provider with a per-shipment forwarding fee (not per item) if you forward in batches: Traveling Mailbox ($2 per box) <Src href={S.tmb} />, or US Global Mail or Stable (postage only) <Src href={S.usgmFeatures} /> <Src href={S.stable} label="Stable" />.</li>
+    <li>Sign Form 1583 on a video call if you can. Traveling Mailbox, Stable and US Global Mail don't need a notary. See <a href="/usps-form-1583-online-notarization/">Form 1583 and online notarization</a>.</li>
+    <li>File a USPS change of address or update your senders yourself. Form 1583 doesn't move your mail <Src href={S.tmb1583} />.</li>
+    <li>Have mail sent to a campground or a Post Office General Delivery window in a town you'll be in for a while. Call the destination Post Office first to ask which facility and ZIP Code to use <Src href={S.dmm508} label="DMM 508.6.3" />.</li>
+  </ol>
+  <ul>
+    <li><Aff id="travelingmailbox" href="https://www.travelingmailbox.com/" text="Traveling Mailbox" /></li>
+    <li><Aff id="usglobalmail" href="https://www.usglobalmail.com/" text="US Global Mail" /></li>
+  </ul>
+  <p>More: <a href="/us-global-mail-vs-traveling-mailbox/">US Global Mail vs Traveling Mailbox</a> · <a href="/virtual-mailbox-from-abroad/">getting a U.S. mailbox while living abroad</a> · <a href="/cheapest-virtual-mailbox/">cheapest virtual mailbox</a> · <a href="/">Mailbox Atlas home</a></p>
+</Base>
