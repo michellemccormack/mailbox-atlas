@@ -2,7 +2,6 @@
 import Base from '../layouts/Base.astro';
 import Src from '../components/Src.astro';
 import Aff from '../components/Aff.astro';
-import Unverified from '../components/Unverified.astro';
 import { S } from '../data/sources.js';
 const title = 'The Cheapest Virtual Mailbox in 2026 (and When It Stops Being Cheap)';
 const description = 'The lowest advertised virtual mailbox prices: Anytime Mailbox from $4.99, PostScan Mail from $8.33 a month billed annually, iPostal1 from $9.99, Traveling Mailbox $15 with scans included. Which one is cheapest depends on how much mail you open.';
@@ -18,7 +17,7 @@ const schema = {"@context":"https://schema.org","@type":"Article","headline":tit
     <tbody>
       <tr><td>1</td><td>Anytime Mailbox</td><td>$4.99; "on average, our plans cost $9.99 per month" <Src href={S.atm} /></td><td>Each location sets its own plans and fees, so the $4.99 address may not be in your city <Src href={S.atm} /></td></tr>
       <tr><td>2</td><td>PostScan Mail</td><td>$8.33/mo Starter, billed annually; "as low as $10/mo" monthly <Src href={S.psm} /></td><td>No free open-and-scans on Starter. Each one is $2.00 for up to 10 pages, and junk mail counts toward your 30-item limit <Src href={S.psm} /> <Src href={S.psmFaq} label="FAQ" /></td></tr>
-      <tr><td>3</td><td>iPostal1</td><td>From $9.99/mo (Virtual Mailing Address) <Src href={S.ip} /></td><td>Plan allowances vary by location <Unverified />. The online notary for Form 1583 is $25 unless your mail center lets you sign in person <Src href={S.ipFaq} /></td></tr>
+      <tr><td>3</td><td>iPostal1</td><td>From $9.99/mo (Virtual Mailing Address) <Src href={S.ip} /></td><td>Plan allowances vary by location. The online notary for Form 1583 is $25 unless your mail center lets you sign in person <Src href={S.ipFaq} /></td></tr>
       <tr><td>4</td><td>Traveling Mailbox</td><td>$15/mo Basic <Src href={S.tmb} /></td><td>Highest sticker price of the four, but 35 page scans a month are included, and Form 1583 needs no notary <Src href={S.tmb} /> <Src href={S.tmbKb} label="1583" /></td></tr>
     </tbody>
   </table></div>

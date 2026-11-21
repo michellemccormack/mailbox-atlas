@@ -1,6 +1,7 @@
 # Mailbox Atlas page queue
 
 Ranked by search intent: buyer/commercial first, then high-volume informational. One page per night. Every number must be sourced from the provider's own page that night.
+Published pages must not show internal notes: no "unverified" or "affiliate link pending" badges, and no "Not captured" or "TODO" text. If a figure is missing, use an em dash (—) in the table cell. Only approved affiliate programs show the small "affiliate link" tag (add the id to the approved set in Aff.astro and use the tracking href). Unapproved <Aff/> links render as ordinary outbound links. Keep [source] citation links.
 
 ## Done (launch, 2026-11-19)
 - [x] /virtual-mailbox-pricing-comparison/

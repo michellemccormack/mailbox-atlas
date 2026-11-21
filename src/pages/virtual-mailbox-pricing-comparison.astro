@@ -2,7 +2,6 @@
 import Base from '../layouts/Base.astro';
 import Src from '../components/Src.astro';
 import Aff from '../components/Aff.astro';
-import Unverified from '../components/Unverified.astro';
 import { S } from '../data/sources.js';
 const title = 'Virtual Mailbox Pricing Compared: Plans, Scan Fees and Form 1583 (2026)';
 const description = 'Eight virtual mailbox services side by side: monthly price, mail included, scan and overage fees, forwarding fees, and whether you need a notary for USPS Form 1583. Every number links to the provider page it came from.';
@@ -22,7 +21,7 @@ const schema = {"@context":"https://schema.org","@type":"Article","headline":tit
         <td>"Our cheapest virtual mailbox plans are $4.99"; average $9.99/mo; prestige addresses up to $50 <Src href={S.atm} /></td>
         <td>Set per location and plan <Src href={S.atm} /></td>
         <td>Shown per plan before signup, set by the mail center <Src href={S.atm} /></td>
-        <td>Set by the mail center <Unverified note="not published centrally" /></td>
+        <td>Set by the mail center </td>
         <td>Notarized; optional built-in online notary video call <Src href={S.atmFaq} /></td></tr>
       <tr><td><strong>iPostal1</strong></td>
         <td>Virtual Mailing Address from $9.99/mo; Virtual Business Address from $14.99/mo; Virtual Office from $39.99/mo <Src href={S.ip} /></td>
@@ -58,17 +57,17 @@ const schema = {"@context":"https://schema.org","@type":"Article","headline":tit
         <td>Scale $65/mo monthly or $49/mo billed annually; Teams $129/mo or $99/mo <Src href={S.usgm} /></td>
         <td>Scale: 360 envelopes opened and scanned a year, 10 recipients <Src href={S.usgm} /></td>
         <td>Scanning included, subject to fair use <Src href={S.usgm} /></td>
-        <td>Not captured <Unverified /></td>
+        <td>—</td>
         <td>"No need to find a notary separately" <Src href={S.usgm1583} /></td></tr>
       <tr><td><strong>Opus Virtual Offices</strong></td>
         <td>All-inclusive virtual office $99/mo (address, live call answering, phone/fax, mail receipt) <Src href={S.opus} /></td>
-        <td>Not captured <Unverified /></td>
-        <td>Not captured <Unverified /></td>
-        <td>Not captured <Unverified /></td>
-        <td>Not captured <Unverified /></td></tr>
+        <td>—</td>
+        <td>—</td>
+        <td>—</td>
+        <td>—</td></tr>
     </tbody>
   </table></div>
-  <p class="meta">Virtual Post Mail publishes plans on its pricing page, but its prices didn't load in our capture, so it isn't in the table yet.</p>
+  <p class="meta">Virtual Post Mail also publishes plans on its pricing page. We weren't able to load those prices, so it isn't in the table yet.</p>
 
   <h2>What a month really costs: one example</h2>
   <p>Say you get 30 letters a month and want 10 of them opened and scanned (about 3 pages each), with nothing forwarded.</p>
@@ -76,7 +75,7 @@ const schema = {"@context":"https://schema.org","@type":"Article","headline":tit
     <li><strong>Traveling Mailbox Basic:</strong> $15. 30 envelopes and 30 page scans fit inside the 40-envelope / 35-page allowance <Src href={S.tmb} />.</li>
     <li><strong>PostScan Mail Starter:</strong> from $10, plus $2.00 for each of the 10 open-and-scans ($20), so from $30. The Starter plan lists no free open-and-scans; Standard includes 5 <Src href={S.psm} />.</li>
     <li><strong>Stable Grow:</strong> $59 monthly ($49 if paid yearly). 30 pieces is the monthly limit, and open-and-scan is free <Src href={S.stable} />.</li>
-    <li><strong>Earth Class Mail Starter:</strong> $39 covers 5 digitized items, so 30 items is well past the allowance. The overage rate wasn't clear in our capture <Unverified />.</li>
+    <li><strong>Earth Class Mail Starter:</strong> $39 covers 5 digitized items, so 30 items is well past the allowance. The overage rate wasn't clearly listed.</li>
   </ul>
   <p>Someone who scans very little and mostly wants an address does best with a cheap Anytime Mailbox or iPostal1 location. Anyone who wants most of their mail opened pays less with a plan that includes page scans.</p>
 
