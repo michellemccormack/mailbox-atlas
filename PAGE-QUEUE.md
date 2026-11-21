@@ -22,18 +22,31 @@ Ranked by search intent: buyer/commercial first, then high-volume informational.
 - Stable pricing text capture shows Grow $49/mo and Scale $83/mo "when billed yearly"; monthly prices not in static HTML.
 - ipostal1.com and travelingmailbox.com return 403 to curl; WebFetch works.
 
+## Done (2026-11-21)
+- [x] /earth-class-mail-pricing/ (queue #6). earthclassmail.com/pricing now 301s to legalzoom.com LZ Virtual Mail; prices unchanged vs 2026-11-19. Unverified: personal page says both "starts at $29/mo" and "$39/mo" (no $29 plan shown); no annual price shown.
+- [x] /stable-vs-earth-class-mail/ (queue #7). Unverified: LegalZoom registered agent price (not on Virtual Mail page); whether Stable's 50% Grow discount applies to monthly and yearly billing.
+- [x] /us-global-mail-vs-traveling-mailbox/ (queue #8). Unverified: TMB extra-user fee; TMB Basic scan rollover (cards say yes, footnote says Extended+ only).
+- [x] /virtual-mailbox-for-rvers/ (queue #10). Sources: USPS DMM 508.6 / 508.7, usps.com PFS page, SD DPS DL manual + Residency Affidavit. Unverified: General Delivery fee (DMM lists none); which providers SD treats as "mail forwarding" vs "virtual only"; iPostal1 storage/forwarding (per mail center).
+- [x] /virtual-mailbox-from-abroad/ (queue #11). Sources: DMM 508.1.8.3, DMM 608.10.3-10.5, PS 1583, provider 1583 pages. Unverified: Anytime Mailbox notary fee; per-provider acceptance of a second photo ID or I-94 as address ID.
+- Also updated: check-deposit page (ECM check subscription stacks on plan, per LegalZoom FAQ), Form 1583 page (ECM "free notarization service"), interlinks on comparison and TMB vs PostScan pages.
+
+## Data notes (2026-11-21)
+- legalzoom.com and usestable.com/usglobalmail.com/postscanmail.com fetch fine with curl; travelingmailbox.com, ipostal1.com and help.earthclassmail.com return 403 to curl (use WebFetch).
+- Stable monthly prices ($59/$99) are in embedded JSON on the pricing page; static text shows yearly ($49/$83).
+- USGM storage: packages $0.10/day now, "$0.10 per lb per day from January 1, 2027" (recheck after Jan 1).
+
 ## Next (ranked)
 1. ~~iPostal1 vs Anytime Mailbox~~ DONE 2026-11-20 (both from $9.99; location-set pricing)
 2. ~~iPostal1 pricing explained~~ DONE 2026-11-20: what the $9.99 plan includes, by location
 3. ~~Anytime Mailbox pricing~~ DONE 2026-11-20: why it ranges from $4.99 to $50
 4. ~~Best virtual mailbox for an LLC~~ DONE 2026-11-20 (address use for state filing, bank, IRS)
 5. ~~Virtual mailbox that doesn't require notarization~~ SKIPPED (duplicate of Form 1583 page) (Traveling Mailbox, Stable, USGM, ECM self-verify)
-6. Earth Class Mail (LegalZoom Virtual Mail) pricing and what changed
-7. Stable vs Earth Class Mail for startups
-8. US Global Mail vs Traveling Mailbox
+6. ~~Earth Class Mail (LegalZoom Virtual Mail) pricing and what changed~~ DONE 2026-11-21
+7. ~~Stable vs Earth Class Mail for startups~~ DONE 2026-11-21
+8. ~~US Global Mail vs Traveling Mailbox~~ DONE 2026-11-21
 9. ~~Virtual mailbox with free check deposit~~ DONE 2026-11-20 (USGM free, Stable $3, TMB $4.95, ECM $39/mo)
-10. Best virtual mailbox for RVers and full-time travelers
-11. Virtual mailbox for digital nomads / expats living abroad (Form 1583 without a US address)
+10. ~~Best virtual mailbox for RVers and full-time travelers~~ DONE 2026-11-21 (/virtual-mailbox-for-rvers/)
+11. ~~Virtual mailbox for digital nomads / expats living abroad (Form 1583 without a US address)~~ DONE 2026-11-21 (/virtual-mailbox-from-abroad/)
 12. Can I use a virtual mailbox for my bank account? (CMRA address flags)
 13. Virtual address vs registered agent: what each is for, and the providers that bundle both
 14. Virtual mailbox with a real street address vs USPS P.O. Box: cost and acceptance
@@ -62,4 +75,8 @@ Ranked by search intent: buyer/commercial first, then high-volume informational.
 37. Can I use a virtual mailbox address on my driver's license? (state DMV rules on CMRA/PMB addresses)
 38. How to write a virtual mailbox address correctly (PMB vs # vs Suite, USPS addressing rules)
 39. Does a virtual mailbox address change your state tax residency? (official state residency/domicile guidance only)
-40. Earth Class Mail check deposit subscription vs per-check: when it pays off (merge into ECM pricing page if thin)
+40. ~~Earth Class Mail check deposit subscription vs per-check~~ MERGED into /earth-class-mail-pricing/ and /virtual-mailbox-check-deposit-fees/ (2026-11-21); do not build separately
+41. South Dakota mail-forwarding addresses for full-timers: what SD DPS accepts, provider by provider (needs SD DPS confirmation of "virtual only" vs "mail forwarding"; official sources only)
+42. USPS Premium Forwarding vs a virtual mailbox for a 3-to-12-month trip: cost by trip length (usps.com PFS fees vs provider plans)
+43. Texas and Florida driver's license rules for mail-forwarding (PMB) addresses (official DPS/FLHSMV pages only)
+44. LegalZoom Virtual Mail vs Stable registered agent + mailbox bundles (needs LegalZoom RA price from its own page)
