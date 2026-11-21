@@ -1,5 +1,7 @@
 ---
 // Inline citation link. Every factual claim should carry one.
 const { href, label = 'source' } = Astro.props;
+const isAffiliate = typeof href === 'string' && /^https:\/\/(www\.)?usglobalmail\.com([/?#]|$)/.test(href);
+const rel = isAffiliate ? 'sponsored nofollow noopener' : 'noopener';
 ---
-<a class="src" href={href} target="_blank" rel="noopener">[{label}]</a>
+<a class="src" href={href} target="_blank" rel={rel}>[{label}]</a>

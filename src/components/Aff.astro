@@ -1,7 +1,11 @@
 ---
-// Affiliate placeholder. NOT an active affiliate link yet: points to the provider's
-// public homepage. When a program approves the site, swap href for the tracking link
-// and keep data-affiliate so links can be found with: grep -r 'data-affiliate' src
+// Affiliate link. Approved programs use the tracking href and are labeled
+// "affiliate link". Pending programs still point at the public homepage.
+// Keep data-affiliate so links can be found with: grep -r 'data-affiliate' src
+const approved = new Set(['usglobalmail']);
 const { id, href, text } = Astro.props;
+const isApproved = approved.has(id);
 ---
-<a href={href} data-affiliate={id} rel="sponsored nofollow noopener" target="_blank">{text}</a><span class="aff-tag" title="Placeholder: no affiliate relationship yet">affiliate link pending</span>
+<a href={href} data-affiliate={id} rel="sponsored nofollow noopener" target="_blank">{text}</a>{isApproved
+  ? <span class="aff-tag" title="Affiliate link: we may earn a commission">affiliate link</span>
+  : <span class="aff-tag" title="Placeholder: no affiliate relationship yet">affiliate link pending</span>}
