@@ -2,7 +2,7 @@
 // Affiliate link. Approved programs use the tracking href and are labeled
 // "affiliate link". Pending programs still point at the public homepage.
 // Keep data-affiliate so links can be found with: grep -r 'data-affiliate' src
-const approved = new Set(['usglobalmail']);
+const approved = new Set(['usglobalmail', 'virtualpostmail']);
 const { id, href, text } = Astro.props;
 const isApproved = approved.has(id);
 ---
