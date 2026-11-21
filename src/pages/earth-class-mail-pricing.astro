@@ -2,7 +2,6 @@
 import Base from '../layouts/Base.astro';
 import Src from '../components/Src.astro';
 import Aff from '../components/Aff.astro';
-import Unverified from '../components/Unverified.astro';
 import { S } from '../data/sources.js';
 const title = 'Earth Class Mail Pricing (Now LegalZoom Virtual Mail): Every Plan and Fee';
 const description = 'Earth Class Mail is now sold as LegalZoom Virtual Mail. All five business plans ($39 to $299/mo), the personal plans, the $3 overage, storage, shipping, check deposit and cancellation fees, from LegalZoom\'s own pages, checked Nov 21, 2026.';
@@ -43,7 +42,7 @@ const schema = {"@context":"https://schema.org","@type":"Article","headline":tit
       <tr><td>Family &amp; Business Mailbox</td><td>$119/mo</td><td>50</td><td>15</td></tr>
     </tbody>
   </table></div>
-  <p class="meta">Source: LegalZoom personal Virtual Mail page <Src href={S.lzPersonal} />. One block of text on that page says "Virtual mail starts at $29/mo" and another says "starts at $39/mo." The cheapest plan listed is $39 <Unverified note="$29 starting price not shown on any plan" />.</p>
+  <p class="meta">Source: LegalZoom personal Virtual Mail page <Src href={S.lzPersonal} />. One block of text on that page says "Virtual mail starts at $29/mo" and another says "starts at $39/mo." The cheapest plan listed is $39.</p>
 
   <h2>Every per-use fee</h2>
   <p>The same fee table appears on the business and personal pages <Src href={S.lzVm} /> <Src href={S.lzPersonal} label="personal" />.</p>

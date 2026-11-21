@@ -2,7 +2,6 @@
 import Base from '../layouts/Base.astro';
 import Src from '../components/Src.astro';
 import Aff from '../components/Aff.astro';
-import Unverified from '../components/Unverified.astro';
 import { S } from '../data/sources.js';
 const title = 'iPostal1 Pricing Explained: What $9.99 Gets You, Every Tier, and Every Extra Fee';
 const description = 'iPostal1 plans run from $9.99 to $69.99 a month before location surcharges. All 12 plan tiers, the Select/Premium/Prestige address add-ons, the $2.25 scan fee, storage fees and the $25 Form 1583 notary, copied from iPostal1\'s own pricing pages.';
@@ -39,9 +38,9 @@ const schema = {"@context":"https://schema.org","@type":"Article","headline":tit
     <thead><tr><th>Address type</th><th>Surcharge (as published)</th><th>30-item personal plan would be</th></tr></thead>
     <tbody>
       <tr><td>Standard</td><td>none</td><td>$9.99</td></tr>
-      <tr><td>Select</td><td>+$10</td><td>$19.99 <Unverified note="assumes surcharge is per month" /></td></tr>
-      <tr><td>Premium</td><td>+$20</td><td>$29.99 <Unverified note="assumes surcharge is per month" /></td></tr>
-      <tr><td>Prestige</td><td>+$30</td><td>$39.99 <Unverified note="assumes surcharge is per month" /></td></tr>
+      <tr><td>Select</td><td>+$10</td><td>$19.99 if the surcharge is monthly</td></tr>
+      <tr><td>Premium</td><td>+$20</td><td>$29.99 if the surcharge is monthly</td></tr>
+      <tr><td>Prestige</td><td>+$30</td><td>$39.99 if the surcharge is monthly</td></tr>
     </tbody>
   </table></div>
   <p>The FAQ doesn't say whether the surcharge is per month or whether it changes on yearly billing <Src href={S.ipFaq} label="FAQ" />. Check the price shown for your chosen address at checkout.</p>
@@ -61,7 +60,7 @@ const schema = {"@context":"https://schema.org","@type":"Article","headline":tit
       <tr><td>Photos of a package's invoice / contents</td><td>$2.95 / $3.95 / both $5.95 <Src href={S.ipVma} /></td></tr>
       <tr><td>Extra shipping insurance</td><td>$4 per $100 <Src href={S.ipVma} /></td></tr>
       <tr><td>Receive a fax</td><td>$2 for up to 6 pages, then $0.25/page <Src href={S.ipVma} /></td></tr>
-      <tr><td>Pickup at the mail center</td><td>"Some locations charge a nominal fee" <Src href={S.ipVma} /> <Unverified note="amount set per location" /></td></tr>
+      <tr><td>Pickup at the mail center</td><td>"Some locations charge a nominal fee" <Src href={S.ipVma} /></td></tr>
       <tr><td>Send mail (letters / postcards)</td><td>From $0.85 / from $1.19 <Src href={S.ipVma} /></td></tr>
       <tr><td>Registered agent add-on (business plans; 25 states + DC listed)</td><td>$99 per year <Src href={S.ip} /></td></tr>
       <tr><td>AI and live call answering add-on</td><td>From $49 a month <Src href={S.ipVma} /></td></tr>

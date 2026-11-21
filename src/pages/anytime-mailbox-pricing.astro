@@ -2,7 +2,6 @@
 import Base from '../layouts/Base.astro';
 import Src from '../components/Src.astro';
 import Aff from '../components/Aff.astro';
-import Unverified from '../components/Unverified.astro';
 import { S } from '../data/sources.js';
 const title = 'Anytime Mailbox Pricing: Why It Ranges From $4.99 to $99.99 a Month';
 const description = 'We read the starting price of all 2,095 U.S. Anytime Mailbox locations: median $10.99, about half at $9.99 or less, one at $4.99. Why prices differ, and what the plans at five real locations include.';
@@ -81,8 +80,8 @@ const schema = {"@context":"https://schema.org","@type":"Article","headline":tit
 
   <h2>Fees that aren't on the location card</h2>
   <ul>
-    <li><strong>Form 1583 notarization.</strong> Anytime Mailbox uses an online notary partner "for a nominal fee," or you can see your operator in person <Src href={S.atm1583} />. We couldn't find a published amount <Unverified note="notary fee not published" />.</li>
-    <li><strong>Overage, storage, shredding and check deposit</strong> are set per plan by the operator and shown under "Full Details" before sign-up <Src href={S.atm} />. They aren't on a central price list <Unverified note="varies by location" />.</li>
+    <li><strong>Form 1583 notarization.</strong> Anytime Mailbox uses an online notary partner "for a nominal fee," or you can see your operator in person <Src href={S.atm1583} />. We couldn't find a published amount.</li>
+    <li><strong>Overage, storage, shredding and check deposit</strong> are set per plan by the operator and shown under "Full Details" before sign-up <Src href={S.atm} />. They aren't on a central price list.</li>
   </ul>
 
   <h2>How to pick an Anytime Mailbox location without overpaying</h2>
