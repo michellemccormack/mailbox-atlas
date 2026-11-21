@@ -2,7 +2,6 @@
 import Base from '../layouts/Base.astro';
 import Src from '../components/Src.astro';
 import Aff from '../components/Aff.astro';
-import Unverified from '../components/Unverified.astro';
 import { S } from '../data/sources.js';
 const title = 'US Global Mail vs Traveling Mailbox: $65 vs $15 a Month, and What the Difference Buys';
 const description = 'US Global Mail Scale ($65/mo, or $49 billed annually) vs Traveling Mailbox Basic ($15/mo): included scans, overage, forwarding, storage, check deposits, recipients and Form 1583, from both companies\' own pages. Checked Nov 21, 2026.';
@@ -22,7 +21,7 @@ const schema = {"@context":"https://schema.org","@type":"Article","headline":tit
       <tr><td>Opening and scanning contents</td><td>360 envelopes opened and scanned a year on Scale, "subject to our fair use policy" <Src href={S.usgm} /></td><td>35 page scans/mo on Basic. Envelope scans don't use up page scans <Src href={S.tmb} /></td></tr>
       <tr><td>Overage</td><td>$3 per extra open-and-scan; discounted scan bundles available <Src href={S.usgm} /></td><td>$0.25 per extra envelope, $0.50 per extra page scan <Src href={S.tmb} /></td></tr>
       <tr><td>Recipients (names)</td><td>10 on Scale, 25 on Teams; $5 each after that <Src href={S.usgm} /></td><td>3 on Basic, 5 on Extended, 10 on Small Business <Src href={S.tmb} /></td></tr>
-      <tr><td>Extra logins</td><td>$25 per user (billed monthly) <Src href={S.usgm} /></td><td>Not listed on the pricing page <Unverified note="not published" /></td></tr>
+      <tr><td>Extra logins</td><td>$25 per user (billed monthly) <Src href={S.usgm} /></td><td>Not listed on the pricing page</td></tr>
       <tr><td>Forwarding fee</td><td>No handling fee. You pay the shipping rate, which the company says is discounted up to 80% off retail (USPS isn't discounted). Repacking is $5 per box or $2 per letter <Src href={S.usgmFeatures} /> <Src href={S.usgmShipCost} label="2" /></td><td>Postage + $2 per shipment, not per piece. Consolidation is free <Src href={S.tmb} /></td></tr>
       <tr><td>Free mail storage</td><td>30 days on Scale, 60 on Teams. After that, $0.05 per mail item per day; packages $0.10/day (and $0.10 per lb per day from Jan 1, 2027) <Src href={S.usgm} /></td><td>Envelopes 30 days, then $1 per envelope per month to hold (otherwise shredded). Packages 30 days, then $0.10 per lb per day <Src href={S.tmb} /></td></tr>
       <tr><td>Digital scan storage</td><td>180 days on Scale, unlimited on Teams <Src href={S.usgm} /></td><td>Unlimited <Src href={S.tmb} /></td></tr>
@@ -32,7 +31,7 @@ const schema = {"@context":"https://schema.org","@type":"Article","headline":tit
       <tr><td>Other</td><td>SOC 2 audited; HIPAA with BAA on Teams; AI summaries; API on Teams <Src href={S.usgm} /></td><td>10% monthly discount for active-duty military and veterans <Src href={S.tmb} /></td></tr>
     </tbody>
   </table></div>
-  <p class="meta">Traveling Mailbox's plan cards list "Your Scans Rollover" on Basic too, but the footnote says only "Extended, Small Business, and Enterprise Plans rollover unused Envelope and Page Scans" <Src href={S.tmb} /> <Unverified note="Basic rollover unclear" />.</p>
+  <p class="meta">Traveling Mailbox's plan cards list "Your Scans Rollover" on Basic too, but the footnote says only "Extended, Small Business, and Enterprise Plans rollover unused Envelope and Page Scans" <Src href={S.tmb} />.</p>
 
   <h2>Worked example: a typical household</h2>
   <p>25 letters a month, 10 opened (about 3 pages each, so 30 pages), one forwarded batch a month:</p>

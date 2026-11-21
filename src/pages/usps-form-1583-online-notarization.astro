@@ -2,7 +2,6 @@
 import Base from '../layouts/Base.astro';
 import Src from '../components/Src.astro';
 import Aff from '../components/Aff.astro';
-import Unverified from '../components/Unverified.astro';
 import { S } from '../data/sources.js';
 const title = 'USPS Form 1583 Online Notarization: What USPS Requires and What Each Provider Charges';
 const description = 'Since May 2024 USPS lets you sign Form 1583 on a live video call with the mail center or a U.S.-commissioned notary. Which virtual mailbox providers need a notary, what their online notary costs, and which IDs to have ready.';
@@ -27,7 +26,7 @@ const schema = {"@context":"https://schema.org","@type":"Article","headline":tit
       <tr><td>Earth Class Mail (LegalZoom)</td><td>Optional</td><td>LegalZoom calls its notary option a "free notarization service" (2026-11-21) <Src href={S.lzPersonal} /></td><td>Verify yourself online (ID photos, a selfie, e-sign) or use a partner online notary. Without a Social Security number, you have to use the notary <Src href={S.ecm1583} />. Billing "starts upon account creation" whether or not the form is approved <Src href={S.ecmNonSsn} /></td></tr>
       <tr><td>iPostal1</td><td>Yes, unless you sign in person at the mail center</td><td>$25 online notary</td><td>Many mail centers let you sign in person (some charge). Customers outside the U.S. must use the online notary <Src href={S.ipFaq} /></td></tr>
       <tr><td>PostScan Mail</td><td>Yes</td><td>$20 partner online notary</td><td>Notarize online or in person, then submit through the platform <Src href={S.psmFaq} /></td></tr>
-      <tr><td>Anytime Mailbox</td><td>Yes</td><td>Fee not published <Unverified /></td><td>Upload two IDs, then "complete and notarize" the form. The "Use Online Notary" button routes you to a video call with a licensed notary <Src href={S.atmFaq} /></td></tr>
+      <tr><td>Anytime Mailbox</td><td>Yes</td><td>—</td><td>Upload two IDs, then "complete and notarize" the form. The "Use Online Notary" button routes you to a video call with a licensed notary <Src href={S.atmFaq} /></td></tr>
     </tbody>
   </table></div>
 
