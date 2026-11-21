@@ -2,7 +2,6 @@
 import Base from '../layouts/Base.astro';
 import Src from '../components/Src.astro';
 import Aff from '../components/Aff.astro';
-import Unverified from '../components/Unverified.astro';
 import { S } from '../data/sources.js';
 const title = 'Getting a U.S. Virtual Mailbox While Living Abroad: Form 1583 With a Foreign Passport and Address';
 const description = 'Expats and digital nomads can sign USPS Form 1583 from outside the U.S. What USPS accepts (foreign passport, I-94, a lease), why a local notary abroad usually won\'t do, and how Traveling Mailbox, US Global Mail, Stable, Earth Class Mail, iPostal1, Anytime Mailbox and PostScan handle overseas customers.';
@@ -30,7 +29,7 @@ const schema = {"@context":"https://schema.org","@type":"Article","headline":tit
       <tr><td><strong>Stable</strong></td><td>ID photos and a verification selfie, reviewed by Stable in "about 1 business day or less" <Src href={S.stable1583} />. Says it works with "many business owners and founders located outside of the United States" <Src href={S.stable} /></td><td>Included <Src href={S.stable1583} /></td><td>Your address ID must show your street address and "cannot be a private mailbox" <Src href={S.stable1583} /></td></tr>
       <tr><td><strong>Earth Class Mail</strong> (LegalZoom)</td><td>Without a Social Security number you must use their online notary partner, Proof. Self-verification isn't an option <Src href={S.ecm1583} /></td><td>LegalZoom calls it a "free notarization service" <Src href={S.lzPersonal} /></td><td>Foreign passport, Matricula Consular or NEXUS. IDs must use the Latin alphabet, and notary sessions run in English or Spanish. Billing starts when you create the account, before the form is approved <Src href={S.ecmNonSsn} /></td></tr>
       <tr><td><strong>iPostal1</strong></td><td>"Customers living outside the U.S, who sign up for a U.S. address MUST use our online notary service" <Src href={S.ipFaq} /></td><td>$25 <Src href={S.ipFaq} /></td><td>Foreign passport listed as a photo ID <Src href={S.ipFaq} /></td></tr>
-      <tr><td><strong>Anytime Mailbox</strong></td><td>Online notary partner by video, "for domestic and international applicants" <Src href={S.atm1583} /></td><td>"A nominal fee" <Src href={S.atm1583} /> <Unverified note="amount not published" /></td><td>"Foreign IDs are accepted as long as they correspond to one of the abovementioned IDs and are in English" <Src href={S.atm1583} /></td></tr>
+      <tr><td><strong>Anytime Mailbox</strong></td><td>Online notary partner by video, "for domestic and international applicants" <Src href={S.atm1583} /></td><td>"A nominal fee" <Src href={S.atm1583} /></td><td>"Foreign IDs are accepted as long as they correspond to one of the abovementioned IDs and are in English" <Src href={S.atm1583} /></td></tr>
       <tr><td><strong>PostScan Mail</strong></td><td>Notarize online or in person, then upload <Src href={S.psmFaq} /></td><td>$20 partner online notary <Src href={S.psmFaq} /></td><td>"Foreign driver's licenses, national ID cards, foreign university ID cards, etc., are not acceptable." Documents must be "in English or English-translated" <Src href={S.psmFaq} /></td></tr>
     </tbody>
   </table></div>
@@ -39,7 +38,7 @@ const schema = {"@context":"https://schema.org","@type":"Article","headline":tit
   <p>Your passport is usually the easy part. The second document is harder, because it has to show the home address you put on the form <Src href={S.dmm508} label="DMM" />. Here's what the rules allow:</p>
   <ul>
     <li><strong>A foreign lease or home insurance policy</strong> fits the USPS list <Src href={S.dmm608} label="DMM 608.10.4" />. Check language rules first: Anytime Mailbox and PostScan want English (or an English translation at PostScan) <Src href={S.atm1583} /> <Src href={S.psmFaq} label="PostScan" />, and Earth Class Mail wants the Latin alphabet <Src href={S.ecmNonSsn} />.</li>
-    <li><strong>A second photo ID</strong> can serve as the address ID under USPS rules <Src href={S.dmm608} label="DMM 608.10.4" />. Whether a given provider accepts, for example, a second passport in place of a lease is up to that provider <Unverified note="provider-specific" />.</li>
+    <li><strong>A second photo ID</strong> can serve as the address ID under USPS rules <Src href={S.dmm608} label="DMM 608.10.4" />. Whether a given provider accepts, for example, a second passport in place of a lease is up to that provider.</li>
     <li><strong>Form I-94</strong> is on the USPS list of address IDs <Src href={S.dmm608} label="DMM 608.10.4" />. Not every provider's own list includes it (Earth Class Mail's non-SSN list doesn't, for example) <Src href={S.ecmNonSsn} />.</li>
     <li><strong>A national ID card</strong> isn't on the USPS photo-ID list, and PostScan explicitly rejects it <Src href={S.dmm608} label="DMM" /> <Src href={S.psmFaq} label="PostScan" />.</li>
   </ul>

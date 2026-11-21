@@ -2,7 +2,6 @@
 import Base from '../layouts/Base.astro';
 import Src from '../components/Src.astro';
 import Aff from '../components/Aff.astro';
-import Unverified from '../components/Unverified.astro';
 import { S } from '../data/sources.js';
 const title = 'Can an LLC Use a Virtual Mailbox Address? Registered Agent vs Business Address, and the Best-Fit Plans';
 const description = 'A virtual mailbox can usually be your LLC\'s mailing or business address, but not its registered office. What Texas, Florida, California and the IRS actually ask for, and which providers bundle a registered agent, with prices from their own pages.';
@@ -23,13 +22,13 @@ const schema = {"@context":"https://schema.org","@type":"Article","headline":tit
   <h2>2. The principal office and mailing address: where a virtual mailbox fits</h2>
   <ul>
     <li><strong>Texas</strong> asks for an initial mailing address in the certificate of formation, which the Comptroller uses for tax mail. It "may be a post office box or street address" <Src href={S.tx201} label="Form 201" />.</li>
-    <li><strong>Florida</strong> asks for "the street and mailing addresses of the company's principal office" <Src href={S.fl0201} label="§605.0201" />. Whether a commercial mail receiving agency (CMRA) address is accepted as the principal <em>street</em> address isn't stated in the statute <Unverified note="not addressed in statute" />.</li>
+    <li><strong>Florida</strong> asks for "the street and mailing addresses of the company's principal office" <Src href={S.fl0201} label="§605.0201" />. Whether a commercial mail receiving agency (CMRA) address is accepted as the principal <em>street</em> address isn't stated in the statute.</li>
     <li><strong>IRS (Form SS-4, EIN):</strong> line 4 is the mailing address, and "generally, this address will be used on all tax returns." Line 5 is the physical address, only if different, and you shouldn't enter a P.O. box there <Src href={S.irsSs4} label="IRS" />. A virtual mailbox address works as a mailing address on line 4.</li>
   </ul>
-  <div class="warnbox"><strong>State rules vary.</strong> US Global Mail says a virtual or PMB address "can be used to open an LLC but there are some states that do not allow it," and names Washington and California as requiring physical addresses <Src href={S.usgmUse} label="USGM" />. We haven't confirmed that against those states' filing rules <Unverified note="provider claim, not state-confirmed" />. iPostal1 likewise says "laws vary by state" <Src href={S.ipFaq} label="iPostal1 FAQ" />. Check your state's filing instructions before you file.</div>
+  <div class="warnbox"><strong>State rules vary.</strong> US Global Mail says a virtual or PMB address "can be used to open an LLC but there are some states that do not allow it," and names Washington and California as requiring physical addresses <Src href={S.usgmUse} label="USGM" />. We haven't confirmed that against those states' filing rules. iPostal1 likewise says "laws vary by state" <Src href={S.ipFaq} label="iPostal1 FAQ" />. Check your state's filing instructions before you file.</div>
 
   <h2>3. Banks</h2>
-  <p>US Global Mail says most banks accept its address. It adds that "some banks have recently started asking for a personal address, which is not a CMRA" address <Src href={S.usgmUse} label="USGM" />. We found no published bank-by-bank rules <Unverified note="bank policies not published" />, so ask your bank before you apply.</p>
+  <p>US Global Mail says most banks accept its address. It adds that "some banks have recently started asking for a personal address, which is not a CMRA" address <Src href={S.usgmUse} label="USGM" />. We found no published bank-by-bank rules, so ask your bank before you apply.</p>
 
   <h2>Plans that let you receive mail in a business name</h2>
   <div class="tablewrap"><table>
@@ -37,10 +36,10 @@ const schema = {"@context":"https://schema.org","@type":"Article","headline":tit
     <tbody>
       <tr><td>iPostal1</td><td>Virtual Business Address $14.99/mo, 30 items, 1 company name. The $9.99 plan is personal only <Src href={S.ipVba} /> <Src href={S.ipFaq} label="FAQ" /></td><td>$99/yr, 25 states + DC listed <Src href={S.ip} /></td><td>$25 online notary or in person <Src href={S.ipFaq} label="FAQ" /></td></tr>
       <tr><td>Stable</td><td>Grow $49/mo billed yearly, 360 pieces a year, unlimited recipients. Early-stage discount: 50% off Grow for a year if you use the address to incorporate or have under $1M revenue, subject to approval <Src href={S.stable} /></td><td>$25/mo per state <Src href={S.stable} /></td><td>No notary; Stable verifies IDs <Src href={S.stable1583} /></td></tr>
-      <tr><td>Earth Class Mail (LegalZoom Virtual Mail)</td><td>Starter MailBox $39/mo, 5 items digitized, 2 recipients <Src href={S.ecm} /></td><td>Says you "must still maintain a registered agent"; add-on price not captured <Src href={S.ecm} /> <Unverified /></td><td>Self-verify online or online notary <Src href={S.ecm1583} /></td></tr>
+      <tr><td>Earth Class Mail (LegalZoom Virtual Mail)</td><td>Starter MailBox $39/mo, 5 items digitized, 2 recipients <Src href={S.ecm} /></td><td>Says you "must still maintain a registered agent"; add-on price isn't listed on that page <Src href={S.ecm} /></td><td>Self-verify online or online notary <Src href={S.ecm1583} /></td></tr>
       <tr><td>Traveling Mailbox</td><td>Basic $15/mo; business names can be added to any plan <Src href={S.tmb} /></td><td>None listed on pricing page</td><td>No notary; video call <Src href={S.tmbKb} /></td></tr>
       <tr><td>US Global Mail</td><td>Scale $49/mo or $65/mo, depending on billing period <Src href={S.usgm} /></td><td>"We currently don't offer Registered Agent Service" <Src href={S.usgmUse} /></td><td>No separate notary <Src href={S.usgm1583} /></td></tr>
-      <tr><td>Anytime Mailbox</td><td>Set per location; check whether the plan allows a business name <Src href={S.atm} /> <Unverified note="varies by location" /></td><td>Not captured <Unverified /></td><td>Notarized; online partner <Src href={S.atm1583} /></td></tr>
+      <tr><td>Anytime Mailbox</td><td>Set per location; check whether the plan allows a business name <Src href={S.atm} /></td><td>—</td><td>Notarized; online partner <Src href={S.atm1583} /></td></tr>
     </tbody>
   </table></div>
   <p>Stable's and US Global Mail's prices depend on monthly vs yearly billing. The figures above are the lowest shown on each pricing page, and the existing <a href="/virtual-mailbox-pricing-comparison/">comparison table</a> has both billing options.</p>
