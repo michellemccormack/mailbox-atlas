@@ -1,0 +1,101 @@
+---
+import Base from '../layouts/Base.astro';
+import Src from '../components/Src.astro';
+import Aff from '../components/Aff.astro';
+import Unverified from '../components/Unverified.astro';
+import { S } from '../data/sources.js';
+const title = 'Earth Class Mail Pricing (Now LegalZoom Virtual Mail): Every Plan and Fee';
+const description = 'Earth Class Mail is now sold as LegalZoom Virtual Mail. All five business plans ($39 to $299/mo), the personal plans, the $3 overage, storage, shipping, check deposit and cancellation fees, from LegalZoom\'s own pages, checked Nov 21, 2026.';
+const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-21"};
+---
+<Base title={title} description={description} updated="2026-11-21" schema={schema}>
+  <h1>Earth Class Mail pricing, now LegalZoom Virtual Mail</h1>
+  <p class="lede">If you look up Earth Class Mail's prices today, you end up on LegalZoom. The plans start at $39 a month, but only 5 pieces of mail a month are included at that price, and every extra piece costs $3. Here is the full fee schedule as LegalZoom published it on November 21, 2026.</p>
+
+  <h2>What changed: the brand and the web address</h2>
+  <ul>
+    <li><strong>The pricing page moved.</strong> earthclassmail.com/pricing now sends you (HTTP 301) to LegalZoom's "LZ Virtual Mail" page <Src href={S.lzVm} label="LegalZoom" />.</li>
+    <li><strong>It's the same company.</strong> LegalZoom's page says, "Earth Class Mail is now part of LegalZoom" <Src href={S.lzVm} />. Help articles and the cancellation policy are still on help.earthclassmail.com <Src href={S.ecmCancel} label="ECM help" />.</li>
+    <li><strong>The prices haven't changed since our November 19 check.</strong> The plan prices and per-item fees on November 21 matched our <a href="/virtual-mailbox-pricing-comparison/">November 19 comparison table</a> ($39 / $59 / $119 MailBox plans) <Src href={S.lzVm} />.</li>
+    <li><strong>The address network:</strong> "53 real street addresses across 44 states," and you can't pick up mail in person. "Our service is entirely virtual" <Src href={S.lzVm} />.</li>
+  </ul>
+
+  <h2>Business plans</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Plan</th><th>Price</th><th>Mail items digitized / month</th><th>Recipients</th><th>User seats</th></tr></thead>
+    <tbody>
+      <tr><td>Starter MailBox</td><td>$39/mo</td><td>5</td><td>2</td><td>1 (up to 2)</td></tr>
+      <tr><td>Essentials MailBox</td><td>$59/mo</td><td>25</td><td>5</td><td>3 (up to 10)</td></tr>
+      <tr><td>Premium MailBox</td><td>$119/mo</td><td>50</td><td>15</td><td>3 (up to 10)</td></tr>
+      <tr><td>Startup MailRoom</td><td>$179/mo</td><td>80</td><td>25</td><td>5</td></tr>
+      <tr><td>Business MailRoom</td><td>$299/mo</td><td>150</td><td>50</td><td>5</td></tr>
+    </tbody>
+  </table></div>
+  <p class="meta">All from LegalZoom's business Virtual Mail page <Src href={S.lzVm} />. Every plan says "auto-renews." Junk mail doesn't count toward the item limit, and scanning is free for documents of 20 pages or less <Src href={S.lzVm} />. We didn't see an annual-billing price on the page.</p>
+
+  <h2>Personal plans</h2>
+  <p>LegalZoom sells the same service to individuals under different names. The plans line up with the first three business tiers:</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Plan</th><th>Price</th><th>Items / month</th><th>Recipients</th></tr></thead>
+    <tbody>
+      <tr><td>Personal Mailbox</td><td>$39/mo</td><td>5</td><td>2</td></tr>
+      <tr><td>Family Mailbox</td><td>$59/mo</td><td>25</td><td>5</td></tr>
+      <tr><td>Family &amp; Business Mailbox</td><td>$119/mo</td><td>50</td><td>15</td></tr>
+    </tbody>
+  </table></div>
+  <p class="meta">Source: LegalZoom personal Virtual Mail page <Src href={S.lzPersonal} />. One block of text on that page says "Virtual mail starts at $29/mo" and another says "starts at $39/mo." The cheapest plan listed is $39 <Unverified note="$29 starting price not shown on any plan" />.</p>
+
+  <h2>Every per-use fee</h2>
+  <p>The same fee table appears on the business and personal pages <Src href={S.lzVm} /> <Src href={S.lzPersonal} label="personal" />.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Fee</th><th>Price</th></tr></thead>
+    <tbody>
+      <tr><td>Mail item received over the plan limit</td><td>$3 per item</td></tr>
+      <tr><td>Pages over 20 in one document</td><td>$0.15 per page (color)</td></tr>
+      <tr><td>Extra recipient</td><td>$5/month</td></tr>
+      <tr><td>Extra user seat</td><td>$19/month</td></tr>
+      <tr><td>Extra address</td><td>$30/month</td></tr>
+      <tr><td>Letter storage</td><td>Free for 30 days, then $1.50 per month</td></tr>
+      <tr><td>Package storage</td><td>Free for 10 days, then $15 per pound per month</td></tr>
+      <tr><td>Domestic forwarding</td><td>$1.25 per shipment + postage + $1 per item in the box</td></tr>
+      <tr><td>International forwarding</td><td>$5 per shipment + postage + $1 per item</td></tr>
+      <tr><td>Expedited shipment</td><td>$10 per shipment + postage + $1 per item</td></tr>
+      <tr><td>Boxes</td><td>Medium $5, large $10; custom packaging $12.50 per 10 minutes ($25 expedited)</td></tr>
+      <tr><td>Check deposit</td><td>$10 per check, or a $39/month subscription with 5 checks included and $2 per extra check</td></tr>
+      <tr><td>Expedited check deposit</td><td>$20 per check (free overnight shipping to Bank of America, JPMorgan Chase and Wells Fargo)</td></tr>
+      <tr><td>Expedited incoming item / expedited scan</td><td>$15 each</td></tr>
+      <tr><td>Special handling</td><td>$12.50 per 10 minutes</td></tr>
+      <tr><td>Shredding</td><td>Free</td></tr>
+      <tr><td>Size limits</td><td>Incoming items over 20 lb or larger than 19" × 14" × 12" are not accepted</td></tr>
+    </tbody>
+  </table></div>
+  <p>LegalZoom's FAQ says check depositing "can be added for an additional fee" <Src href={S.lzVm} />, so the $39 check subscription is billed on top of your plan, not in place of it.</p>
+
+  <h2>What it costs at real mail volumes</h2>
+  <p>Plan price plus $3 for each item over the allowance <Src href={S.lzVm} />. Junk mail is left out of the count, and forwarding and check deposits are extra.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Mail per month (not junk)</th><th>Starter $39</th><th>Essentials $59</th><th>Cheapest option</th></tr></thead>
+    <tbody>
+      <tr><td>5</td><td>$39</td><td>$59</td><td>Starter, $39</td></tr>
+      <tr><td>10</td><td>$39 + 5 × $3 = $54</td><td>$59</td><td>Starter, $54</td></tr>
+      <tr><td>15</td><td>$39 + 10 × $3 = $69</td><td>$59</td><td>Essentials, $59</td></tr>
+      <tr><td>30</td><td>$39 + 25 × $3 = $114</td><td>$59 + 5 × $3 = $74</td><td>Essentials, $74</td></tr>
+    </tbody>
+  </table></div>
+  <p>At 12 or more pieces of real mail a month, Essentials costs less than Starter (Starter reaches $60 at 12 items). For comparison, Traveling Mailbox's $15 Basic plan includes 40 envelopes <Src href={S.tmb} />. See <a href="/stable-vs-earth-class-mail/">Stable vs Earth Class Mail</a> for a provider that includes 30 pieces at its entry price.</p>
+
+  <h2>Signing up and canceling</h2>
+  <ul>
+    <li><strong>Billing starts right away.</strong> "Billing starts upon account creation and is not dependent on the completion or approval of USPS Form 1583" <Src href={S.ecmNonSsn} label="ECM help" />.</li>
+    <li><strong>Form 1583:</strong> LegalZoom says, "If a notary is required, we make the process seamless with our free notarization service" <Src href={S.lzPersonal} />. If you don't have a Social Security number, you go through the notary session with a foreign passport, Matricula Consular or NEXUS card as your photo ID <Src href={S.ecmNonSsn} />.</li>
+    <li><strong>Canceling at the end of the billing cycle is free.</strong> A $50 fee applies only if you choose 6 more months of account access. During those 6 months, received mail is $3 per item, and shipments are $5 domestic or $10 international, plus postage and $1 per item <Src href={S.ecmCancel} />.</li>
+    <li><strong>Mail after you close:</strong> mail is shredded for 6 months, then returned to sender. Earth Class Mail says "USPS rules do not allow for mail forwarding" after you cancel. Reopening within 3 months costs $99. You can't pause an account <Src href={S.ecmCancel} />.</li>
+  </ul>
+
+  <h2>Who Earth Class Mail fits</h2>
+  <p>Teams that want company-run processing facilities, AI summaries and API integrations, and that get enough mail to justify Essentials or higher <Src href={S.lzVm} />. For a single person with a few letters a month, a $39 plan with a $3 overage is expensive next to the plans on our <a href="/cheapest-virtual-mailbox/">cheapest virtual mailbox</a> page.</p>
+  <ul>
+    <li><Aff id="earthclassmail" href="https://www.earthclassmail.com/" text="Earth Class Mail / LegalZoom Virtual Mail" /></li>
+  </ul>
+  <p>More: <a href="/virtual-mailbox-pricing-comparison/">all providers compared</a> · <a href="/virtual-mailbox-check-deposit-fees/">check deposit fees</a> · <a href="/virtual-mailbox-for-llc/">virtual mailbox for an LLC</a> · <a href="/">Mailbox Atlas home</a></p>
+</Base>

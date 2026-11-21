@@ -1,0 +1,61 @@
+---
+import Base from '../layouts/Base.astro';
+import Src from '../components/Src.astro';
+import Aff from '../components/Aff.astro';
+import Unverified from '../components/Unverified.astro';
+import { S } from '../data/sources.js';
+const title = 'Stable vs Earth Class Mail (LegalZoom Virtual Mail) for Startups: Cost at 5, 15 and 30 Letters';
+const description = 'Stable Grow ($59/mo, or $49 billed yearly, with 30 pieces and free scans) vs Earth Class Mail Starter ($39/mo, 5 items, $3 per extra). Overage, users, registered agent, check deposit and Form 1583, from both companies\' own pages.';
+const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-21"};
+---
+<Base title={title} description={description} updated="2026-11-21" schema={schema}>
+  <h1>Stable vs Earth Class Mail for a startup</h1>
+  <p class="lede">Both sell business-grade mail scanning to startups, but they charge in very different ways. Earth Class Mail (now LegalZoom Virtual Mail) has the lower sticker price and includes few pieces of mail. Stable costs more up front and includes six times as much. Which one is cheaper depends almost entirely on how much mail you get. Checked November 21, 2026.</p>
+
+  <h2>Side by side</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th></th><th>Stable</th><th>Earth Class Mail / LegalZoom</th></tr></thead>
+    <tbody>
+      <tr><td>Entry plan</td><td>Grow: $59/mo monthly, or $49/mo billed yearly <Src href={S.stable} /></td><td>Starter MailBox: $39/mo, auto-renews <Src href={S.lzVm} /></td></tr>
+      <tr><td>Next plan up</td><td>Scale: $99/mo monthly, or $83/mo billed yearly <Src href={S.stable} /></td><td>Essentials MailBox: $59/mo <Src href={S.lzVm} /></td></tr>
+      <tr><td>Mail included (entry plan)</td><td>30 pieces/month on monthly billing, 360/year on yearly. Junk mail isn't counted <Src href={S.stable} /></td><td>5 items/month digitized. Junk mail isn't counted <Src href={S.lzVm} /></td></tr>
+      <tr><td>Over the limit</td><td>$3 per piece <Src href={S.stable} /></td><td>$3 per item <Src href={S.lzVm} /></td></tr>
+      <tr><td>Opening and scanning</td><td>Free open-and-scan on every plan <Src href={S.stable} /></td><td>Free for documents of 20 pages or less, then $0.15 per page <Src href={S.lzVm} /></td></tr>
+      <tr><td>Recipients (names)</td><td>Unlimited <Src href={S.stable} /></td><td>2 on Starter; $5/mo per extra <Src href={S.lzVm} /></td></tr>
+      <tr><td>Logins</td><td>1 user included; $20/mo per extra on Grow (3 paid users max), $30/mo on Scale <Src href={S.stable} /></td><td>1 seat on Starter (up to 2); $19/mo per extra seat <Src href={S.lzVm} /></td></tr>
+      <tr><td>Forwarding</td><td>Cost of postage <Src href={S.stable} /></td><td>$1.25 per shipment + postage + $1 per item <Src href={S.lzVm} /></td></tr>
+      <tr><td>Free physical storage</td><td>Mail 30 days, packages 15 days, then disposed of <Src href={S.stable} /></td><td>Letters 30 days, then $1.50/mo. Packages 10 days, then $15 per lb per month <Src href={S.lzVm} /></td></tr>
+      <tr><td>Check deposit</td><td>Separate purchase: "volume-based plans as low as $3/check" <Src href={S.stable} /></td><td>$10 per check, or $39/mo for 5 checks plus $2 each after that <Src href={S.lzVm} /></td></tr>
+      <tr><td>Registered agent</td><td>Add-on, $25/mo per state <Src href={S.stable} /></td><td>Sold separately by LegalZoom. Price not on the Virtual Mail page <Unverified note="not captured" /></td></tr>
+      <tr><td>Addresses</td><td>39 cities listed on the pricing page <Src href={S.stable} /></td><td>53 street addresses in 44 states <Src href={S.lzVm} /></td></tr>
+      <tr><td>Form 1583</td><td>No notary. Stable verifies your IDs in about 1 business day <Src href={S.stable1583} /></td><td>Self-verify online or use the partner notary. LegalZoom calls it a "free notarization service" <Src href={S.ecm1583} /> <Src href={S.lzPersonal} label="LZ" /></td></tr>
+      <tr><td>Startup discount</td><td>50% off Grow for 1 year if revenue is under $1M or you're using the address to form a company, subject to approval <Src href={S.stable} /></td><td>None listed on the pricing page <Src href={S.lzVm} /></td></tr>
+      <tr><td>Refund / cancel</td><td>30-day money-back guarantee <Src href={S.stable} /></td><td>No fee to cancel at the end of the cycle. Billing starts when you create the account, even before Form 1583 is approved <Src href={S.ecmCancel} /> <Src href={S.ecmNonSsn} label="2" /></td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>Monthly cost at three mail volumes</h2>
+  <p>Monthly billing, entry plans, one user, nothing forwarded or deposited. Pieces of mail that aren't junk <Src href={S.stable} /> <Src href={S.lzVm} label="LZ" />.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Mail / month</th><th>Stable Grow</th><th>ECM Starter</th><th>ECM Essentials</th></tr></thead>
+    <tbody>
+      <tr><td>5 pieces</td><td>$59</td><td><strong>$39</strong></td><td>$59</td></tr>
+      <tr><td>15 pieces</td><td>$59</td><td>$39 + 10 × $3 = $69</td><td><strong>$59</strong> (tie)</td></tr>
+      <tr><td>30 pieces</td><td><strong>$59</strong></td><td>$39 + 25 × $3 = $114</td><td>$59 + 5 × $3 = $74</td></tr>
+    </tbody>
+  </table></div>
+  <p>With the 50% startup discount, Grow drops to about $29.50 on monthly billing, or $24.50 a month on yearly billing, for the first year. That assumes the discount applies to whichever billing interval you pick, which the page doesn't spell out <Src href={S.stable} /> <Unverified note="discount math is ours" />. At 12 or more real pieces a month, Earth Class Mail Starter costs more than Stable Grow at full price: $39 + 7 × $3 = $60 at 12 pieces, against $59 (at 11 pieces it's $57).</p>
+
+  <h2>Which to pick</h2>
+  <ul>
+    <li><strong>Very little mail (a handful of IRS and state letters):</strong> Earth Class Mail Starter at $39 is the cheaper of the two <Src href={S.lzVm} />.</li>
+    <li><strong>15 or more pieces a month, or several company names on one box:</strong> Stable. Unlimited recipients and 30 included pieces make Grow cheaper <Src href={S.stable} />.</li>
+    <li><strong>You also need a registered agent:</strong> Stable lists it at $25/mo per state, alongside your mail in the same dashboard <Src href={S.stable} />.</li>
+    <li><strong>Paper checks:</strong> it depends on your volume. Earth Class Mail charges $10 per check without the subscription <Src href={S.lzVm} />, while Stable's rate starts "as low as $3" <Src href={S.stable} />. See <a href="/virtual-mailbox-check-deposit-fees/">check deposit fees</a>.</li>
+  </ul>
+  <ul>
+    <li><Aff id="stable" href="https://www.usestable.com/" text="Stable" /></li>
+    <li><Aff id="earthclassmail" href="https://www.earthclassmail.com/" text="Earth Class Mail / LegalZoom Virtual Mail" /></li>
+  </ul>
+  <p>More: <a href="/earth-class-mail-pricing/">Earth Class Mail pricing in full</a> · <a href="/virtual-mailbox-for-llc/">virtual mailbox for an LLC</a> · <a href="/virtual-mailbox-pricing-comparison/">all providers compared</a> · <a href="/">Mailbox Atlas home</a></p>
+</Base>

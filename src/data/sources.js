@@ -39,4 +39,17 @@ export const S = {
   fl0201: 'https://www.flsenate.gov/Laws/Statutes/2025/605.0201',
   caFaq: 'https://www.sos.ca.gov/business-programs/business-entities/faqs',
   irsSs4: 'https://www.irs.gov/instructions/iss4',
+  // Added 2026-11-21 (fetched that day; captures in research/2026-11-21)
+  lzVm: 'https://www.legalzoom.com/business/business-operations/lz-virtual-mail-overview.html',
+  lzPersonal: 'https://www.legalzoom.com/personal/virtual-mail-overview.html',
+  ecmCancel: 'https://help.earthclassmail.com/hc/en-us/articles/360034846614-Cancellation-FAQ-s',
+  usgmFeatures: 'https://support.usglobalmail.com/en/articles/11022318-us-global-mail-features-explained',
+  usgmShipCost: 'https://support.usglobalmail.com/en/articles/11022385-how-much-does-it-cost-to-ship-my-mail',
+  usgmIndividuals: 'https://www.usglobalmail.com/individuals/',
+  dmm508: 'https://pe.usps.com/text/dmm300/508.htm',
+  dmm608: 'https://pe.usps.com/text/dmm300/608.htm',
+  uspsPfs: 'https://www.usps.com/manage/forward-premium.htm',
+  sdDlManual: 'https://www.sd.gov/sys_attachment.do?sys_id=709bcdfa47406e10237fbd51026d43a9',
+  sdAffidavit: 'https://www.sd.gov/sys_attachment.do?sys_id=49c27bd087a26250b81f0f280cbb3563',
+  sdChecklist: 'https://www.sd.gov/sys_attachment.do?sys_id=4f894da647882e10a497127ba26d43d4',
 };
