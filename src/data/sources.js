@@ -52,4 +52,6 @@ export const S = {
   sdDlManual: 'https://www.sd.gov/sys_attachment.do?sys_id=709bcdfa47406e10237fbd51026d43a9',
   sdAffidavit: 'https://www.sd.gov/sys_attachment.do?sys_id=49c27bd087a26250b81f0f280cbb3563',
   sdChecklist: 'https://www.sd.gov/sys_attachment.do?sys_id=4f894da647882e10a497127ba26d43d4',
+  bn1583: 'https://bluenotary.us/usps-form-1583-the-essential-guide-for-mailbox-services/',
+  bnFees: 'https://help.bluenotary.us/en/article/fee-schedule-for-business-individuals-1kg94y4/',
 };
