@@ -56,5 +56,19 @@ export const S = {
   bnFees: 'https://help.bluenotary.us/en/article/fee-schedule-for-business-individuals-1kg94y4/',
   // Added 2026-11-22 (fetched that day)
   notarize1583: 'https://forms.notarize.com/pages/form/ps-1583',
+  // Added 2026-11-22 nightly (fetched that day; captures in research/2026-11-22)
+  vpmPricing: 'https://www.virtualpostmail.com/virtual-mailbox/pricing/',
+  vpmPlans: 'https://www.virtualpostmail.com/pricing/',
+  vpmRa: 'https://www.virtualpostmail.com/registered-agent/pricing/',
+  vpmRaOverview: 'https://www.virtualpostmail.com/registered-agent/',
+  vpmTruLease: 'https://www.virtualpostmail.com/trulease/pricing/',
+  vpmTruRes: 'https://www.virtualpostmail.com/truresidence/pricing/',
+  cfrCip: 'https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1020/subpart-B/section-1020.220',
+  mercuryAddr: 'https://support.mercury.com/hc/en-us/articles/28769699533588-Company-address-requirements',
+  mercuryElig: 'https://support.mercury.com/hc/en-us/articles/28770467511060-Eligibility-and-requirements-for-opening-a-Mercury-account',
+  stableMercury: 'https://support.usestable.com/en/articles/9330705-using-your-stable-address-with-mercury',
+  stableRa: 'https://www.usestable.com/products/registered-agent',
+  notice123: 'https://pe.usps.com/text/dmm300/Notice123.htm',
+  uspsPoBoxes: 'https://www.usps.com/manage/po-boxes.htm',
 };
 

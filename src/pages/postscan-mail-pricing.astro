@@ -1,0 +1,94 @@
+---
+import Base from '../layouts/Base.astro';
+import Src from '../components/Src.astro';
+import Aff from '../components/Aff.astro';
+import { S } from '../data/sources.js';
+const title = 'PostScan Mail Pricing: Every Plan, Location Tier and Fee Explained';
+const description = 'PostScan Mail plans start "as low as" $10/mo but run to $45/mo for the same Starter plan at pricier addresses. All three plans, annual billing, the $2 open-and-scan, $0.50 overage, storage, shredding and notary fees, from PostScan\'s own pages, checked Nov 22, 2026.';
+const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-22"};
+---
+<Base title={title} description={description} updated="2026-11-22" schema={schema}>
+  <h1>PostScan Mail pricing, every fee explained</h1>
+  <p class="lede">PostScan Mail's Starter plan is advertised "as low as $10" a month, but that's the price at its cheapest addresses. The same plan costs up to $45 at its most expensive ones, and opening a letter costs $2 on top. Here is the full price list as PostScan published it on November 22, 2026.</p>
+
+  <h2>The three personal and small-business plans</h2>
+  <p>PostScan sells the same three plans everywhere, but the price depends on which address (location tier) you pick. The lowest and highest prices on the pricing page are below <Src href={S.psm} />.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Plan</th><th>Monthly billing</th><th>Annual billing</th><th>Mail items / month</th><th>Free open-and-scans / month</th><th>Recipients</th></tr></thead>
+    <tbody>
+      <tr><td>Starter</td><td>$10 to $45/mo</td><td>$100 to $450/yr ($8.33 to $37.50/mo)</td><td>30</td><td>None (monthly) · none (annual)</td><td>1 (monthly) · 2 (annual)</td></tr>
+      <tr><td>Standard</td><td>$20 to $55/mo</td><td>$200 to $550/yr ($16.67 to $45.83/mo)</td><td>60</td><td>5 (monthly) · 10 (annual)</td><td>2 (monthly) · 3 (annual)</td></tr>
+      <tr><td>Premium</td><td>$30 to $65/mo</td><td>$300 to $650/yr ($25 to $54.17/mo)</td><td>120</td><td>10 (monthly) · 20 (annual)</td><td>4 (monthly) · 6 (annual)</td></tr>
+    </tbody>
+  </table></div>
+  <p class="meta">All from PostScan Mail's pricing page <Src href={S.psm} />. "Mail items" means letters or packages. Free open-and-scans cover up to 10 pages each, then $0.25 per extra page. Annual billing is advertised as "2 months free," and on this page it also adds recipients and free scans.</p>
+  <div class="note"><strong>Which price will you pay?</strong> PostScan shows the price after you pick an address. Use the cheapest tier's numbers ($10 / $20 / $30) only if your chosen address is in that tier. Our <a href="/virtual-mailbox-pricing-comparison/">comparison table</a> uses the lowest advertised price for every provider, so it shows the $10 figure.</div>
+
+  <h2>Every per-use fee</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Fee</th><th>Price</th></tr></thead>
+    <tbody>
+      <tr><td>Mail item over your plan's limit</td><td>$0.50 per envelope or package</td></tr>
+      <tr><td>Open and scan (beyond free ones)</td><td>$2.00 per envelope up to 10 pages, then $0.25 per page</td></tr>
+      <tr><td>Forwarding</td><td>$2.00 for the first item, $0.50 per additional item, plus shipping</td></tr>
+      <tr><td>Mail storage</td><td>Free for 14 days (30 days on an annual plan), then $0.05 per envelope per day</td></tr>
+      <tr><td>Package storage</td><td>Free for 3 days (7 days on an annual plan), then $0.10 per pound per day</td></tr>
+      <tr><td>Shredding</td><td>$1.00 per item for the first 10 pages, then $0.15 per page</td></tr>
+      <tr><td>Extra recipient or user</td><td>$5.00/month each</td></tr>
+      <tr><td>Extra mailbox (address)</td><td>$5.00/month each</td></tr>
+      <tr><td>Oversized package (over 25 lb or 110" length + girth)</td><td>$0.25 per pound</td></tr>
+      <tr><td>AI mail summaries</td><td>10 free a month, then $0.25 each</td></tr>
+      <tr><td>HIPAA compliance</td><td>$25.00/month billed annually, then $0.50 per received item</td></tr>
+      <tr><td>Local pickup</td><td>Free at most locations; "some may charge a nominal fee"</td></tr>
+    </tbody>
+  </table></div>
+  <p class="meta">Source: PostScan Mail pricing page, "Additional Fees" <Src href={S.psm} />. Discarding junk mail is free and unlimited <Src href={S.psm} />.</p>
+  <p><strong>The storage numbers differ by page.</strong> The pricing page says mail is free for 14 days on monthly plans (30 on annual). The FAQ says "the first 30 days of mail storage are free" and packages get 7 days, without mentioning the billing period <Src href={S.psmFaq} label="FAQ" />. If you're on monthly billing, plan around the shorter window.</p>
+
+  <h2>Junk mail counts toward your limit</h2>
+  <p>"Yes, junk mail counts towards your account limit," PostScan's FAQ says, adding that some addresses may filter out "Presorted Standard" mail <Src href={S.psmFaq} label="FAQ" />. That matters on Starter: 30 items includes catalogs and credit card offers. Traveling Mailbox and Virtual Post Mail both leave junk out of the count (see <a href="/traveling-mailbox-pricing/">Traveling Mailbox pricing</a> and <a href="/virtual-post-mail-pricing/">Virtual Post Mail pricing</a>).</p>
+
+  <h2>What it costs at real mail volumes</h2>
+  <p>At the cheapest location tier ($10 / $20 / $30 monthly), counting junk in the item total, with each opened letter under 10 pages <Src href={S.psm} />:</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Items / month (incl. junk)</th><th>Opened</th><th>Starter $10</th><th>Standard $20</th><th>Premium $30</th></tr></thead>
+    <tbody>
+      <tr><td>20</td><td>3</td><td>$10 + 3 × $2 = <strong>$16</strong></td><td>$20</td><td>$30</td></tr>
+      <tr><td>40</td><td>10</td><td>$10 + 10 × $0.50 + 10 × $2 = $35</td><td>$20 + 5 × $2 = <strong>$30</strong></td><td><strong>$30</strong></td></tr>
+      <tr><td>80</td><td>15</td><td>$10 + 50 × $0.50 + 15 × $2 = $65</td><td>$20 + 20 × $0.50 + 10 × $2 = $50</td><td>$30 + 5 × $2 = <strong>$40</strong></td></tr>
+    </tbody>
+  </table></div>
+  <p>If you open more than about 5 letters a month, Standard usually beats Starter. Shredding and forwarding are extra in every row. At a higher-priced address, add the tier difference (up to $35/month) to each column.</p>
+
+  <h2>Business and enterprise plans</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Plan</th><th>Price</th><th>Incoming mail / month</th><th>Free open-and-scans</th><th>Recipients</th></tr></thead>
+    <tbody>
+      <tr><td>Startup</td><td>$100/mo, or $1,000 billed annually</td><td>360</td><td>60</td><td>10</td></tr>
+      <tr><td>Business</td><td>$300/mo, or $3,000 billed annually</td><td>1,200</td><td>200</td><td>20</td></tr>
+      <tr><td>Enterprise</td><td>$600/mo, or $6,000 billed annually</td><td>3,000</td><td>500</td><td>30</td></tr>
+    </tbody>
+  </table></div>
+  <p class="meta">Source: PostScan Mail pricing page <Src href={S.psm} />.</p>
+
+  <h2>Package lockers (no mail scanning)</h2>
+  <ul>
+    <li><strong>Basic Locker, $4.95/month:</strong> $3 processing per item, $2 forwarding per item, packages stored free for 7 days, then $0.10 per pound per day <Src href={S.psm} />.</li>
+    <li><strong>Premium Locker, $9.95/month:</strong> $2 processing per item, $1 forwarding per item, 14 days free storage, then $0.10 per pound per day <Src href={S.psm} />.</li>
+  </ul>
+
+  <h2>Signing up, Form 1583 and canceling</h2>
+  <ul>
+    <li><strong>Notary:</strong> you fill out and notarize USPS Form 1583 and provide two IDs. PostScan's online notary partners charge $20 <Src href={S.psmFaq} label="FAQ" />. Compare no-notary providers on our <a href="/usps-form-1583-online-notarization/">Form 1583 page</a>.</li>
+    <li><strong>Each extra name needs its own Form 1583</strong>, and the $5/month fee applies <Src href={S.psmFaq} label="FAQ" />.</li>
+    <li><strong>Canceling:</strong> close the account under "Subscription &amp; Billing." Stored mail is discarded, received mail is held for 6 months "per CMRA regulations," and after that new mail is returned to sender <Src href={S.psmFaq} label="FAQ" />.</li>
+    <li><strong>USPS change of address can't redirect mail away from a CMRA</strong>, so you'll need to tell senders yourself when you leave <Src href={S.psmFaq} label="FAQ" />.</li>
+  </ul>
+
+  <h2>Who PostScan Mail fits</h2>
+  <p>People who want a specific city address with free local pickup <Src href={S.psm} />, who mostly look at envelope images, and who don't get much junk mail. If you want most letters opened, the $2 scans add up fast. See <a href="/traveling-mailbox-vs-postscan-mail/">Traveling Mailbox vs PostScan Mail</a> for a side-by-side.</p>
+  <ul>
+    <li><Aff id="postscanmail" href="https://www.postscanmail.com/" text="PostScan Mail" /></li>
+  </ul>
+  <p>More: <a href="/virtual-mailbox-pricing-comparison/">all providers compared</a> · <a href="/cheapest-virtual-mailbox/">cheapest virtual mailbox</a> · <a href="/virtual-mailbox-vs-po-box/">virtual mailbox vs PO Box</a> · <a href="/">Mailbox Atlas home</a></p>
+</Base>

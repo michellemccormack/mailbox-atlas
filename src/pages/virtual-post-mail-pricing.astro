@@ -1,0 +1,88 @@
+---
+import Base from '../layouts/Base.astro';
+import Src from '../components/Src.astro';
+import Aff from '../components/Aff.astro';
+import { S } from '../data/sources.js';
+const title = 'Virtual Post Mail (VPM) Pricing: Mailbox Plans, Free Registered Agent, TruLease and TruResidence';
+const description = 'Virtual Post Mail mailbox plans run $20 to $90 a month, and every plan includes a free registered agent in five states. What each plan includes, the $3 scan and $10 check-deposit fees, and what TruLease ($400 to $700/mo) and TruResidence ($300 to $600/mo) add. From VPM\'s own pages, checked Nov 22, 2026.';
+const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-22"};
+---
+<Base title={title} description={description} updated="2026-11-22" schema={schema}>
+  <h1>Virtual Post Mail pricing</h1>
+  <p class="lede">Virtual Post Mail (VPM) sells three different things: a regular virtual mailbox ($20 to $90 a month), a leased office address called TruLease, and a residential address called TruResidence. The mailbox plans are the ones most people need, and they come with a free registered agent in California, Delaware, Florida, Nevada and Texas. Here's every published price, as of November 22, 2026.</p>
+
+  <h2>Virtual mailbox plans</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th></th><th>Starter</th><th>Plus</th><th>Business</th><th>Premium</th></tr></thead>
+    <tbody>
+      <tr><td>Price</td><td>$20/mo</td><td>$35/mo</td><td>$60/mo</td><td>$90/mo</td></tr>
+      <tr><td>Envelope scans (incoming mail)</td><td>25</td><td>Unlimited</td><td>Unlimited</td><td>Unlimited</td></tr>
+      <tr><td>Extra mail piece</td><td>$0.50</td><td>Free</td><td>Free</td><td>Free</td></tr>
+      <tr><td>Content scans included (up to 30 pages each)</td><td>10</td><td>50</td><td>100</td><td>150</td></tr>
+      <tr><td>Users</td><td>1</td><td>5</td><td>10</td><td>20</td></tr>
+      <tr><td>Recipients (names you get mail under)</td><td>2</td><td>5</td><td>10</td><td>20</td></tr>
+      <tr><td>Extra recipient</td><td>$10/mo</td><td>$10/mo</td><td>$10/mo</td><td>$5/mo</td></tr>
+      <tr><td>Free package storage</td><td>15 days</td><td>15 days</td><td>15 days</td><td>30 days</td></tr>
+      <tr><td>Automated check deposit</td><td>No</td><td>No</td><td>Yes</td><td>Yes</td></tr>
+      <tr><td>HIPAA BAA</td><td>No</td><td>No</td><td>Yes</td><td>Yes</td></tr>
+      <tr><td>Free registered agent</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+    </tbody>
+  </table></div>
+  <p class="meta">Source: VPM virtual mailbox pricing page <Src href={S.vpmPricing} />. The page lists only monthly prices. It advertises no setup fees, no contracts, no cancellation fees and a 30-day money-back guarantee <Src href={S.vpmPricing} />.</p>
+
+  <h2>Fees on every plan</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Fee</th><th>Price</th></tr></thead>
+    <tbody>
+      <tr><td>Extra content scan</td><td>$3 per scan over the included ones (covers the first 30 pages), then $0.25 per page</td></tr>
+      <tr><td>Check deposit by mail</td><td>$10 per deposit, including one check and USPS First-Class with tracking; $1.50 per additional check in the same deposit</td></tr>
+      <tr><td>Forwarding</td><td>Varies with destination, weight and size</td></tr>
+      <tr><td>Mail storage</td><td>30 days free</td></tr>
+      <tr><td>Shredding</td><td>"No additional fee"</td></tr>
+      <tr><td>Junk mail</td><td>Obvious junk is sorted out automatically and doesn't count toward your quota</td></tr>
+    </tbody>
+  </table></div>
+  <p class="meta">Source: VPM virtual mailbox pricing page and its FAQ section <Src href={S.vpmPricing} />. VPM's check deposit uses your bank's mail-in deposit service; it doesn't offer electronic deposits <Src href={S.vpmPricing} />. Mail pickup isn't offered on any mailbox plan <Src href={S.vpmPricing} />.</p>
+
+  <h2>What it costs at real mail volumes</h2>
+  <p>Plan price + $0.50 per piece over 25 (Starter only) + $3 per content scan over the included number <Src href={S.vpmPricing} />. Junk is excluded.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Pieces / month</th><th>Opened and scanned</th><th>Starter $20</th><th>Plus $35</th></tr></thead>
+    <tbody>
+      <tr><td>20</td><td>5</td><td><strong>$20</strong></td><td>$35</td></tr>
+      <tr><td>40</td><td>10</td><td>$20 + 15 × $0.50 = <strong>$27.50</strong></td><td>$35</td></tr>
+      <tr><td>40</td><td>15</td><td>$20 + 15 × $0.50 + 5 × $3 = $42.50</td><td><strong>$35</strong></td></tr>
+    </tbody>
+  </table></div>
+  <p>The jump from Starter to Plus pays off once you open more than about 12 letters a month, or get more than 55 pieces. For a cheaper flat plan with more envelopes included, Traveling Mailbox's $15 Basic covers 40 envelopes and 35 page scans <Src href={S.tmb} /> (see <a href="/traveling-mailbox-pricing/">Traveling Mailbox pricing</a>).</p>
+
+  <h2>The free registered agent: what's covered</h2>
+  <ul>
+    <li><strong>States:</strong> California, Nevada, Delaware, Florida and Texas <Src href={S.vpmRa} />.</li>
+    <li><strong>Conditions:</strong> your mailbox address has to be in the same state as the registered agent service, the business must be registered in that state, and the business must be added as a recipient on your mailbox. Extra recipient fees apply if that puts you over your plan's free recipients <Src href={S.vpmRa} />.</li>
+    <li><strong>What VPM does:</strong> receives "legal, tax, and corporate compliance documents for the company," and scans served documents the same day. "We do not handle any filings on your behalf" <Src href={S.vpmPricing} /> <Src href={S.vpmRaOverview} label="VPM RA" />.</li>
+  </ul>
+  <p>For comparison: Stable charges $25/month per state for its registered agent add-on, and a Stable plan is required <Src href={S.stable} />. iPostal1 charges $99/year with any business plan <Src href={S.ipVma} />. US Global Mail says it doesn't offer registered agent service <Src href={S.usgmUse} />. Why a mailbox by itself can't be your registered office is covered in <a href="/virtual-mailbox-for-llc/">virtual mailbox for an LLC</a>.</p>
+
+  <h2>TruLease and TruResidence: when a mailbox isn't enough</h2>
+  <p>VPM says plainly that its mailbox address "is not a physical address," and that "a virtual mailbox won't work for banking, lease agreements, or utility bills" <Src href={S.vpmPricing} />. It sells two pricier products for those uses:</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Product</th><th>Price</th><th>What you get</th></tr></thead>
+    <tbody>
+      <tr><td>TruLease Standard</td><td>$700/mo, 1-year contract, billed monthly</td><td>Office lease (1 tenant), $1,800 security deposit, proof of funds for 12 months' rent required; CA or FL offices <Src href={S.vpmTruLease} /></td></tr>
+      <tr><td>TruLease Annual</td><td>$400/mo, $4,800 billed annually</td><td>Office lease, no security deposit or proof of funds; CA, DE or FL offices <Src href={S.vpmTruLease} /></td></tr>
+      <tr><td>TruRes Essentials</td><td>$600/mo, month-to-month</td><td>Residential address in CA or SD, 2 recipients, mail processed weekly; leasing is an add-on <Src href={S.vpmTruRes} /></td></tr>
+      <tr><td>TruRes Premium+</td><td>$300/mo, $3,600 billed annually</td><td>Residential address in CA, FL, NV, SD or TX, 5 recipients; leasing is an add-on <Src href={S.vpmTruRes} /></td></tr>
+    </tbody>
+  </table></div>
+  <p class="meta">TruLease requires incorporation documents, an EIN, proof the signer is authorized, and a notarized Form 1583 <Src href={S.vpmTruLease} />. TruResidence's optional lease adds a $1,200 deposit and rent that "varies by address" <Src href={S.vpmTruRes} />. VPM says TruLease "does NOT guarantee outcomes" for any particular use <Src href={S.vpmTruLease} />.</p>
+  <p>Before paying $300 or more a month, read <a href="/virtual-mailbox-for-bank-account/">can I use a virtual mailbox for my bank account?</a>: some banks only want a home address for the owner, which you may already have.</p>
+
+  <h2>Form 1583</h2>
+  <p>VPM requires "a notarized Form 1583 and two IDs" before it processes mail; documents are processed within 1 business day <Src href={S.vpmPricing} />. You only need the form for the mailbox owner and/or one company to start, but USPS can ask for forms from any listed recipient <Src href={S.vpmPricing} />. Online notary options are on our <a href="/usps-form-1583-online-notarization/">Form 1583 page</a>.</p>
+
+  <ul>
+    <li><Aff id="virtualpostmail" href="https://refer.virtualpostmail.com/l/13ELDJ264/" text="Virtual Post Mail" /></li>
+  </ul>
+  <p>More: <a href="/virtual-mailbox-pricing-comparison/">all providers compared</a> · <a href="/virtual-mailbox-check-deposit-fees/">check deposit fees</a> · <a href="/virtual-mailbox-for-llc/">virtual mailbox for an LLC</a> · <a href="/">Mailbox Atlas home</a></p>
+</Base>

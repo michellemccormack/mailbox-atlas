@@ -1,0 +1,73 @@
+---
+import Base from '../layouts/Base.astro';
+import Src from '../components/Src.astro';
+import Aff from '../components/Aff.astro';
+import { S } from '../data/sources.js';
+const title = 'Traveling Mailbox Pricing: Basic vs Extended vs Small Business, and When to Upgrade';
+const description = 'Traveling Mailbox costs $15, $25 or $55 a month. What each plan includes (40/100/200 envelopes, 35/80/180 page scans), the $0.25 and $0.50 overage fees, forwarding, check deposit and storage, and the mail volume where upgrading pays off. From Traveling Mailbox\'s own pages, checked Nov 22, 2026.';
+const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-22"};
+---
+<Base title={title} description={description} updated="2026-11-22" schema={schema}>
+  <h1>Traveling Mailbox pricing: which plan to pick</h1>
+  <p class="lede">Traveling Mailbox has three flat-priced plans: $15, $25 and $55 a month. Unlike most providers, it doesn't charge per open-and-scan. Each plan includes a set number of page scans, and you pay small overage fees past that. Here's what each plan covers and the point where upgrading saves money, from the pricing page as of November 22, 2026.</p>
+
+  <h2>The three plans</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Plan</th><th>Price</th><th>Incoming envelopes / month</th><th>Page scans / month</th><th>Mailbox recipients</th></tr></thead>
+    <tbody>
+      <tr><td>Basic</td><td>$15/mo</td><td>40</td><td>35</td><td>3</td></tr>
+      <tr><td>Extended</td><td>$25/mo</td><td>100</td><td>80</td><td>5</td></tr>
+      <tr><td>Small Business</td><td>$55/mo</td><td>200</td><td>180</td><td>10</td></tr>
+    </tbody>
+  </table></div>
+  <p class="meta">Source: Traveling Mailbox pricing page <Src href={S.tmb} />. All plans include free shredding, unlimited cloud storage, and plan changes at any time. Junk mail you mark as junk "won't count towards your plan limits" <Src href={S.tmb} />.</p>
+  <ul>
+    <li><strong>Envelope scans vs page scans:</strong> every envelope that arrives is scanned on the outside, and that doesn't use your page-scan allowance. Page scans are for opening and scanning the contents <Src href={S.tmb} />.</li>
+    <li><strong>Rollover:</strong> the plan cards say "Your Scans Rollover" on all three plans, but the footnote limits rollover of unused envelope and page scans to the Extended, Small Business and Enterprise plans <Src href={S.tmb} />. Count on rollover only if you're on Extended or higher.</li>
+    <li><strong>Annual billing:</strong> the FAQ says there are no contracts. You can pay month to month, or "subscribe to an annual plan to get 2 months free," and annual plans "are refundable on a monthly schedule" <Src href={S.tmb} />.</li>
+    <li><strong>Minors</strong> can be added to an account and don't count toward the recipient limit <Src href={S.tmb} />.</li>
+  </ul>
+
+  <h2>Every other fee</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Fee</th><th>Price</th></tr></thead>
+    <tbody>
+      <tr><td>Extra envelope over the allowance</td><td>$0.25 each</td></tr>
+      <tr><td>Extra page scan over the allowance</td><td>$0.50 per page</td></tr>
+      <tr><td>Mail and package forwarding</td><td>Postage + $2 per shipment (not per piece)</td></tr>
+      <tr><td>Check deposit by mail</td><td>$4.95 per check + postage</td></tr>
+      <tr><td>Envelope storage</td><td>Free for 30 days, then shredded unless you put it on hold; holds are $1 per envelope per month</td></tr>
+      <tr><td>Package storage</td><td>Free for 30 days, then $0.10 per pound per day</td></tr>
+      <tr><td>Shredding</td><td>Free</td></tr>
+      <tr><td>Military discount</td><td>10% off monthly for active-duty military and veterans</td></tr>
+    </tbody>
+  </table></div>
+  <p class="meta">Source: Traveling Mailbox pricing page and FAQ <Src href={S.tmb} />. The page also mentions "Membership Plans" to keep an account open when you're not traveling, without listing a price.</p>
+
+  <h2>When to upgrade: the break-even points</h2>
+  <p>Monthly cost = plan price + $0.25 per envelope over the allowance + $0.50 per page over the allowance <Src href={S.tmb} />. Junk you mark as junk is excluded.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Envelopes / pages per month</th><th>Basic $15</th><th>Extended $25</th><th>Small Business $55</th></tr></thead>
+    <tbody>
+      <tr><td>30 / 25</td><td><strong>$15</strong></td><td>$25</td><td>$55</td></tr>
+      <tr><td>50 / 45</td><td>$15 + 10 × $0.25 + 10 × $0.50 = <strong>$22.50</strong></td><td>$25</td><td>$55</td></tr>
+      <tr><td>60 / 55</td><td>$15 + 20 × $0.25 + 20 × $0.50 = $30</td><td><strong>$25</strong></td><td>$55</td></tr>
+      <tr><td>150 / 130</td><td>$15 + 110 × $0.25 + 95 × $0.50 = $90</td><td>$25 + 50 × $0.25 + 50 × $0.50 = $62.50</td><td><strong>$55</strong> (within limits)</td></tr>
+    </tbody>
+  </table></div>
+  <p>In the 150-envelope row Small Business ($55) is the cheapest. Rule of thumb: if you regularly go over Basic by more than about 13 envelopes and 13 pages, Extended costs less. Rollover on Extended (but per the footnote, not Basic) helps if your mail comes in uneven months <Src href={S.tmb} />.</p>
+
+  <h2>Form 1583 without a notary</h2>
+  <p>After you subscribe, you complete USPS Form 1583 inside your account, then "schedule an appointment with us to verify your form. A notary is not required" <Src href={S.tmbKb} />. That saves the $20 to $25 online-notary fee charged at some other providers (see our <a href="/usps-form-1583-online-notarization/">Form 1583 guide</a>).</p>
+
+  <h2>How Traveling Mailbox compares</h2>
+  <ul>
+    <li><strong>Versus PostScan Mail:</strong> PostScan's Starter starts at $10 but charges $2 for each open-and-scan and counts junk mail <Src href={S.psm} /> <Src href={S.psmFaq} label="PostScan FAQ" />. See <a href="/postscan-mail-pricing/">PostScan Mail pricing</a> and <a href="/traveling-mailbox-vs-postscan-mail/">the head-to-head</a>.</li>
+    <li><strong>Versus Virtual Post Mail:</strong> VPM's Starter is $20 with 25 envelopes and 10 content scans <Src href={S.vpmPricing} />. Details on <a href="/virtual-post-mail-pricing/">Virtual Post Mail pricing</a>.</li>
+    <li><strong>Versus US Global Mail:</strong> see <a href="/us-global-mail-vs-traveling-mailbox/">US Global Mail vs Traveling Mailbox</a>.</li>
+  </ul>
+  <ul>
+    <li><Aff id="travelingmailbox" href="https://www.travelingmailbox.com/" text="Traveling Mailbox" /></li>
+  </ul>
+  <p>More: <a href="/virtual-mailbox-for-rvers/">mail for full-time RVers</a> · <a href="/virtual-mailbox-check-deposit-fees/">check deposit fees</a> · <a href="/virtual-mailbox-pricing-comparison/">all providers compared</a> · <a href="/">Mailbox Atlas home</a></p>
+</Base>
