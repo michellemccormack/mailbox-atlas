@@ -1,6 +1,6 @@
 # Mailbox Atlas page queue
 
-Ranked by search intent: buyer/commercial first, then high-volume informational. One page per night. Every number must be sourced from the provider's own page that night.
+Ranked by search intent: buyer/commercial first, then high-volume informational. Five pages per night (Michelle's choice). Every number must be sourced from the provider's own page that night.
 Published pages must not show internal notes: no "unverified" or "affiliate link pending" badges, and no "Not captured" or "TODO" text. If a figure is missing, use an em dash (—) in the table cell. Only approved affiliate programs show the small "affiliate link" tag (add the id to the approved set in Aff.astro and use the tracking href). Unapproved <Aff/> links render as ordinary outbound links. Keep [source] citation links.
 
 ## Done (launch, 2026-11-19)
@@ -36,6 +36,20 @@ Published pages must not show internal notes: no "unverified" or "affiliate link
 - Stable monthly prices ($59/$99) are in embedded JSON on the pricing page; static text shows yearly ($49/$83).
 - USGM storage: packages $0.10/day now, "$0.10 per lb per day from January 1, 2027" (recheck after Jan 1).
 
+## Done (2026-11-22)
+- [x] /virtual-mailbox-for-bank-account/ (queue #12). Sources: 31 CFR 1020.220 (eCFR), Mercury company-address and eligibility help articles, Stable "using your Stable address with Mercury", USGM address-use article, VPM pricing/TruLease/TruResidence, DMM 508.1.8. Only Mercury publishes field-by-field rules; no other bank-specific claims made.
+- [x] /virtual-mailbox-vs-po-box/ (queue #14). Sources: USPS Notice 123 (effective Oct 4, 2026) PO Box tables, DMM 508.4 (sizes, Form 1093, street addressing, refunds, Group E), IRS SS-4 instructions, TX SOS FAQ.
+- [x] /postscan-mail-pricing/ (queue #15). Pricing page has 11 location tiers (Starter $10-$45 monthly, $100-$450/yr); page and FAQ disagree on mail-storage free days (page: 14 monthly / 30 annual; FAQ: 30). PostScan registered agent page lists states but no price.
+- [x] /traveling-mailbox-pricing/ (queue #16). TMB plan cards show rollover on all plans; footnote says Extended+ only (page states both). No annual dollar price shown ("2 months free").
+- [x] /virtual-post-mail-pricing/ (queue #32, pulled forward: approved affiliate). Prices are in astro-island JSON props on /virtual-mailbox/pricing/ (not in static text). Free RA only in CA, NV, DE, FL, TX.
+- [~] Queue #13 "Virtual address vs registered agent": SKIPPED as a near-duplicate of /virtual-mailbox-for-llc/ (already covers registered office vs mailing address and RA bundles). Added a Virtual Post Mail free-RA row to that page instead.
+- Also updated: homepage cards, comparison/TMB-vs-PostScan/LLC interlinks.
+
+## Data notes (2026-11-22)
+- virtualpostmail.com, postscanmail.com, usestable.com, legalzoom.com fetch fine with curl; support.mercury.com returns 403 to curl (WebFetch works); travelingmailbox.com and ipostal1.com still need WebFetch.
+- Stable registered agent: $25/mo per state, Stable plan required (pricing page). iPostal1 RA: $99/yr with any business plan (VMA page lists 26 jurisdictions).
+- VPM says its mailbox "is not a physical address" and "won't work for banking"; TruLease $400-$700/mo, TruResidence $300-$600/mo.
+
 ## Next (ranked)
 1. ~~iPostal1 vs Anytime Mailbox~~ DONE 2026-11-20 (both from $9.99; location-set pricing)
 2. ~~iPostal1 pricing explained~~ DONE 2026-11-20: what the $9.99 plan includes, by location
@@ -48,11 +62,11 @@ Published pages must not show internal notes: no "unverified" or "affiliate link
 9. ~~Virtual mailbox with free check deposit~~ DONE 2026-11-20 (USGM free, Stable $3, TMB $4.95, ECM $39/mo)
 10. ~~Best virtual mailbox for RVers and full-time travelers~~ DONE 2026-11-21 (/virtual-mailbox-for-rvers/)
 11. ~~Virtual mailbox for digital nomads / expats living abroad (Form 1583 without a US address)~~ DONE 2026-11-21 (/virtual-mailbox-from-abroad/)
-12. Can I use a virtual mailbox for my bank account? (CMRA address flags)
-13. Virtual address vs registered agent: what each is for, and the providers that bundle both
-14. Virtual mailbox with a real street address vs USPS P.O. Box: cost and acceptance
-15. PostScan Mail pricing: every fee explained
-16. Traveling Mailbox pricing: Basic vs Extended vs Small Business
+12. ~~Can I use a virtual mailbox for my bank account?~~ DONE 2026-11-22 (/virtual-mailbox-for-bank-account/)
+13. ~~Virtual address vs registered agent~~ SKIPPED 2026-11-22 (near-duplicate of /virtual-mailbox-for-llc/; VPM row added there)
+14. ~~Virtual mailbox vs USPS P.O. Box~~ DONE 2026-11-22 (/virtual-mailbox-vs-po-box/)
+15. ~~PostScan Mail pricing~~ DONE 2026-11-22 (/postscan-mail-pricing/)
+16. ~~Traveling Mailbox pricing~~ DONE 2026-11-22 (/traveling-mailbox-pricing/)
 17. Cheapest virtual mailbox in Texas (state page, with no-income-tax angle)
 18. Cheapest virtual mailbox in Florida
 19. Cheapest virtual mailbox in Delaware / Wyoming (LLC states)
@@ -68,7 +82,7 @@ Published pages must not show internal notes: no "unverified" or "affiliate link
 29. Form 1583 for a business: who signs, which IDs, extra recipients
 30. Form 1583 rejected: common reasons and fixes (ECM, PostScan lists)
 31. Virtual mailbox for Amazon seller / Stripe verification (CMRA rejection risk)
-32. Virtual Post Mail pricing (TruLease, TruResidence explained)
+32. ~~Virtual Post Mail pricing~~ DONE 2026-11-22 (/virtual-post-mail-pricing/)
 33. iPostal1 vs Traveling Mailbox
 34. Anytime Mailbox vs PostScan Mail
 35. How to cancel a virtual mailbox and what happens to mail after
@@ -81,3 +95,7 @@ Published pages must not show internal notes: no "unverified" or "affiliate link
 42. USPS Premium Forwarding vs a virtual mailbox for a 3-to-12-month trip: cost by trip length (usps.com PFS fees vs provider plans)
 43. Texas and Florida driver's license rules for mail-forwarding (PMB) addresses (official DPS/FLHSMV pages only)
 44. LegalZoom Virtual Mail vs Stable registered agent + mailbox bundles (needs LegalZoom RA price from its own page)
+45. iPostal1 registered agent ($99/yr) vs Stable ($25/mo) vs VPM (free): which states each covers and the yearly cost (provider pages only)
+46. TruLease vs a coworking membership for a business bank address: what VPM's lease includes (VPM pages only; no bank-outcome claims)
+47. Virtual mailbox for receiving debit and credit cards: forwarding and pickup rules by provider
+48. Mail storage after cancellation: what each provider does for 6 months (CMRA rule, provider FAQs)
