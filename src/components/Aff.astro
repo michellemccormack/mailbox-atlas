@@ -3,7 +3,7 @@
 // "affiliate link" tag as an FTC-style disclosure. Unapproved programs render
 // as ordinary outbound links with no badge. Keep data-affiliate so links can
 // be found with: grep -r 'data-affiliate' src
-const approved = new Set(['usglobalmail', 'virtualpostmail', 'bluenotary']);
+const approved = new Set(['usglobalmail', 'virtualpostmail', 'bluenotary', 'notarize']);
 const { id, href, text } = Astro.props;
 const isApproved = approved.has(id);
 ---

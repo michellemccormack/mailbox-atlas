@@ -5,7 +5,7 @@ import Aff from '../components/Aff.astro';
 import { S } from '../data/sources.js';
 const title = 'USPS Form 1583 Online Notarization: What USPS Requires and What Each Provider Charges';
 const description = 'Since May 2024 USPS lets you sign Form 1583 on a live video call with the mail center or a U.S.-commissioned notary. Which virtual mailbox providers need a notary, what their online notary costs, and which IDs to have ready.';
-const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-21"};
+const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-22"};
 ---
 <Base title={title} description={description} schema={schema}>
   <h1>USPS Form 1583 and online notarization</h1>
@@ -48,6 +48,7 @@ const schema = {"@context":"https://schema.org","@type":"Article","headline":tit
   <h2>An independent online notary</h2>
   <p>If your provider requires a notarized form, some send you to their own partner and others let you bring a form that was notarized separately. Confirm which yours accepts before you pay.</p>
   <p>BlueNotary is an online notary that says it can notarize Form 1583 over a live video session: you upload the form and an ID, then meet a commissioned online notary. It says a notary acknowledgment can take less than 10 minutes <Src href={S.bn1583} />. Its fee schedule lists on-demand notarization at $25 for one stamp <Src href={S.bnFees} />.</p>
+  <p>Notarize, which now operates under the Proof name, also offers online notarization of Form 1583: you upload the form, verify your identity, and meet a notary on a live video call. Its Form 1583 page lists the first notary seal at $25 and says signers complete their notarization in less than 10 minutes on average, with notaries available 24/7 <Src href={S.notarize1583} />.</p>
 
   <h2>Links</h2>
   <ul>
@@ -55,6 +56,7 @@ const schema = {"@context":"https://schema.org","@type":"Article","headline":tit
     <li><Aff id="stable" href="https://www.usestable.com/" text="Stable (no notary)" /></li>
     <li><Aff id="usglobalmail" href="https://www.usglobalmail.com?via=michelle" text="US Global Mail (no notary)" /></li>
     <li><Aff id="bluenotary" href="https://app.bluenotary.us/business/register?referralCode=ve5sumc1gl" text="BlueNotary (online notary)" /></li>
+    <li><Aff id="notarize" href="https://app.proof.com/referral?campaign=813d4b9c-eab9-4604-8f1b-99eb28ff49b8" text="Notarize (online notary)" /></li>
   </ul>
   <p>Prices: <a href="/virtual-mailbox-pricing-comparison/">virtual mailbox pricing compared</a>. Forming a company? See <a href="/virtual-mailbox-for-llc/">virtual mailboxes for an LLC</a>. Living outside the U.S.? See <a href="/virtual-mailbox-from-abroad/">getting a U.S. mailbox from abroad</a>.</p>
 </Base>
