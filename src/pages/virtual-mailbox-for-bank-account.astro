@@ -1,0 +1,62 @@
+---
+import Base from '../layouts/Base.astro';
+import Src from '../components/Src.astro';
+import Aff from '../components/Aff.astro';
+import { S } from '../data/sources.js';
+const title = 'Can I Use a Virtual Mailbox Address for My Bank Account?';
+const description = 'Usually as a mailing address, rarely as your home or business street address. What the federal bank ID rule (31 CFR 1020.220) asks for, what Mercury accepts in each address field, and what US Global Mail, Stable and Virtual Post Mail tell their own customers. Checked Nov 22, 2026.';
+const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-22"};
+---
+<Base title={title} description={description} updated="2026-11-22" schema={schema}>
+  <h1>Can you use a virtual mailbox for a bank account?</h1>
+  <p class="lede">Usually yes as a <strong>mailing address</strong>, and usually no as your <strong>home address</strong> or your company's <strong>street address</strong>. Banks have to collect a real street address under federal rules, and a virtual mailbox is easy to spot because every one carries a "PMB" or "#" number. Here's what the rule says, what one business-banking platform publishes, and what mailbox companies tell their own customers.</p>
+
+  <h2>What federal law asks banks to collect</h2>
+  <p>Under the Customer Identification Program rule, a bank must get an address from each new customer before opening an account <Src href={S.cfrCip} label="31 CFR 1020.220" />:</p>
+  <ul>
+    <li><strong>For a person:</strong> "a residential or business street address." Someone with no street address can give an APO/FPO box or the street address of next of kin or another contact person.</li>
+    <li><strong>For a company</strong> (corporation, LLC, partnership, trust): "a principal place of business, local office, or other physical location."</li>
+  </ul>
+  <p>The rule also has banks set "risk-based procedures" to verify identity, so each bank decides how to treat a commercial mail address <Src href={S.cfrCip} label="31 CFR 1020.220" />. That's why answers differ from bank to bank.</p>
+
+  <h2>Why a bank can tell it's a virtual mailbox</h2>
+  <p>Virtual mailbox companies are Commercial Mail Receiving Agencies (CMRAs) under USPS rules. Each CMRA registers with its Post Office, and mail to its customers must show "PMB" (private mailbox) or "#" and a box number, for example "10 MAIN ST PMB 234" <Src href={S.dmm508} label="USPS DMM 508.1.8" />. So the address itself tells a bank it isn't where you live or work.</p>
+
+  <h2>Address field by address field: one business-banking platform's published rules</h2>
+  <p>Mercury, a business-banking platform, publishes unusually specific rules, so it's a useful example of how the fields get split. Mercury notes it is a fintech company, with banking services provided by partner banks <Src href={S.mercuryAddr} label="Mercury" />:</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Field</th><th>Virtual mailbox accepted?</th><th>What Mercury says</th></tr></thead>
+    <tbody>
+      <tr><td>Company legal address</td><td>Not a P.O. box</td><td>Must be a physical U.S. address, such as the one on your formation documents. If it's a "virtual address, mail center, or registered agent," Mercury may ask you to verify your physical address <Src href={S.mercuryAddr} /></td></tr>
+      <tr><td>Company physical address (where you work)</td><td>No</td><td>"We don't accept a P.O. box, virtual address, commercial mail receiving agency, mail center, or registered agent address." A residential address is fine if you don't have an office <Src href={S.mercuryAddr} /></td></tr>
+      <tr><td>Beneficial owner's home address</td><td>No</td><td>"PO boxes, mail drops, and commercial mail-receiving or virtual address services can't be used" <Src href={S.mercuryElig} label="Mercury" /></td></tr>
+      <tr><td>Mailing address (for cards)</td><td>Physical, deliverable address</td><td>Must be "a physical address" deliverable by USPS; statements are digital, not mailed <Src href={S.mercuryAddr} /></td></tr>
+    </tbody>
+  </table></div>
+  <p>Stable, a virtual mailbox provider, tells its customers the same thing for Mercury: don't use the Stable mailbox address as your legal address or where you work, but you can enter it as the company mailing address and use it as your mailing address once the account is open. Stable's separate registered agent address is accepted as the legal address <Src href={S.stableMercury} label="Stable" />.</p>
+
+  <h2>What mailbox providers tell their customers</h2>
+  <ul>
+    <li><strong>US Global Mail:</strong> "Yes and No!" Most banks and card companies let customers use the address as a personal address, but "some banks have recently started asking for a personal address, which is not a CMRA" address. In that case customers give a friend's, family member's or company's address as the personal address and the US Global Mail address as the mailing address <Src href={S.usgmUse} label="USGM" />.</li>
+    <li><strong>Virtual Post Mail:</strong> "A virtual mailbox won't work for banking, lease agreements, or utility bills." It sells a leased office address (TruLease, $400 to $700/mo) and a residential address (TruResidence, $300 to $600/mo) for those cases <Src href={S.vpmPricing} label="VPM" /> <Src href={S.vpmTruLease} label="TruLease" /> <Src href={S.vpmTruRes} label="TruResidence" />.</li>
+    <li><strong>Stable:</strong> treats its mailbox address as "a mail-forwarding address" for Mercury's legal-address field, but fine for the mailing-address field <Src href={S.stableMercury} label="Stable" />.</li>
+  </ul>
+
+  <h2>A setup that usually works</h2>
+  <ol>
+    <li><strong>Home or physical address:</strong> use where you actually live (or your real office). For a remote LLC, Mercury accepts a residential address as the company's physical address <Src href={S.mercuryAddr} label="Mercury" />.</li>
+    <li><strong>Legal address for an LLC:</strong> the address on your formation documents. A registered agent address is one option some banks accept; see <a href="/virtual-mailbox-for-llc/">virtual mailbox for an LLC</a> for what states require, and <a href="/virtual-post-mail-pricing/">Virtual Post Mail</a>, which includes a free registered agent in five states <Src href={S.vpmRa} label="VPM" />.</li>
+    <li><strong>Mailing address:</strong> your virtual mailbox, if the bank allows it, so statements, cards and checks get scanned.</li>
+    <li><strong>Ask first.</strong> Banks set their own procedures under the federal rule <Src href={S.cfrCip} label="31 CFR 1020.220" />, so ask the bank which fields can hold a PMB address before you apply.</li>
+  </ol>
+
+  <div class="warnbox"><strong>Don't paper over the address.</strong> Writing a mailbox address as "Suite" instead of "PMB" doesn't make it a street address. USPS rules say a CMRA address can't combine the building's suite number with your box number, and mail without the PMB or # can be returned to the sender <Src href={S.dmm508} label="USPS DMM 508.1.8" />.</div>
+
+  <h2>Receiving bank mail at a virtual mailbox: what it costs</h2>
+  <p>Once the account is open, the mailbox handles statements, new cards and checks. Check deposit fees range from no handling fee at US Global Mail (you cover shipping) <Src href={S.usgm} label="USGM" /> to $10 per check at Earth Class Mail without its subscription <Src href={S.lzVm} label="LegalZoom" />; the full table is on <a href="/virtual-mailbox-check-deposit-fees/">virtual mailbox check deposit fees</a>. Virtual Post Mail charges $10 per deposit plus $1.50 per extra check <Src href={S.vpmPricing} label="VPM" />, and Traveling Mailbox $4.95 per check plus postage <Src href={S.tmb} label="TMB" />.</p>
+  <ul>
+    <li><Aff id="usglobalmail" href="https://www.usglobalmail.com/?via=michelle" text="US Global Mail" /></li>
+    <li><Aff id="virtualpostmail" href="https://refer.virtualpostmail.com/l/13ELDJ264/" text="Virtual Post Mail" /></li>
+  </ul>
+  <p>More: <a href="/virtual-mailbox-vs-po-box/">virtual mailbox vs PO Box</a> · <a href="/virtual-mailbox-from-abroad/">living abroad</a> · <a href="/virtual-mailbox-pricing-comparison/">all providers compared</a> · <a href="/">Mailbox Atlas home</a></p>
+</Base>

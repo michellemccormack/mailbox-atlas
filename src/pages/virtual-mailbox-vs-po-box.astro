@@ -1,0 +1,72 @@
+---
+import Base from '../layouts/Base.astro';
+import Src from '../components/Src.astro';
+import Aff from '../components/Aff.astro';
+import { S } from '../data/sources.js';
+const title = 'Virtual Mailbox vs USPS PO Box: Cost, Street Address and Where Each Is Accepted';
+const description = 'A small USPS PO Box costs $31 to $170 per six months depending on the ZIP Code; entry plans at iPostal1, PostScan Mail and Traveling Mailbox run $99 to $180 a year. What each costs (USPS Notice 123, effective Oct 4, 2026), which one gets a street address and packages from UPS and FedEx, and where a PO Box or PMB address is refused. Checked Nov 22, 2026.';
+const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-22"};
+---
+<Base title={title} description={description} updated="2026-11-22" schema={schema}>
+  <h1>Virtual mailbox vs PO Box</h1>
+  <p class="lede">A PO Box is usually cheaper, but you have to go to the Post Office to check it, and the address says "PO Box." A virtual mailbox costs more, gives you a street address with a "PMB" number, and scans your mail so you can read it from anywhere. Here's how the costs and the rules compare, from USPS's own price list and mail manual.</p>
+
+  <h2>Side by side</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th></th><th>USPS PO Box</th><th>Virtual mailbox</th></tr></thead>
+    <tbody>
+      <tr><td>Smallest-box / entry price</td><td>$31 to $170 per 6 months for the smallest box, set by ZIP Code <Src href={S.notice123} label="Notice 123" /></td><td>iPostal1 $9.99/mo or $99/yr <Src href={S.ipVma} />; PostScan Mail from $10/mo or $100/yr <Src href={S.psm} />; Traveling Mailbox $15/mo <Src href={S.tmb} /></td></tr>
+      <tr><td>Address format</td><td>"PO Box 1234," or at some Post Offices the Post Office's street address with "#1234" <Src href={S.dmm508} label="DMM 508.4" /></td><td>Provider's street address with "PMB 1234" or "#1234" <Src href={S.dmm508} label="DMM 508.1.8" /></td></tr>
+      <tr><td>UPS, FedEx and other private carriers</td><td>Only at Post Offices that offer the street-addressing option, and only if you sign up for it <Src href={S.dmm508} label="DMM 508.4.5.4" /></td><td>Yes, packages are accepted (for example, Traveling Mailbox "can receive any size package") <Src href={S.tmb} /></td></tr>
+      <tr><td>Reading mail remotely</td><td>No scanning; you collect mail in person</td><td>Envelope scans on arrival; contents scanned on request <Src href={S.tmb} /> <Src href={S.psm} /></td></tr>
+      <tr><td>Sign-up</td><td>PS Form 1093, two IDs shown in person at the Post Office <Src href={S.dmm508} label="DMM 508.4.2" /></td><td>PS Form 1583 and two IDs, notarized or verified by the provider (<a href="/usps-form-1583-online-notarization/">details</a>)</td></tr>
+      <tr><td>Forwarding</td><td>A PO Box "may not be used when the primary purpose is to have the USPS forward or transfer mail to another address free of charge" <Src href={S.dmm508} label="DMM 508.4.3.5" /></td><td>Paid forwarding anywhere; e.g. postage + $2 per shipment at Traveling Mailbox <Src href={S.tmb} /></td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>What a PO Box actually costs</h2>
+  <p>USPS prices a PO Box by box size and by the "fee group" of its ZIP Code. Areas served by a competing private mailbox provider are "Competitive" (groups C30 to C44); the rest are "Market Dominant" (groups 1 to 7) <Src href={S.dmm508} label="DMM 508.4" /> <Src href={S.notice123} label="Notice 123" />. Prices per 6-month period, effective October 4, 2026:</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Box size (front opening)</th><th>Market Dominant locations</th><th>Competitive locations</th></tr></thead>
+    <tbody>
+      <tr><td>1 (3" × 5.5")</td><td>$31 to $81</td><td>$80 to $170</td></tr>
+      <tr><td>2 (5" × 5.5")</td><td>$41 to $118</td><td>$103 to $225</td></tr>
+      <tr><td>3 (11" × 5.5")</td><td>$60 to $206</td><td>$161 to $395</td></tr>
+      <tr><td>4 (11" × 11")</td><td>$90 to $355</td><td>$193 to $452</td></tr>
+      <tr><td>5 (22.5" × 12")</td><td>$156 to $553</td><td>$270 to $677</td></tr>
+    </tbody>
+  </table></div>
+  <p class="meta">Fees: USPS Notice 123 price list, "PO Box Service," semi-annual tables <Src href={S.notice123} />. Box dimensions: DMM 508.4.1.3 <Src href={S.dmm508} />. To find your ZIP Code's fee group, USPS points to its PO Box page or your local Post Office <Src href={S.uspsPoBoxes} label="USPS" />.</p>
+  <ul>
+    <li><strong>Per year, the smallest box runs $62 to $340</strong> (two 6-month periods), depending on where you live <Src href={S.notice123} label="Notice 123" />.</li>
+    <li><strong>New customers at Competitive locations</strong> get 13 months for a 12-month payment and pay no deposit for the first two keys <Src href={S.dmm508} label="DMM 508.4.5.4" />.</li>
+    <li><strong>Keys and locks:</strong> $6 deposit per key, $14 per extra or replacement key after the first two, $30 lock replacement or late-payment fee <Src href={S.notice123} label="Notice 123" />.</li>
+    <li><strong>Three-month terms</strong> exist at some Post Offices if you set up automatic renewal (smallest box: $21 to $50 Market Dominant, $46 to $98 Competitive) <Src href={S.notice123} label="Notice 123" /> <Src href={S.dmm508} label="DMM 508.4.1.7" />.</li>
+    <li><strong>Free PO Boxes</strong> (Group E) exist only for people whose address USPS won't deliver to, under specific conditions <Src href={S.dmm508} label="DMM 508.4.5.2" />.</li>
+    <li><strong>Refunds:</strong> cancel in the first 3 months of a 6-month period and you get half back; after that, nothing <Src href={S.dmm508} label="DMM 508.4.6.1" />.</li>
+  </ul>
+
+  <h2>The street-address option at some Post Offices</h2>
+  <p>At Competitive locations, you can sign a customer agreement to use the Post Office's street address with your box number, written like "123 Main Street #4567." With that option you can also get packages from private carriers at the box, within USPS size and weight limits (70 lb, 130 inches length plus girth) <Src href={S.dmm508} label="DMM 508.4.5.4" />. If your Post Office offers it, this gives you most of what a basic virtual mailbox address does, except scanning and forwarding.</p>
+
+  <h2>Where neither address works</h2>
+  <ul>
+    <li><strong>Your LLC's registered office:</strong> Texas says a registered office "cannot solely be the address of a mailbox service" <Src href={S.txFaq} label="Texas SOS" />. More in <a href="/virtual-mailbox-for-llc/">virtual mailbox for an LLC</a>.</li>
+    <li><strong>The IRS physical address line:</strong> Form SS-4 tells you not to enter a P.O. box as the physical location on line 5 <Src href={S.irsSs4} label="IRS" />.</li>
+    <li><strong>A bank's home or business street address:</strong> federal rules require a street address for individuals and a physical location for companies <Src href={S.cfrCip} label="31 CFR 1020.220" />, and some banks refuse PO boxes and virtual addresses in those fields <Src href={S.mercuryAddr} label="Mercury" />. See <a href="/virtual-mailbox-for-bank-account/">can I use a virtual mailbox for my bank account?</a></li>
+  </ul>
+  <p>Both work as a <em>mailing</em> address in most of those places, and the IRS uses your SS-4 mailing address "on all tax returns" <Src href={S.irsSs4} label="IRS" />.</p>
+
+  <h2>Which to choose</h2>
+  <ul>
+    <li><strong>PO Box:</strong> you live near the Post Office, get mostly letters, and want the lowest price. Check whether your Post Office offers the street-address option if you get UPS or FedEx deliveries <Src href={S.dmm508} label="DMM 508.4.5.4" />.</li>
+    <li><strong>Virtual mailbox:</strong> you travel, live abroad, or want mail scanned and forwarded. A full-time traveler can't check a PO Box; see <a href="/virtual-mailbox-for-rvers/">mail for full-time RVers</a> and <a href="/virtual-mailbox-from-abroad/">living abroad</a>.</li>
+    <li><strong>Lowest-cost virtual options:</strong> see <a href="/cheapest-virtual-mailbox/">the cheapest virtual mailbox</a>, <a href="/postscan-mail-pricing/">PostScan Mail pricing</a> and <a href="/traveling-mailbox-pricing/">Traveling Mailbox pricing</a>.</li>
+  </ul>
+  <ul>
+    <li><Aff id="ipostal1" href="https://ipostal1.com/" text="iPostal1" /></li>
+    <li><Aff id="travelingmailbox" href="https://www.travelingmailbox.com/" text="Traveling Mailbox" /></li>
+    <li><Aff id="usglobalmail" href="https://www.usglobalmail.com/?via=michelle" text="US Global Mail" /></li>
+  </ul>
+  <p>More: <a href="/virtual-mailbox-pricing-comparison/">all providers compared</a> · <a href="/">Mailbox Atlas home</a></p>
+</Base>
