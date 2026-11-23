@@ -1,0 +1,86 @@
+---
+import Base from '../layouts/Base.astro';
+import Src from '../components/Src.astro';
+import Aff from '../components/Aff.astro';
+import { S } from '../data/sources.js';
+const title = 'How Long Virtual Mailboxes Keep Your Mail: Free Storage Days and Fees';
+const description = 'Free physical storage for letters and packages at eight virtual mailbox providers, what they charge after that, and what happens when storage ends or you cancel. From 3 days (PostScan Mail packages, monthly plan) to 60 days (US Global Mail Teams). Checked Nov 23, 2026.';
+const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-23"};
+---
+<Base title={title} description={description} updated="2026-11-23" schema={schema}>
+  <h1>How long virtual mailboxes keep your mail</h1>
+  <p class="lede">A virtual mailbox stores the paper original of each letter and package for a set number of days. After that, it either starts charging storage or shreds the item. The scans stay online much longer. Here are the free periods and the fees after them, from each provider's own pages on November 23, 2026.</p>
+
+  <h2>Letters</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Provider</th><th>Free storage</th><th>After the free period</th></tr></thead>
+    <tbody>
+      <tr><td>US Global Mail</td><td>30 days (Scale), 60 days (Teams) <Src href={S.usgmStorage} /></td><td>$0.05 per letter per day <Src href={S.usgmStorage} /></td></tr>
+      <tr><td>Traveling Mailbox</td><td>30 days <Src href={S.tmb} /></td><td>Shredded on site unless you put it on hold: $1 per envelope per month <Src href={S.tmb} /></td></tr>
+      <tr><td>PostScan Mail</td><td>14 days on monthly plans, 30 days on annual plans <Src href={S.psm} /></td><td>$0.05 per envelope per day <Src href={S.psm} /></td></tr>
+      <tr><td>iPostal1</td><td>30 days <Src href={S.ipVma} /></td><td>$1.10 per item per month <Src href={S.ipVma} /></td></tr>
+      <tr><td>LegalZoom Virtual Mail (Earth Class Mail)</td><td>30 days <Src href={S.lzVm} /></td><td>$1.50 per month <Src href={S.lzVm} /></td></tr>
+      <tr><td>Stable</td><td>30 days <Src href={S.stable} /></td><td>Securely disposed of <Src href={S.stable} /></td></tr>
+      <tr><td>Virtual Post Mail</td><td>30 days, all plans <Src href={S.vpmPricing} /></td><td>—</td></tr>
+      <tr><td>Anytime Mailbox</td><td>Varies by location <Src href={S.atmFaqStorage} /></td><td>Varies by location</td></tr>
+    </tbody>
+  </table></div>
+  <p class="meta">PostScan Mail's FAQ gives 30 free days for mail without mentioning the plan type <Src href={S.psmFaq} />; its pricing page says 14 days, or 30 with an annual plan <Src href={S.psm} />.</p>
+
+  <h2>Packages</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Provider</th><th>Free storage</th><th>After the free period</th></tr></thead>
+    <tbody>
+      <tr><td>US Global Mail</td><td>30 days (Scale), 60 days (Teams) <Src href={S.usgmStorage} /></td><td>$0.10 per package per day; from January 1, 2027, $0.10 per lb per day (under 1 lb counts as 1 lb) <Src href={S.usgmStorage} /></td></tr>
+      <tr><td>Traveling Mailbox</td><td>30 days <Src href={S.tmb} /></td><td>$0.10 per lb per day <Src href={S.tmb} /></td></tr>
+      <tr><td>PostScan Mail</td><td>3 days on monthly plans, 7 days on annual plans <Src href={S.psm} /></td><td>$0.10 per lb per day <Src href={S.psm} /></td></tr>
+      <tr><td>iPostal1</td><td>30 days under 12×12×12 in.; 10 days up to 24×17×12 in.; 5 days larger <Src href={S.ipVma} /></td><td>$1.10 per lb per month, per 10 days or per 5 days by size (greater of actual or dimensional weight) <Src href={S.ipVma} /></td></tr>
+      <tr><td>LegalZoom Virtual Mail</td><td>10 days <Src href={S.lzVm} /></td><td>$15 per lb per month <Src href={S.lzVm} /></td></tr>
+      <tr><td>Stable</td><td>15 days <Src href={S.stable} /></td><td>Disposed of <Src href={S.stable} /></td></tr>
+      <tr><td>Virtual Post Mail</td><td>15 days (Starter, Plus, Business), 30 days (Premium) <Src href={S.vpmPricing} /></td><td>—</td></tr>
+      <tr><td>Anytime Mailbox</td><td>Varies by location <Src href={S.atmFaqStorage} /></td><td>Varies by location</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>What a forgotten box costs</h2>
+  <p>A 5 lb package left 30 days past its free period:</p>
+  <ul>
+    <li><strong>Traveling Mailbox or PostScan Mail:</strong> 5 lb × $0.10 × 30 days = $15 <Src href={S.tmb} /> <Src href={S.psm} />.</li>
+    <li><strong>US Global Mail:</strong> $0.10 × 30 days = $3 today; from January 1, 2027, 5 lb × $0.10 × 30 = $15 <Src href={S.usgmStorage} />.</li>
+    <li><strong>LegalZoom Virtual Mail:</strong> 5 lb × $15 = $75 for the month <Src href={S.lzVm} />.</li>
+    <li><strong>iPostal1</strong> (small box, monthly rate): 5 lb × $1.10 = $5.50 <Src href={S.ipVma} />.</li>
+  </ul>
+  <p>For letters, the difference is smaller but adds up if you keep originals: 20 letters held one extra month cost $20 at Traveling Mailbox ($1 each) <Src href={S.tmb} />, $22 at iPostal1 ($1.10 each) <Src href={S.ipVma} />, and about $30 at US Global Mail or PostScan Mail ($0.05 × 20 × 30 days) <Src href={S.usgmStorage} /> <Src href={S.psm} />.</p>
+
+  <h2>Scans last longer than paper</h2>
+  <ul>
+    <li><strong>US Global Mail:</strong> scans kept 180 days on Scale, unlimited on Teams <Src href={S.usgm} />.</li>
+    <li><strong>Traveling Mailbox:</strong> scans stay "until you delete them" <Src href={S.tmb} />.</li>
+    <li><strong>Stable, LegalZoom, iPostal1, Virtual Post Mail:</strong> unlimited digital storage <Src href={S.stable} /> <Src href={S.lzVm} /> <Src href={S.ipVma} /> <Src href={S.vpmPricing} />.</li>
+    <li><strong>Anytime Mailbox:</strong> scans are available "as long as your account remains active" <Src href={S.atmFaqStorage} />.</li>
+  </ul>
+
+  <h2>When you cancel</h2>
+  <p>USPS rules require a commercial mail receiving agency (the legal category for virtual mailboxes) to keep remailing mail for at least 6 months after your service ends, to the address on your Form 1583, with new postage. Neither you nor the provider files a USPS change-of-address order, and you can tell the provider in writing not to remail <Src href={S.dmm508} label="DMM 508.1.8" />. In practice:</p>
+  <ul>
+    <li><strong>PostScan Mail</strong> discards any stored mail when you close the account and holds newly received mail for 6 months, then returns it to the sender <Src href={S.psmFaq} />.</li>
+    <li>So before canceling, forward or download anything you want to keep, and update your address with senders. More in <a href="/virtual-mailbox-from-abroad/">living abroad</a> and <a href="/virtual-mailbox-for-rvers/">full-time RVers</a>.</li>
+  </ul>
+
+  <h2>Avoiding storage fees</h2>
+  <ul>
+    <li>Shred or recycle what you've read: shredding is free at Traveling Mailbox, US Global Mail and LegalZoom <Src href={S.tmb} /> <Src href={S.usgmFeatures} /> <Src href={S.lzVm} />; PostScan Mail charges $1.00 per item for up to 10 pages <Src href={S.psm} />.</li>
+    <li>Batch your forwarding before the free period runs out; see <a href="/virtual-mailbox-forwarding-fees/">mail forwarding fees compared</a>.</li>
+    <li>If you get a lot of packages, the free package period (3 to 60 days above) matters more than the plan price.</li>
+  </ul>
+
+  <h2>Links</h2>
+  <ul>
+    <li><Aff id="usglobalmail" href="https://www.usglobalmail.com/?via=michelle" text="US Global Mail" /></li>
+    <li><Aff id="virtualpostmail" href="https://refer.virtualpostmail.com/l/13ELDJ264/" text="Virtual Post Mail" /></li>
+    <li><Aff id="travelingmailbox" href="https://www.travelingmailbox.com/" text="Traveling Mailbox" /></li>
+    <li><Aff id="ipostal1" href="https://ipostal1.com/" text="iPostal1" /></li>
+    <li><Aff id="postscanmail" href="https://www.postscanmail.com/" text="PostScan Mail" /></li>
+  </ul>
+  <p>More: <a href="/virtual-mailbox-pricing-comparison/">virtual mailbox pricing compared</a> · <a href="/virtual-mailbox-check-deposit-fees/">check deposit fees</a> · <a href="/">Mailbox Atlas home</a></p>
+</Base>

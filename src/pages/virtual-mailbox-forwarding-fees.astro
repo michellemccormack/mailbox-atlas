@@ -1,0 +1,65 @@
+---
+import Base from '../layouts/Base.astro';
+import Src from '../components/Src.astro';
+import Aff from '../components/Aff.astro';
+import { S } from '../data/sources.js';
+const title = 'Virtual Mailbox Mail Forwarding Fees Compared: Per Shipment vs Per Item';
+const description = 'What eight virtual mailbox providers charge to forward mail, on top of postage: Traveling Mailbox $2 per shipment, PostScan Mail $2 plus $0.50 per extra item, LegalZoom Virtual Mail $1.25 per shipment plus $1 per item, US Global Mail and Stable no handling fee. With a worked 10-letter example. Checked Nov 23, 2026.';
+const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-23"};
+---
+<Base title={title} description={description} updated="2026-11-23" schema={schema}>
+  <h1>Mail forwarding fees compared</h1>
+  <p class="lede">Every virtual mailbox charges postage when it ships your mail. What differs is the handling fee on top: some charge once per box, some charge for every item inside it, and a few charge nothing but postage. If you forward a stack of letters once a month, that structure matters more than the plan price. Fees below are from each provider's own pricing page, checked November 23, 2026.</p>
+
+  <h2>Handling fee on top of postage</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Provider</th><th>Forwarding fee (plus postage)</th><th>Charged per</th><th>Consolidating items</th></tr></thead>
+    <tbody>
+      <tr><td>Traveling Mailbox</td><td>$2 <Src href={S.tmb} /></td><td>Shipment ("not per piece")</td><td>No extra charge <Src href={S.tmb} /></td></tr>
+      <tr><td>PostScan Mail</td><td>$2.00 for the first item, $0.50 for each additional item <Src href={S.psm} /></td><td>Item</td><td>Items can be bundled into one package <Src href={S.psm} /></td></tr>
+      <tr><td>LegalZoom Virtual Mail (Earth Class Mail)</td><td>Domestic $1.25 per shipment + $1 per item; international $5 per shipment + $1 per item; expedited $10 per shipment + $1 per item <Src href={S.lzVm} /></td><td>Shipment + item</td><td>Medium box $5, large box $10 <Src href={S.lzVm} /></td></tr>
+      <tr><td>US Global Mail</td><td>No handling fee; discounted carrier rates <Src href={S.usgmFeatures} /></td><td>—</td><td>Repack fee $5 per box, $2 per letter <Src href={S.usgmFeatures} /></td></tr>
+      <tr><td>Stable</td><td>"Add cost of postage" (no separate fee listed) <Src href={S.stable} /></td><td>—</td><td>Can combine mail and packages going to the same address <Src href={S.stable} /></td></tr>
+      <tr><td>iPostal1</td><td>Real-time shipping prices; no separate forwarding fee listed <Src href={S.ipVma} /></td><td>—</td><td>Letters free; $1.95 per package or letter-pack consolidated <Src href={S.ipVma} /></td></tr>
+      <tr><td>Virtual Post Mail</td><td>Varies with destination, weight and size <Src href={S.vpmPricing} /></td><td>—</td><td>—</td></tr>
+      <tr><td>Anytime Mailbox</td><td>Set by each location <Src href={S.atm} /></td><td>—</td><td>—</td></tr>
+    </tbody>
+  </table></div>
+  <p class="meta">Postage is extra everywhere. US Global Mail says its rates are up to 80% off retail for most carriers <Src href={S.usgmFeatures} />, and that the rate shown before packing is an estimate <Src href={S.usgmShipCost} />. Traveling Mailbox says it passes its shipping discounts on <Src href={S.tmb} />. PostScan Mail's package lockers have their own fees ($2 or $1 per item forwarded) <Src href={S.psm} />.</p>
+
+  <h2>Worked example: 10 letters in one domestic box</h2>
+  <p>Handling fees only, before postage:</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Provider</th><th>Math</th><th>Handling fee</th></tr></thead>
+    <tbody>
+      <tr><td>iPostal1</td><td>Letters consolidated free <Src href={S.ipVma} /></td><td><strong>$0</strong></td></tr>
+      <tr><td>Stable</td><td>Postage only <Src href={S.stable} /></td><td><strong>$0</strong></td></tr>
+      <tr><td>Traveling Mailbox</td><td>$2 per shipment <Src href={S.tmb} /></td><td><strong>$2</strong></td></tr>
+      <tr><td>PostScan Mail</td><td>$2.00 + 9 × $0.50 <Src href={S.psm} /></td><td><strong>$6.50</strong></td></tr>
+      <tr><td>LegalZoom Virtual Mail</td><td>$1.25 + 10 × $1 <Src href={S.lzVm} /></td><td><strong>$11.25</strong></td></tr>
+      <tr><td>US Global Mail</td><td>No handling fee; if the $2-per-letter repack fee applies to all 10 letters, 10 × $2 <Src href={S.usgmFeatures} /></td><td><strong>$0 to $20</strong></td></tr>
+    </tbody>
+  </table></div>
+  <p>Ship one letter at a time instead and the order flips: PostScan Mail charges $2.00 per single-item shipment <Src href={S.psm} />, the same as Traveling Mailbox <Src href={S.tmb} />, and LegalZoom charges $2.25 ($1.25 + $1) <Src href={S.lzVm} />. Per-item pricing gets expensive with big batches; per-shipment pricing rewards batching.</p>
+
+  <h2>Ways to cut forwarding costs</h2>
+  <ul>
+    <li><strong>Batch.</strong> With a per-shipment fee, one monthly box costs the same handling as one letter <Src href={S.tmb} />. iPostal1 lets you schedule shipments weekly, bi-weekly or monthly <Src href={S.ipVma} />.</li>
+    <li><strong>Don't forward what you can scan.</strong> Most mail only needs to be read. Compare scan allowances in <a href="/virtual-mailbox-pricing-comparison/">virtual mailbox pricing compared</a>.</li>
+    <li><strong>Watch storage clocks.</strong> Waiting to batch is free only until the free storage period ends; see <a href="/virtual-mailbox-storage-fees/">how long virtual mailboxes keep your mail</a>.</li>
+    <li><strong>Checks are a separate service.</strong> Mailing a check to your bank has its own fee at most providers; see <a href="/virtual-mailbox-check-deposit-fees/">check deposit fees</a>.</li>
+  </ul>
+
+  <h2>If you're away for months</h2>
+  <p>For long trips, compare a virtual mailbox's forwarding against USPS Premium Forwarding Service, which packs up your mail at your Post Office and sends it weekly by Priority Mail for a $26.40 online enrollment fee plus $29.70 a week <Src href={S.uspsPfs} label="USPS" />. Our <a href="/virtual-mailbox-for-rvers/">mail for full-time RVers</a> page covers both, and <a href="/virtual-mailbox-from-abroad/">living abroad</a> covers international shipping.</p>
+
+  <h2>Links</h2>
+  <ul>
+    <li><Aff id="usglobalmail" href="https://www.usglobalmail.com/?via=michelle" text="US Global Mail" /></li>
+    <li><Aff id="travelingmailbox" href="https://www.travelingmailbox.com/" text="Traveling Mailbox" /></li>
+    <li><Aff id="ipostal1" href="https://ipostal1.com/" text="iPostal1" /></li>
+    <li><Aff id="postscanmail" href="https://www.postscanmail.com/" text="PostScan Mail" /></li>
+    <li><Aff id="virtualpostmail" href="https://refer.virtualpostmail.com/l/13ELDJ264/" text="Virtual Post Mail" /></li>
+  </ul>
+  <p>More: <a href="/traveling-mailbox-pricing/">Traveling Mailbox pricing</a> · <a href="/postscan-mail-pricing/">PostScan Mail pricing</a> · <a href="/earth-class-mail-pricing/">Earth Class Mail pricing</a> · <a href="/">Mailbox Atlas home</a></p>
+</Base>
