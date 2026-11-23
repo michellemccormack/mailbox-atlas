@@ -50,6 +50,19 @@ Published pages must not show internal notes: no "unverified" or "affiliate link
 - Stable registered agent: $25/mo per state, Stable plan required (pricing page). iPostal1 RA: $99/yr with any business plan (VMA page lists 26 jurisdictions).
 - VPM says its mailbox "is not a physical address" and "won't work for banking"; TruLease $400-$700/mo, TruResidence $300-$600/mo.
 
+## Done (2026-11-23; all five live-verified HTTP 200 on mailboxatlas.com)
+- [x] /cheapest-virtual-mailbox-by-state/ (queue #17-#20 merged into one page instead of four state pages that would only swap the state name). Every Anytime Mailbox location card in TX, FL, DE, WY, CA, NY parsed (research/2026-11-23/atm_6states_2026-11-23.csv); legal notes from TX SOS FAQ, W.S. 17-28-101, 6 Del. C. 18-104, FL 605.0113/0201, CA SOS FAQ. No NY legal claim (dos.ny.gov 403); no Texas income-tax claim made.
+- [x] /opus-virtual-offices-vs-davinci/ (queue #21). Opus mail forwarding fee not published (dash). Davinci NYC not used (static HTML shows only part of the 80 listings).
+- [x] /virtual-office-vs-virtual-mailbox/ (queue #22).
+- [x] /virtual-mailbox-forwarding-fees/ (queue #23).
+- [x] /virtual-mailbox-storage-fees/ (queue #24 + #26 merged: package and letter storage on one page). VPM after-free-period fee not published (dash).
+- Also updated: homepage cards, Related links on the comparison, cheapest and LLC pages.
+
+## Data notes (2026-11-23)
+- opusvirtualoffices.com and davincivirtual.com fetch fine with curl; opus /virtual-offices/pricing is a 404. Davinci city pages list each building with "$N/mo + Discounted setup fee".
+- USGM storage help article moved to /articles/11328326 (old 11022343 is 404).
+- PostScan Mail FAQ: on cancellation, stored mail is discarded and new mail held 6 months, then returned to sender (useful for #35/#48).
+
 ## Next (ranked)
 1. ~~iPostal1 vs Anytime Mailbox~~ DONE 2026-11-20 (both from $9.99; location-set pricing)
 2. ~~iPostal1 pricing explained~~ DONE 2026-11-20: what the $9.99 plan includes, by location
@@ -67,16 +80,16 @@ Published pages must not show internal notes: no "unverified" or "affiliate link
 14. ~~Virtual mailbox vs USPS P.O. Box~~ DONE 2026-11-22 (/virtual-mailbox-vs-po-box/)
 15. ~~PostScan Mail pricing~~ DONE 2026-11-22 (/postscan-mail-pricing/)
 16. ~~Traveling Mailbox pricing~~ DONE 2026-11-22 (/traveling-mailbox-pricing/)
-17. Cheapest virtual mailbox in Texas (state page, with no-income-tax angle)
-18. Cheapest virtual mailbox in Florida
-19. Cheapest virtual mailbox in Delaware / Wyoming (LLC states)
-20. Cheapest virtual mailbox in California / New York (prestige address pricing)
-21. Opus Virtual Offices vs Davinci Virtual: virtual office pricing
-22. Virtual office vs virtual mailbox: what the extra $50–$90/mo buys
-23. Mail forwarding cost comparison (per shipment vs per item)
-24. Package forwarding and storage fees compared
+17. ~~Cheapest virtual mailbox in Texas~~ DONE 2026-11-23 (merged into /cheapest-virtual-mailbox-by-state/)
+18. ~~Cheapest virtual mailbox in Florida~~ DONE 2026-11-23 (merged into /cheapest-virtual-mailbox-by-state/)
+19. ~~Cheapest virtual mailbox in Delaware / Wyoming~~ DONE 2026-11-23 (merged into /cheapest-virtual-mailbox-by-state/)
+20. ~~Cheapest virtual mailbox in California / New York~~ DONE 2026-11-23 (merged into /cheapest-virtual-mailbox-by-state/); do not build separate state pages
+21. ~~Opus Virtual Offices vs Davinci Virtual~~ DONE 2026-11-23 (/opus-virtual-offices-vs-davinci/)
+22. ~~Virtual office vs virtual mailbox~~ DONE 2026-11-23 (/virtual-office-vs-virtual-mailbox/)
+23. ~~Mail forwarding cost comparison~~ DONE 2026-11-23 (/virtual-mailbox-forwarding-fees/)
+24. ~~Package forwarding and storage fees compared~~ DONE 2026-11-23 (merged into /virtual-mailbox-storage-fees/ and /virtual-mailbox-forwarding-fees/)
 25. Virtual mailbox with HIPAA compliance (PostScan $25/mo, USGM, VPM, Stable BAA)
-26. How long virtual mailboxes keep your physical mail (storage fees table)
+26. ~~How long virtual mailboxes keep your physical mail~~ DONE 2026-11-23 (/virtual-mailbox-storage-fees/)
 27. Virtual mailbox junk-mail rules: which count junk toward your limit
 28. How to change your address to a virtual mailbox (USPS change of address + 1583)
 29. Form 1583 for a business: who signs, which IDs, extra recipients
@@ -85,7 +98,7 @@ Published pages must not show internal notes: no "unverified" or "affiliate link
 32. ~~Virtual Post Mail pricing~~ DONE 2026-11-22 (/virtual-post-mail-pricing/)
 33. iPostal1 vs Traveling Mailbox
 34. Anytime Mailbox vs PostScan Mail
-35. How to cancel a virtual mailbox and what happens to mail after
+35. How to cancel a virtual mailbox and what happens to mail after (note: /virtual-mailbox-storage-fees/ has a short "When you cancel" section with DMM 508.1.8; build this as the full provider-by-provider cancellation guide, merge with #48)
 36. Virtual mailbox for a nonprofit or church
 37. Can I use a virtual mailbox address on my driver's license? (state DMV rules on CMRA/PMB addresses)
 38. How to write a virtual mailbox address correctly (PMB vs # vs Suite, USPS addressing rules)
@@ -99,3 +112,5 @@ Published pages must not show internal notes: no "unverified" or "affiliate link
 46. TruLease vs a coworking membership for a business bank address: what VPM's lease includes (VPM pages only; no bank-outcome claims)
 47. Virtual mailbox for receiving debit and credit cards: forwarding and pickup rules by provider
 48. Mail storage after cancellation: what each provider does for 6 months (CMRA rule, provider FAQs)
+49. Virtual mailbox with in-person pickup: which providers allow it, pickup fees, and ID rules (provider pages only)
+50. Extra recipients and business names on a virtual mailbox: included names and per-name fees by provider (each name needs its own Form 1583)
