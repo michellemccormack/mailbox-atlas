@@ -1,0 +1,73 @@
+---
+import Base from '../layouts/Base.astro';
+import Src from '../components/Src.astro';
+import Aff from '../components/Aff.astro';
+import { S } from '../data/sources.js';
+const title = 'Virtual Office vs Virtual Mailbox: What the Extra Money Buys';
+const description = 'A virtual mailbox gives you a street address and scanned mail from about $10 to $20 a month. A virtual office adds a phone line, receptionist, lobby listing or meeting rooms for $40 to $200 a month, often with a setup fee and a minimum term. Prices from iPostal1, Opus, Davinci, Traveling Mailbox and Virtual Post Mail, checked Nov 23, 2026.';
+const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-23"};
+---
+<Base title={title} description={description} updated="2026-11-23" schema={schema}>
+  <h1>Virtual office vs virtual mailbox</h1>
+  <p class="lede">Both give you a real street address that isn't your home. A virtual mailbox is built around mail: it scans envelopes, opens letters on request and forwards what you need. A virtual office is built around looking like an office: a business phone number, someone to answer it, a name in the building lobby, and rooms you can book. Here's what that difference costs, from the providers' own price lists on November 23, 2026.</p>
+
+  <h2>The same company, both products</h2>
+  <p>iPostal1 sells both, so it's the cleanest comparison. Same addresses, same mail handling; the virtual office adds a company name, phone and fax:</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>iPostal1 plan</th><th>Monthly</th><th>Yearly</th><th>Mail items / month</th><th>Adds</th></tr></thead>
+    <tbody>
+      <tr><td>Virtual Mailing Address</td><td>$9.99</td><td>$99</td><td>30</td><td>Up to 6 recipient names, no company name <Src href={S.ipVma} /></td></tr>
+      <tr><td>Virtual Office</td><td>$39.99</td><td>$399</td><td>60</td><td>1 company name, local phone and fax number, voicemail <Src href={S.ipVo} /></td></tr>
+      <tr><td>Virtual Office</td><td>$49.99</td><td>$499</td><td>120</td><td>Same, more mail <Src href={S.ipVo} /></td></tr>
+      <tr><td>Virtual Office (toll-free)</td><td>$59.99 / $69.99</td><td>$599 / $699</td><td>120 / 240</td><td>Toll-free phone and fax <Src href={S.ipVo} /></td></tr>
+    </tbody>
+  </table></div>
+  <p class="meta">Prices are iPostal1's starting prices; they vary by Standard, Select, Premium or Prestige location <Src href={S.ipVma} />. Calls and faxes on the virtual office plans are billed per minute and per page (for example, $0.015 a minute for inbound calls to a local number), with 250 voicemail minutes a month free <Src href={S.ipVo} />.</p>
+
+  <h2>What each kind of product includes</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th></th><th>Virtual mailbox</th><th>Virtual office</th></tr></thead>
+    <tbody>
+      <tr><td>Street address</td><td>Yes, with a PMB or suite number</td><td>Yes, usually an office building suite <Src href={S.opusBizAddr} /></td></tr>
+      <tr><td>Mail scanning</td><td>Core feature; e.g. 35 page scans included on Traveling Mailbox Basic <Src href={S.tmb} /></td><td>Mail receipt and notification; scanning prices aren't published by Opus or Davinci on the pages we checked <Src href={S.opusHouston} /> <Src href={S.davinciFaq} /></td></tr>
+      <tr><td>Phone number and receptionist</td><td>No (iPostal1 offers call answering as an add-on from $49/mo) <Src href={S.ipVma} /></td><td>Included at Opus's $99 tier (live receptionist on weekdays) <Src href={S.opusServices} />; separate plans at Davinci <Src href={S.davinciFaq} /></td></tr>
+      <tr><td>Meeting rooms, lobby listing</td><td>No</td><td>Davinci: lobby and directory listings at most locations, day offices and conference rooms by the hour <Src href={S.davinciFaq} />. Opus: meeting rooms available <Src href={S.opusHouston} /></td></tr>
+      <tr><td>Drop-off and pickup in person</td><td>Depends on provider: Virtual Post Mail offers no pickup <Src href={S.vpmPricing} />; some iPostal1 locations charge a pickup fee <Src href={S.ipVma} /></td><td>Davinci locations act as a "drop off &amp; pick up point for clientele" <Src href={S.davinciFaq} /></td></tr>
+      <tr><td>Setup fee and term</td><td>Usually none; Traveling Mailbox is month to month <Src href={S.tmb} /></td><td>Davinci: setup fee from $150 and a 6-month commitment <Src href={S.davinciFaq} />. Opus: no setup fee, 3-month initial term <Src href={S.opusHouston} /></td></tr>
+      <tr><td>Form 1583</td><td colspan="2">Required for both: anyone receiving mail through a commercial mail receiving agency signs USPS Form 1583 <Src href={S.dmm508} label="DMM 508.1.8" />. Opus asks for two IDs and a notary <Src href={S.opusBizAddr} />; Davinci includes an online notary in its setup fee <Src href={S.davinciFaq} /></td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>Price ladder, per year</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Option</th><th>What you get</th><th>Cost for 12 months</th></tr></thead>
+    <tbody>
+      <tr><td>iPostal1 Virtual Mailing Address</td><td>Address, 30 items/mo, envelope images</td><td>$99 paid yearly <Src href={S.ipVma} /></td></tr>
+      <tr><td>Traveling Mailbox Basic</td><td>Address, 40 envelopes and 35 page scans/mo</td><td>$15 × 12 = $180 <Src href={S.tmb} /></td></tr>
+      <tr><td>Virtual Post Mail Starter</td><td>Address, 25 envelopes and 10 content scans/mo, free registered agent in 5 states</td><td>$20 × 12 = $240 <Src href={S.vpmPricing} /></td></tr>
+      <tr><td>iPostal1 Virtual Office</td><td>Address + company name + phone/fax</td><td>$399 paid yearly <Src href={S.ipVo} /></td></tr>
+      <tr><td>Davinci, cheapest Houston address</td><td>Office-building address, mail receipt</td><td>$50 × 12 = $600 + setup fee from $150 <Src href={S.davinciHouston} /> <Src href={S.davinciFaq} /></td></tr>
+      <tr><td>Opus address only</td><td>Office-building address, mail receipt</td><td>$59 × 12 = $708 <Src href={S.opusBizAddr} /></td></tr>
+      <tr><td>Opus all-inclusive</td><td>Address + live receptionist + phone/fax</td><td>$99 × 12 = $1,188 <Src href={S.opusBizAddr} /></td></tr>
+    </tbody>
+  </table></div>
+  <p>Going from a basic virtual mailbox to a virtual office costs roughly $300 to $1,000 more a year. That money buys phone service and a more office-like address, not better mail handling: the mailbox plans above publish more detail on scans and forwarding than the virtual offices do.</p>
+
+  <h2>Which one you need</h2>
+  <ul>
+    <li><strong>Virtual mailbox:</strong> you need an address for mail, an LLC's mailing address, or to read mail while traveling. Start with <a href="/cheapest-virtual-mailbox/">the cheapest virtual mailbox</a> or <a href="/cheapest-virtual-mailbox-by-state/">the cheapest address in your state</a>.</li>
+    <li><strong>Virtual office:</strong> clients call you, visit you, or look you up, and you want a receptionist or a room to meet in. Compare <a href="/opus-virtual-offices-vs-davinci/">Opus vs Davinci</a>.</li>
+    <li><strong>Neither replaces a registered agent</strong> in states that require the agent to be physically present at the registered office; see <a href="/virtual-mailbox-for-llc/">virtual mailbox for an LLC</a>.</li>
+    <li><strong>Bank account?</strong> Banks have their own address rules; see <a href="/virtual-mailbox-for-bank-account/">can I use a virtual mailbox for my bank account?</a></li>
+  </ul>
+
+  <h2>Links</h2>
+  <ul>
+    <li><Aff id="ipostal1" href="https://ipostal1.com/" text="iPostal1" /></li>
+    <li><Aff id="travelingmailbox" href="https://www.travelingmailbox.com/" text="Traveling Mailbox" /></li>
+    <li><Aff id="virtualpostmail" href="https://refer.virtualpostmail.com/l/13ELDJ264/" text="Virtual Post Mail" /></li>
+    <li><Aff id="opus" href="https://www.opusvirtualoffices.com/" text="Opus Virtual Offices" /></li>
+    <li><Aff id="davinci" href="https://www.davincivirtual.com/" text="Davinci Virtual" /></li>
+  </ul>
+  <p>More: <a href="/virtual-mailbox-pricing-comparison/">virtual mailbox pricing compared</a> · <a href="/virtual-mailbox-vs-po-box/">virtual mailbox vs PO Box</a> · <a href="/">Mailbox Atlas home</a></p>
+</Base>

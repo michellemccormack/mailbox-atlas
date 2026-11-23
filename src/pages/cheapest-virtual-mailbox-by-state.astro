@@ -1,0 +1,74 @@
+---
+import Base from '../layouts/Base.astro';
+import Src from '../components/Src.astro';
+import Aff from '../components/Aff.astro';
+import { S } from '../data/sources.js';
+const title = 'Cheapest Virtual Mailbox in Texas, Florida, Delaware, Wyoming, California and New York';
+const description = 'The lowest starting price for a virtual mailbox address in six popular states, from every Anytime Mailbox location listed on November 23, 2026: Florida from $5.99, Delaware from $6.99, Texas, Wyoming and California from $7.99, New York from $8.99. City price ranges, and what each state requires for an LLC registered office.';
+const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-23"};
+---
+<Base title={title} description={description} updated="2026-11-23" schema={schema}>
+  <h1>Cheapest virtual mailbox by state</h1>
+  <p class="lede">If you want a mailing address in a particular state, the cheapest option is usually an Anytime Mailbox location, because each local operator sets its own price. We went through every location Anytime Mailbox lists in Texas, Florida, Delaware, Wyoming, California and New York on November 23, 2026, and pulled out the lowest "starting from" price in each state and in the big cities.</p>
+
+  <h2>Lowest starting price in each state</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>State</th><th>Locations listed</th><th>Cheapest location</th><th>Half of locations start at or below</th><th>Most expensive</th></tr></thead>
+    <tbody>
+      <tr><td>Florida</td><td>242</td><td><strong>$5.99/mo</strong>, Fort Walton Beach (Lewis Turner Blvd) <Src href={S.atmFl} /></td><td>about $10.50/mo</td><td>$69/mo</td></tr>
+      <tr><td>Delaware</td><td>18</td><td><strong>$6.99/mo</strong>, Newark (Polly Drummond Shopping Center) <Src href={S.atmDe} /></td><td>$9.99/mo</td><td>$15.99/mo</td></tr>
+      <tr><td>Texas</td><td>290</td><td><strong>$7.99/mo</strong>, Austin (605 W 9th Street) <Src href={S.atmTx} /></td><td>$11.99/mo</td><td>$59.99/mo</td></tr>
+      <tr><td>Wyoming</td><td>6</td><td><strong>$7.99/mo</strong>, Cheyenne (South Greeley Hwy) <Src href={S.atmWy} /></td><td>$9.99/mo</td><td>$19.99/mo</td></tr>
+      <tr><td>California</td><td>397</td><td><strong>$7.99/mo</strong>, at several locations including Anaheim, Fresno and Laguna Niguel <Src href={S.atmCa} /></td><td>$9.99/mo</td><td>$75/mo</td></tr>
+      <tr><td>New York</td><td>99</td><td><strong>$8.99/mo</strong>, East Setauket, Glen Cove and Plainview (all Long Island) <Src href={S.atmNy} /></td><td>$11.99/mo</td><td>$84.99/mo</td></tr>
+    </tbody>
+  </table></div>
+  <p class="meta">Source: the "Starting from" price on each location card of Anytime Mailbox's state pages, checked November 23, 2026 (linked in each row). The middle and high columns use monthly prices only; one California location and three Brooklyn locations show only a yearly price ($149.99 to $399.99 a year) and are left out of those columns. "Starting from" is the location's cheapest plan; mail allowances and per-item fees differ by location, so open the location page before you sign up <Src href={S.atm} />.</p>
+
+  <h2>Big-city ranges</h2>
+  <p>A big-city address costs more at the top end, but every one of these cities has locations around $10 a month.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>City</th><th>Locations</th><th>Starting prices</th></tr></thead>
+    <tbody>
+      <tr><td>Austin, TX</td><td>17</td><td>$7.99 to $49.99/mo <Src href={S.atmTx} /></td></tr>
+      <tr><td>Houston, TX</td><td>50</td><td>$9.49 to $49.99/mo <Src href={S.atmTx} /></td></tr>
+      <tr><td>Dallas, TX</td><td>25</td><td>$9.99 to $49.99/mo <Src href={S.atmTx} /></td></tr>
+      <tr><td>Orlando, FL</td><td>15</td><td>$7.00 to $30/mo <Src href={S.atmFl} /></td></tr>
+      <tr><td>Tampa, FL</td><td>9</td><td>$8.99 to $26.99/mo <Src href={S.atmFl} /></td></tr>
+      <tr><td>Miami, FL</td><td>22</td><td>$9.99 to $49.99/mo <Src href={S.atmFl} /></td></tr>
+      <tr><td>Wilmington, DE</td><td>6</td><td>$8.99 to $14.99/mo <Src href={S.atmDe} /></td></tr>
+      <tr><td>Cheyenne, WY</td><td>4</td><td>$7.99 to $19.99/mo <Src href={S.atmWy} /></td></tr>
+      <tr><td>Los Angeles, CA</td><td>28</td><td>$8.97 to $33/mo <Src href={S.atmCa} /></td></tr>
+      <tr><td>San Francisco, CA</td><td>10</td><td>$9.99 to $19.99/mo <Src href={S.atmCa} /></td></tr>
+      <tr><td>New York (Manhattan listings)</td><td>17</td><td>$9.99 to $54.99/mo <Src href={S.atmNy} /></td></tr>
+      <tr><td>Brooklyn, NY</td><td>16 monthly + 3 yearly-only</td><td>$9.99 to $19.99/mo; yearly-only locations $149.99 to $399.99/yr <Src href={S.atmNy} /></td></tr>
+    </tbody>
+  </table></div>
+  <p>Why the spread? Anytime Mailbox doesn't run the mailrooms; each location is an independent operator that sets its own plans and fees. More on that in <a href="/anytime-mailbox-pricing/">Anytime Mailbox pricing</a>.</p>
+
+  <h2>A cheap address isn't a registered office</h2>
+  <p>People often want a Delaware, Wyoming or Texas address because they're forming an LLC there. A virtual mailbox can be the company's <em>mailing</em> address, but each state sets its own rules for the registered office, and they ask for more than a mail drop:</p>
+  <ul>
+    <li><strong>Texas:</strong> the registered office "must be a physical address in Texas where the registered agent can be personally served with process during business hours. It cannot solely be the address of a mailbox service" <Src href={S.txFaq} label="Texas SOS" />.</li>
+    <li><strong>Wyoming:</strong> the registered office must be "a street address in Wyoming which shall be a physical location" where the registered agent, or a person with an agency relationship with the agent, "is physically present" to accept service <Src href={S.wyTitle17} label="W.S. 17-28-101" />.</li>
+    <li><strong>Delaware:</strong> every LLC must maintain a registered office in Delaware and a registered agent "having a business office identical with such registered office" <Src href={S.deLlc104} label="6 Del. C. §18-104" />.</li>
+    <li><strong>Florida:</strong> the registered agent's business address must be "identical to the address of the registered office" <Src href={S.fl0113} label="§605.0113" />, and the articles must give the agent's "street address in this state" <Src href={S.fl0201} label="§605.0201" />.</li>
+    <li><strong>California:</strong> the agent must be a California resident or a registered corporate agent, and the agent's "physical street address" is public record <Src href={S.caFaq} label="CA SOS" />.</li>
+  </ul>
+  <p>So the cheapest setup in these states is usually a registered agent plus a separate mailbox, or a mailbox plan that includes an agent. Virtual Post Mail has business addresses in Keller (TX), Brandon (FL), Claymont (DE) and Covina (CA), and includes a free registered agent in California, Delaware, Florida, Nevada and Texas on plans from $20 a month <Src href={S.vpmPricing} />. Details in <a href="/virtual-post-mail-pricing/">Virtual Post Mail pricing</a> and <a href="/virtual-mailbox-for-llc/">virtual mailbox for an LLC</a>.</p>
+
+  <h2>Before you pick the $5.99 address</h2>
+  <ul>
+    <li><strong>Check the plan, not just the price.</strong> A low starting price often comes with a small mail allowance and per-scan fees. Compare what you'll actually open each month with <a href="/cheapest-virtual-mailbox/">the cheapest virtual mailbox</a> guide.</li>
+    <li><strong>Add the Form 1583 cost.</strong> Every provider needs USPS Form 1583 before it can handle your mail; some charge for the notary. See <a href="/usps-form-1583-online-notarization/">Form 1583 and online notarization</a>.</li>
+    <li><strong>Some providers publish one price list.</strong> Traveling Mailbox's pricing page shows a single $15 Basic plan with 35 page scans included <Src href={S.tmb} />, and most of its customers use its home base in Sanford, NC <Src href={S.tmb} /> (<a href="/traveling-mailbox-pricing/">Traveling Mailbox pricing</a>).</li>
+  </ul>
+
+  <h2>Links</h2>
+  <ul>
+    <li><Aff id="anytimemailbox" href="https://www.anytimemailbox.com/l/usa" text="Anytime Mailbox U.S. locations" /></li>
+    <li><Aff id="virtualpostmail" href="https://refer.virtualpostmail.com/l/13ELDJ264/" text="Virtual Post Mail" /></li>
+    <li><Aff id="travelingmailbox" href="https://www.travelingmailbox.com/" text="Traveling Mailbox" /></li>
+  </ul>
+  <p>More: <a href="/virtual-mailbox-pricing-comparison/">all providers compared</a> · <a href="/virtual-mailbox-vs-po-box/">virtual mailbox vs PO Box</a> · <a href="/">Mailbox Atlas home</a></p>
+</Base>
