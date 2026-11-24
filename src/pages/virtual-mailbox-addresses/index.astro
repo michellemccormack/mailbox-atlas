@@ -1,0 +1,49 @@
+---
+import Base from '../../layouts/Base.astro';
+import Src from '../../components/Src.astro';
+import Crumbs from '../../components/Crumbs.astro';
+import { states, pageStates, total, money, SITE, CHECKED, CHECKED_TEXT, MIN_PAGE } from '../../lib/locations.js';
+const withPage = new Set(pageStates.map((s) => s.slug));
+const title = `Virtual Mailbox Addresses by State: ${total.toLocaleString('en-US')} Locations Compared`;
+const description = `Every Anytime Mailbox street address in the U.S., state by state: how many locations, the cheapest and median starting price, checked ${CHECKED_TEXT}.`;
+const byPrice = [...states].filter((s) => s.min != null).sort((a, b) => a.min - b.min).slice(0, 10);
+const schema = [
+  { '@type': 'Article', headline: title, description, url: `${SITE}/virtual-mailbox-addresses/`, dateModified: CHECKED, citation: ['https://www.anytimemailbox.com/l/usa'] },
+  { '@type': 'ItemList', name: 'Virtual mailbox addresses by state', numberOfItems: pageStates.length, itemListElement: pageStates.map((s, i) => ({ '@type': 'ListItem', position: i + 1, name: s.name, url: `${SITE}/virtual-mailbox-addresses/${s.slug}/` })) },
+];
+---
+<Base title={title} description={description} updated={CHECKED} schema={schema}>
+  <Crumbs items={[{ name: 'Home', href: '/' }, { name: 'Addresses by state' }]} />
+  <h1>Virtual mailbox addresses by state</h1>
+  <div class="answer"><p><strong>Short answer:</strong> Anytime Mailbox listed {total.toLocaleString('en-US')} U.S. locations on {CHECKED_TEXT}, in {states.length} states and territories. North Dakota and West Virginia had none. The cheapest starting price in each state is below.<Src href="https://www.anytimemailbox.com/l/usa" /></p></div>
+  <p class="lede">We copied every location card from Anytime Mailbox’s state pages: the street address and the “starting from” price each independent mail center sets. Each state page lists every address, grouped by city.</p>
+
+  <h2>Lowest starting prices</h2>
+  <ul>
+    {byPrice.map((s) => <li>{withPage.has(s.slug) ? <a href={`/virtual-mailbox-addresses/${s.slug}/`}>{s.name}</a> : s.name}: from {money(s.min)}/mo ({s.cheapest[0].location})</li>)}
+  </ul>
+
+  <h2>Every state</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>State</th><th>Locations</th><th>Cities</th><th>Cheapest</th><th>Median</th></tr></thead>
+    <tbody>
+      {states.map((s) => (
+        <tr>
+          <td>{withPage.has(s.slug) ? <a href={`/virtual-mailbox-addresses/${s.slug}/`}>{s.name}</a> : s.name}</td>
+          <td>{s.count}</td><td>{s.cities.length}</td>
+          <td>{s.min == null ? '—' : `${money(s.min)}/mo`}</td>
+          <td>{s.median == null ? '—' : `${money(s.median)}/mo`}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table></div>
+  <p class="meta">Source: Anytime Mailbox U.S. state pages, checked {CHECKED_TEXT}.<Src href="https://www.anytimemailbox.com/l/usa" /> States with fewer than {MIN_PAGE} locations are listed here without their own page. Yearly-only prices are left out of the cheapest and median columns.</p>
+
+  <h2>Related</h2>
+  <ul>
+    <li><a href="/cheapest-virtual-mailbox-by-state/">Cheapest virtual mailbox in Texas, Florida, Delaware, Wyoming, California and New York</a></li>
+    <li><a href="/cheapest-virtual-mailbox/">Cheapest virtual mailbox overall</a></li>
+    <li><a href="/virtual-mailbox-pricing-comparison/">Virtual mailbox price table</a></li>
+    <li><a href="/usps-form-1583-online-notarization/">USPS Form 1583 and online notarization</a></li>
+  </ul>
+</Base>
