@@ -1,4 +1,7 @@
 ---
+import EmailSignup from '../components/EmailSignup.astro';
+const noSignup = ['/privacy/', '/contact/', '/affiliate-disclosure/', '/404', '/get-it-done/'];
+const showSignup = !noSignup.some((p) => Astro.url.pathname.startsWith(p));
 const { title, description, updated = '2026-11-19', schema } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const siteName = 'Mailbox Atlas';
@@ -76,6 +79,7 @@ const fullTitle = title === siteName ? title : `${title} | ${siteName}`;
   </div></header>
   <main><div class="wrap">
     <slot />
+    {showSignup && <EmailSignup />}
     <p class="meta" style="margin-top:3rem">Last checked: {updated}. Prices are copied from each provider's own page on that date and change often. Follow the source link before you sign up.</p>
   </div></main>
   <footer class="site"><div class="wrap" style="padding:20px">
