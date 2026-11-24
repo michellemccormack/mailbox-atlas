@@ -1,0 +1,80 @@
+---
+import Base from '../layouts/Base.astro';
+import Src from '../components/Src.astro';
+import Aff from '../components/Aff.astro';
+import { S } from '../data/sources.js';
+const title = 'HIPAA-Compliant Virtual Mailbox: Which Providers Sign a BAA, and on Which Plan';
+const description = 'Four virtual mailbox providers publish a HIPAA Business Associate Agreement option: Virtual Post Mail from $60/mo, PostScan Mail as a $25/mo add-on, and Stable and US Global Mail on custom or enterprise plans. What each includes, from their own pages on Nov 24, 2026.';
+const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-24"};
+---
+<Base title={title} description={description} updated="2026-11-24" schema={schema}>
+  <h1>HIPAA-compliant virtual mailboxes</h1>
+  <div class="answer"><p><strong>Short answer:</strong> If a mail service will open and scan mail that contains patient information, you'll want it to sign a Business Associate Agreement (BAA). Four providers publish one: Virtual Post Mail on its Business plan ($60/mo) and up, PostScan Mail as a $25/mo add-on (billed annually) plus $0.50 per item, Stable on request (listed on its Custom plan), and US Global Mail on its Enterprise plan only.</p></div>
+  <p class="lede">"HIPAA compliant" on a pricing page and a signed BAA aren't the same thing. Below is what each provider actually offers, which plan you need, and what it costs, from each provider's own pages on November 24, 2026. This is a price and feature reference, not legal advice; your own compliance review still applies.</p>
+
+  <h2>Why does a virtual mailbox need a BAA when USPS doesn't?</h2>
+  <p>HHS says covered entities don't need business associate contracts with the U.S. Postal Service or private couriers that act "merely as conduits." A conduit "transports information but does not access it other than on a random or infrequent basis" <Src href={S.hhsConduit} label="HHS" />. A virtual mailbox that opens your envelopes and uploads the contents does more than carry them. That's why the providers that market to healthcare offer a BAA, and why Stable's FAQ says a provider "should be willing to sign a Business Associate Agreement" <Src href={S.stableHipaa} />.</p>
+
+  <h2>Which providers sign a BAA?</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Provider</th><th>BAA offered?</th><th>Plan you need</th><th>Published price</th></tr></thead>
+    <tbody>
+      <tr><td>Virtual Post Mail</td><td>Yes <Src href={S.vpmSecurity} /></td><td>Business plan or higher <Src href={S.vpmHealthcare} /></td><td>Business $60/mo, Premium $90/mo <Src href={S.vpmPricing} /></td></tr>
+      <tr><td>PostScan Mail</td><td>HIPAA Compliance add-on <Src href={S.psm} /></td><td>Add-on to a mailbox plan (plans from $10/mo) <Src href={S.psm} /></td><td>$25/mo billed annually, then $0.50 per received mail item <Src href={S.psm} /></td></tr>
+      <tr><td>Stable</td><td>Yes, "available on request" <Src href={S.stable} /></td><td>"HIPAA BAA" is listed under the Custom plan <Src href={S.stable} /></td><td>Custom: "Contact us for details" <Src href={S.stable} /></td></tr>
+      <tr><td>US Global Mail</td><td>Yes <Src href={S.usgmHealthcare} /></td><td>Enterprise only; the Occasional, Scale and Teams plans don't include it <Src href={S.usgm} /></td><td>Enterprise: custom <Src href={S.usgm} /></td></tr>
+    </tbody>
+  </table></div>
+  <p class="meta">Traveling Mailbox, iPostal1, Anytime Mailbox and LegalZoom Virtual Mail don't mention HIPAA or a BAA on the pricing pages we checked <Src href={S.tmb} /> <Src href={S.ipVma} /> <Src href={S.atmFaq} /> <Src href={S.lzVm} />. Ask them directly before sending patient mail there.</p>
+
+  <h2>What does each one include?</h2>
+  <h3>Virtual Post Mail</h3>
+  <ul>
+    <li>Says it "will also sign a BAA to satisfy HIPAA requirements" and that mail is processed in-house "by HIPAA and SOC 2-trained staff—never by a third party" <Src href={S.vpmSecurity} />.</li>
+    <li>Unwanted mail is shredded on site, and destruction certificates are available on request <Src href={S.vpmSecurity} />.</li>
+    <li>Claims to be the only provider offering a BAA "at every location"; the BAA is available "only on Business Plans or higher" <Src href={S.vpmHealthcare} />.</li>
+    <li>The Business plan includes unlimited envelope scans, 100 content scans, 10 users and 10 recipients <Src href={S.vpmPricing} />. Full plan table: <a href="/virtual-post-mail-pricing/">Virtual Post Mail pricing</a>.</li>
+  </ul>
+  <h3>PostScan Mail</h3>
+  <ul>
+    <li>HIPAA is a paid add-on: "$25.00 per month, billed annually, then $0.50 per received mail item" <Src href={S.psm} />.</li>
+    <li>That per-item charge stacks on the plan. The Starter plan is from $10/mo with 30 items, and PostScan counts junk mail toward your limit <Src href={S.psm} /> <Src href={S.psmFaq} />.</li>
+    <li>More fees: <a href="/postscan-mail-pricing/">PostScan Mail pricing</a>.</li>
+  </ul>
+  <h3>Stable</h3>
+  <ul>
+    <li>Says it is "fully HIPAA-compliant and BAAs are available," with mail data "encrypted in transit and at rest" and every action logged <Src href={S.stableHipaa} />.</li>
+    <li>Signs a BAA "on request for healthcare clients" <Src href={S.stableHipaa} />. Its pricing page lists "HIPAA BAA" among the Custom plan's features <Src href={S.stable} />; the self-serve plans are Grow ($49/mo billed yearly) and Scale ($83/mo billed yearly) <Src href={S.stable} />.</li>
+    <li>Stable says you can keep your current address and forward mail to its processing centers instead of taking a new address <Src href={S.stableHipaa} />.</li>
+  </ul>
+  <h3>US Global Mail</h3>
+  <ul>
+    <li>Describes itself as "SOC 2 Type II audited and HIPAA compliant" <Src href={S.usgmCompliance} />.</li>
+    <li>The BAA is offered "on our custom plans" <Src href={S.usgmCompliance} />. Its healthcare page says "HIPAA support and the Business Associate Agreement are part of our Enterprise offering" and that the team reviews your scope before you send PHI <Src href={S.usgmHealthcare} />.</li>
+    <li>In the plan comparison, "HIPAA with BAA" is checked only for Enterprise. Occasional ($25 a month, or $21 billed annually), Scale ($65 or $49) and Teams ($129 or $99) don't include it <Src href={S.usgm} />.</li>
+  </ul>
+
+  <h2>What does it cost at 100 pieces of mail a month?</h2>
+  <p>Example: a small practice getting 100 pieces a month, using only published prices.</p>
+  <ul>
+    <li><strong>Virtual Post Mail Business:</strong> $60/mo. Incoming envelopes are unlimited on Business, and 100 content scans are included <Src href={S.vpmPricing} />.</li>
+    <li><strong>PostScan Mail:</strong> the HIPAA add-on alone is $25 + 100 × $0.50 = $75/mo, before the mailbox plan. The Premium plan covers 120 items and starts at $30/mo, so the total starts around $105/mo <Src href={S.psm} />.</li>
+    <li><strong>Stable and US Global Mail:</strong> BAA plans are quoted individually <Src href={S.stable} /> <Src href={S.usgm} />.</li>
+  </ul>
+
+  <h2>Before you sign up</h2>
+  <ul>
+    <li>Get the BAA signed before the first piece of PHI arrives. US Global Mail says to review the agreement and covered services "before US Global Mail receives or processes PHI" <Src href={S.usgmHealthcare} />.</li>
+    <li>A BAA covers the vendor, not your whole workflow. US Global Mail notes your organization "must also assess its own policies, permitted uses, and connected systems" <Src href={S.usgmHealthcare} />.</li>
+    <li>Every person and business name that gets mail still needs its own USPS Form 1583. See <a href="/form-1583-for-business/">Form 1583 for a business</a>.</li>
+  </ul>
+
+  <h2>Links</h2>
+  <ul>
+    <li><Aff id="virtualpostmail" href="https://refer.virtualpostmail.com/l/13ELDJ264/" text="Virtual Post Mail" /></li>
+    <li><Aff id="usglobalmail" href="https://www.usglobalmail.com/?via=michelle" text="US Global Mail" /></li>
+    <li><Aff id="postscanmail" href="https://www.postscanmail.com/" text="PostScan Mail" /></li>
+    <li><Aff id="stable" href="https://www.usestable.com/" text="Stable" /></li>
+  </ul>
+  <p>More: <a href="/virtual-mailbox-pricing-comparison/">virtual mailbox pricing compared</a> · <a href="/virtual-mailbox-junk-mail/">which providers count junk mail</a> · <a href="/">Mailbox Atlas home</a></p>
+</Base>
