@@ -9,9 +9,10 @@ const schema = {"@context":"https://schema.org","@type":"Article","headline":tit
 ---
 <Base title={title} description={description} updated="2026-11-20" schema={schema}>
   <h1>Best virtual mailbox for an LLC (and what it can't do)</h1>
+  <div class="answer"><p><strong>Short answer:</strong> A virtual mailbox works as an LLC's mailing address, and it can go on line 4 (mailing address) of IRS Form SS-4. It can't be the registered office on its own: Texas, Florida and California require a registered agent at a real in-state street address. Pair the mailbox with a registered agent service. <Src href={S.irsSs4} /><Src href={S.txFaq} /><Src href={S.fl0113} /></p></div>
   <p class="lede">An LLC deals with up to three addresses: a <strong>registered office</strong> where its registered agent accepts lawsuits, a <strong>principal office</strong>, and a <strong>mailing address</strong>. A virtual mailbox is built for the last one. It can't be the registered office unless someone there actually serves as your registered agent. Here's what the states and the IRS ask for, and which providers fill the gap. Checked November 20, 2026. This is a summary of published rules, not legal advice.</p>
 
-  <h2>1. The registered office: a mailbox alone doesn't qualify</h2>
+  <h2>Can a virtual mailbox be your LLC's registered office?</h2>
   <ul>
     <li><strong>Texas:</strong> "An entity's registered office must be a physical address in Texas where the registered agent can be personally served with process during business hours. It cannot solely be the address of a mailbox service or telephone answering service." <Src href={S.txFaq} label="Texas SOS" /> The Certificate of Formation instructions say the same, citing BOC § 5.201 <Src href={S.tx201} label="Form 201" />.</li>
     <li><strong>Florida:</strong> every LLC must keep a registered office and a registered agent "whose business address is identical to the address of the registered office" <Src href={S.fl0113} label="§605.0113" />. The articles must give the agent's "street address in this state" <Src href={S.fl0201} label="§605.0201" />.</li>
@@ -19,7 +20,7 @@ const schema = {"@context":"https://schema.org","@type":"Article","headline":tit
   </ul>
   <p>In practice, that means your registered agent is either you (at a real street address in the state, open during business hours) or a registered agent company. A mail-scanning address doesn't fill this role on its own.</p>
 
-  <h2>2. The principal office and mailing address: where a virtual mailbox fits</h2>
+  <h2>Can a virtual mailbox be your LLC's mailing address?</h2>
   <ul>
     <li><strong>Texas</strong> asks for an initial mailing address in the certificate of formation, which the Comptroller uses for tax mail. It "may be a post office box or street address" <Src href={S.tx201} label="Form 201" />.</li>
     <li><strong>Florida</strong> asks for "the street and mailing addresses of the company's principal office" <Src href={S.fl0201} label="§605.0201" />. Whether a commercial mail receiving agency (CMRA) address is accepted as the principal <em>street</em> address isn't stated in the statute.</li>
@@ -27,7 +28,7 @@ const schema = {"@context":"https://schema.org","@type":"Article","headline":tit
   </ul>
   <div class="warnbox"><strong>State rules vary.</strong> US Global Mail says a virtual or PMB address "can be used to open an LLC but there are some states that do not allow it," and names Washington and California as requiring physical addresses <Src href={S.usgmUse} label="USGM" />. We haven't confirmed that against those states' filing rules. iPostal1 likewise says "laws vary by state" <Src href={S.ipFaq} label="iPostal1 FAQ" />. Check your state's filing instructions before you file.</div>
 
-  <h2>3. Banks</h2>
+  <h2>Will banks accept a virtual mailbox address?</h2>
   <p>US Global Mail says most banks accept its address. It adds that "some banks have recently started asking for a personal address, which is not a CMRA" address <Src href={S.usgmUse} label="USGM" />. We found no published bank-by-bank rules, so ask your bank before you apply.</p>
 
   <h2>Plans that let you receive mail in a business name</h2>
