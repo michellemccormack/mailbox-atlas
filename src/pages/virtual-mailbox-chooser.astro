@@ -92,7 +92,7 @@ const schema = [
         T.forEach(function(t){if(q.r>t[4])return;var pages=q.o*q.pg;var c=t[1]+over(q.m,t[2])*0.25+over(pages,t[3])*0.5+q.c*4.95;
           if(!best||c<best.cost)best={cost:c,plan:t[0]+' ($'+t[1]+')',parts:[over(q.m,t[2])?over(q.m,t[2])+' extra envelopes × $0.25':'',over(pages,t[3])?over(pages,t[3])+' extra page scans × $0.50':'',q.c?q.c+' checks × $4.95':''],notes:[]};});
         return best||{cost:null,notes:['More names than its largest plan lists.']};},
-      usglobalmail:function(q){var c=65+over(q.o,30)*3+over(q.r,10)*5;return {cost:c,plan:'Scale ($65 monthly, $49 billed annually)',parts:[over(q.o,30)?over(q.o,30)+' open-and-scans over 30 × $3':'',over(q.r,10)?over(q.r,10)+' extra names × $5':'',q.c?'checks: no handling fee':''],notes:['Envelope scans are unlimited; 360 open-and-scans a year under fair use (we count 30 a month). Prices vary by address.'],annual:49};},
+      usglobalmail:function(q){var c=25+(q.o||0)*2+over(q.r,5)*5;return {cost:c,plan:'Occasional ($25 monthly, $21 billed annually)',parts:[(q.o||0)?(q.o||0)+' interior scans × $2':'',over(q.r,5)?over(q.r,5)+' extra names × $5':'',q.c?'checks: no handling fee':''],notes:['Envelope scans are included; interior scans are $2 each on Occasional. Scale is $65 monthly or $49 billed annually and includes 360 open-and-scans a year under fair use. Prices vary by address.'],annual:21+(q.o||0)*2+over(q.r,5)*5};},
       virtualpostmail:function(q){var T=[['Starter',20,25,10,2,10],['Plus',35,1e9,50,5,10],['Business',60,1e9,100,10,10],['Premium',90,1e9,150,20,5]];var best=null;
         var ex=q.pg>30?(q.pg-30)*0.25:0; var chk=q.c?10+(q.c-1)*1.5:0;
         T.forEach(function(t){var c=t[1]+over(q.m,t[2])*0.5+over(q.o,t[3])*(3+ex)+over(q.r,t[4])*t[5]+chk;

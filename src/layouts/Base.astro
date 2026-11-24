@@ -1,5 +1,5 @@
 ---
-const { title, description, updated = '2026-11-19', schema } = Astro.props;
+const { title, description, updated = '2026-11-19', schema, noindex = false } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const siteName = 'Mailbox Atlas';
 const fullTitle = title === siteName ? title : `${title} | ${siteName}`;
@@ -52,7 +52,7 @@ const prettyDate = (d) => { const t = new Date(`${d}T12:00:00Z`); return isNaN(t
   <meta property="og:description" content={description} />
   <meta property="og:url" content={canonical} />
   <meta name="twitter:card" content="summary" />
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  <meta name="robots" content={noindex ? "noindex, follow" : "index, follow, max-snippet:-1, max-image-preview:large"} />
   <script type="application/ld+json" set:html={JSON.stringify(ld)} />
   <style is:global>
     :root{--ink:#1b1f24;--muted:#5b6470;--line:#e3e6ea;--brand:#0f5a4a;--bg:#fbfcfd;--warn:#8a5a00;--warnbg:#fff4dc}
@@ -107,6 +107,7 @@ const prettyDate = (d) => { const t = new Date(`${d}T12:00:00Z`); return isNaN(t
       <a href="/virtual-mailbox-pricing-comparison/">Price table</a>
       <a href="/cheapest-virtual-mailbox/">Cheapest</a>
       <a href="/usps-form-1583-online-notarization/">Form 1583</a>
+      <a href="/kit/">Kit</a>
       <a href="/about/">About</a>
     </nav>
   </div></header>
