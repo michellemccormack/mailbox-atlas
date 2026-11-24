@@ -1,0 +1,104 @@
+---
+import Base from '../../layouts/Base.astro';
+import Src from '../../components/Src.astro';
+import Aff from '../../components/Aff.astro';
+import Crumbs from '../../components/Crumbs.astro';
+import { S } from '../../data/sources.js';
+import { pageStates, money, priceText, SITE, CHECKED, CHECKED_TEXT, VPM, CHEAPEST_PAGE } from '../../lib/locations.js';
+export function getStaticPaths() {
+  return pageStates.map((s, i) => ({ params: { state: s.slug }, props: { s, prev: pageStates[i - 1] || null, next: pageStates[i + 1] || null } }));
+}
+const { s, prev, next } = Astro.props;
+const cheapest = [...s.list].filter((r) => r.per === 'month').sort((a, b) => a.starting_price_usd - b.starting_price_usd).slice(0, 10);
+const cheapestNames = s.cheapest.slice(0, 3).map((r) => r.location).join(', ');
+const title = `Virtual Mailbox Addresses in ${s.name}: ${s.count} Locations from ${money(s.min)}/mo`;
+const description = `Every Anytime Mailbox street address in ${s.name} (${s.count} locations in ${s.cities.length} ${s.cities.length === 1 ? 'city' : 'cities'}), with each location's starting price, checked ${CHECKED_TEXT}. Cheapest: ${money(s.min)} a month.`;
+const url = `${SITE}/virtual-mailbox-addresses/${s.slug}/`;
+const schema = [
+  { '@type': 'BreadcrumbList', itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+    { '@type': 'ListItem', position: 2, name: 'Virtual mailbox addresses by state', item: `${SITE}/virtual-mailbox-addresses/` },
+    { '@type': 'ListItem', position: 3, name: s.name, item: url },
+  ] },
+  { '@type': 'Article', headline: title, description, url, dateModified: CHECKED, citation: [s.source] },
+];
+---
+<Base title={title} description={description} updated={CHECKED} schema={schema}>
+  <Crumbs items={[{ name: 'Home', href: '/' }, { name: 'Addresses by state', href: '/virtual-mailbox-addresses/' }, { name: s.name }]} />
+  <h1>Virtual mailbox addresses in {s.name}</h1>
+  <div class="answer"><p><strong>Short answer:</strong> Anytime Mailbox listed {s.count} locations in {s.name} on {CHECKED_TEXT}, in {s.cities.length} {s.cities.length === 1 ? 'city' : 'cities'}. The cheapest started at {money(s.min)} a month ({cheapestNames}); half started at or below {money(s.median)}, and the most expensive at {money(s.max)}.<Src href={s.source} /></p></div>
+  <p class="lede">Anytime Mailbox is a network of independent mail centers, and each one sets its own price, so the same service costs very different amounts a few miles apart. Below is every {s.name} address it listed, with the “starting from” price on its location card.</p>
+
+  <div class="tablewrap"><table>
+    <tbody>
+      <tr><th scope="row">Locations listed</th><td>{s.count}<Src href={s.source} /></td></tr>
+      <tr><th scope="row">Cities</th><td>{s.cities.length}</td></tr>
+      <tr><th scope="row">Lowest starting price</th><td>{money(s.min)}/mo</td></tr>
+      <tr><th scope="row">Median starting price</th><td>{money(s.median)}/mo</td></tr>
+      <tr><th scope="row">Highest starting price</th><td>{money(s.max)}/mo</td></tr>
+      <tr><th scope="row">Locations under $10/mo</th><td>{s.under10}</td></tr>
+      <tr><th scope="row">Marked “Top Rated Mailroom Operator”</th><td>{s.topRated}</td></tr>
+      {s.yearlyOnly > 0 && <tr><th scope="row">Shown with a yearly price only</th><td>{s.yearlyOnly} (left out of the monthly figures)</td></tr>}
+    </tbody>
+  </table></div>
+
+  <h2>Cheapest {s.name} addresses</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Location</th><th>Street address</th><th>Starting price</th></tr></thead>
+    <tbody>
+      {cheapest.map((r) => <tr><td><a href={r.url} target="_blank" rel="noopener">{r.location}</a></td><td>{r.street}, {r.city}, {r.state_code} {r.zip}</td><td>{priceText(r)}</td></tr>)}
+    </tbody>
+  </table></div>
+  <p class="meta">The starting price is the cheapest plan at that location. Plans differ in how many pieces of mail and scans they include; open the location to see its plans.</p>
+
+  {s.cities.length > 1 && (
+    <>
+      <h2>Price range by city</h2>
+      <div class="tablewrap"><table>
+        <thead><tr><th>City</th><th>Locations</th><th>Starting prices</th></tr></thead>
+        <tbody>
+          {s.cities.map((c) => <tr><td><a href={`#${c.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}>{c.name}</a></td><td>{c.count}</td><td>{c.min == null ? '—' : c.min === c.max ? `${money(c.min)}/mo` : `${money(c.min)} to ${money(c.max)}/mo`}</td></tr>)}
+        </tbody>
+      </table></div>
+    </>
+  )}
+
+  <h2>All {s.count} addresses</h2>
+  {s.cities.map((c) => (
+    <section>
+      <h3 id={c.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}>{c.name} ({c.count})</h3>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Location</th><th>Street address</th><th>ZIP</th><th>Starting price</th></tr></thead>
+        <tbody>
+          {c.list.map((r) => <tr><td><a href={r.url} target="_blank" rel="noopener">{r.location}</a>{r.top_rated && <span class="meta"> · top rated</span>}</td><td>{r.street}</td><td>{r.zip || '—'}</td><td>{priceText(r)}</td></tr>)}
+        </tbody>
+      </table></div>
+    </section>
+  ))}
+  <p class="meta">Source: Anytime Mailbox, Virtual Mailbox in {s.name}, every location card, checked {CHECKED_TEXT}.<Src href={s.source} /> Prices and locations change; confirm on the location page before you sign up.</p>
+
+  {VPM[s.slug] && (
+    <>
+      <h2>Another option in {s.name}</h2>
+      <p><Aff id="virtualpostmail" href="https://refer.virtualpostmail.com/l/13ELDJ264/" text="Virtual Post Mail" /> has a business address in {VPM[s.slug]}, {s.name}, and includes a free registered agent in California, Delaware, Florida, Nevada and Texas on plans from $20 a month.<Src href={S.vpmPricing} /> See <a href="/virtual-post-mail-pricing/">Virtual Post Mail pricing</a>.</p>
+    </>
+  )}
+
+  <h2>Before you pick an address</h2>
+  <ul>
+    <li><strong>Form 1583.</strong> Renting a private mailbox at any of these mail centers means filing USPS Form 1583 with the mail center.<Src href={S.atm1583} /> Whether you also need a notary, and what each provider charges for one, is on our <a href="/usps-form-1583-online-notarization/">Form 1583 page</a>.</li>
+    <li><strong>Using it for an LLC.</strong> Some states won’t accept a mailbox address as a registered agent or principal office address. See <a href="/virtual-mailbox-for-llc/">virtual mailbox for an LLC</a>.</li>
+    <li><strong>Banks.</strong> A mailbox usually works as a bank mailing address, but usually not as your home or business street address. See <a href="/virtual-mailbox-for-bank-account/">virtual mailbox for a bank account</a>.</li>
+    <li><strong>Fees after the monthly price.</strong> Forwarding, storage and check deposit fees vary by provider: <a href="/virtual-mailbox-forwarding-fees/">forwarding</a>, <a href="/virtual-mailbox-storage-fees/">storage</a>, <a href="/virtual-mailbox-check-deposit-fees/">check deposits</a>.</li>
+  </ul>
+
+  <h2>Related</h2>
+  <ul>
+    <li><a href="/virtual-mailbox-addresses/">Virtual mailbox addresses in every state</a></li>
+    {CHEAPEST_PAGE.has(s.slug) && <li><a href="/cheapest-virtual-mailbox-by-state/">Cheapest virtual mailbox in TX, FL, DE, WY, CA and NY</a></li>}
+    <li><a href="/virtual-mailbox-pricing-comparison/">Virtual mailbox price table</a> and the <a href="/virtual-mailbox-chooser/">mailbox chooser</a></li>
+    <li><a href="/anytime-mailbox-pricing/">Anytime Mailbox pricing</a></li>
+    {prev && <li>Previous state: <a href={`/virtual-mailbox-addresses/${prev.slug}/`}>{prev.name}</a></li>}
+    {next && <li>Next state: <a href={`/virtual-mailbox-addresses/${next.slug}/`}>{next.name}</a></li>}
+  </ul>
+</Base>

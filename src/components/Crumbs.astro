@@ -1,0 +1,9 @@
+---
+// Breadcrumb trail. items: [{ name, href }]; the last item is the current page.
+const { items } = Astro.props;
+---
+<nav class="crumbs" aria-label="Breadcrumb" style="font-size:14px;color:var(--muted);margin-bottom:.4rem">
+  {items.map((it, i) => (
+    <span>{i > 0 && <span aria-hidden="true"> › </span>}{i < items.length - 1 ? <a href={it.href}>{it.name}</a> : <span>{it.name}</span>}</span>
+  ))}
+</nav>
