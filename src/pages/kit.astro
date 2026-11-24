@@ -1,0 +1,98 @@
+---
+import Base from '../layouts/Base.astro';
+// Set PRICE (e.g. '$29') and CHECKOUT_URL when the kit goes on sale; until then the page shows the coming-soon notice.
+const PRICE = '$19';
+const CHECKOUT_URL = 'https://buy.stripe.com/14A28r8mkfAZbuo64Kf3a01';
+const title = 'Business Address Switch Kit: USPS Form 1583 Walkthrough and Address-Change Checklist';
+const description = 'A 13-page kit for moving a business to a virtual mailbox or new address: a field-by-field USPS Form 1583 walkthrough, ID checklist, IRS Form 8822-B guide, a master list of everywhere to update your address, and a provider comparison worksheet. PDF plus Excel files.';
+const updated = '2026-11-23';
+const schema = {"@context":"https://schema.org","@type":"Product","name":'Business Address Switch Kit',"description":description,"brand":{"@type":"Brand","name":'Mailbox Atlas'},"image":'https://mailboxatlas.com/kit/kit-hero.svg'};
+if (CHECKOUT_URL) schema.offers = {'@type':'Offer','url':CHECKOUT_URL,'priceCurrency':'USD','price':PRICE.replace('$',''),'availability':'https://schema.org/InStock'};
+---
+<Base title={title} description={description} updated={updated} schema={schema}>
+<style>
+  .kit-hero{margin:1.2rem 0 1rem;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:#fff}
+  .kit-hero img{display:block;width:100%;height:auto}
+  .kit-cta{display:flex;flex-wrap:wrap;gap:.8rem 1.2rem;align-items:center;border:1px solid var(--line);border-left:4px solid var(--brand);background:#fff;border-radius:8px;padding:1rem 1.2rem;margin:1rem 0 1.6rem}
+  .kit-cta .soon{font-weight:700;color:var(--brand);text-transform:uppercase;letter-spacing:.06em;font-size:.85rem}
+  .kit-btn{display:inline-block;background:var(--brand);color:#fff!important;text-decoration:none;font-weight:600;padding:.6rem 1.1rem;border-radius:6px}
+  .kit-btn:hover{opacity:.92}
+  .kit-cta .fine{flex:1 0 100%;margin:0;font-size:14px;color:var(--muted)}
+  .kit-list{display:grid;grid-template-columns:1fr 1fr;gap:.5rem 1.4rem;padding-left:1.1rem}
+  .kit-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:1rem 0}
+  .kit-gallery figure{margin:0}
+  .kit-gallery img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:4px;box-shadow:0 2px 10px rgba(0,0,0,.08);background:#fff}
+  .kit-gallery figcaption{font-size:13px;color:var(--muted);margin-top:.35rem}
+  .kit-formats{display:flex;flex-wrap:wrap;gap:.5rem;margin:.6rem 0 0;padding:0;list-style:none}
+  .kit-formats li{border:1px solid var(--line);border-radius:999px;padding:.15rem .7rem;font-size:14px;background:#fff}
+  @media (max-width:640px){.kit-list{grid-template-columns:1fr}.kit-gallery{grid-template-columns:1fr 1fr}}
+</style>
+  <h1>Business Address Switch Kit</h1>
+  <p class="lede">Switching your business address touches the IRS, your state, your bank, Google and every invoice you send. This kit puts every step in order, walks you through USPS Form 1583 item by item, and gives you a tracker so nothing keeps going to the old address.</p>
+  <div class="kit-hero"><img src="/kit/kit-hero.svg" alt="The Business Address Switch Kit cover with sample pages: Form 1583 walkthrough, government checklist and provider comparison worksheet" width="1200" height="750" /></div>
+  <div class="kit-cta">
+    {CHECKOUT_URL ? (
+      <>
+        <a class="kit-btn" href={CHECKOUT_URL} rel="noopener">Get the kit · {PRICE}</a>
+        <p class="fine">Instant download. 13-page PDF plus a pre-filled Excel address tracker and a comparison worksheet. 14-day money-back guarantee, no questions asked.</p>
+      </>
+    ) : (
+      <>
+        <span class="soon">Coming soon</span>
+        <a class="kit-btn" href="mailto:ds59tmmv@mail.grokbot.com?subject=Notify%20me%3A%20Business%20Address%20Switch%20Kit">Get notified when it launches</a>
+        <p class="fine">We'll send one email when the kit is available. 13-page PDF plus a pre-filled Excel address tracker and a comparison worksheet.</p>
+      </>
+    )}
+  </div>
+
+  <h2>What's inside</h2>
+  <ul class="kit-list">
+      <li>The switch timeline, in order</li>
+      <li>USPS Form 1583 walkthrough, item by item</li>
+      <li>Accepted IDs and the signing rules</li>
+      <li>How to write a PMB address the USPS way</li>
+      <li>Where a virtual address works, and where it can&#x27;t go</li>
+      <li>IRS Form 8822-B: when, where to mail, how long</li>
+      <li>Government and tax checklist</li>
+      <li>Banks, vendors and customers checklist</li>
+      <li>Address change tracker</li>
+      <li>Provider comparison worksheet</li>
+      <li>Questions to ask before you sign up</li>
+  </ul>
+  <ul class="kit-formats">
+    <li>13-page PDF</li>
+    <li>Excel address tracker, pre-filled</li>
+    <li>Excel comparison worksheet</li>
+  </ul>
+
+  <h2>A look inside</h2>
+  <div class="kit-gallery">
+    <figure><img src="/kit/kit-preview-1.svg" alt="Form 1583 walkthrough" width="620" height="803" loading="lazy" /><figcaption>Form 1583 walkthrough</figcaption></figure>
+    <figure><img src="/kit/kit-preview-2.svg" alt="Government and tax checklist" width="620" height="803" loading="lazy" /><figcaption>Government and tax checklist</figcaption></figure>
+    <figure><img src="/kit/kit-preview-3.svg" alt="Provider comparison worksheet" width="620" height="803" loading="lazy" /><figcaption>Provider comparison worksheet</figcaption></figure>
+  </div>
+
+  <h2>Who it's for</h2>
+  <ul>
+    <li>LLC owners and freelancers moving to a virtual mailbox</li>
+    <li>Businesses relocating or leaving a home address</li>
+    <li>Anyone switching from one mailbox provider to another</li>
+  </ul>
+
+  <h2>How it's sourced</h2>
+  <p>Every rule in the kit is cited to the official source: the June 2024 PS Form 1583, the USPS Postal Bulletin and Domestic Mail Manual 508, IRS Forms 8822-B and SS-4, FinCEN, the federal bank customer identification rule, Texas and Florida registered-agent rules, and Google Business Profile's own guidelines. Sources were checked November 20–23, 2026.</p>
+
+  <h2>Questions</h2>
+  <h3>What if the kit isn&#x27;t what I needed?</h3>
+  <p>There is a 14-day money-back guarantee, no questions asked. Email us from the <a href="/contact/">contact page</a>.</p>
+  <h3>Is this legal or tax advice?</h3>
+  <p>No. It is general information based on the cited official sources. Ask an accountant or attorney about your situation, and always use the current form from USPS or your provider.</p>
+  <h3>Does it include the Form 1583 itself?</h3>
+  <p>No. Get the form from USPS or your mailbox provider; the kit explains every item on the current June 2024 version and what trips people up.</p>
+  <h3>Will it tell me which provider to pick?</h3>
+  <p>It gives you a worksheet and the questions that matter. For current prices side by side, see our <a href="/virtual-mailbox-pricing-comparison/">virtual mailbox pricing comparison</a>.</p>
+  <h3>Can I use a virtual mailbox as my registered agent address?</h3>
+  <p>Usually not. The kit explains why, with the Texas and Florida rules as examples, and where a virtual address does work.</p>
+
+  <p class="meta">General information, not legal or tax advice. Mailbox Atlas is independent and is not affiliated with the U.S. Postal Service, the IRS or any mailbox provider.</p>
+</Base>
