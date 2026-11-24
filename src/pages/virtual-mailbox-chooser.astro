@@ -1,0 +1,157 @@
+---
+import Base from '../layouts/Base.astro';
+import Src from '../components/Src.astro';
+import Aff from '../components/Aff.astro';
+import { S } from '../data/sources.js';
+const updated = '2026-11-23';
+const title = 'Virtual Mailbox Chooser: Which Service Fits Your Mail and Budget';
+const description = 'Answer five questions (mail volume, how much you want opened and scanned, checks, notary, budget) and get an estimated monthly cost for nine virtual mailbox services, using each provider\'s published fees. Free, runs in your browser.';
+// Providers. Prices and allowances are the ones on our provider pages, each linked to its source.
+const P = [
+  { id: 'travelingmailbox', name: 'Traveling Mailbox', href: 'https://www.travelingmailbox.com/', page: '/traveling-mailbox-pricing/', src: S.tmb, notary: false, notaryTxt: 'Video call with staff, no notary' },
+  { id: 'usglobalmail', name: 'US Global Mail', href: 'https://www.usglobalmail.com/?via=michelle', page: '/us-global-mail-vs-traveling-mailbox/', src: S.usgm, notary: false, notaryTxt: '"No need to find a notary separately"' },
+  { id: 'virtualpostmail', name: 'Virtual Post Mail', href: 'https://refer.virtualpostmail.com/l/13ELDJ264/', page: '/virtual-post-mail-pricing/', src: S.vpmPricing, notary: true, notaryTxt: 'Notarized Form 1583 required' },
+  { id: 'postscanmail', name: 'PostScan Mail', href: 'https://www.postscanmail.com/', page: '/postscan-mail-pricing/', src: S.psm, notary: true, notaryTxt: 'Notarized; partner online notary $20' },
+  { id: 'ipostal1', name: 'iPostal1', href: 'https://ipostal1.com/', page: '/ipostal1-pricing/', src: S.ipVma, notary: true, notaryTxt: 'Notarized; online notary $25 or in person' },
+  { id: 'anytimemailbox', name: 'Anytime Mailbox', href: 'https://www.anytimemailbox.com/', page: '/anytime-mailbox-pricing/', src: S.atm, notary: true, notaryTxt: 'Notarized; built-in online notary option' },
+  { id: 'stable', name: 'Stable', href: 'https://www.usestable.com/', page: '/stable-vs-earth-class-mail/', src: S.stable, notary: false, notaryTxt: 'No notary; Stable verifies IDs' },
+  { id: 'earthclassmail', name: 'Earth Class Mail (LegalZoom Virtual Mail)', href: 'https://www.earthclassmail.com/', page: '/earth-class-mail-pricing/', src: S.ecm, notary: false, notaryTxt: 'Self-verify online or partner notary' },
+  { id: 'opus', name: 'Opus Virtual Offices', href: 'https://www.opusvirtualoffices.com/', page: '/opus-virtual-offices-vs-davinci/', src: S.opus, notary: null, notaryTxt: '–' },
+];
+const schema = [
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Virtual Mailbox Chooser","url":"https://mailboxatlas.com/virtual-mailbox-chooser/","description":description,"applicationCategory":"BusinessApplication","operatingSystem":"Any (runs in the browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"isAccessibleForFree":true,"dateModified":updated,"publisher":{"@type":"Organization","name":"Mailbox Atlas"}},
+  {"@context":"https://schema.org","@type":"HowTo","name":"How to choose a virtual mailbox","step":[
+    {"@type":"HowToStep","name":"Count your mail","text":"Estimate how many letters and packages you get a month, and how many you want opened and scanned."},
+    {"@type":"HowToStep","name":"Add checks and must-haves","text":"Enter how many paper checks you get a month and whether you need business use, no-notary Form 1583, or a phone/virtual office."},
+    {"@type":"HowToStep","name":"Set a budget","text":"Enter the most you want to pay per month."},
+    {"@type":"HowToStep","name":"Compare the estimates","text":"Providers are ranked by estimated monthly cost from their published plan prices and fees, before postage."}]},
+];
+---
+<Base title={title} description={description} updated={updated} schema={schema}>
+  <h1>Virtual mailbox chooser</h1>
+  <p class="lede">Tell us how much mail you get and what you need, and we'll work out what each service would cost you a month from its published plans and per-item fees, then rank them. It runs in your browser and sends nothing anywhere.</p>
+
+  <form id="q" class="card" style="display:grid;gap:14px;max-width:640px" onsubmit="return false">
+    <fieldset style="border:0;padding:0;margin:0"><legend><strong>1. What is it for?</strong></legend>
+      <label><input type="radio" name="use" value="personal" checked /> Personal mail (travel, RV, living abroad)</label><br/>
+      <label><input type="radio" name="use" value="business" /> A business or LLC</label>
+    </fieldset>
+    <label><strong>2. Mail pieces a month</strong> (letters and packages, not counting junk)<br/><input id="m" type="number" min="0" step="1" value="20" inputmode="numeric" style="width:120px;padding:8px;font-size:16px" /></label>
+    <label><strong>3. How many you want opened and scanned</strong> a month<br/><input id="o" type="number" min="0" step="1" value="8" inputmode="numeric" style="width:120px;padding:8px;font-size:16px" /></label>
+    <label>Pages in a typical scanned letter<br/><input id="pg" type="number" min="1" step="1" value="3" inputmode="numeric" style="width:120px;padding:8px;font-size:16px" /></label>
+    <label><strong>4. Paper checks a month</strong> you'd want deposited<br/><input id="c" type="number" min="0" step="1" value="0" inputmode="numeric" style="width:120px;padding:8px;font-size:16px" /></label>
+    <label>Names receiving mail at the address<br/><input id="r" type="number" min="1" step="1" value="1" inputmode="numeric" style="width:120px;padding:8px;font-size:16px" /></label>
+    <fieldset style="border:0;padding:0;margin:0"><legend><strong>5. Must-haves</strong></legend>
+      <label><input type="checkbox" id="nonotary" /> Set up Form 1583 without paying a notary</label><br/>
+      <label><input type="checkbox" id="office" /> Phone answering or a virtual office too</label>
+    </fieldset>
+    <label><strong>Budget</strong>: most you'd pay a month ($, blank for no limit)<br/><input id="b" type="number" min="0" step="1" inputmode="numeric" style="width:120px;padding:8px;font-size:16px" /></label>
+  </form>
+
+  <div id="res" aria-live="polite" style="margin-top:1rem"></div>
+  <noscript><p class="warnbox">The chooser needs JavaScript. The same numbers are in the <a href="/virtual-mailbox-pricing-comparison/">price table</a>.</p></noscript>
+
+  <div id="cards" hidden>
+    {P.map(p => (
+      <div class="card pv" data-id={p.id} style="margin:12px 0">
+        <h3 style="margin-bottom:.2rem"><span class="rank"></span>{p.name}</h3>
+        <p class="est" style="font-size:1.15rem;margin:.2rem 0"></p>
+        <p class="why meta" style="margin:.3rem 0"></p>
+        <p class="meta" style="margin:.3rem 0">Form 1583: {p.notaryTxt}</p>
+        <p style="margin:.4rem 0 0;font-size:15px"><Aff id={p.id} href={p.href} text={`Go to ${p.name}`} /> · <a href={p.page}>Our full fee breakdown</a> · <Src href={p.src} label="prices" /></p>
+      </div>
+    ))}
+  </div>
+
+  <h2>How the estimate works</h2>
+  <ul>
+    <li>For each service we try every plan with published allowances and pick the cheapest for your numbers: plan price plus extra-item, extra-scan, check and extra-name fees. Monthly billing, standard address, before postage and sales tax.</li>
+    <li>Checks are assumed to go to your bank together in one shipment a month.</li>
+    <li>iPostal1, PostScan Mail and Anytime Mailbox prices are "from" prices: the mail center you pick can charge more. Anytime Mailbox lets each location set its own plans and fees, so we can only show its starting price.</li>
+    <li>Where a provider doesn't publish a fee (for example PostScan Mail's check deposit), the estimate says so and leaves it out.</li>
+    <li>Fee sources: <a href="/virtual-mailbox-pricing-comparison/">price table</a>, <a href="/virtual-mailbox-check-deposit-fees/">check deposit fees</a>, <a href="/virtual-mailbox-forwarding-fees/">forwarding fees</a> and each provider page linked above.</li>
+  </ul>
+
+  <h2>Related</h2>
+  <ul>
+    <li><a href="/cheapest-virtual-mailbox/">The cheapest virtual mailbox</a></li>
+    <li><a href="/usps-form-1583-online-notarization/">Form 1583 and online notary options</a></li>
+    <li><a href="/virtual-mailbox-for-llc/">Virtual mailbox for an LLC</a> and <a href="/virtual-mailbox-for-bank-account/">for a bank account</a></li>
+  </ul>
+  <p class="meta">Some provider links are affiliate links and are marked. See our <a href="/affiliate-disclosure/">affiliate disclosure</a>. Rankings come only from the published prices and your answers.</p>
+
+  <script is:inline>
+  (function(){
+    var $=function(i){return document.getElementById(i)};
+    function n(i,d){var v=parseFloat($(i).value);return isNaN(v)||v<0?d:v}
+    function money(v){return '$'+v.toFixed(2).replace(/\.00$/,'')}
+    function over(a,b){return Math.max(0,a-b)}
+    // Each model returns {cost, plan, parts[], notes[], from:bool} or {cost:null,...}
+    var M={
+      travelingmailbox:function(q){var T=[['Basic',15,40,35,3],['Extended',25,100,80,5],['Small Business',55,200,180,10]];var best=null;
+        T.forEach(function(t){if(q.r>t[4])return;var pages=q.o*q.pg;var c=t[1]+over(q.m,t[2])*0.25+over(pages,t[3])*0.5+q.c*4.95;
+          if(!best||c<best.cost)best={cost:c,plan:t[0]+' ($'+t[1]+')',parts:[over(q.m,t[2])?over(q.m,t[2])+' extra envelopes × $0.25':'',over(pages,t[3])?over(pages,t[3])+' extra page scans × $0.50':'',q.c?q.c+' checks × $4.95':''],notes:[]};});
+        return best||{cost:null,notes:['More names than its largest plan lists.']};},
+      usglobalmail:function(q){var c=65+over(q.o,30)*3+over(q.r,10)*5;return {cost:c,plan:'Scale ($65 monthly, $49 billed annually)',parts:[over(q.o,30)?over(q.o,30)+' open-and-scans over 30 × $3':'',over(q.r,10)?over(q.r,10)+' extra names × $5':'',q.c?'checks: no handling fee':''],notes:['Envelope scans are unlimited; 360 open-and-scans a year under fair use (we count 30 a month). Prices vary by address.'],annual:49};},
+      virtualpostmail:function(q){var T=[['Starter',20,25,10,2,10],['Plus',35,1e9,50,5,10],['Business',60,1e9,100,10,10],['Premium',90,1e9,150,20,5]];var best=null;
+        var ex=q.pg>30?(q.pg-30)*0.25:0; var chk=q.c?10+(q.c-1)*1.5:0;
+        T.forEach(function(t){var c=t[1]+over(q.m,t[2])*0.5+over(q.o,t[3])*(3+ex)+over(q.r,t[4])*t[5]+chk;
+          if(!best||c<best.cost)best={cost:c,plan:t[0]+' ($'+t[1]+')',parts:[t[2]<1e9&&over(q.m,t[2])?over(q.m,t[2])+' extra pieces × $0.50':'',over(q.o,t[3])?over(q.o,t[3])+' extra content scans × $3':'',over(q.r,t[4])?over(q.r,t[4])+' extra names × $'+t[5]:'',q.c?'check deposit $10 + $1.50 per extra check':''],notes:['Free registered agent on every plan.']};});
+        return best;},
+      postscanmail:function(q){var T=[['Starter',10,30,0,1],['Standard',20,60,5,2],['Premium',30,120,10,4]];var best=null;var per=2+(q.pg>10?(q.pg-10)*0.25:0);
+        T.forEach(function(t){var c=t[1]+over(q.m,t[2])*0.5+over(q.o,t[3])*per+over(q.r,t[4])*5;
+          if(!best||c<best.cost)best={cost:c,plan:t[0]+' (from $'+t[1]+')',parts:[over(q.m,t[2])?over(q.m,t[2])+' extra items × $0.50':'',over(q.o,t[3])?over(q.o,t[3])+' open-and-scans × '+money(per):'',over(q.r,t[4])?over(q.r,t[4])+' extra names × $5':''],notes:q.c?['Check deposit fee: – (not on its pricing page), so it is not included.']:[],from:true};});
+        return best;},
+      ipostal1:function(q){var T=q.office?[[60,39.99],[120,49.99],[240,69.99]]:(q.biz?[[30,14.99],[60,19.99],[120,29.99],[240,44.99]]:[[30,9.99],[60,14.99],[120,24.99],[240,39.99]]);var best=null;var per=2.25+(q.pg>10?(q.pg-10)*0.25:0);
+        var chk=q.c?Math.ceil(q.c/5)*4.95:0;
+        T.forEach(function(t){var c=t[1]+over(q.m,t[0])*0.35+q.o*per+chk;var nm=(q.office?'Virtual Office':(q.biz?'Virtual Business Address':'Virtual Mailing Address'))+', '+t[0]+' items (from $'+t[1]+')';
+          if(!best||c<best.cost)best={cost:c,plan:nm,parts:[over(q.m,t[0])?over(q.m,t[0])+' extra items × $0.35':'',q.o?q.o+' open-and-scans × '+money(per):'',q.c?'check deposit $4.95 per 5 checks, plus check scans':''],notes:q.biz||q.office?[]:['Virtual Mailing Address plans are for personal use only.'],from:true};});
+        return best;},
+      anytimemailbox:function(q){return {cost:null,from:true,plan:'Plans start at $4.99; each location sets its own',notes:['Allowances, scan fees and check deposit are set by each mail center, so we can\'t estimate your total. About half of U.S. locations start between $8 and $9.99.']};},
+      stable:function(q){var c=59+over(q.m,30)*3+(q.c?q.c*3:0);return {cost:c,plan:'Grow ($59 monthly, $49 billed yearly)',parts:[over(q.m,30)?over(q.m,30)+' pieces over 30 × $3':'','open-and-scan free',q.c?q.c+' checks × "as low as $3"':''],notes:['Unlimited names.'],annual:49};},
+      earthclassmail:function(q){var T=[['Starter MailBox',39,5,2],['Essentials MailBox',59,25,5],['Premium MailBox',119,50,15],['Startup MailRoom',179,80,25],['Business MailRoom',299,150,50]];var best=null;
+        var chk=q.c?Math.min(q.c*10,39+over(q.c,5)*2):0; var pgx=q.pg>20?(q.pg-20)*0.15*q.o:0;
+        T.forEach(function(t){var c=t[1]+over(q.m,t[2])*3+over(q.r,t[3])*5+chk+pgx;
+          if(!best||c<best.cost)best={cost:c,plan:t[0]+' ($'+t[1]+')',parts:[over(q.m,t[2])?over(q.m,t[2])+' items over '+t[2]+' × $3':'',over(q.r,t[3])?over(q.r,t[3])+' extra names × $5':'',q.c?'checks '+money(chk):''],notes:[]};});
+        return best;},
+      opus:function(q){return {cost:99,plan:'All-inclusive virtual office ($99)',parts:['address, live call answering, phone/fax, mail receipt'],notes:['Scan and forwarding fees: – (not on the page we checked).'],officeOnly:true};}
+    };
+    var CARDS=Array.prototype.slice.call(document.querySelectorAll('#cards .pv'));
+    function run(){
+      var q={biz:document.querySelector('input[name=use]:checked').value==='business',m:n('m',0),o:n('o',0),pg:Math.max(1,n('pg',1)),c:n('c',0),r:Math.max(1,Math.round(n('r',1))),nonotary:$('nonotary').checked,office:$('office').checked};
+      q.o=Math.min(q.o,q.m);
+      var bRaw=$('b').value, budget=bRaw===''?null:parseFloat(bRaw);
+      var cards=CARDS;
+      var list=cards.map(function(el){var id=el.getAttribute('data-id');var r=M[id](q);
+        var why=[];var ok=true;
+        if(r.officeOnly&&!q.office){ok=false;why.push('A full virtual office; tick "phone answering" above to include it.');}
+        if(q.office&&!(id==='opus'||id==='ipostal1')){ok=false;why.push('No phone or virtual-office plan in our data.');}
+        var needN={travelingmailbox:false,usglobalmail:false,stable:false,earthclassmail:false,virtualpostmail:true,postscanmail:true,ipostal1:true,anytimemailbox:true,opus:null}[id];
+        if(q.nonotary&&needN!==false){ok=false;why.push(needN===null?'Form 1583 process: –':'Needs a notarized Form 1583.');}
+        if(id==='stable'&&!q.biz){why.push('Stable is built for businesses.');}
+        if(budget!==null&&r.cost!==null&&r.cost>budget){ok=false;why.push('Over your '+money(budget)+' budget.');}
+        if(r.cost===null&&id!=='anytimemailbox')ok=false;
+        return {el:el,id:id,r:r,ok:ok,why:why};});
+      list.sort(function(a,b){if(a.ok!==b.ok)return a.ok?-1:1;var ac=a.r.cost===null?1e9:a.r.cost, bc=b.r.cost===null?1e9:b.r.cost;return ac-bc;});
+      var res=$('res'); var good=list.filter(function(x){return x.ok&&x.r.cost!==null});
+      var hdr='';
+      if(good.length){var t=good[0];hdr='<div class="note"><strong>Best fit for your answers: '+t.el.querySelector('h3').lastChild.textContent+'</strong>, about '+money(t.r.cost)+' a month'+(t.r.from?' or more':'')+' before postage, on '+t.r.plan+'.'+(good[1]?' Runner-up: '+good[1].el.querySelector('h3').lastChild.textContent+' at about '+money(good[1].r.cost)+'.':'')+'</div>';}
+      else hdr='<div class="warnbox">No service we track fits all of your must-haves and budget. The closest options are below, with what rules each one out.</div>';
+      res.innerHTML=hdr;
+      var i=0;
+      list.forEach(function(x){
+        var r=x.r; var el=x.el;
+        el.querySelector('.rank').textContent=x.ok?(++i)+'. ':'';
+        el.style.opacity=x.ok?'1':'.6';
+        el.querySelector('.est').innerHTML=r.cost===null?'<strong>–</strong> <span class="meta">'+r.plan+'</span>':'<strong>'+(r.from?'from ':'')+money(r.cost)+'/mo</strong> <span class="meta">on '+r.plan+'</span>';
+        var parts=(r.parts||[]).filter(Boolean);
+        el.querySelector('.why').textContent=[parts.length?'Includes: '+parts.join('; ')+'.':''].concat(r.notes||[]).concat(x.why).filter(Boolean).join(' ');
+        res.appendChild(el);
+      });
+    }
+    ['m','o','pg','c','r','b','nonotary','office'].forEach(function(i){$(i).addEventListener('input',run);$(i).addEventListener('change',run);});
+    Array.prototype.forEach.call(document.querySelectorAll('input[name=use]'),function(e){e.addEventListener('change',run)});
+    run();
+  })();
+  </script>
+</Base>
