@@ -63,6 +63,19 @@ Published pages must not show internal notes: no "unverified" or "affiliate link
 - USGM storage help article moved to /articles/11328326 (old 11022343 is 404).
 - PostScan Mail FAQ: on cancellation, stored mail is discarded and new mail held 6 months, then returned to sender (useful for #35/#48).
 
+## Done (2026-11-24; all five live-verified HTTP 200 on mailboxatlas.com)
+- [x] /hipaa-compliant-virtual-mailbox/ (queue #25). BAA offers: VPM Business+ ($60/$90), PostScan add-on ($25/mo billed annually + $0.50/item), Stable (on request; listed on Custom), USGM (Enterprise only). HHS conduit FAQ for the "why". TMB/iPostal1/Anytime/LegalZoom pricing pages don't mention HIPAA (stated as such, no compliance claim).
+- [x] /virtual-mailbox-junk-mail/ (queue #27). Junk excluded at TMB (mark as junk), Stable, LegalZoom, VPM (obvious junk), iPostal1 (most locations); USGM has no piece limit; PostScan counts junk. Anytime: no central rule (omitted from table, noted). CFPB OptOutPrescreen; DMAchoice fee not used (JS-only page).
+- [x] /change-address-to-virtual-mailbox/ (queue #28). usps.com forward page ($1.25 online ID fee, temp 15 days-1 yr, permanent 12 mo + Extended), DMM 507 temporary rules, PS 1583 agreement (no COA on termination), DMM 508.1.8 remail, IRS 8822/8822-B, provider COA FAQs.
+- [x] /form-1583-for-business/ (queue #29). PS 1583 footnotes (officer signs with title, item 7 fields, place of registration, item 12 members), USGM business-name rules, extra-name fees by provider.
+- [x] /form-1583-rejected/ (queue #30). DMM 508.1.8 (deny on mismatch, current IDs, illegible = non-compliant, altered forms invalid), DMM 608.10.5, USGM troubleshooting articles, Stable API docs, ECM/PostScan ID rules, iPostal1 review time.
+- Also updated: homepage cards; links from Form 1583, LLC, price comparison and storage pages. gh-pages rebuild also published the state pages' single-BreadcrumbList fix that was on main but not yet deployed.
+
+## Data notes (2026-11-24)
+- US Global Mail added an Occasional plan: $25/mo, or $21 billed annually (5 recipients, $2 per scan). Pages that call $65/$49 USGM's cheapest plan (us-global-mail-vs-traveling-mailbox, chooser, comparison) need a refresh.
+- hhs.gov returns 403 to curl (WebFetch works). dmachoice.org fee isn't in static HTML.
+- Deploy method: GitHub MCP push_files, max 4 files per call (gh CLI is not logged in on the box).
+
 ## Next (ranked)
 1. ~~iPostal1 vs Anytime Mailbox~~ DONE 2026-11-20 (both from $9.99; location-set pricing)
 2. ~~iPostal1 pricing explained~~ DONE 2026-11-20: what the $9.99 plan includes, by location
@@ -88,12 +101,12 @@ Published pages must not show internal notes: no "unverified" or "affiliate link
 22. ~~Virtual office vs virtual mailbox~~ DONE 2026-11-23 (/virtual-office-vs-virtual-mailbox/)
 23. ~~Mail forwarding cost comparison~~ DONE 2026-11-23 (/virtual-mailbox-forwarding-fees/)
 24. ~~Package forwarding and storage fees compared~~ DONE 2026-11-23 (merged into /virtual-mailbox-storage-fees/ and /virtual-mailbox-forwarding-fees/)
-25. Virtual mailbox with HIPAA compliance (PostScan $25/mo, USGM, VPM, Stable BAA)
+25. ~~Virtual mailbox with HIPAA compliance~~ DONE 2026-11-24 (/hipaa-compliant-virtual-mailbox/)
 26. ~~How long virtual mailboxes keep your physical mail~~ DONE 2026-11-23 (/virtual-mailbox-storage-fees/)
-27. Virtual mailbox junk-mail rules: which count junk toward your limit
-28. How to change your address to a virtual mailbox (USPS change of address + 1583)
-29. Form 1583 for a business: who signs, which IDs, extra recipients
-30. Form 1583 rejected: common reasons and fixes (ECM, PostScan lists)
+27. ~~Virtual mailbox junk-mail rules~~ DONE 2026-11-24 (/virtual-mailbox-junk-mail/)
+28. ~~How to change your address to a virtual mailbox~~ DONE 2026-11-24 (/change-address-to-virtual-mailbox/)
+29. ~~Form 1583 for a business~~ DONE 2026-11-24 (/form-1583-for-business/)
+30. ~~Form 1583 rejected: common reasons and fixes~~ DONE 2026-11-24 (/form-1583-rejected/)
 31. Virtual mailbox for Amazon seller / Stripe verification (CMRA rejection risk)
 32. ~~Virtual Post Mail pricing~~ DONE 2026-11-22 (/virtual-post-mail-pricing/)
 33. iPostal1 vs Traveling Mailbox
