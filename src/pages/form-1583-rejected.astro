@@ -1,0 +1,66 @@
+---
+import Base from '../layouts/Base.astro';
+import Src from '../components/Src.astro';
+import Aff from '../components/Aff.astro';
+import { S } from '../data/sources.js';
+const title = 'Form 1583 Rejected? The Common Reasons and How to Fix Each One';
+const description = 'Why virtual mailbox providers reject Form 1583 or its IDs: a name or address that doesn’t match the ID, an expired or unreadable ID, one license used as both IDs, a document USPS doesn’t accept, or a blank business section. The USPS rule behind each, the fix, and how long re-review takes. Checked Nov 24, 2026.';
+const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-24"};
+---
+<Base title={title} description={description} updated="2026-11-24" schema={schema}>
+  <h1>Form 1583 rejected: reasons and fixes</h1>
+  <div class="answer"><p><strong>Short answer:</strong> Most rejections come down to a mismatch or an unreadable document. USPS rules say that if the information on the form doesn't match the ID, the mail center must deny the application. Fix the specific item (name, home address, expired or blurry ID, wrong document type), upload again, and re-sign if the form changed. Re-review takes 1 to 3 business days at iPostal1 and about 2 to 3 at US Global Mail.</p></div>
+  <p class="lede">Your virtual mailbox can't accept mail until Form 1583 is approved, and some providers bill you whether or not it's approved. Below are the reasons USPS rules and providers' help pages give for rejections, with the fix for each, checked November 24, 2026.</p>
+
+  <h2>Why was my Form 1583 rejected?</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Reason</th><th>The rule</th><th>Fix</th></tr></thead>
+    <tbody>
+      <tr><td>Name doesn't match the ID</td><td>The mail center must deny the application if the form doesn't match the ID <Src href={S.dmm508} label="DMM 508.1.8" />. US Global Mail: the name on the ID must match the recipient name on the mailbox <Src href={S.usgmIdRejected} /></td><td>Use your legal name exactly as on the ID. If your name changed, have the account corrected first <Src href={S.usgmIdRejected} /></td></tr>
+      <tr><td>Home address doesn't match the address ID</td><td>The home address in item 4f must match the address document in 9b <Src href={S.usps1583} label="PS 1583" /></td><td>Enter the address exactly as it appears on your address ID. If you moved, update the address and upload a document showing the new one <Src href={S.usgmFormWrong} /></td></tr>
+      <tr><td>Expired ID</td><td>IDs must be current (not expired) <Src href={S.dmm508} label="DMM 508.1.8" /></td><td>Upload a current ID. At US Global Mail, a "flagged as expired" result often means the date wasn't readable; retake the photo with the date clearly visible <Src href={S.usgmIdRejected} /></td></tr>
+      <tr><td>Blurry, dark or cropped image</td><td>Illegible or unclear ID images are "not in compliance" <Src href={S.dmm508} label="DMM 508.1.8" /></td><td>Good light, no glare, all four corners in frame <Src href={S.usgmIdRejected} /></td></tr>
+      <tr><td>Only one side uploaded</td><td>The address ID must show the address on the form <Src href={S.usps1583} label="PS 1583" /></td><td>Upload the back too if your address is printed there <Src href={S.usgmIdRejected} /></td></tr>
+      <tr><td>Driver's license used for both IDs</td><td>A driver's or non-driver's ID can be the photo ID or the address ID, not both <Src href={S.usps1583} label="PS 1583" /></td><td>Add a second document: lease, mortgage or deed of trust, voter or vehicle registration, or home or vehicle insurance policy <Src href={S.usps1583} label="PS 1583" /></td></tr>
+      <tr><td>Document type not accepted</td><td>USPS doesn't accept Social Security cards, birth certificates or credit cards <Src href={S.dmm608} label="DMM 608.10.5" /></td><td>Pick from the form's photo ID and address ID lists. US Global Mail also rejects utility bills, corporate ID cards and non-U.S. driver's licenses <Src href={S.usgmIds} /></td></tr>
+      <tr><td>Business box checked, section 7 blank</td><td>Business/Organization use requires item 7, signed by an officer with their title <Src href={S.usps1583} label="PS 1583" /></td><td>Complete section 7; see <a href="/form-1583-for-business/">Form 1583 for a business</a></td></tr>
+      <tr><td>Form altered or signed wrong</td><td>A modified or altered Form 1583 is invalid <Src href={S.dmm508} label="DMM 508.1.8" />. A notary, if used, must be commissioned in a U.S. state, territory, possession or D.C. <Src href={S.usps1583} label="PS 1583" /></td><td>Ask the provider to regenerate the form and sign again <Src href={S.usgmSignedWrong} /></td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>Provider-specific rules that catch people</h2>
+  <ul>
+    <li><strong>Earth Class Mail (LegalZoom):</strong> both IDs must be valid, not expired, and "in a language that uses the Latin alphabet," and the secondary ID must show your name "exactly as listed on the primary ID" <Src href={S.ecmReauth} />.</li>
+    <li><strong>PostScan Mail:</strong> documents must be "in English or English-translated." Foreign driver's licenses, national ID cards and foreign university IDs aren't accepted <Src href={S.psmFaq} />.</li>
+    <li><strong>US Global Mail:</strong> a document it accepted when you signed up can be flagged now, because the 2024 USPS update "revised the list of document types accepted as secondary ID." Your secondary ID also can't be the same document type as your primary <Src href={S.usgm1583Update} />.</li>
+    <li><strong>Stable:</strong> if documents are rejected (Stable's examples are poor image quality, expired IDs and mismatched information), the signature packet is deleted. You upload new documents and sign again <Src href={S.stableOnboard} />.</li>
+    <li><strong>iPostal1:</strong> forms are reviewed by its 1583 team, then sent to the mail center for final approval, which takes 1 to 3 business days <Src href={S.ipFaq} />.</li>
+  </ul>
+
+  <h2>How do I resubmit?</h2>
+  <ol>
+    <li>Read the rejection email. US Global Mail emails the reason and reopens the upload step <Src href={S.usgm1583Update} />, and reviews new documents in about 2 to 3 business days <Src href={S.usgmIdRejected} />.</li>
+    <li>Fix only what was flagged. If the problem is wrong information on a pre-filled form, US Global Mail says "Do not sign a Form 1583 that contains incorrect information"; ask for a corrected form instead <Src href={S.usgmFormWrong} />.</li>
+    <li>Re-sign if the form changed. Stable asks you to sign a new signature packet <Src href={S.stableOnboard} />. US Global Mail regenerates the form and sends a new e-signature request, at no charge <Src href={S.usgmSignedWrong} />.</li>
+    <li>If a notary is required again, iPostal1's online notary is $25 and PostScan Mail's partner notary is $20 <Src href={S.ipFaq} /> <Src href={S.psmFaq} />. Providers that verify you on video without a notary are compared in <a href="/usps-form-1583-online-notarization/">Form 1583 and online notarization</a>.</li>
+  </ol>
+
+  <h2>Does a rejection pause billing or deadlines?</h2>
+  <ul>
+    <li><strong>Billing:</strong> iPostal1 says the charge "will process and auto-renew whether or not you choose to complete the Form 1583" <Src href={S.ipFaq} />.</li>
+    <li><strong>Deadlines:</strong> at US Global Mail, your 30-day window keeps running while a correction is in progress <Src href={S.usgmFormWrong} />. If required documents aren't approved by the deadline, mail receipt is suspended until the account is compliant <Src href={S.usgm1583Update} />.</li>
+    <li><strong>Mail in the meantime:</strong> a mail center with no Form 1583 on file for you must return your mail to the Post Office <Src href={S.dmm508} label="DMM 508.1.8" />. Hold off on your <a href="/change-address-to-virtual-mailbox/">change of address</a> until you're approved.</li>
+  </ul>
+
+  <h2>Living outside the U.S.?</h2>
+  <p>A foreign passport works as the photo ID, but a non-U.S. driver's license doesn't. For the address ID, US Global Mail says documents showing your foreign home address (a lease, mortgage, vehicle registration, insurance policy or voter card) are "generally workable" <Src href={S.usgmIdRejected} />. More in <a href="/virtual-mailbox-from-abroad/">getting a U.S. mailbox from abroad</a>.</p>
+
+  <h2>Links</h2>
+  <ul>
+    <li><Aff id="usglobalmail" href="https://www.usglobalmail.com/?via=michelle" text="US Global Mail (no notary needed)" /></li>
+    <li><Aff id="travelingmailbox" href="https://www.travelingmailbox.com/" text="Traveling Mailbox (video verification, no notary)" /></li>
+    <li><Aff id="bluenotary" href="https://app.bluenotary.us/business/register?referralCode=ve5sumc1gl" text="BlueNotary (online notary)" /></li>
+    <li><Aff id="notarize" href="https://app.proof.com/referral?campaign=813d4b9c-eab9-4604-8f1b-99eb28ff49b8" text="Notarize (online notary)" /></li>
+  </ul>
+  <p>More: <a href="/form-1583-for-business/">Form 1583 for a business</a> · <a href="/virtual-mailbox-pricing-comparison/">pricing compared</a> · <a href="/">Mailbox Atlas home</a></p>
+</Base>

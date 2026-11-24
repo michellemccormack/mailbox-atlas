@@ -1,0 +1,79 @@
+---
+import Base from '../layouts/Base.astro';
+import Src from '../components/Src.astro';
+import Aff from '../components/Aff.astro';
+import { S } from '../data/sources.js';
+const title = 'How to Change Your Address to a Virtual Mailbox: USPS Change of Address, Form 1583 and What Isn’t Forwarded';
+const description = 'The order that works: get your Form 1583 approved, then file a USPS change of address ($1.25 online ID check), then update banks, the IRS and other senders directly. Temporary vs permanent forwarding, what USPS won’t forward, and why you can’t forward mail away from a virtual mailbox later. Checked Nov 24, 2026.';
+const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-24"};
+---
+<Base title={title} description={description} updated="2026-11-24" schema={schema}>
+  <h1>How to change your address to a virtual mailbox</h1>
+  <div class="answer"><p><strong>Short answer:</strong> Wait until your Form 1583 is approved, then file a USPS change of address to your new address with its PMB number (online, with a $1.25 identity check). After that, give the new address to your bank, the IRS and anyone who sends sensitive mail, because USPS forwarding won't move those. Form 1583 on its own doesn't forward anything.</p></div>
+  <p class="lede">There are two separate pieces: the USPS form that lets the mail center accept your mail, and the change of address that sends mail there. Here are the steps in order, with the rules from USPS and the providers' own pages, checked November 24, 2026.</p>
+
+  <h2>Step 1: Get Form 1583 approved first</h2>
+  <ul>
+    <li>Form 1583 "only gives permission to your mail center to receive mail on your behalf." It doesn't change your address <Src href={S.ipFaq} />. Traveling Mailbox says the same thing: the form "does not forward your mail" <Src href={S.tmb1583} />.</li>
+    <li>Mail that arrives before your form is approved can be sent back. iPostal1 says mail before approval is "subject to be returned to sender" <Src href={S.ipFaq} />, and USPS rules tell a mail center with no Form 1583 on file to return the mail to the Post Office <Src href={S.dmm508} label="DMM 508.1.8" />.</li>
+    <li>Choose the address carefully. At US Global Mail, the address can be changed only until your Form 1583 is approved. After that, you need a new account and a new form <Src href={S.usgmChangeAddr} />.</li>
+  </ul>
+
+  <h2>Step 2: File a USPS change of address</h2>
+  <p>A change of address isn't required. Anytime Mailbox and PostScan Mail both call it optional but recommended; without it, you have to tell every sender yourself <Src href={S.atmFaq} /> <Src href={S.psmFaq} />.</p>
+  <ul>
+    <li><strong>Online:</strong> on the official USPS site, you pay a $1.25 identity verification fee, and the card's billing address must match your old or new address <Src href={S.uspsForward} label="USPS" />.</li>
+    <li><strong>In person:</strong> fill out PS Form 3575 from a Mover's Guide packet at a Post Office, with photo ID <Src href={S.uspsForward} label="USPS" />.</li>
+    <li><strong>Timing:</strong> allow at least 7 to 10 business days after approval for it to take effect <Src href={S.uspsForward} label="USPS" />.</li>
+    <li><strong>Your PMB number:</strong> use the full address the provider gives you, with "PMB" or "#" and your number. USPS can return mail without it as "Undeliverable as Addressed, Missing PMB or # Sign" <Src href={S.dmm508} label="DMM 508.1.8" />.</li>
+  </ul>
+
+  <h2>Temporary or permanent change of address?</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th></th><th>Temporary</th><th>Permanent</th></tr></thead>
+    <tbody>
+      <tr><td>Meant for</td><td>Relocating for 15 days up to 1 year <Src href={S.uspsForward} /></td><td>Moving <Src href={S.uspsForward} /></td></tr>
+      <tr><td>How long forwarding lasts</td><td>15 to 185 days on the first order; a second order can extend it to 364 days total <Src href={S.dmm507} label="DMM 507" /></td><td>12 months; paid Extended Mail Forwarding adds 6, 12 or 18 months <Src href={S.uspsForward} /></td></tr>
+      <tr><td>Notices to senders</td><td>No address-correction notices for temporary orders <Src href={S.dmm507} label="DMM 507" /></td><td>—</td></tr>
+    </tbody>
+  </table></div>
+  <p>iPostal1 tells customers to file a temporary change of address and says "We do not recommend filing a Permanent Change of Address form with the USPS" <Src href={S.ipFaq} />. With a temporary order, you still get to decide later whether the virtual mailbox becomes your long-term address.</p>
+
+  <h2>What won't a change of address forward?</h2>
+  <ul>
+    <li><strong>Sensitive documents:</strong> USPS says government agencies and financial institutions "do not allow forwarding" of identity documents, credit cards, bank statements, insurance information and medical information <Src href={S.uspsForward} label="USPS" />. Update those senders directly.</li>
+    <li><strong>Advertising:</strong> USPS Marketing Mail isn't forwarded unless the sender paid for forwarding <Src href={S.uspsForward} label="USPS" />. That helps if your plan counts junk; see <a href="/virtual-mailbox-junk-mail/">junk mail rules by provider</a>.</li>
+    <li><strong>Media Mail:</strong> forwarded, but you pay the shipping from your local Post Office <Src href={S.uspsForward} label="USPS" />.</li>
+    <li><strong>Periodicals:</strong> forwarded free for 60 days if fully prepaid by the sender <Src href={S.uspsForward} label="USPS" />.</li>
+  </ul>
+
+  <h2>Step 3: Update senders directly</h2>
+  <p>USPS says a change of address "only changes your mailing address with the Post Office," and you're responsible for telling government agencies, companies and other senders <Src href={S.uspsForward} label="USPS" />.</p>
+  <ul>
+    <li><strong>IRS, personal:</strong> Form 8822 notifies the IRS of a change to your home mailing address <Src href={S.irs8822} label="IRS" />.</li>
+    <li><strong>IRS, business:</strong> Form 8822-B is for entities with an EIN that change their business mailing address, business location or responsible party <Src href={S.irs8822b} label="IRS" />.</li>
+    <li><strong>Banks:</strong> check what your bank accepts first; some address fields don't take a mailbox address. See <a href="/virtual-mailbox-for-bank-account/">using a virtual mailbox for a bank account</a>.</li>
+    <li><strong>State filings for a company:</strong> a mailbox can be the mailing address, but Texas, Florida and California require a registered agent at a real in-state street address. See <a href="/virtual-mailbox-for-llc/">virtual mailbox for an LLC</a>.</li>
+  </ul>
+  <p>Some providers help with this step. Stable includes "change of address guidance" on all plans, with a tailored checklist and pre-filled paperwork <Src href={S.stable} />, and US Global Mail lists "change of address guidance" on every plan <Src href={S.usgm} />.</p>
+
+  <h2>Can you forward mail from a virtual mailbox later?</h2>
+  <p>Not with USPS. Under the Form 1583 agreement, neither you nor the mail center may file a change of address with USPS when the service ends <Src href={S.usps1583} label="PS 1583" />. The mail center instead has to remail your mail for at least 6 months, with new postage, to the address on your form, unless you tell it in writing not to <Src href={S.dmm508} label="DMM 508.1.8" />.</p>
+  <ul>
+    <li>Anytime Mailbox: "a change of address form cannot be submitted for a digital mailbox"; mail is stored up to six months after you cancel, and storage and forwarding fees may apply <Src href={S.atmFaq} />.</li>
+    <li>PostScan Mail: USPS "does not allow a Change-of-Address request to redirect mail from a CMRA"; you have to contact your senders <Src href={S.psmFaq} />.</li>
+  </ul>
+  <p>So if you might leave the mailbox one day, keep a list of everyone you gave the address to. More in <a href="/virtual-mailbox-storage-fees/">how long mail is kept</a>.</p>
+
+  <h2>Moving abroad?</h2>
+  <p>If you're moving outside the U.S., USPS requires you to file the change of address in person at a Post Office, and identity can only be verified in person in the 50 states and Puerto Rico. From outside the U.S., you can't file one at all <Src href={S.uspsForward} label="USPS" />. File it before you leave. See <a href="/virtual-mailbox-from-abroad/">getting a U.S. mailbox from abroad</a>.</p>
+
+  <h2>Links</h2>
+  <ul>
+    <li><Aff id="usglobalmail" href="https://www.usglobalmail.com/?via=michelle" text="US Global Mail (change of address guidance on every plan)" /></li>
+    <li><Aff id="stable" href="https://www.usestable.com/" text="Stable (change of address checklist)" /></li>
+    <li><Aff id="virtualpostmail" href="https://refer.virtualpostmail.com/l/13ELDJ264/" text="Virtual Post Mail" /></li>
+    <li><Aff id="travelingmailbox" href="https://www.travelingmailbox.com/" text="Traveling Mailbox" /></li>
+  </ul>
+  <p>More: <a href="/usps-form-1583-online-notarization/">Form 1583 and online notary</a> · <a href="/virtual-mailbox-vs-po-box/">virtual mailbox vs PO Box</a> · <a href="/">Mailbox Atlas home</a></p>
+</Base>

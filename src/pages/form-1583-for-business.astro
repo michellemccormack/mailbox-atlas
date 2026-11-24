@@ -1,0 +1,84 @@
+---
+import Base from '../layouts/Base.astro';
+import Src from '../components/Src.astro';
+import Aff from '../components/Aff.astro';
+import { S } from '../data/sources.js';
+const title = 'USPS Form 1583 for a Business: Who Signs, Which IDs, and Extra Business Names';
+const description = 'For a business mailbox, an officer signs Form 1583 and gives their title, the officer’s two IDs cover the company, and section 7 asks for the business name, type, street address and place of registration. Each business name needs its own form; what providers charge per extra name. Checked Nov 24, 2026.';
+const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-24"};
+---
+<Base title={title} description={description} updated="2026-11-24" schema={schema}>
+  <h1>Form 1583 for a business</h1>
+  <div class="answer"><p><strong>Short answer:</strong> Check "Business/Organization Use," fill in section 7 (business name, type, street address, phone and place of registration), and have a company officer sign with their title. The business doesn't need its own ID: the officer's photo ID and address ID cover it. Every business name on the mailbox needs its own Form 1583.</p></div>
+  <p class="lede">USPS Form 1583 works the same for a company as for a person, with a few extra boxes. Here's what the current form (June 2024 edition) and the USPS rules say, and how providers handle business names, checked November 24, 2026. For notary options and the basic ID list, see <a href="/usps-form-1583-online-notarization/">Form 1583 and online notarization</a>.</p>
+
+  <h2>Who signs Form 1583 for a business?</h2>
+  <p>An officer. The form's instructions say: "for Business/Organization Use, an officer must sign the application and provide his or her title" <Src href={S.usps1583} label="PS 1583" />. Like any applicant, the officer signs in front of the mail center's staff (in person or on a live video call) or a U.S.-commissioned notary <Src href={S.usps1583} label="PS 1583" />.</p>
+  <p>That's why your personal name appears on a company's form. iPostal1 explains that "the USPS requires a responsible party on each mailbox," and that your name is kept confidential to the mail center and USPS <Src href={S.ipFaq} />. US Global Mail requires "1 primary name" on every business account, an officer of the company who signs Form 1583 <Src href={S.usgmBiz1583} />.</p>
+
+  <h2>Which IDs does a business need?</h2>
+  <p>The officer's. The business itself provides none:</p>
+  <ul>
+    <li>Two IDs for the applicant: a government-issued photo ID and a second document showing the address on the form <Src href={S.usps1583} label="PS 1583" />.</li>
+    <li>US Global Mail: "Business names don't require their own IDs but the company officer must be on the account with two IDs" <Src href={S.usgmIds} />. It also lists a corporate identification card as not acceptable <Src href={S.usgmIds} />.</li>
+    <li>One driver's license can't count as both the photo ID and the address ID <Src href={S.usps1583} label="PS 1583" />.</li>
+  </ul>
+
+  <h2>What goes in section 7?</h2>
+  <p>If you check "Business/Organization Use" in item 3, you must complete item 7 <Src href={S.usps1583} label="PS 1583" />:</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Field</th><th>What to enter</th></tr></thead>
+    <tbody>
+      <tr><td>7a Name of business</td><td>The name mail will be addressed to</td></tr>
+      <tr><td>7b Type of business</td><td>What the business does</td></tr>
+      <tr><td>7c–7g Business street address</td><td>The business's own address. Anytime Mailbox notes this "cannot be the mailbox address you are currently signing up for" <Src href={S.atm1583} /></td></tr>
+      <tr><td>7h Telephone</td><td>The business phone</td></tr>
+      <tr><td>7i Place of registration</td><td>"The county and state (if domestic), or the country (if foreign)" <Src href={S.usps1583} label="PS 1583" /></td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li><strong>Not registered yet?</strong> Anytime Mailbox says to enter N/A for place of registration if the business is new or not yet registered <Src href={S.atm1583} />. Earth Class Mail has a "Check if not applicable" box for cases like a sole proprietorship <Src href={S.ecmReauth} />.</li>
+    <li><strong>Verification:</strong> USPS may check that you conduct business at the address in 7c <Src href={S.usps1583} label="PS 1583" />.</li>
+  </ul>
+
+  <h2>Employees and partners who get mail (item 12)</h2>
+  <p>For a business mailbox, item 12 lists the members who will receive mail there. Each person listed must present two forms of valid ID to USPS on request <Src href={S.usps1583} label="PS 1583" />. That's different from personal use, where each adult files a separate Form 1583 <Src href={S.usps1583} label="PS 1583" />.</p>
+  <p>Providers handle this in different ways. US Global Mail separates <em>recipients</em> (people whose mail it receives; each adult needs their own two IDs and Form 1583) from <em>users</em> (people who log in to manage mail; no form or ID needed) <Src href={S.usgm1583Update} />.</p>
+
+  <h2>How many business names can one mailbox have?</h2>
+  <p>Each business name needs its own form. US Global Mail says "every mailbox name on your account (including any company or trust names) requires its own Form 1583," each listing you as the account holder <Src href={S.usgm1583Update} />. The cost per extra name varies:</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Provider</th><th>Business names</th><th>Price per extra name</th></tr></thead>
+    <tbody>
+      <tr><td>iPostal1</td><td>One business name per account, on Virtual Business Address or Virtual Office plans; a second business needs a second mailbox <Src href={S.ipFaq} /></td><td>One business name per account; business plans start at $14.99/mo <Src href={S.ipFaq} /></td></tr>
+      <tr><td>Stable</td><td>Unlimited individual or business names <Src href={S.stable} /></td><td>Included <Src href={S.stable} /></td></tr>
+      <tr><td>Virtual Post Mail</td><td>Recipients: 2 (Starter), 5 (Plus), 10 (Business), 20 (Premium) <Src href={S.vpmPricing} /></td><td>$10/mo each ($5 on Premium) <Src href={S.vpmPricing} /></td></tr>
+      <tr><td>PostScan Mail</td><td>Add names or businesses; each needs a Form 1583 <Src href={S.psmFaq} /></td><td>$5/mo per extra recipient or user <Src href={S.psm} /></td></tr>
+      <tr><td>LegalZoom Virtual Mail</td><td>Recipients: 2 (Starter), 5 (Essentials), 15 (Premium) <Src href={S.lzVm} /></td><td>$5/mo each <Src href={S.lzVm} /></td></tr>
+      <tr><td>Traveling Mailbox</td><td>Recipients, including business names: 3 (Basic), 5 (Extended), 10 (Small Business) <Src href={S.tmb} /></td><td>—</td></tr>
+      <tr><td>US Global Mail</td><td>Recipients: 5 on Occasional, 10 on Scale <Src href={S.usgm} /></td><td>—</td></tr>
+    </tbody>
+  </table></div>
+  <p class="meta">US Global Mail generates a Form 1583 for each company or trust name and sends one e-signature request per name; your ID is uploaded once <Src href={S.usgm1583Update} />.</p>
+
+  <h2>When do you need a new form?</h2>
+  <ul>
+    <li><strong>When information on the form changes.</strong> The applicant "must file an updated application" <Src href={S.usps1583} label="PS 1583" />, for example when the officer changes or the business moves.</li>
+    <li><strong>When an ID expires.</strong> IDs must be current, and mail centers certify every quarter that no ID on file is expired <Src href={S.dmm508} label="DMM 508.1.8" />. Anytime Mailbox gives an expired ID as an example of when you'll need a new form <Src href={S.atm1583} />.</li>
+    <li><strong>For each new location.</strong> iPostal1 requires a new Form 1583 for each mailbox location <Src href={S.ipFaq} />.</li>
+  </ul>
+  <p>If yours was sent back, see <a href="/form-1583-rejected/">Form 1583 rejected: reasons and fixes</a>.</p>
+
+  <h2>Where can you use the business address?</h2>
+  <p>A mailbox address works as a company's mailing address, but Texas, Florida and California require a registered agent at a real in-state street address for the registered office. See <a href="/virtual-mailbox-for-llc/">virtual mailbox for an LLC</a> and <a href="/virtual-mailbox-for-bank-account/">virtual mailbox for a bank account</a>. If you're switching an existing business, the IRS change form is 8822-B <Src href={S.irs8822b} label="IRS" />; see <a href="/change-address-to-virtual-mailbox/">changing your address to a virtual mailbox</a>.</p>
+
+  <h2>Links</h2>
+  <ul>
+    <li><Aff id="usglobalmail" href="https://www.usglobalmail.com/?via=michelle" text="US Global Mail (no notary needed)" /></li>
+    <li><Aff id="virtualpostmail" href="https://refer.virtualpostmail.com/l/13ELDJ264/" text="Virtual Post Mail" /></li>
+    <li><Aff id="stable" href="https://www.usestable.com/" text="Stable (unlimited business names)" /></li>
+    <li><Aff id="bluenotary" href="https://app.bluenotary.us/business/register?referralCode=ve5sumc1gl" text="BlueNotary (online notary)" /></li>
+    <li><Aff id="notarize" href="https://app.proof.com/referral?campaign=813d4b9c-eab9-4604-8f1b-99eb28ff49b8" text="Notarize (online notary)" /></li>
+  </ul>
+  <p>More: <a href="/usps-form-1583-online-notarization/">Form 1583 and online notary</a> · <a href="/hipaa-compliant-virtual-mailbox/">HIPAA-compliant virtual mailboxes</a> · <a href="/">Mailbox Atlas home</a></p>
+</Base>
