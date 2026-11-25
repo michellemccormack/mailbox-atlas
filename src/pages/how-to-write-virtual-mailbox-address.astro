@@ -1,0 +1,67 @@
+---
+import Base from '../layouts/Base.astro';
+import Src from '../components/Src.astro';
+import Aff from '../components/Aff.astro';
+import { S } from '../data/sources.js';
+const title = 'How to Write a Virtual Mailbox Address: PMB, #, or Suite?';
+const description = 'USPS rules say mail to a virtual mailbox must carry "PMB" or "#" before your box number, and that any other word is prohibited. The two USPS formats, the rule for buildings that already have a suite number, and why some providers print "Suite" anyway. Checked Nov 25, 2026.';
+const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-25"};
+---
+<Base title={title} description={description} updated="2026-11-25" schema={schema}>
+  <h1>How to write a virtual mailbox address</h1>
+  <div class="answer"><p><strong>Short answer:</strong> Put "PMB" (or "#") and your box number either on its own line above the street or at the end of the street line: <code>10 MAIN ST PMB 234</code>. If the building's address already has a suite number, keep it and add PMB after it, <code>10 MAIN ST STE 11 PMB 234</code>, and never merge the two into "STE 11-234." For a USPS change of address, use PMB.</p></div>
+  <p class="lede">Every virtual mailbox is a commercial mail receiving agency (CMRA) under USPS rules, and USPS has specific addressing rules for them. Here's what the Domestic Mail Manual and Publication 28 (Postal Addressing Standards) say, and how providers present their addresses, checked November 25, 2026.</p>
+
+  <h2>What USPS requires</h2>
+  <ul>
+    <li>"A CMRA must represent its delivery address designation for the intended addressees by the use of 'PMB' (private mailbox) or the alternative '#' sign" <Src href={S.dmm508} label="DMM 508.1.8" />.</li>
+    <li>Publication 28 goes further: mail to a CMRA customer "must include either the PMB identifier or the #, followed by the appropriate private mailbox number. Use of any other identifier is prohibited" <Src href={S.pub28Pmb} label="Pub 28, 285" />.</li>
+    <li>"POST OFFICE BOX" or "PO BOX" can't be used with your private mailbox number on the delivery line. "Only the Postal Service is entitled to provide delivery to a PO Box" <Src href={S.pub28Pmb} label="Pub 28, 285" />.</li>
+    <li>Mail without a proper address can be returned to the sender endorsed "Undeliverable as Addressed, Missing PMB or # Sign" <Src href={S.dmm508} label="DMM 508.1.8" />.</li>
+  </ul>
+
+  <h2>The two correct formats</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Four-line format (preferred)</th><th>Three-line format (alternate)</th></tr></thead>
+    <tbody>
+      <tr><td><code>JOE DOE<br />PMB 234<br />10 MAIN ST<br />HERNDON VA 22071-2716</code></td><td><code>JOE DOE<br />10 MAIN ST PMB 234<br />HERNDON VA 22071-2716</code></td></tr>
+    </tbody>
+  </table></div>
+  <p class="meta">Both formats and the examples are from DMM 508.1.8, which lists the four-line layout as the preferred format and the three-line layout as the alternate. "#234" works in place of "PMB 234" in either <Src href={S.dmm508} label="DMM 508.1.8" />. Publication 28 adds that when "#" is used as a unit designator, there must be a space between it and the number, and notes that the pound sign "might be prohibited" with some CMRA addresses that carry PMB information <Src href={S.pub28Unit} label="Pub 28, 213" />.</p>
+
+  <h2>When the building already has a suite number</h2>
+  <p>Many mail centers sit in a suite of a larger building. In that case, "the CMRA customer must use 'PMB' in the three-line format," and "it is not permissible to combine the secondary address element of the physical location of the CMRA address and the CMRA customer private mailbox number, e.g., 10 MAIN ST STE 11-234" <Src href={S.dmm508} label="DMM 508.1.8" />.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Write it like this</th><th>Not like this</th></tr></thead>
+    <tbody>
+      <tr><td><code>10 MAIN ST STE 11 PMB 234</code></td><td><code>10 MAIN ST STE 11-234</code></td></tr>
+      <tr><td><code>10 MAIN ST STE 11 PMB 234</code></td><td><code>10 MAIN ST STE 11 # 234</code> (in the three-line format, the rule calls for PMB)</td></tr>
+      <tr><td><code>RR 12 BOX 512 PMB 234</code></td><td><code>RR 12 BOX 512-234</code></td></tr>
+    </tbody>
+  </table></div>
+  <p class="meta">Examples follow DMM 508.1.8, which gives <code>10 MAIN ST STE 11 PMB 234</code> and <code>RR 12 BOX 512 PMB 234</code> as the required three-line forms <Src href={S.dmm508} label="DMM 508.1.8" />.</p>
+
+  <h2>Why your provider's address may say "Suite" or "Unit"</h2>
+  <p>Provider pages don't all follow the USPS wording:</p>
+  <ul>
+    <li><strong>US Global Mail</strong> lists its addresses with "Suite ####" (for example "1321 Upland Dr. Suite ####, Houston, TX 77043") and says you can replace PMB with Suite, Apt. or Unit "when sharing your address, except when changing the address with USPS" <Src href={S.usgmAddr} />. For the USPS change-of-address form, it says the only accepted format is "Street Address PMB NNNN," with no # signs, periods or commas <Src href={S.usgmAddrInvalid} />.</li>
+    <li><strong>iPostal1</strong> says the box number "will most often appear on the same line as the street address" and that "some locations are suite addresses," with samples like "123 Main Street #1001" and "400 Rella Blvd. Suite 123" <Src href={S.ipFaq} />.</li>
+    <li><strong>Anytime Mailbox</strong> location pages show the box line as "Unit # MAILBOX" (Omaha, Austin) or "Ste 1 # MAILBOX" (Astoria, NY) <Src href={S.atmOmaha} /> <Src href={S.atmAstoria} label="Astoria" />.</li>
+  </ul>
+  <p>Mail addressed with "Suite" often still arrives, because the mail center sorts it. But Publication 28 says any identifier other than PMB or # "is prohibited" <Src href={S.pub28Pmb} label="Pub 28" />, and USPS can return mail that's missing the PMB or # <Src href={S.dmm508} label="DMM 508.1.8" />. Using "Suite" also doesn't make the address something other than a CMRA, as our <a href="/virtual-mailbox-for-bank-account/">bank account page</a> explains.</p>
+
+  <h2>Where to use which format</h2>
+  <ul>
+    <li><strong>USPS change of address:</strong> PMB, in the exact format your provider gives for USPS <Src href={S.usgmAddrInvalid} label="USGM" /> <Src href={S.usgmNotify} label="2" />.</li>
+    <li><strong>Your Form 1583:</strong> the CMRA "must write the complete CMRA delivery address" for each addressee on the form <Src href={S.dmm508} label="DMM 508.1.8" />. Use the same address everywhere else.</li>
+    <li><strong>Senders, banks and government forms:</strong> the USPS format with PMB or # is always correct for delivery. Whether a bank or state agency accepts a mailbox address at all is a separate question; see <a href="/virtual-mailbox-for-bank-account/">bank accounts</a> and <a href="/virtual-mailbox-for-llc/">LLC filings</a>.</li>
+    <li><strong>Every piece of mail</strong> should carry a name on your account plus the box number. US Global Mail says an item without them becomes a "Lookup Item," delayed while staff match it, and may be returned to the sender if several customers share that name <Src href={S.usgmStart} />.</li>
+  </ul>
+
+  <h2>Links</h2>
+  <ul>
+    <li><Aff id="usglobalmail" href="https://www.usglobalmail.com/?via=michelle" text="US Global Mail" /></li>
+    <li><Aff id="virtualpostmail" href="https://refer.virtualpostmail.com/l/13ELDJ264/" text="Virtual Post Mail" /></li>
+  </ul>
+  <p>More: <a href="/change-address-to-virtual-mailbox/">changing your address to a virtual mailbox</a> · <a href="/form-1583-rejected/">Form 1583 rejected?</a> · <a href="/virtual-mailbox-vs-po-box/">virtual mailbox vs PO Box</a> · <a href="/kit/">Business Address Switch Kit</a> · <a href="/">Mailbox Atlas home</a></p>
+</Base>

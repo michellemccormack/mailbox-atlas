@@ -1,0 +1,56 @@
+---
+import Base from '../layouts/Base.astro';
+import Src from '../components/Src.astro';
+import Aff from '../components/Aff.astro';
+import { S } from '../data/sources.js';
+const title = 'Can You Pick Up Mail In Person From a Virtual Mailbox? Pickup Rules and Fees by Provider';
+const description = 'Some virtual mailboxes let you walk in and collect mail; others never do. US Global Mail charges $5 for letters and $15+ for packages, iPostal1 and PostScan Mail are free at most locations, Anytime Mailbox depends on the operator, and Stable and Virtual Post Mail don\'t allow pickup. Checked Nov 25, 2026.';
+const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-25"};
+---
+<Base title={title} description={description} updated="2026-11-25" schema={schema}>
+  <h1>Picking up mail in person from a virtual mailbox</h1>
+  <div class="answer"><p><strong>Short answer:</strong> Only at some providers. Mailboxes run through local mail centers, like Anytime Mailbox, iPostal1 and PostScan Mail, usually let you collect mail during business hours, sometimes for a small fee. US Global Mail allows scheduled pickups at most of its locations for a fee. Stable and Virtual Post Mail don't offer pickup at all, so you have them ship your mail instead.</p></div>
+  <p class="lede">USPS rules allow either approach: a CMRA (the postal term for a virtual mailbox company) "accepts delivery of the mail and holds it for pickup or remails it to the addressee" <Src href={S.dmm508} label="DMM 508.1.8" />. Whether you can walk in depends on the company. Here's each provider's own policy, checked November 25, 2026.</p>
+
+  <h2>Pickup by provider</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Provider</th><th>In-person pickup?</th><th>Fee</th><th>How it works</th></tr></thead>
+    <tbody>
+      <tr><td>US Global Mail</td><td>At most locations, but not Concord CA, Las Vegas NV, Long Island City NY or Wilmington DE <Src href={S.usgmPickup} /></td><td>Letters $5 flat; packages $15 for the first pound + $1 per additional pound; expedited pickup (1 PM to 3 PM, where offered) +$5; $5 no-show fee <Src href={S.usgmPickup} /></td><td>Schedule in advance by choosing "Pickup at Warehouse" as the shipping option. Hours vary by location. Photo ID required, and items not collected within 5 days go back to your inbox <Src href={S.usgmPickup} /></td></tr>
+      <tr><td>iPostal1</td><td>Yes, during business hours <Src href={S.ipFaq} /></td><td>"Some locations charge a small fee" <Src href={S.ipFaq} /></td><td>Schedule in the app. Someone else can collect if you add them to your account <Src href={S.ipFaq} /></td></tr>
+      <tr><td>Anytime Mailbox</td><td>"The majority" of mail centers allow it during business hours <Src href={S.atmFaq} /></td><td>Set by each operator, shown under "Full Details" on each plan <Src href={S.atmFaq} /></td><td>Schedule a pickup in your account where available <Src href={S.atmFaq} />. All five locations we checked list Local Pickup <Src href={S.atmArlington} label="Arlington" /> <Src href={S.atmAustin} label="Austin" /> <Src href={S.atmOmaha} label="Omaha" /> <Src href={S.atmDc} label="DC" /> <Src href={S.atmAstoria} label="Astoria" /></td></tr>
+      <tr><td>PostScan Mail</td><td>At most locations <Src href={S.psm} /></td><td>Free at most locations; some "may charge a nominal fee per pickup" <Src href={S.psm} /></td><td>—</td></tr>
+      <tr><td>Stable</td><td>No: "In-person pickup is not available from your Stable address" <Src href={S.stablePickup} /></td><td>n/a</td><td>Forward instead; Stable recommends FedEx and supports overnight shipping <Src href={S.stablePickup} /></td></tr>
+      <tr><td>Virtual Post Mail</td><td>No. Its locations "are not open to the public" <Src href={S.vpmPickup} /></td><td>n/a</td><td>Create a shipping request. If you're nearby, it says mail normally arrives in 1 business day <Src href={S.vpmPickup} /></td></tr>
+    </tbody>
+  </table></div>
+  <p class="meta">Traveling Mailbox's pricing and Form 1583 pages describe scanning, forwarding and storage but don't mention in-person pickup <Src href={S.tmb} /> <Src href={S.tmb1583} label="1583" />.</p>
+
+  <h2>Why some charge for pickup</h2>
+  <p>iPostal1 explains it: "Since digital mailboxes are not self-service like physical mailboxes, some mail centers charge a nominal fee for processing and retrieving your mail when you come in to pick it up" <Src href={S.ipFaq} />. Staff have to find your items and hand them over, unlike a PO Box you open with a key.</p>
+
+  <h2>What it costs: one visit at US Global Mail</h2>
+  <ul>
+    <li>A stack of letters: <strong>$5</strong> flat <Src href={S.usgmPickup} />.</li>
+    <li>A 4 lb package: $15 + 3 × $1 = <strong>$18</strong> <Src href={S.usgmPickup} />.</li>
+  </ul>
+  <p>For comparison, having letters shipped costs postage plus a handling fee at most providers. See <a href="/virtual-mailbox-forwarding-fees/">mail forwarding fees compared</a>.</p>
+
+  <h2>Picking a mailbox for pickup</h2>
+  <ol>
+    <li><strong>Choose a location you can reach during its business hours.</strong> Pickup happens at the specific address you sign up for <Src href={S.ipFaq} label="iPostal1" /> <Src href={S.atmFaq} label="Anytime" />.</li>
+    <li><strong>Check the location's pickup fee before signing up.</strong> At Anytime Mailbox it's in each plan's Full Details; at iPostal1, on the locations page <Src href={S.atmFaq} label="Anytime" /> <Src href={S.ipVma} label="iPostal1" />.</li>
+    <li><strong>Bring photo ID</strong>, and if someone else is collecting, add them to the account or notify the provider first <Src href={S.usgmPickup} label="USGM" /> <Src href={S.ipFaq} label="iPostal1" />.</li>
+    <li><strong>Watch the storage clock.</strong> Mail you plan to collect still counts against the free storage period; see <a href="/virtual-mailbox-storage-fees/">how long mail is kept</a>.</li>
+  </ol>
+  <p>If you only want a place to collect mail locally and don't need scans, compare a USPS PO Box: <a href="/virtual-mailbox-vs-po-box/">virtual mailbox vs PO Box</a>.</p>
+
+  <h2>Links</h2>
+  <ul>
+    <li><Aff id="usglobalmail" href="https://www.usglobalmail.com/?via=michelle" text="US Global Mail" /></li>
+    <li><Aff id="ipostal1" href="https://ipostal1.com/" text="iPostal1" /></li>
+    <li><Aff id="anytimemailbox" href="https://www.anytimemailbox.com/" text="Anytime Mailbox locations" /></li>
+    <li><Aff id="postscanmail" href="https://www.postscanmail.com/" text="PostScan Mail" /></li>
+  </ul>
+  <p>More: <a href="/anytime-mailbox-vs-postscan-mail/">Anytime Mailbox vs PostScan Mail</a> · <a href="/ipostal1-vs-traveling-mailbox/">iPostal1 vs Traveling Mailbox</a> · <a href="/virtual-mailbox-pricing-comparison/">all providers compared</a> · <a href="/">Mailbox Atlas home</a></p>
+</Base>

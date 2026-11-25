@@ -1,0 +1,66 @@
+---
+import Base from '../layouts/Base.astro';
+import Src from '../components/Src.astro';
+import Aff from '../components/Aff.astro';
+import { S } from '../data/sources.js';
+const title = 'How to Cancel a Virtual Mailbox, and What Happens to Mail That Arrives After';
+const description = 'USPS won\'t forward mail away from a virtual mailbox, and mail keeps arriving for months. How to cancel at eight providers, what each does with stored mail and with mail that arrives after you close, and the fees (from free to a $50 wind-down plan). Checked Nov 25, 2026.';
+const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-25"};
+---
+<Base title={title} description={description} updated="2026-11-25" schema={schema}>
+  <h1>How to cancel a virtual mailbox</h1>
+  <div class="answer"><p><strong>Short answer:</strong> Update your senders first, because you can't file a USPS change of address away from a virtual mailbox. Download the scans you want to keep and forward or shred the paper you still have stored. Then cancel from your account before the renewal date. Mail will keep arriving for months. Depending on the provider, it gets held, forwarded for a fee, shredded or returned to the sender.</p></div>
+  <p class="lede">Closing a virtual mailbox is easy. Getting your mail to follow you is the hard part. Below are the USPS rule behind that and each provider's own cancellation policy, checked November 25, 2026.</p>
+
+  <h2>The USPS rule: no change of address, 6 months of mail</h2>
+  <ul>
+    <li>When you leave a commercial mail receiving agency (CMRA, the USPS term for a virtual mailbox company), "neither the addressee nor the CMRA will file a change-of-address order with the Post Office" <Src href={S.dmm508} label="DMM 508.1.8" />.</li>
+    <li>The CMRA "must remail mail intended for the addressee (customer) for at least 6 months after the termination date," with new postage, to the remail address on your Form 1583 <Src href={S.dmm508} label="DMM 508.1.8" />.</li>
+    <li>That obligation doesn't apply if you give the CMRA written instructions not to remail, and those instructions can be in its service agreement <Src href={S.dmm508} label="DMM 508.1.8" />. Many providers' terms do exactly that, which is why policies differ below.</li>
+    <li>A CMRA may not refuse mail for a former customer within the past 6 months. After the 6 months, it returns First-Class Mail, Priority Mail and similar classes to the Post Office endorsed "Undeliverable, Commercial Mail Receiving Agency, No Authorization to Receive Mail for this Addressee" <Src href={S.dmm508} label="DMM 508.1.8" />.</li>
+  </ul>
+  <p>If you filed a USPS change of address <em>to</em> the mailbox when you signed up, that's a separate request. A temporary one ends on its own date, and you can cancel or edit it with the confirmation code USPS sent you <Src href={S.usgmClose} label="USGM" /> <Src href={S.tmbCancel} label="Traveling Mailbox" />. More on that in <a href="/change-address-to-virtual-mailbox/">changing your address to a virtual mailbox</a>.</p>
+
+  <h2>Provider by provider</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Provider</th><th>How to cancel</th><th>Mail already stored</th><th>Mail that arrives after you close</th><th>Coming back</th></tr></thead>
+    <tbody>
+      <tr><td>US Global Mail</td><td>Settings › Subscriptions &amp; Billing › Plan &amp; Billing Details › Cancel Subscription. Pending invoices must be paid first; closure takes effect immediately <Src href={S.usgmClose} /></td><td>Handle every item first: scan, ship, shred or return to sender <Src href={S.usgmClose} /></td><td>Shredded, "No exceptions," unless you pick the Wind-down Plan offered when you close. Its terms let you prepay postage, packaging and forwarding fees to have mail remailed for up to 6 months <Src href={S.usgmClose} /> <Src href={S.usgmTos} label="terms" /></td><td>Reactivate within 6 months of closing; after that you need a new account and address <Src href={S.usgmPause} /></td></tr>
+      <tr><td>Virtual Post Mail</td><td>Contact support to close. Service runs to the end of the billing cycle, then your login is disabled and leftover credits are refunded <Src href={S.vpmCancel} /></td><td>Shredded unless you ask for something else, such as packing and forwarding it. The shipping fee comes out of your credit balance <Src href={S.vpmCancel} /> <Src href={S.vpmMailAfter} label="2" /></td><td>"Rejected and returned to the sender." Its terms say it won't remail after termination <Src href={S.vpmMailAfter} /> <Src href={S.vpmRemail} label="2" /></td><td>It can hold your mailbox number for up to 6 months if you ask when canceling (conditions apply) <Src href={S.vpmHold} /></td></tr>
+      <tr><td>Traveling Mailbox</td><td>On the website (not the app): Billing › Subscriptions › cancel <Src href={S.tmbCancel} /></td><td>Arrange forwarding before you close <Src href={S.tmbCancel} /></td><td>Received for up to six months; you can sign in and request forwarding, with shipping and handling charges <Src href={S.tmbCancel} /></td><td>Reactivate your old account within one year <Src href={S.tmbCancel} /></td></tr>
+      <tr><td>iPostal1</td><td>Mailbox Settings › Cancel Mailbox, before the next billing date. No cancellation fee <Src href={S.ipFaq} /></td><td>—</td><td>—</td><td>—</td></tr>
+      <tr><td>Anytime Mailbox</td><td>Settings › Close account <Src href={S.atmFaq} /></td><td>—</td><td>Stored by the local operator for up to six months, "and storage fees may apply." Forwarding costs extra <Src href={S.atmFaq} /></td><td>—</td></tr>
+      <tr><td>PostScan Mail</td><td>Settings › Subscription &amp; Billing › Close Account <Src href={S.psmFaq} /></td><td>Discarded <Src href={S.psmFaq} /></td><td>Held 6 months. After that, held mail is discarded and new mail goes back to the sender <Src href={S.psmFaq} /></td><td>—</td></tr>
+      <tr><td>Stable</td><td>Billing › Cancel subscription. A registered agent service must be canceled separately <Src href={S.stableCancelPolicy} /></td><td>—</td><td>You get an email with a photo of the envelope front, but Stable won't scan or forward it unless you reactivate <Src href={S.stableCancel} /> <Src href={S.stableCancelPolicy} label="2" /></td><td>Reactivate through support and keep your mailbox number; mail received meanwhile becomes available again <Src href={S.stableCancelPolicy} /></td></tr>
+      <tr><td>Earth Class Mail (LegalZoom Virtual Mail)</td><td>Two options: close at the end of the billing cycle (no fee), or keep 6 months of account access for a $50 cancellation fee <Src href={S.ecmCancel} /></td><td>Shredded when the account closes <Src href={S.ecmCancel} /></td><td>Closed now: shredded for 6 months, then returned to the sender. With 6 months' access: you can manage it, paying $3 per received item, and $5 per domestic shipment plus postage and $1 per item ($10 international) <Src href={S.ecmCancel} /></td><td>Reopen within 3 months for a $99 reactivation fee <Src href={S.ecmCancel} /></td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>Refunds when you cancel</h2>
+  <ul>
+    <li><strong>US Global Mail:</strong> 30-day money-back guarantee; after 30 days, no refund for unused time <Src href={S.usgmRefund} />.</li>
+    <li><strong>Stable:</strong> 30-day money-back guarantee on your first invoice only. Add-ons like check deposits and mail forwarding aren't covered <Src href={S.stableCancelPolicy} />.</li>
+    <li><strong>iPostal1:</strong> prepaid yearly plans are non-refundable after the first 30 days, and unused scan or shred bundles are non-refundable <Src href={S.ipFaq} />.</li>
+    <li><strong>Anytime Mailbox:</strong> a full refund only within 30 days of sign-up and only if the mailbox was never used to receive mail <Src href={S.atmFaq} />.</li>
+    <li><strong>Traveling Mailbox:</strong> annual plans are "refundable on a monthly schedule" <Src href={S.tmb} />.</li>
+    <li><strong>Virtual Post Mail:</strong> remaining account credits are refunded <Src href={S.vpmCancel} />.</li>
+  </ul>
+
+  <h2>Checklist before you close</h2>
+  <ol>
+    <li><strong>Get the new address working first.</strong> Traveling Mailbox suggests waiting until mail is actually arriving at the new place <Src href={S.tmbCancel} />.</li>
+    <li><strong>Tell senders directly</strong>, starting with banks, the IRS and state agencies. The IRS uses Form 8822 for individuals and 8822-B for businesses <Src href={S.irs8822} label="8822" /> <Src href={S.irs8822b} label="8822-B" />. Virtual Post Mail recommends starting at least a month before you close <Src href={S.vpmRemail} />.</li>
+    <li><strong>Cancel any USPS forwarding that points to the mailbox</strong>, as Stable recommends <Src href={S.stableCancelPolicy} />.</li>
+    <li><strong>Download your scans.</strong> At Virtual Post Mail you can't log in after termination <Src href={S.vpmCancel} />.</li>
+    <li><strong>Forward or shred the paper you still have there.</strong> PostScan discards it and US Global Mail asks you to handle every item first <Src href={S.psmFaq} label="PostScan" /> <Src href={S.usgmClose} label="USGM" />.</li>
+    <li><strong>Cancel before the renewal date.</strong> US Global Mail and iPostal1 renew automatically <Src href={S.usgmClose} label="USGM" /> <Src href={S.ipFaq} label="iPostal1" />.</li>
+    <li><strong>If you need late mail</strong>, choose a provider option that covers it: US Global Mail's Wind-down Plan, Earth Class Mail's 6-month access, or Traveling Mailbox's six months of residual-mail forwarding <Src href={S.usgmClose} label="USGM" /> <Src href={S.ecmCancel} label="ECM" /> <Src href={S.tmbCancel} label="TMB" />.</li>
+  </ol>
+
+  <h2>Links</h2>
+  <ul>
+    <li><Aff id="usglobalmail" href="https://www.usglobalmail.com/?via=michelle" text="US Global Mail" /></li>
+    <li><Aff id="virtualpostmail" href="https://refer.virtualpostmail.com/l/13ELDJ264/" text="Virtual Post Mail" /></li>
+  </ul>
+  <p>More: <a href="/virtual-mailbox-storage-fees/">how long mail is kept</a> · <a href="/change-address-to-virtual-mailbox/">changing your address</a> · <a href="/virtual-mailbox-forwarding-fees/">mail forwarding fees</a> · <a href="/virtual-mailbox-pricing-comparison/">all providers compared</a> · <a href="/">Mailbox Atlas home</a></p>
+</Base>
