@@ -1,0 +1,71 @@
+---
+import Base from '../layouts/Base.astro';
+import Src from '../components/Src.astro';
+import Aff from '../components/Aff.astro';
+import { S } from '../data/sources.js';
+const title = 'Anytime Mailbox vs PostScan Mail: Operator-Set Plans vs One Price List';
+const description = 'Anytime Mailbox plans are set by each mail center (from $4.99 a month); PostScan Mail sells the same three plans everywhere at $10 to $65 by address. What each charges to open, forward and store mail, with a 20-letter worked example. Checked Nov 25, 2026.';
+const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-25"};
+---
+<Base title={title} description={description} updated="2026-11-25" schema={schema}>
+  <h1>Anytime Mailbox vs PostScan Mail</h1>
+  <div class="answer"><p><strong>Short answer:</strong> They're built differently. Anytime Mailbox is a marketplace: each address is run by an independent mail center that sets its own plans and fees, so you compare location by location. PostScan Mail sells the same Starter, Standard and Premium plans everywhere, with one fee list, and only the base price changes by address. If you open few letters and find a cheap Anytime location with fair per-page scan fees, Anytime can cost less. If you want predictable fees, PostScan is easier to price in advance.</p></div>
+  <p class="lede">Both offer street addresses in hundreds of cities, envelope scans, forwarding and in-person pickup at most locations. Here's how the pricing compares, using Anytime Mailbox's location pages and FAQ and PostScan Mail's pricing page and FAQ, checked November 25, 2026.</p>
+
+  <h2>How each one prices</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th></th><th>Anytime Mailbox</th><th>PostScan Mail</th></tr></thead>
+    <tbody>
+      <tr><td>Who sets the price</td><td>The mail center operator at each address. Plans list what's included and the fees for extra actions before you sign up <Src href={S.atm} /></td><td>PostScan. Same three plans at every address; the price depends on the address's tier <Src href={S.psm} /></td></tr>
+      <tr><td>Starting price</td><td>"Our cheapest virtual mailbox plans are $4.99. On average, our plans cost $9.99 per month." Vanity addresses "can cost up to $50" <Src href={S.atm} /></td><td>Starter "as low as" $10 to $45/mo, or $100 to $450/yr, by address <Src href={S.psm} /></td></tr>
+      <tr><td>Mail included on the entry plan</td><td>Varies: 15 or 30 items a month at the locations below, or none on "Just an Address" plans <Src href={S.atmArlington} /> <Src href={S.atmOmaha} label="2" /> <Src href={S.atmAustin} label="3" /></td><td>30 items a month (letters or packages) <Src href={S.psm} /></td></tr>
+      <tr><td>Opening and scanning</td><td>Set per location: $0.18 to $1.00 per page or item at the locations below, or a few pages a month included <Src href={S.atmAustin} /> <Src href={S.atmArlington} label="2" /> <Src href={S.atmAstoria} label="3" /></td><td>$2.00 per envelope for up to 10 pages, then $0.25 a page. Standard includes 5 free open-and-scans a month (10 on annual), Premium 10 (20 on annual) <Src href={S.psm} /></td></tr>
+      <tr><td>Mail over your limit</td><td>Set per plan by the operator, shown under "Full Details" <Src href={S.atm} /></td><td>$0.50 per extra envelope or package <Src href={S.psm} /></td></tr>
+      <tr><td>Junk mail</td><td>—</td><td>"Junk mail counts towards your account limit"; discarding it is free and unlimited <Src href={S.psmFaq} label="FAQ" /> <Src href={S.psm} /></td></tr>
+      <tr><td>Forwarding</td><td>Set per location: "No handling fees," $3.00 or $5.00 each, or $5.00 per shipping bundle at the locations below <Src href={S.atmArlington} /> <Src href={S.atmDc} label="2" /> <Src href={S.atmOmaha} label="3" /></td><td>$2.00 for the first item, then $0.50 per additional item, plus shipping <Src href={S.psm} /></td></tr>
+      <tr><td>Free storage</td><td>"Varies by location" <Src href={S.atmFaq} /></td><td>Mail 14 days on monthly plans, 30 on annual; packages 3 days, or 7 on annual. Then $0.05 per envelope per day and $0.10 per pound per day <Src href={S.psm} /></td></tr>
+      <tr><td>Recipients</td><td>Set per plan: 1 to 5 on the entry plans below <Src href={S.atmDc} /> <Src href={S.atmAstoria} label="2" /></td><td>Starter 1 (2 on annual); Standard 2 (3); Premium 4 (6). Extra names $5/mo each, and each needs a Form 1583 <Src href={S.psm} /></td></tr>
+      <tr><td>Check deposit</td><td>Offered at some locations (shown on each location page) <Src href={S.atmDc} /></td><td>—</td></tr>
+      <tr><td>In-person pickup</td><td>"The majority" of mail centers allow pickup during business hours; check the location's Full Details <Src href={S.atmFaq} /></td><td>Free at most locations; some "may charge a nominal fee per pickup" <Src href={S.psm} /></td></tr>
+      <tr><td>Form 1583</td><td>Online notary partner "for a nominal fee," or sign in person with your operator <Src href={S.atm1583} /></td><td>Notarized, online or in person. Its online notary partners charge $20 <Src href={S.psmFaq} label="FAQ" /></td></tr>
+      <tr><td>Refunds</td><td>Full refund within 30 days of sign-up only if the mailbox hasn't been used to receive mail <Src href={S.atmFaq} /></td><td>—</td></tr>
+      <tr><td>Extras</td><td>—</td><td>HIPAA option ($25/mo billed annually + $0.50 per item), AI mail summaries, developer API <Src href={S.psm} /></td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>Five Anytime Mailbox locations, side by side</h2>
+  <p>Here is the cheapest plan at five locations, copied from each location page on November 25, 2026. Plan names don't mean the same thing everywhere.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Location (operator)</th><th>Cheapest plan</th><th>Mail included</th><th>Open &amp; scan</th><th>Forwarding</th><th>Recipients</th></tr></thead>
+    <tbody>
+      <tr><td>Arlington, VA (TKO Suites)</td><td>Bronze $4.99/mo or $56.99/yr</td><td>15/mo</td><td>$1.00 per page</td><td>"No handling fees"</td><td>1 <Src href={S.atmArlington} /></td></tr>
+      <tr><td>Austin, TX, 9th St (Virtual Mail Hub)</td><td>Just an Address $7.99/mo or $79.90/yr</td><td>None: $1.44 per item</td><td>$0.18 each</td><td>$5.00 each</td><td>1 <Src href={S.atmAustin} /></td></tr>
+      <tr><td>Omaha, NE (Advance Tax Solutions)</td><td>Bronze $9.99/mo or $109.99/yr</td><td>30/mo</td><td>$0.50 per page</td><td>$5.00 per shipping bundle</td><td>1 <Src href={S.atmOmaha} /></td></tr>
+      <tr><td>Washington, DC, H St NE (Gold Spot Pack and Ship)</td><td>Bronze $9.99/mo or $109.99/yr</td><td>30/mo</td><td>$0.50 per page</td><td>$3.00 each</td><td>1 <Src href={S.atmDc} /></td></tr>
+      <tr><td>Astoria, NY (Astorias Hub)</td><td>Bronze $9.99/mo or $109.99/yr</td><td>15/mo</td><td>10 pages/mo included</td><td>Unlimited</td><td>5 <Src href={S.atmAstoria} /></td></tr>
+    </tbody>
+  </table></div>
+  <p>For the starting price of every U.S. Anytime Mailbox location, see <a href="/anytime-mailbox-pricing/">Anytime Mailbox pricing</a> and <a href="/virtual-mailbox-addresses/">every address, state by state</a>.</p>
+
+  <h2>Worked example: 20 letters a month, 5 opened (3 pages each), one forwarded batch of 5</h2>
+  <ul>
+    <li><strong>PostScan Starter (cheapest tier):</strong> $10 + 5 × $2.00 opens + $2.00 + 4 × $0.50 forwarding = <strong>$24 plus shipping</strong> <Src href={S.psm} /></li>
+    <li><strong>PostScan Standard (cheapest tier):</strong> $20, with the 5 opens included, + $4 forwarding = <strong>$24 plus shipping</strong> <Src href={S.psm} /></li>
+    <li><strong>Anytime Mailbox, Omaha Bronze:</strong> $9.99 + 15 pages × $0.50 + one $5.00 bundle = <strong>$22.49 plus shipping</strong> <Src href={S.atmOmaha} /></li>
+    <li><strong>Anytime Mailbox, Austin "Just an Address":</strong> 20 × $1.44 = $28.80 for receiving alone, on top of the $7.99 fee. At that volume, the same location's $12.99 "Address Pro" plan (60 items and 60 open-and-scans included, $4.95 per forward) is the better buy <Src href={S.atmAustin} /></li>
+  </ul>
+  <p>At PostScan, a higher-tier address raises every line above by the same plan-price difference (up to $35 a month more on Starter) <Src href={S.psm} />. At Anytime Mailbox, the result depends entirely on the location you choose, so run your own numbers on two or three nearby ones.</p>
+
+  <h2>Leaving either service</h2>
+  <ul>
+    <li><strong>Anytime Mailbox:</strong> close the account under Settings. Mail that arrives afterward is stored by the operator for up to six months, "and storage fees may apply"; forwarding costs extra <Src href={S.atmFaq} />.</li>
+    <li><strong>PostScan Mail:</strong> close it under Subscription &amp; Billing. Stored mail is discarded, and mail received over the next 6 months is held, then returned to the sender <Src href={S.psmFaq} />.</li>
+  </ul>
+  <p>Full provider-by-provider details: <a href="/cancel-virtual-mailbox/">how to cancel a virtual mailbox</a>.</p>
+
+  <ul>
+    <li><Aff id="anytimemailbox" href="https://www.anytimemailbox.com/" text="Anytime Mailbox" /></li>
+    <li><Aff id="postscanmail" href="https://www.postscanmail.com/" text="PostScan Mail" /></li>
+  </ul>
+  <p>More: <a href="/postscan-mail-pricing/">PostScan Mail pricing</a> · <a href="/anytime-mailbox-pricing/">Anytime Mailbox pricing</a> · <a href="/ipostal1-vs-anytime-mailbox/">iPostal1 vs Anytime Mailbox</a> · <a href="/traveling-mailbox-vs-postscan-mail/">Traveling Mailbox vs PostScan Mail</a> · <a href="/virtual-mailbox-pricing-comparison/">all providers compared</a> · <a href="/">Mailbox Atlas home</a></p>
+</Base>

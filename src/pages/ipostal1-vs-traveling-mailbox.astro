@@ -1,0 +1,72 @@
+---
+import Base from '../layouts/Base.astro';
+import Src from '../components/Src.astro';
+import Aff from '../components/Aff.astro';
+import { S } from '../data/sources.js';
+const title = 'iPostal1 vs Traveling Mailbox: $9.99 vs $15, and Which Is Cheaper Once You Open Mail';
+const description = 'iPostal1 starts at $9.99 a month but charges $2.25 to open each letter; Traveling Mailbox starts at $15 with 35 page scans included. Fee by fee, with worked examples at 2 and 10 opened letters a month, from both companies\' own pages. Checked Nov 25, 2026.';
+const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-25"};
+---
+<Base title={title} description={description} updated="2026-11-25" schema={schema}>
+  <h1>iPostal1 vs Traveling Mailbox</h1>
+  <div class="answer"><p><strong>Short answer:</strong> iPostal1 is cheaper if you mostly look at envelope images and open only a letter or two a month. Traveling Mailbox is cheaper once you open more than about two letters a month, because its $15 Basic plan includes 35 page scans, while iPostal1 charges $2.25 for each letter it opens. iPostal1 also has far more addresses to pick from and lets you collect mail in person. Traveling Mailbox skips the notary for Form 1583.</p></div>
+  <p class="lede">Both give you a street address, show you a picture of every envelope, and scan or forward on request. They charge for it in opposite ways: iPostal1 has a low monthly fee plus pay-per-use scans, and Traveling Mailbox has a higher fee with scans included. Here's the comparison from both companies' own pages, checked November 25, 2026.</p>
+
+  <h2>Fee by fee</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th></th><th>iPostal1 (personal plans)</th><th>Traveling Mailbox</th></tr></thead>
+    <tbody>
+      <tr><td>Entry plan</td><td>$9.99/mo or $99/yr for 30 mail items a month <Src href={S.ipVma} /></td><td>Basic: $15/mo for 40 envelopes and 35 page scans a month <Src href={S.tmb} /></td></tr>
+      <tr><td>Higher plans</td><td>60 items $14.99 · 120 items $24.99 · 240 items $39.99 a month <Src href={S.ipVma} /></td><td>Extended $25 (100 envelopes, 80 page scans) · Small Business $55 (200 envelopes, 180 page scans) <Src href={S.tmb} /></td></tr>
+      <tr><td>Address price differences</td><td>About 90% of locations are Standard. Select, Premium and Prestige addresses cost +$10, +$20 or +$30 <Src href={S.ipFaq} label="FAQ" /></td><td>One price list. Most customers use the Sanford, NC address <Src href={S.tmb} /></td></tr>
+      <tr><td>Yearly billing</td><td>Pay 10 months, get 12: $99/yr on the entry plan. Prepaid yearly plans are non-refundable after the first 30 days <Src href={S.ipVma} /> <Src href={S.ipFaq} label="FAQ" /></td><td>"2 months free" on annual plans, which are "refundable on a monthly schedule" <Src href={S.tmb} /></td></tr>
+      <tr><td>Envelope images</td><td>Included for every item <Src href={S.ipVma} /></td><td>Included. Envelope scans don't use up page scans <Src href={S.tmb} /></td></tr>
+      <tr><td>Opening and scanning a letter</td><td>$2.25 per envelope for up to 10 pages, then $0.25 a page. Prepaid bundles: $10 for 5, $18 for 10, $30 for 20 <Src href={S.ipVma} /></td><td>Included up to your page-scan allowance (35 a month on Basic) <Src href={S.tmb} /></td></tr>
+      <tr><td>Over the limit</td><td>$0.35 per mail item over your plan <Src href={S.ipVma} /></td><td>$0.25 per extra envelope, $0.50 per extra page scan <Src href={S.tmb} /></td></tr>
+      <tr><td>Junk mail</td><td>—</td><td>Mark it as junk and it doesn't count toward your limits <Src href={S.tmb} /></td></tr>
+      <tr><td>Names on the mailbox</td><td>Up to 6 recipient names, but no company name on personal plans. Business plans start at $14.99 <Src href={S.ipVma} /> <Src href={S.ipFaq} label="FAQ" /></td><td>3 recipients on Basic, 5 on Extended, 10 on Small Business. Business names can be added to any plan <Src href={S.tmb} /></td></tr>
+      <tr><td>Forwarding</td><td>Real-time shipping price for the carrier you choose. Consolidating letters is free; $1.95 per package or letter-pack consolidated <Src href={S.ipVma} /></td><td>Postage + $2 per shipment, not per item. Consolidation is free <Src href={S.tmb} /></td></tr>
+      <tr><td>Free physical storage</td><td>30 days for mail and packages under 12×12×12 in.; 10 days for medium packages; 5 days for large ones <Src href={S.ipVma} /></td><td>Envelopes 30 days, then shredded unless you put them on hold. Packages 30 days <Src href={S.tmb} /></td></tr>
+      <tr><td>Storage after that</td><td>Letters $1.10 per item per month; packages $1.10 per pound per 30, 10 or 5 days by size <Src href={S.ipVma} /></td><td>$1 per envelope per month to hold; packages $0.10 per pound per day <Src href={S.tmb} /></td></tr>
+      <tr><td>Scan storage</td><td>Unlimited cloud storage <Src href={S.ipVma} /></td><td>Unlimited cloud storage <Src href={S.tmb} /></td></tr>
+      <tr><td>Check deposit</td><td>$4.95 for up to 5 checks, plus check scans and trackable shipping (most locations) <Src href={S.ipVma} /></td><td>$4.95 per check + postage <Src href={S.tmb} /></td></tr>
+      <tr><td>Form 1583</td><td>Notarized. Online notary $25, or sign in person at many mail centers, some for a small fee. Customers living outside the U.S. must use the online notary <Src href={S.ipFaq} label="FAQ" /></td><td>No notary needed: a video call with staff verifies your ID and e-signs the form <Src href={S.tmb1583} /></td></tr>
+      <tr><td>In-person pickup</td><td>Yes, during business hours. Some locations charge a small fee <Src href={S.ipFaq} label="FAQ" /></td><td>—</td></tr>
+      <tr><td>Discounts</td><td>—</td><td>10% monthly discount for active-duty military and veterans <Src href={S.tmb} /></td></tr>
+    </tbody>
+  </table></div>
+  <p class="meta">iPostal1 business plans (which add one company name) cost $5 a month more at each tier, $14.99 to $44.99 <Src href={S.ipVba} />; see <a href="/ipostal1-pricing/">iPostal1 pricing explained</a>. Traveling Mailbox's plan cards say scans roll over on every plan, while its footnote says only Extended and higher roll over <Src href={S.tmb} />.</p>
+
+  <h2>Worked examples (Standard iPostal1 address, monthly billing)</h2>
+  <h3>Light use: 15 letters a month, 2 opened, nothing forwarded</h3>
+  <ul>
+    <li><strong>iPostal1:</strong> $9.99 + 2 × $2.25 = <strong>$14.49</strong> <Src href={S.ipVma} /></li>
+    <li><strong>Traveling Mailbox Basic:</strong> <strong>$15</strong>, since 15 envelopes and a few pages fit in 40 / 35 <Src href={S.tmb} /></li>
+  </ul>
+  <h3>Typical household: 25 letters, 10 opened (3 pages each), one forwarded batch</h3>
+  <ul>
+    <li><strong>iPostal1:</strong> $9.99 + 10 × $2.25 = $32.49 plus shipping. With a prepaid 10-order bundle ($18), it's <strong>$27.99 plus shipping</strong> <Src href={S.ipVma} /></li>
+    <li><strong>Traveling Mailbox Basic:</strong> $15 + $2 for the shipment = <strong>$17 plus postage</strong>. 25 envelopes and 30 pages fit inside 40 / 35 <Src href={S.tmb} /></li>
+  </ul>
+  <p>The break-even is low: at Standard addresses, three opened letters a month ($9.99 + 3 × $2.25 = $16.74) already cost more than Traveling Mailbox's $15. If you want a Select, Premium or Prestige iPostal1 address, add the surcharge before you compare <Src href={S.ipFaq} label="FAQ" />.</p>
+
+  <h2>Pick iPostal1 if</h2>
+  <ul>
+    <li>You want a specific city or neighborhood. iPostal1 lists 4,250+ addresses <Src href={S.ipFaq} label="FAQ" />.</li>
+    <li>You mostly need to see who wrote and rarely need letters opened.</li>
+    <li>You live near the mail center and want to collect mail in person <Src href={S.ipFaq} label="FAQ" />.</li>
+    <li>You receive several checks at once: $4.95 covers up to 5 checks in one deposit, plus scans and shipping <Src href={S.ipVma} />.</li>
+  </ul>
+  <h2>Pick Traveling Mailbox if</h2>
+  <ul>
+    <li>You read most of your mail as PDFs. 35 page scans a month are included on Basic <Src href={S.tmb} />.</li>
+    <li>You get a lot of junk mail. Marked junk doesn't count toward your limits <Src href={S.tmb} />.</li>
+    <li>You'd rather skip the notary. Traveling Mailbox handles Form 1583 by video call <Src href={S.tmb1583} />.</li>
+    <li>You want a business name without changing plans <Src href={S.tmb} />.</li>
+  </ul>
+  <ul>
+    <li><Aff id="ipostal1" href="https://ipostal1.com/" text="iPostal1" /></li>
+    <li><Aff id="travelingmailbox" href="https://www.travelingmailbox.com/" text="Traveling Mailbox" /></li>
+  </ul>
+  <p>More: <a href="/ipostal1-pricing/">iPostal1 pricing explained</a> · <a href="/traveling-mailbox-pricing/">Traveling Mailbox pricing</a> · <a href="/ipostal1-vs-anytime-mailbox/">iPostal1 vs Anytime Mailbox</a> · <a href="/us-global-mail-vs-traveling-mailbox/">US Global Mail vs Traveling Mailbox</a> · <a href="/virtual-mailbox-pricing-comparison/">all providers compared</a> · <a href="/">Mailbox Atlas home</a></p>
+</Base>
