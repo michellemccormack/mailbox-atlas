@@ -4,13 +4,13 @@ import Src from '../components/Src.astro';
 import Aff from '../components/Aff.astro';
 import { S } from '../data/sources.js';
 const title = 'The Cheapest Virtual Mailbox in 2026 (and When It Stops Being Cheap)';
-const description = 'The lowest advertised virtual mailbox prices: Anytime Mailbox from $4.99, PostScan Mail from $8.33 a month billed annually, iPostal1 from $9.99, Traveling Mailbox $15 with scans included. Which one is cheapest depends on how much mail you open.';
-const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-19"};
+const description = 'The lowest advertised virtual mailbox prices: Anytime Mailbox from $4.99, PhysicalAddress.com from $7.98, PostScan Mail from $8.33 a month billed annually, iPostal1 from $9.99, Traveling Mailbox $15 with scans included. Which one is cheapest depends on how much mail you open.';
+const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-25"};
 ---
 <Base title={title} description={description} schema={schema}>
   <h1>The cheapest virtual mailbox</h1>
-  <div class="answer"><p><strong>Short answer:</strong> Anytime Mailbox advertises the lowest price, from $4.99 a month, but each location sets its own plans. PostScan Mail starts at $8.33 a month billed yearly and iPostal1 at $9.99. If you open several letters a month, Traveling Mailbox Basic ($15 with 35 page scans and no notary) can cost less overall. <Src href={S.atm} /><Src href={S.psm} /><Src href={S.ip} /><Src href={S.tmb} /></p></div>
-  <p class="lede">The lowest advertised price is Anytime Mailbox: "Our cheapest virtual mailbox plans are $4.99" <Src href={S.atm} />. But the cheapest plan only stays cheapest if you rarely open mail. Prices below were checked on November 19, 2026.</p>
+  <div class="answer"><p><strong>Short answer:</strong> Anytime Mailbox advertises the lowest price, from $4.99 a month, but each location sets its own plans. PhysicalAddress.com Plan 30 starts at $7.98, PostScan Mail at $8.33 a month billed yearly, and iPostal1 at $9.99. If you open several letters a month, PhysicalAddress.com Plan 30 includes 10 content scans, and Traveling Mailbox Basic ($15 with 35 page scans and no notary) can still cost less overall once you outgrow those allowances. <Src href={S.atm} /><Src href={S.paPricing} /><Src href={S.psm} /><Src href={S.ip} /><Src href={S.tmb} /></p></div>
+  <p class="lede">The lowest advertised price is Anytime Mailbox: "Our cheapest virtual mailbox plans are $4.99" <Src href={S.atm} />. But the cheapest plan only stays cheapest if you rarely open mail. Prices below were checked on November 19, 2026, with PhysicalAddress.com added from its own pages on November 25, 2026.</p>
 
   <p>Want your own number? The <a href="/virtual-mailbox-chooser/">virtual mailbox chooser</a> works out a monthly cost for your mail volume, scans and checks.</p>
 
@@ -19,16 +19,17 @@ const schema = {"@context":"https://schema.org","@type":"Article","headline":tit
     <thead><tr><th>Rank</th><th>Provider</th><th>Lowest advertised price</th><th>The catch</th></tr></thead>
     <tbody>
       <tr><td>1</td><td>Anytime Mailbox</td><td>$4.99; "on average, our plans cost $9.99 per month" <Src href={S.atm} /></td><td>Each location sets its own plans and fees, so the $4.99 address may not be in your city <Src href={S.atm} /></td></tr>
-      <tr><td>2</td><td>PostScan Mail</td><td>$8.33/mo Starter, billed annually; "as low as $10/mo" monthly <Src href={S.psm} /></td><td>No free open-and-scans on Starter. Each one is $2.00 for up to 10 pages, and junk mail counts toward your 30-item limit <Src href={S.psm} /> <Src href={S.psmFaq} label="FAQ" /></td></tr>
-      <tr><td>3</td><td>iPostal1</td><td>From $9.99/mo (Virtual Mailing Address) <Src href={S.ip} /></td><td>Plan allowances vary by location. The online notary for Form 1583 is $25 unless your mail center lets you sign in person <Src href={S.ipFaq} /></td></tr>
-      <tr><td>4</td><td>Traveling Mailbox</td><td>$15/mo Basic <Src href={S.tmb} /></td><td>Highest sticker price of the four, but 35 page scans a month are included, and Form 1583 needs no notary <Src href={S.tmb} /> <Src href={S.tmbKb} label="1583" /></td></tr>
+      <tr><td>2</td><td>PhysicalAddress.com</td><td>Plan 30 $7.98/mo <Src href={S.paPricing} /></td><td>The $7.98 price matches its Boise location. Other cities start higher (Las Vegas $8.98, several $9.98, Laguna Beach $10.98, Wall Street $19.98). Plan 30 includes 10 content scans; additional scans are $0.20. Form 1583 needs a notary or an in-person signing; the online notary fee is not published <Src href={S.paLocations} label="locations" /> <Src href={S.paSignup} label="1583" /></td></tr>
+      <tr><td>3</td><td>PostScan Mail</td><td>$8.33/mo Starter, billed annually; "as low as $10/mo" monthly <Src href={S.psm} /></td><td>No free open-and-scans on Starter. Each one is $2.00 for up to 10 pages, and junk mail counts toward your 30-item limit <Src href={S.psm} /> <Src href={S.psmFaq} label="FAQ" /></td></tr>
+      <tr><td>4</td><td>iPostal1</td><td>From $9.99/mo (Virtual Mailing Address) <Src href={S.ip} /></td><td>Plan allowances vary by location. The online notary for Form 1583 is $25 unless your mail center lets you sign in person <Src href={S.ipFaq} /></td></tr>
+      <tr><td>5</td><td>Traveling Mailbox</td><td>$15/mo Basic <Src href={S.tmb} /></td><td>Highest sticker price of these five, but 35 page scans a month are included, and Form 1583 needs no notary <Src href={S.tmb} /> <Src href={S.tmbKb} label="1583" /></td></tr>
     </tbody>
   </table></div>
 
   <h2>Cheapest for your situation</h2>
   <div class="cards">
-    <div class="card"><h3>You just need an address</h3><p>An Anytime Mailbox or iPostal1 location is cheapest when you mostly recycle mail and only look at envelope images.</p></div>
-    <div class="card"><h3>You open 5+ letters a month</h3><p>Traveling Mailbox Basic includes 35 page scans for $15 <Src href={S.tmb} />. At PostScan, five open-and-scans on Starter add $10 to the bill <Src href={S.psm} />.</p></div>
+    <div class="card"><h3>You just need an address</h3><p>An Anytime Mailbox or iPostal1 location is often cheapest when you mostly recycle mail and only look at envelope images. PhysicalAddress.com Plan 30 at $7.98 is in the same range if you want one of its eight company-run addresses <Src href={S.paPricing} />.</p></div>
+    <div class="card"><h3>You open 5+ letters a month</h3><p>PhysicalAddress.com Plan 30 includes 10 content scans in the $7.98 price <Src href={S.paPricing} />. Traveling Mailbox Basic includes 35 page scans for $15 <Src href={S.tmb} />. At PostScan, five open-and-scans on Starter add $10 to the bill <Src href={S.psm} />.</p></div>
     <div class="card"><h3>You want to skip the notary</h3><p>Traveling Mailbox, Stable and US Global Mail handle Form 1583 without a notary <Src href={S.tmbKb} /> <Src href={S.stable1583} /> <Src href={S.usgm1583} />. That saves the $20–$25 online notary fee charged elsewhere <Src href={S.psmFaq} /> <Src href={S.ipFaq} />.</p></div>
   </div>
 
@@ -38,9 +39,10 @@ const schema = {"@context":"https://schema.org","@type":"Article","headline":tit
   <h2>Links</h2>
   <ul>
     <li><Aff id="anytimemailbox" href="https://www.anytimemailbox.com/" text="Anytime Mailbox locations" /></li>
+    <li><a href="https://physicaladdress.com/" target="_blank" rel="noopener">PhysicalAddress.com</a> · <a href="/physicaladdress-pricing/">pricing details</a></li>
     <li><Aff id="postscanmail" href="https://www.postscanmail.com/" text="PostScan Mail" /></li>
     <li><Aff id="ipostal1" href="https://ipostal1.com/" text="iPostal1" /></li>
     <li><Aff id="travelingmailbox" href="https://www.travelingmailbox.com/" text="Traveling Mailbox" /></li>
   </ul>
-  <p>Full table: <a href="/virtual-mailbox-pricing-comparison/">virtual mailbox pricing compared</a>. Why Anytime Mailbox locations range from $4.99 to $99.99: <a href="/anytime-mailbox-pricing/">Anytime Mailbox pricing</a>. iPostal1's full fee list: <a href="/ipostal1-pricing/">iPostal1 pricing explained</a>. Cheapest address in Texas, Florida, Delaware, Wyoming, California or New York: <a href="/cheapest-virtual-mailbox-by-state/">cheapest virtual mailbox by state</a>.</p>
+  <p>Full table: <a href="/virtual-mailbox-pricing-comparison/">virtual mailbox pricing compared</a>. Why Anytime Mailbox locations range from $4.99 to $99.99: <a href="/anytime-mailbox-pricing/">Anytime Mailbox pricing</a>. iPostal1's full fee list: <a href="/ipostal1-pricing/">iPostal1 pricing explained</a>. PhysicalAddress.com plans and city prices: <a href="/physicaladdress-pricing/">PhysicalAddress.com pricing</a>. Cheapest address in Texas, Florida, Delaware, Wyoming, California or New York: <a href="/cheapest-virtual-mailbox-by-state/">cheapest virtual mailbox by state</a>.</p>
 </Base>

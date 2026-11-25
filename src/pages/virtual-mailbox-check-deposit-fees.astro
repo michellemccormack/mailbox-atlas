@@ -5,16 +5,17 @@ import Aff from '../components/Aff.astro';
 import { S } from '../data/sources.js';
 const title = 'Virtual Mailbox Check Deposit Fees Compared: Free, $3, $4.95 or $10 a Check';
 const description = 'What it costs to have a virtual mailbox deposit a paper check: US Global Mail (no handling fee), Stable (from $3/check), Traveling Mailbox ($4.95 + postage), iPostal1 ($4.95 per 5 checks), Earth Class Mail ($10, or $39/mo for 5). From each provider\'s own page.';
-const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-20"};
+const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-25"};
 ---
-<Base title={title} description={description} updated="2026-11-20" schema={schema}>
+<Base title={title} description={description} updated="2026-11-25" schema={schema}>
   <h1>Virtual mailbox check deposit fees, compared</h1>
-  <p class="lede">If customers or clients still mail you paper checks, the deposit fee can cost more than the mailbox itself. Usually the provider endorses the check and mails it to your bank, and you pay a handling fee plus postage. Here's what each provider publishes, as of November 20, 2026.</p>
+  <p class="lede">If customers or clients still mail you paper checks, the deposit fee can cost more than the mailbox itself. Usually the provider endorses the check and mails it to your bank, and you pay a handling fee plus postage. Here's what each provider publishes, as of November 20, 2026, with PhysicalAddress.com added on November 25, 2026.</p>
 
   <div class="tablewrap"><table>
     <thead><tr><th>Provider</th><th>Handling fee</th><th>Plus</th><th>How it's deposited</th></tr></thead>
     <tbody>
       <tr><td><strong>US Global Mail</strong></td><td>None. "We don't charge any additional handling fees for check deposit" <Src href={S.usgmCheck} /></td><td>Standard shipping (trackable methods only), and optional repacking <Src href={S.usgmCheck} /></td><td>They print a deposit slip and mail the check to your bank. Or you deposit the scanned image through your bank yourself <Src href={S.usgmCheck} /></td></tr>
+      <tr><td><strong>PhysicalAddress.com</strong></td><td>None. "our check deposit feature does not have an additional fee; all you'll pay is the cost of forwarding, no check handling fee is included" <Src href={S.paCheck} /></td><td>Forwarding postage <Src href={S.paCheck} /></td><td>It generates a deposit slip and mails the check to the bank of your choice <Src href={S.paCheck} /></td></tr>
       <tr><td><strong>Stable</strong></td><td>"Volume-based plans as low as $3/check" <Src href={S.stable} /></td><td>A separate check-deposit purchase; "you must have an existing Stable account" <Src href={S.stable} /></td><td>Electronic and mail-in options <Src href={S.stable} /></td></tr>
       <tr><td><strong>Traveling Mailbox</strong></td><td>$4.95 per check <Src href={S.tmb} /></td><td>Postage <Src href={S.tmb} /></td><td>Endorsed "For Deposit Only" and mailed to your bank <Src href={S.tmb} /></td></tr>
       <tr><td><strong>iPostal1</strong></td><td>$4.95 to deposit up to 5 checks (most locations) <Src href={S.ipVma} /></td><td>"The cost of check scan(s) and trackable shipping." U.S. only <Src href={S.ipVma} /></td><td>By mail <Src href={S.ipVma} /></td></tr>
@@ -32,6 +33,7 @@ const schema = {"@context":"https://schema.org","@type":"Article","headline":tit
     <thead><tr><th>Provider</th><th>3 checks, mailed together</th><th>Math</th></tr></thead>
     <tbody>
       <tr><td>US Global Mail</td><td><strong>$0</strong> + shipping</td><td>No handling fee <Src href={S.usgmCheck} /></td></tr>
+      <tr><td>PhysicalAddress.com</td><td><strong>$0</strong> + postage</td><td>No handling fee <Src href={S.paCheck} /></td></tr>
       <tr><td>iPostal1</td><td><strong>$4.95</strong> + scans + shipping</td><td>One $4.95 deposit covers up to 5 checks. The page doesn't say how scans of checks are charged <Src href={S.ipVma} /></td></tr>
       <tr><td>Stable</td><td><strong>from $9</strong></td><td>3 × "as low as $3." The rate at low volume isn't published <Src href={S.stable} /></td></tr>
       <tr><td>Traveling Mailbox</td><td><strong>$14.85</strong> + postage</td><td>3 × $4.95 <Src href={S.tmb} /></td></tr>
@@ -48,6 +50,7 @@ const schema = {"@context":"https://schema.org","@type":"Article","headline":tit
 
   <p>Choosing a provider for other reasons too? See the <a href="/virtual-mailbox-pricing-comparison/">full price table</a>, <a href="/virtual-mailbox-for-llc/">virtual mailboxes for an LLC</a>, and <a href="/traveling-mailbox-vs-postscan-mail/">Traveling Mailbox vs PostScan Mail</a>.</p>
   <ul>
+    <li><a href="https://physicaladdress.com/" target="_blank" rel="noopener">PhysicalAddress.com</a></li>
     <li><Aff id="usglobalmail" href="https://www.usglobalmail.com?via=michelle" text="US Global Mail" /></li>
     <li><Aff id="travelingmailbox" href="https://www.travelingmailbox.com/" text="Traveling Mailbox" /></li>
     <li><Aff id="ipostal1" href="https://ipostal1.com/" text="iPostal1" /></li>

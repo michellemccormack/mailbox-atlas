@@ -4,12 +4,12 @@ import Src from '../components/Src.astro';
 import Aff from '../components/Aff.astro';
 import { S } from '../data/sources.js';
 const title = 'Virtual Mailbox Mail Forwarding Fees Compared: Per Shipment vs Per Item';
-const description = 'What eight virtual mailbox providers charge to forward mail, on top of postage: Traveling Mailbox $2 per shipment, PostScan Mail $2 plus $0.50 per extra item, LegalZoom Virtual Mail $1.25 per shipment plus $1 per item, US Global Mail and Stable no handling fee. With a worked 10-letter example. Checked Nov 23, 2026.';
-const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-23"};
+const description = 'What virtual mailbox providers charge to forward mail, on top of postage: Traveling Mailbox $2 per shipment, PostScan Mail $2 plus $0.50 per extra item, LegalZoom Virtual Mail $1.25 per shipment plus $1 per item, US Global Mail, Stable and PhysicalAddress.com no published handling fee. With a worked 10-letter example. Checked Nov 23, 2026.';
+const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-25"};
 ---
-<Base title={title} description={description} updated="2026-11-23" schema={schema}>
+<Base title={title} description={description} updated="2026-11-25" schema={schema}>
   <h1>Mail forwarding fees compared</h1>
-  <p class="lede">Every virtual mailbox charges postage when it ships your mail. What differs is the handling fee on top: some charge once per box, some charge for every item inside it, and a few charge nothing but postage. If you forward a stack of letters once a month, that structure matters more than the plan price. Fees below are from each provider's own pricing page, checked November 23, 2026.</p>
+  <p class="lede">Every virtual mailbox charges postage when it ships your mail. What differs is the handling fee on top: some charge once per box, some charge for every item inside it, and a few charge nothing but postage. If you forward a stack of letters once a month, that structure matters more than the plan price. Fees below are from each provider's own pricing page, checked November 23, 2026, with PhysicalAddress.com added on November 25, 2026.</p>
 
   <h2>Handling fee on top of postage</h2>
   <div class="tablewrap"><table>
@@ -19,6 +19,7 @@ const schema = {"@context":"https://schema.org","@type":"Article","headline":tit
       <tr><td>PostScan Mail</td><td>$2.00 for the first item, $0.50 for each additional item <Src href={S.psm} /></td><td>Item</td><td>Items can be bundled into one package <Src href={S.psm} /></td></tr>
       <tr><td>LegalZoom Virtual Mail (Earth Class Mail)</td><td>Domestic $1.25 per shipment + $1 per item; international $5 per shipment + $1 per item; expedited $10 per shipment + $1 per item <Src href={S.lzVm} /></td><td>Shipment + item</td><td>Medium box $5, large box $10 <Src href={S.lzVm} /></td></tr>
       <tr><td>US Global Mail</td><td>No handling fee; discounted carrier rates <Src href={S.usgmFeatures} /></td><td>—</td><td>Repack fee $5 per box, $2 per letter <Src href={S.usgmFeatures} /></td></tr>
+      <tr><td>PhysicalAddress.com</td><td>No separate handling fee published; "competitive commercial prices" through USPS, FedEx, UPS and DHL <Src href={S.paFwd} /></td><td>—</td><td>—</td></tr>
       <tr><td>Stable</td><td>"Add cost of postage" (no separate fee listed) <Src href={S.stable} /></td><td>—</td><td>Can combine mail and packages going to the same address <Src href={S.stable} /></td></tr>
       <tr><td>iPostal1</td><td>Real-time shipping prices; no separate forwarding fee listed <Src href={S.ipVma} /></td><td>—</td><td>Letters free; $1.95 per package or letter-pack consolidated <Src href={S.ipVma} /></td></tr>
       <tr><td>Virtual Post Mail</td><td>Varies with destination, weight and size <Src href={S.vpmPricing} /></td><td>—</td><td>—</td></tr>
@@ -34,6 +35,7 @@ const schema = {"@context":"https://schema.org","@type":"Article","headline":tit
     <tbody>
       <tr><td>iPostal1</td><td>Letters consolidated free <Src href={S.ipVma} /></td><td><strong>$0</strong></td></tr>
       <tr><td>Stable</td><td>Postage only <Src href={S.stable} /></td><td><strong>$0</strong></td></tr>
+      <tr><td>PhysicalAddress.com</td><td>No separate handling fee published <Src href={S.paFwd} /></td><td><strong>$0</strong></td></tr>
       <tr><td>Traveling Mailbox</td><td>$2 per shipment <Src href={S.tmb} /></td><td><strong>$2</strong></td></tr>
       <tr><td>PostScan Mail</td><td>$2.00 + 9 × $0.50 <Src href={S.psm} /></td><td><strong>$6.50</strong></td></tr>
       <tr><td>LegalZoom Virtual Mail</td><td>$1.25 + 10 × $1 <Src href={S.lzVm} /></td><td><strong>$11.25</strong></td></tr>
@@ -55,6 +57,7 @@ const schema = {"@context":"https://schema.org","@type":"Article","headline":tit
 
   <h2>Links</h2>
   <ul>
+    <li><a href="https://physicaladdress.com/" target="_blank" rel="noopener">PhysicalAddress.com</a></li>
     <li><Aff id="usglobalmail" href="https://www.usglobalmail.com/?via=michelle" text="US Global Mail" /></li>
     <li><Aff id="travelingmailbox" href="https://www.travelingmailbox.com/" text="Traveling Mailbox" /></li>
     <li><Aff id="ipostal1" href="https://ipostal1.com/" text="iPostal1" /></li>
