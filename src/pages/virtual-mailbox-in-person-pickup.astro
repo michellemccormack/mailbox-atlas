@@ -9,7 +9,7 @@ const schema = {"@context":"https://schema.org","@type":"Article","headline":tit
 ---
 <Base title={title} description={description} updated="2026-11-25" schema={schema}>
   <h1>Picking up mail in person from a virtual mailbox</h1>
-  <div class="answer"><p><strong>Short answer:</strong> Only at some providers. Mailboxes run through local mail centers, like Anytime Mailbox, iPostal1 and PostScan Mail, usually let you collect mail during business hours, sometimes for a small fee. US Global Mail allows scheduled pickups at most of its locations for a fee. Stable and Virtual Post Mail don't offer pickup at all, so you have them ship your mail instead.</p></div>
+  <div class="answer"><p><strong>Short answer:</strong> Only at some providers. Mailboxes run through local mail centers, like Anytime Mailbox, iPostal1 and PostScan Mail, usually let you collect mail during business hours, sometimes for a small fee. PhysicalAddress.com includes free local pickup at each of its company-run locations. US Global Mail allows scheduled pickups at most of its locations for a fee. Stable and Virtual Post Mail don't offer pickup at all, so you have them ship your mail instead.</p></div>
   <p class="lede">USPS rules allow either approach: a CMRA (the postal term for a virtual mailbox company) "accepts delivery of the mail and holds it for pickup or remails it to the addressee" <Src href={S.dmm508} label="DMM 508.1.8" />. Whether you can walk in depends on the company. Here's each provider's own policy, checked November 25, 2026.</p>
 
   <h2>Pickup by provider</h2>
@@ -20,6 +20,7 @@ const schema = {"@context":"https://schema.org","@type":"Article","headline":tit
       <tr><td>iPostal1</td><td>Yes, during business hours <Src href={S.ipFaq} /></td><td>"Some locations charge a small fee" <Src href={S.ipFaq} /></td><td>Schedule in the app. Someone else can collect if you add them to your account <Src href={S.ipFaq} /></td></tr>
       <tr><td>Anytime Mailbox</td><td>"The majority" of mail centers allow it during business hours <Src href={S.atmFaq} /></td><td>Set by each operator, shown under "Full Details" on each plan <Src href={S.atmFaq} /></td><td>Schedule a pickup in your account where available <Src href={S.atmFaq} />. All five locations we checked list Local Pickup <Src href={S.atmArlington} label="Arlington" /> <Src href={S.atmAustin} label="Austin" /> <Src href={S.atmOmaha} label="Omaha" /> <Src href={S.atmDc} label="DC" /> <Src href={S.atmAstoria} label="Astoria" /></td></tr>
       <tr><td>PostScan Mail</td><td>At most locations <Src href={S.psm} /></td><td>Free at most locations; some "may charge a nominal fee per pickup" <Src href={S.psm} /></td><td>—</td></tr>
+      <tr><td>PhysicalAddress.com</td><td>Yes, at any of its locations <Src href={S.paPickup} /></td><td>Free <Src href={S.paPricing} /> <Src href={S.paPickup} /></td><td>In your account, select the items, click Local Pickup, and say who will collect and when <Src href={S.paPickup} /></td></tr>
       <tr><td>Stable</td><td>No: "In-person pickup is not available from your Stable address" <Src href={S.stablePickup} /></td><td>n/a</td><td>Forward instead; Stable recommends FedEx and supports overnight shipping <Src href={S.stablePickup} /></td></tr>
       <tr><td>Virtual Post Mail</td><td>No. Its locations "are not open to the public" <Src href={S.vpmPickup} /></td><td>n/a</td><td>Create a shipping request. If you're nearby, it says mail normally arrives in 1 business day <Src href={S.vpmPickup} /></td></tr>
     </tbody>
@@ -47,6 +48,7 @@ const schema = {"@context":"https://schema.org","@type":"Article","headline":tit
 
   <h2>Links</h2>
   <ul>
+    <li><a href="https://physicaladdress.com/" target="_blank" rel="noopener">PhysicalAddress.com</a></li>
     <li><Aff id="usglobalmail" href="https://www.usglobalmail.com/?via=michelle" text="US Global Mail" /></li>
     <li><Aff id="ipostal1" href="https://ipostal1.com/" text="iPostal1" /></li>
     <li><Aff id="anytimemailbox" href="https://www.anytimemailbox.com/" text="Anytime Mailbox locations" /></li>

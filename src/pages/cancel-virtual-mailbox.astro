@@ -4,7 +4,7 @@ import Src from '../components/Src.astro';
 import Aff from '../components/Aff.astro';
 import { S } from '../data/sources.js';
 const title = 'How to Cancel a Virtual Mailbox, and What Happens to Mail That Arrives After';
-const description = 'USPS won\'t forward mail away from a virtual mailbox, and mail keeps arriving for months. How to cancel at eight providers, what each does with stored mail and with mail that arrives after you close, and the fees (from free to a $50 wind-down plan). Checked Nov 25, 2026.';
+const description = 'USPS won\'t forward mail away from a virtual mailbox, and mail keeps arriving for months. How to cancel at nine providers, what each does with stored mail and with mail that arrives after you close, and the fees (from free to a $50 wind-down plan). Checked Nov 25, 2026.';
 const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-25"};
 ---
 <Base title={title} description={description} updated="2026-11-25" schema={schema}>
@@ -32,6 +32,7 @@ const schema = {"@context":"https://schema.org","@type":"Article","headline":tit
       <tr><td>Anytime Mailbox</td><td>Settings › Close account <Src href={S.atmFaq} /></td><td>—</td><td>Stored by the local operator for up to six months, "and storage fees may apply." Forwarding costs extra <Src href={S.atmFaq} /></td><td>—</td></tr>
       <tr><td>PostScan Mail</td><td>Settings › Subscription &amp; Billing › Close Account <Src href={S.psmFaq} /></td><td>Discarded <Src href={S.psmFaq} /></td><td>Held 6 months. After that, held mail is discarded and new mail goes back to the sender <Src href={S.psmFaq} /></td><td>—</td></tr>
       <tr><td>Stable</td><td>Billing › Cancel subscription. A registered agent service must be canceled separately <Src href={S.stableCancelPolicy} /></td><td>—</td><td>You get an email with a photo of the envelope front, but Stable won't scan or forward it unless you reactivate <Src href={S.stableCancel} /> <Src href={S.stableCancelPolicy} label="2" /></td><td>Reactivate through support and keep your mailbox number; mail received meanwhile becomes available again <Src href={S.stableCancelPolicy} /></td></tr>
+      <tr><td>PhysicalAddress.com</td><td>Call (844) 888-6364, email support@physicaladdress.com, or open a support ticket in your account. Give your name, address and suite number <Src href={S.paCancel} /></td><td>—</td><td>If Form 1583 was completed, it keeps accepting mail for 6 months and scans and uploads each piece for free; "forwarding requests will incur additional fees" <Src href={S.paCancel} /></td><td>—</td></tr>
       <tr><td>Earth Class Mail (LegalZoom Virtual Mail)</td><td>Two options: close at the end of the billing cycle (no fee), or keep 6 months of account access for a $50 cancellation fee <Src href={S.ecmCancel} /></td><td>Shredded when the account closes <Src href={S.ecmCancel} /></td><td>Closed now: shredded for 6 months, then returned to the sender. With 6 months' access: you can manage it, paying $3 per received item, and $5 per domestic shipment plus postage and $1 per item ($10 international) <Src href={S.ecmCancel} /></td><td>Reopen within 3 months for a $99 reactivation fee <Src href={S.ecmCancel} /></td></tr>
     </tbody>
   </table></div>
@@ -39,6 +40,7 @@ const schema = {"@context":"https://schema.org","@type":"Article","headline":tit
   <h2>Refunds when you cancel</h2>
   <ul>
     <li><strong>US Global Mail:</strong> 30-day money-back guarantee; after 30 days, no refund for unused time <Src href={S.usgmRefund} />.</li>
+    <li><strong>PhysicalAddress.com:</strong> 30-day money-back guarantee <Src href={S.paPricing} />.</li>
     <li><strong>Stable:</strong> 30-day money-back guarantee on your first invoice only. Add-ons like check deposits and mail forwarding aren't covered <Src href={S.stableCancelPolicy} />.</li>
     <li><strong>iPostal1:</strong> prepaid yearly plans are non-refundable after the first 30 days, and unused scan or shred bundles are non-refundable <Src href={S.ipFaq} />.</li>
     <li><strong>Anytime Mailbox:</strong> a full refund only within 30 days of sign-up and only if the mailbox was never used to receive mail <Src href={S.atmFaq} />.</li>
@@ -59,6 +61,7 @@ const schema = {"@context":"https://schema.org","@type":"Article","headline":tit
 
   <h2>Links</h2>
   <ul>
+    <li><a href="https://physicaladdress.com/" target="_blank" rel="noopener">PhysicalAddress.com</a></li>
     <li><Aff id="usglobalmail" href="https://www.usglobalmail.com/?via=michelle" text="US Global Mail" /></li>
     <li><Aff id="virtualpostmail" href="https://refer.virtualpostmail.com/l/13ELDJ264/" text="Virtual Post Mail" /></li>
   </ul>
