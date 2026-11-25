@@ -1,0 +1,71 @@
+---
+import Base from '../layouts/Base.astro';
+import Src from '../components/Src.astro';
+import { S } from '../data/sources.js';
+const title = 'PhysicalAddress.com Pricing: Plans From $7.98, Locations and Fees (2026)';
+const description = 'PhysicalAddress.com Plan 30 starts at $7.98 a month with 30 envelope scans and 10 content scans. Published plan prices, city starting prices, storage, forwarding, Form 1583 and the free registered agent, copied from PhysicalAddress.com on November 25, 2026.';
+const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-25"};
+---
+<Base title={title} description={description} updated="2026-11-25" schema={schema}>
+  <h1>PhysicalAddress.com pricing</h1>
+  <div class="answer"><p><strong>Short answer:</strong> The cheapest published plan is Plan 30 at $7.98 a month, with 30 envelope scans and 10 content scans. Additional scans are $0.20. Starting prices are higher in some cities: Las Vegas is $8.98, several others are $9.98, Laguna Beach is $10.98 and the Wall Street address is $19.98. Annual billing is advertised at 20% off, but the pricing page does not list the annual dollar amounts. <Src href={S.paPricing} /><Src href={S.paLocations} /></p></div>
+  <p class="lede">PhysicalAddress.com runs its own mail locations instead of using third-party mail centers, and it says mail is scanned on site the same business day <Src href={S.paProcess} />. Every figure below is from its own pages, checked November 25, 2026.</p>
+
+  <h2>The plans on the pricing page</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Plan</th><th>Monthly price</th><th>Envelope scans / month</th><th>Content scans / month</th><th>Letter storage after 90 days</th><th>Also included</th></tr></thead>
+    <tbody>
+      <tr><td>Plan 30</td><td>$7.98</td><td>30</td><td>10</td><td>$0.25 per item per month</td><td>Unlimited recipients; free local pickup, registered agent and shredding</td></tr>
+      <tr><td>Plan 50</td><td>$10.98</td><td>50</td><td>25</td><td>$0.20 per item per month</td><td>The Plan 30 extras, plus multi-user admin</td></tr>
+      <tr><td>Plan 100</td><td>$16.98</td><td>100</td><td>50</td><td>$0.15 per item per month</td><td>The Plan 50 extras, plus suite numbers ending in 0</td></tr>
+      <tr><td>Plan 200</td><td>$26.98</td><td>200</td><td>100</td><td>$0.10 per item per month</td><td>The Plan 100 extras</td></tr>
+    </tbody>
+  </table></div>
+  <p class="meta">Source: PhysicalAddress.com pricing page <Src href={S.paPricing} />. Content scans are "pages inside envelopes or packages that you request to be scanned." After you reach the plan limit in envelope or content scans, additional scans are $0.20. Every plan includes 90 days of free storage for non-parcel mail (envelopes, magazines and postcards), one week of free package storage, then $1 a week, and unlimited free storage for scanned (digital) mail <Src href={S.paPricing} /> <Src href={S.paDigital} label="digital storage" />. The page advertises "20% Off Annual Plans" without listing the resulting prices. You can change plans at any time <Src href={S.paChange} />.</p>
+  <p>The same pricing page says "there are six plans to choose from" and that Plan 600 includes 600 monthly envelope scans, and a help article mentions switching to a Plan 300, but neither page publishes prices for those plans <Src href={S.paPricing} /> <Src href={S.paChange} label="change plans" />. For more than 300 mail items a month, it tells you to call (844) 888-6364 for a custom plan <Src href={S.paCorp} />.</p>
+
+  <h2>Starting price by location</h2>
+  <p>The locations page lists a monthly starting price at each of the eight company-run addresses <Src href={S.paLocations} />:</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Location</th><th>Address as published</th><th>Starting monthly price</th></tr></thead>
+    <tbody>
+      <tr><td>Boise / Garden City, ID</td><td>9169 W State St, Garden City, ID 83714. You can address mail to Boise or Garden City; they share a ZIP code <Src href={S.paLocations} /></td><td>$7.98</td></tr>
+      <tr><td>Las Vegas, NV</td><td>304 S Jones Blvd, Las Vegas, NV 89107</td><td>$8.98</td></tr>
+      <tr><td>Wilmington, DE</td><td>1207 Delaware Ave, Wilmington, DE 19806</td><td>$9.98</td></tr>
+      <tr><td>Atlanta, GA</td><td>1445 Woodmont Ln NW, Atlanta, GA 30318</td><td>$9.98</td></tr>
+      <tr><td>Dallas, TX</td><td>539 W Commerce St, Dallas, TX 75208</td><td>$9.98</td></tr>
+      <tr><td>Orlando, FL</td><td>1317 Edgewater Dr, Orlando, FL 32804</td><td>$9.98</td></tr>
+      <tr><td>Laguna Beach, CA</td><td>1968 S Coast Hwy, Laguna Beach, CA 92651</td><td>$10.98</td></tr>
+      <tr><td>Wall Street, New York, NY</td><td>99 Wall Street, New York, NY 10005</td><td>$19.98</td></tr>
+    </tbody>
+  </table></div>
+  <p class="meta">The $7.98 Plan 30 price on the pricing page matches the Boise starting price. The locations page does not break out Plan 50, 100 or 200 prices in each city, so those are not shown here. Every location card also lists a 30-day money-back guarantee, free local pickup, a free registered agent, unlimited shredding, multi-user plans, suite numbers ending in 0 on some plans, and phone support 7 days a week (Monday–Friday 6 AM–7 PM, Saturday 8 AM–3 PM, Sunday 10 AM–2 PM Pacific) <Src href={S.paLocations} />.</p>
+
+  <h2>Other fees</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Item</th><th>What PhysicalAddress.com publishes</th></tr></thead>
+    <tbody>
+      <tr><td>Additional envelope or content scans</td><td>$0.20 after the plan limit <Src href={S.paPricing} /></td></tr>
+      <tr><td>Opening mail</td><td>Only if you click Scan; it will not open mail or packages automatically <Src href={S.paOpen} /></td></tr>
+      <tr><td>Mail and package forwarding</td><td>USPS, FedEx, UPS or DHL at "competitive commercial prices"; no separate handling fee is listed <Src href={S.paFwd} /></td></tr>
+      <tr><td>Check deposit</td><td>No check-handling fee; you pay the forwarding postage. It generates a deposit slip and mails the check to your bank <Src href={S.paCheck} /></td></tr>
+      <tr><td>Local pickup</td><td>Free. Schedule it in your account and say who will collect and when <Src href={S.paPickup} /></td></tr>
+      <tr><td>Registered agent</td><td>"Free Registered Agent Service with Account" <Src href={S.paRa} /> <Src href={S.paPricing} /></td></tr>
+      <tr><td>Shredding</td><td>Free <Src href={S.paPricing} /></td></tr>
+      <tr><td>Sign-up fee / contract</td><td>No sign-up fees; no contract; cancel anytime <Src href={S.pa} /></td></tr>
+      <tr><td>Recipients</td><td>Unlimited on every published plan <Src href={S.paPricing} /></td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>Form 1583</h2>
+  <p>You can start using the address right away, but PhysicalAddress.com cannot scan, forward or upload mail until USPS Form 1583 is completed <Src href={S.pa1583} /> <Src href={S.paSignup} />. After you sign up, it emails a pre-filled form and a link to a partner online notary that "supports international clients." You can also sign with a notary or at one of its locations. It does not publish the online notary's fee <Src href={S.paSignup} />.</p>
+
+  <h2>A 30-letter example</h2>
+  <p>If you receive 30 letters a month and open 10 of them, Plan 30's allowance (30 envelope scans and 10 content scans) covers that volume, so the monthly plan price is $7.98 at the Boise rate published on the pricing page, before any forwarding <Src href={S.paPricing} />. The same mail volume on Traveling Mailbox Basic is $15, and on PostScan Mail Starter it is from $10 plus $2.00 for each of the 10 open-and-scans <Src href={S.tmb} /> <Src href={S.psm} />. In New York the published starting price is $19.98, which already costs more than Traveling Mailbox Basic before scans are counted <Src href={S.paLocations} />.</p>
+
+  <h2>Canceling</h2>
+  <p>Cancel by phone at (844) 888-6364, by emailing support@physicaladdress.com, or by opening a support ticket in your account. If Form 1583 was completed, it will keep accepting mail for 6 months after you cancel and will scan and upload each piece for free; forwarding in that period "will incur additional fees." There is a 30-day money-back guarantee <Src href={S.paCancel} /> <Src href={S.paPricing} />.</p>
+
+  <p>Go to <a href="https://physicaladdress.com/" target="_blank" rel="noopener">PhysicalAddress.com</a>.</p>
+  <p>More: <a href="/virtual-mailbox-pricing-comparison/">all providers compared</a> · <a href="/cheapest-virtual-mailbox/">the cheapest virtual mailbox</a> · <a href="/virtual-mailbox-check-deposit-fees/">check deposit fees</a> · <a href="/virtual-mailbox-storage-fees/">how long mail is kept</a> · <a href="/virtual-mailbox-in-person-pickup/">in-person pickup</a> · <a href="/cancel-virtual-mailbox/">canceling a virtual mailbox</a> · <a href="/usps-form-1583-online-notarization/">Form 1583 and online notarization</a> · <a href="/">Mailbox Atlas home</a></p>
+</Base>

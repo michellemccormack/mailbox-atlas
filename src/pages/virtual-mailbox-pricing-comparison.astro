@@ -4,15 +4,15 @@ import Src from '../components/Src.astro';
 import Aff from '../components/Aff.astro';
 import { S } from '../data/sources.js';
 const title = 'Virtual Mailbox Pricing Compared: Plans, Scan Fees and Form 1583 (2026)';
-const description = 'Eight virtual mailbox services side by side: monthly price, mail included, scan and overage fees, forwarding fees, and whether you need a notary for USPS Form 1583. Every number links to the provider page it came from.';
-const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-24"};
+const description = 'Nine virtual mailbox services side by side: monthly price, mail included, scan and overage fees, forwarding fees, and whether you need a notary for USPS Form 1583. Every number links to the provider page it came from.';
+const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-25"};
 ---
 <Base title={title} description={description} schema={schema}>
   <h1>Virtual mailbox pricing, compared</h1>
-  <div class="answer"><p><strong>Short answer:</strong> Entry plans start at $4.99 (Anytime Mailbox, varies by location), $9.99 (iPostal1), $10 (PostScan Mail) and $15 (Traveling Mailbox). Scans and forwarding decide the real bill: at 30 letters with 10 opened and scanned, Traveling Mailbox Basic stays at $15 while PostScan Mail Starter comes to $30 or more. <Src href={S.atm} /><Src href={S.ip} /><Src href={S.psm} /><Src href={S.tmb} /></p></div>
-  <p class="lede">The sticker price is the smallest part of the bill. What decides the real cost is how many pieces of mail are included, what each scan past that costs, and what forwarding costs. Here are the published numbers for eight services, copied from each provider's own page on November 19, 2026. US Global Mail's entry plan was rechecked on November 24, 2026.</p>
+  <div class="answer"><p><strong>Short answer:</strong> Entry plans start at $4.99 (Anytime Mailbox, varies by location), $7.98 (PhysicalAddress.com, in Boise), $9.99 (iPostal1), $10 (PostScan Mail) and $15 (Traveling Mailbox). Scans and forwarding decide the real bill: at 30 letters with 10 opened and scanned, PhysicalAddress.com Plan 30 stays at $7.98 and Traveling Mailbox Basic stays at $15, while PostScan Mail Starter comes to $30 or more. <Src href={S.atm} /><Src href={S.paPricing} /><Src href={S.ip} /><Src href={S.psm} /><Src href={S.tmb} /></p></div>
+  <p class="lede">The sticker price is the smallest part of the bill. What decides the real cost is how many pieces of mail are included, what each scan past that costs, and what forwarding costs. Here are the published numbers for nine services, copied from each provider's own page on November 19, 2026. US Global Mail's entry plan was rechecked on November 24, 2026, and PhysicalAddress.com was added from its own pages on November 25, 2026.</p>
 
-  <div class="note"><strong>How to read this:</strong> "from" prices vary by location for iPostal1, Anytime Mailbox and PostScan Mail, because independent mail centers set them. The table shows the lowest price each provider advertises. Annual billing is cheaper at several providers, and both prices are shown where the page lists both.</div>
+  <div class="note"><strong>How to read this:</strong> "from" prices vary by location for iPostal1, Anytime Mailbox and PostScan Mail, because independent mail centers set them. PhysicalAddress.com runs its own locations, and its starting price still varies by city. The table shows the lowest price each provider advertises. Annual billing is cheaper at several providers, and both prices are shown where the page lists both.</div>
 
   <p>Want your own number? The <a href="/virtual-mailbox-chooser/">virtual mailbox chooser</a> works out a monthly cost for your mail volume, scans and checks.</p>
 
@@ -38,6 +38,12 @@ const schema = {"@context":"https://schema.org","@type":"Article","headline":tit
         <td>$0.25 per extra envelope, $0.50 per extra page scan <Src href={S.tmb} /></td>
         <td>Postage + $2 per shipment (not per piece) <Src href={S.tmb} /></td>
         <td>Video call with Traveling Mailbox staff; "A notary is not required" <Src href={S.tmbKb} /></td></tr>
+      <tr><td><strong>PhysicalAddress.com</strong></td>
+        <td>Plan 30 $7.98/mo; Plan 50 $10.98; Plan 100 $16.98; Plan 200 $26.98. Starting prices are higher in some cities (Las Vegas $8.98, several $9.98, Laguna Beach $10.98, Wall Street $19.98). Annual billing advertised at 20% off, with no dollar amounts listed <Src href={S.paPricing} /> <Src href={S.paLocations} label="locations" /></td>
+        <td>Plan 30: 30 envelope scans and 10 content scans a month; unlimited recipients <Src href={S.paPricing} /></td>
+        <td>$0.20 per additional envelope or content scan past the plan limit <Src href={S.paPricing} /></td>
+        <td>USPS, FedEx, UPS or DHL at commercial rates; no separate handling fee published <Src href={S.paFwd} /></td>
+        <td>Notarized, or signed at one of its locations. It emails a pre-filled form and a link to a partner online notary; the notary fee is not published <Src href={S.paSignup} /></td></tr>
       <tr><td><strong>PostScan Mail</strong></td>
         <td>Starter "as low as $10/mo" (monthly) or $8.33/mo billed annually <Src href={S.psm} /></td>
         <td>Starter: 30 items a month, 1 recipient <Src href={S.psm} /></td>
@@ -75,6 +81,7 @@ const schema = {"@context":"https://schema.org","@type":"Article","headline":tit
   <h2>What does a virtual mailbox really cost per month?</h2>
   <p>Say you get 30 letters a month and want 10 of them opened and scanned (about 3 pages each), with nothing forwarded.</p>
   <ul>
+    <li><strong>PhysicalAddress.com Plan 30:</strong> $7.98 at the price published on the pricing page (the same as its Boise starting price). 30 envelope scans and 10 content scans are included, so this example stays at the plan price <Src href={S.paPricing} />.</li>
     <li><strong>Traveling Mailbox Basic:</strong> $15. 30 envelopes and 30 page scans fit inside the 40-envelope / 35-page allowance <Src href={S.tmb} />.</li>
     <li><strong>PostScan Mail Starter:</strong> from $10, plus $2.00 for each of the 10 open-and-scans ($20), so from $30. The Starter plan lists no free open-and-scans; Standard includes 5 <Src href={S.psm} />.</li>
     <li><strong>Stable Grow:</strong> $59 monthly ($49 if paid yearly). 30 pieces is the monthly limit, and open-and-scan is free <Src href={S.stable} />.</li>
@@ -87,6 +94,7 @@ const schema = {"@context":"https://schema.org","@type":"Article","headline":tit
 
   <h2>Go to a provider</h2>
   <ul>
+    <li><a href="https://physicaladdress.com/" target="_blank" rel="noopener">PhysicalAddress.com</a> · <a href="/physicaladdress-pricing/">pricing details</a></li>
     <li><Aff id="travelingmailbox" href="https://www.travelingmailbox.com/" text="Traveling Mailbox" /></li>
     <li><Aff id="ipostal1" href="https://ipostal1.com/" text="iPostal1" /></li>
     <li><Aff id="anytimemailbox" href="https://www.anytimemailbox.com/" text="Anytime Mailbox" /></li>
@@ -96,5 +104,5 @@ const schema = {"@context":"https://schema.org","@type":"Article","headline":tit
     <li><Aff id="earthclassmail" href="https://www.earthclassmail.com/" text="Earth Class Mail / LegalZoom Virtual Mail" /></li>
     <li><Aff id="virtualpostmail" href="https://refer.virtualpostmail.com/l/13ELDJ264/" text="Virtual Post Mail" /></li>
   </ul>
-  <p>Related: <a href="/ipostal1-vs-traveling-mailbox/">iPostal1 vs Traveling Mailbox</a> · <a href="/anytime-mailbox-vs-postscan-mail/">Anytime Mailbox vs PostScan Mail</a> · <a href="/cancel-virtual-mailbox/">canceling a virtual mailbox</a> · <a href="/virtual-mailbox-in-person-pickup/">in-person pickup</a> · <a href="/virtual-mailbox-forwarding-fees/">mail forwarding fees compared</a> · <a href="/virtual-mailbox-storage-fees/">how long mail is kept</a> · <a href="/cheapest-virtual-mailbox-by-state/">cheapest address by state</a> · <a href="/virtual-office-vs-virtual-mailbox/">virtual office vs virtual mailbox</a> · <a href="/postscan-mail-pricing/">PostScan Mail pricing</a> · <a href="/traveling-mailbox-pricing/">Traveling Mailbox pricing</a> · <a href="/virtual-post-mail-pricing/">Virtual Post Mail pricing</a> · <a href="/virtual-mailbox-vs-po-box/">virtual mailbox vs PO Box</a> · <a href="/earth-class-mail-pricing/">Earth Class Mail pricing</a> · <a href="/stable-vs-earth-class-mail/">Stable vs Earth Class Mail</a> · <a href="/us-global-mail-vs-traveling-mailbox/">US Global Mail vs Traveling Mailbox</a> · <a href="/cheapest-virtual-mailbox/">the cheapest virtual mailbox</a> · <a href="/usps-form-1583-online-notarization/">Form 1583 and online notarization</a> · <a href="/traveling-mailbox-vs-postscan-mail/">Traveling Mailbox vs PostScan Mail</a></p>
+  <p>Related: <a href="/ipostal1-vs-traveling-mailbox/">iPostal1 vs Traveling Mailbox</a> · <a href="/anytime-mailbox-vs-postscan-mail/">Anytime Mailbox vs PostScan Mail</a> · <a href="/cancel-virtual-mailbox/">canceling a virtual mailbox</a> · <a href="/virtual-mailbox-in-person-pickup/">in-person pickup</a> · <a href="/virtual-mailbox-forwarding-fees/">mail forwarding fees compared</a> · <a href="/virtual-mailbox-storage-fees/">how long mail is kept</a> · <a href="/cheapest-virtual-mailbox-by-state/">cheapest address by state</a> · <a href="/virtual-office-vs-virtual-mailbox/">virtual office vs virtual mailbox</a> · <a href="/physicaladdress-pricing/">PhysicalAddress.com pricing</a> · <a href="/postscan-mail-pricing/">PostScan Mail pricing</a> · <a href="/traveling-mailbox-pricing/">Traveling Mailbox pricing</a> · <a href="/virtual-post-mail-pricing/">Virtual Post Mail pricing</a> · <a href="/virtual-mailbox-vs-po-box/">virtual mailbox vs PO Box</a> · <a href="/earth-class-mail-pricing/">Earth Class Mail pricing</a> · <a href="/stable-vs-earth-class-mail/">Stable vs Earth Class Mail</a> · <a href="/us-global-mail-vs-traveling-mailbox/">US Global Mail vs Traveling Mailbox</a> · <a href="/cheapest-virtual-mailbox/">the cheapest virtual mailbox</a> · <a href="/usps-form-1583-online-notarization/">Form 1583 and online notarization</a> · <a href="/traveling-mailbox-vs-postscan-mail/">Traveling Mailbox vs PostScan Mail</a></p>
 </Base>
