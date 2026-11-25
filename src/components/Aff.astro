@@ -3,8 +3,12 @@
 // "affiliate link" tag as an FTC-style disclosure. Unapproved programs render
 // as ordinary outbound links with no badge. Keep data-affiliate so links can
 // be found with: grep -r 'data-affiliate' src
-const approved = new Set(['usglobalmail', 'virtualpostmail', 'bluenotary', 'notarize']);
+const approved = new Set(['usglobalmail', 'virtualpostmail', 'bluenotary', 'notarize', 'travelingmailbox']);
+const tracking = {
+  travelingmailbox: 'https://travelingmailbox.com/?ref=3953',
+};
 const { id, href, text } = Astro.props;
 const isApproved = approved.has(id);
+const out = tracking[id] || href;
 ---
-<a href={href} data-affiliate={id} rel={isApproved ? 'sponsored nofollow noopener' : 'noopener'} target="_blank">{text}</a>{isApproved && <span class="aff-tag" title="Affiliate link: we may earn a commission">affiliate link</span>}
+<a href={out} data-affiliate={id} rel={isApproved ? 'sponsored nofollow noopener' : 'noopener'} target="_blank">{text}</a>{isApproved && <span class="aff-tag" title="Affiliate link: we may earn a commission">affiliate link</span>}
