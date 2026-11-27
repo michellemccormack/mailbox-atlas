@@ -1,0 +1,60 @@
+---
+import Base from '../layouts/Base.astro';
+import Src from '../components/Src.astro';
+import Aff from '../components/Aff.astro';
+import { S } from '../data/sources.js';
+const title = 'Can a Virtual Mailbox Receive Amazon, UPS and FedEx Packages? Carriers, Size Limits and Package Fees by Provider';
+const description = 'Every major virtual mailbox accepts packages from UPS, FedEx and DHL as well as USPS. The differences are size limits (Traveling Mailbox takes no freight; PostScan charges $0.25/lb over 25 lbs), free package storage (3 days to 30 days) and where to ship. Provider by provider, checked Nov 27, 2026.';
+const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-27"};
+---
+<Base title={title} description={description} updated="2026-11-27" schema={schema}>
+  <h1>Receiving packages at a virtual mailbox</h1>
+  <div class="answer"><p><strong>Short answer:</strong> Yes. Because a virtual mailbox is a street address, it takes deliveries from UPS, FedEx, DHL and Amazon as well as USPS. US Global Mail and PostScan Mail name Amazon specifically <Src href={S.usgmPackages} label="USGM" /> <Src href={S.psmFaq} label="PostScan" />. What varies is how long packages are stored free, size limits, and, at Traveling Mailbox, a separate package address <Src href={S.tmbPkgWhere} label="TMB" />.</p></div>
+  <p class="lede">The practical questions are which carriers each provider accepts, whether big boxes are a problem, how long a package sits free, and what it costs after that. All from the providers' own pages, checked November 27, 2026. For shipping packages onward, see <a href="/virtual-mailbox-forwarding-fees/">forwarding fees</a>.</p>
+
+  <h2>Carriers and package rules by provider</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Provider</th><th>Carriers accepted</th><th>Free package storage</th><th>After that</th><th>Size and other rules</th></tr></thead>
+    <tbody>
+      <tr><td>US Global Mail</td><td>"USPS, UPS, FedEx, DHL, Amazon, and more" <Src href={S.usgmPackages} /></td><td>30 days (Scale), 60 days (Teams) <Src href={S.usgmStorageFees} /></td><td>$0.10 per lb per day <Src href={S.usgmStorageFees} /></td><td>Packages processed Monday to Friday; weekend shipment requests go out the next business day <Src href={S.usgmPkgSchedule} /></td></tr>
+      <tr><td>iPostal1</td><td>USPS, "FedEx, UPS and other carriers" <Src href={S.ipFaq} /></td><td>30 days under 12×12×12 in; 10 days up to 24×17×12 in; 5 days at or over 24×17×12 in <Src href={S.ipVma} /></td><td>$1.10 per lb per month, per 10 days, or per 5 days by the same size bands <Src href={S.ipVma} /></td><td>Content photos $3.95; consolidation $1.95 per package <Src href={S.ipVma} /></td></tr>
+      <tr><td>Anytime Mailbox</td><td>"USPS, FedEx, UPS, DHL, and any other shipping company" <Src href={S.atmFaq} /></td><td>Set by each location</td><td>Set by each location</td><td>Locations "will sign for all your mail and package deliveries" <Src href={S.atmFaq} /></td></tr>
+      <tr><td>PostScan Mail</td><td>"USPS, FedEx, UPS, DHL, and Amazon" <Src href={S.psmFaq} /></td><td>3 days, or 7 days on an annual plan <Src href={S.psm} /></td><td>$0.10 per lb per day <Src href={S.psm} /></td><td>Over 25 lbs or over 110 in length and girth: $0.25 per lb. Packages count toward the plan's item limit <Src href={S.psm} /></td></tr>
+      <tr><td>Traveling Mailbox</td><td>Parcel carriers; "does not accept freight deliveries" <Src href={S.tmbPkgSize} /></td><td>30 days <Src href={S.tmbPkgHold} /></td><td>$0.10 per lb per day <Src href={S.tmbPkgHold} /></td><td>Ship packages to its Sanford, NC package address even if your letter address is elsewhere <Src href={S.tmbPkgWhere} /></td></tr>
+      <tr><td>Virtual Post Mail</td><td>"All couriers, including FedEx and UPS" <Src href={S.vpmCouriers} /></td><td>15 days (Starter, Plus, Business), 30 days (Premium) <Src href={S.vpmPricing} /></td><td>—</td><td>Signs for items that need a signature <Src href={S.vpmCouriers} />. Perishable packages get 7 days of guaranteed storage <Src href={S.vpmStorage} /></td></tr>
+      <tr><td>Stable</td><td>"FedEx, UPS, DHL, and USPS" <Src href={S.stable} /></td><td>Up to 15 days <Src href={S.stable} /></td><td>Disposed of after the storage period <Src href={S.stable} /></td><td>—</td></tr>
+      <tr><td>PhysicalAddress.com</td><td>"UPS/FedEx Can Deliver" <Src href={S.paRa} /></td><td>1 week <Src href={S.paPricing} /></td><td>—</td><td>—</td></tr>
+    </tbody>
+  </table></div>
+  <p class="meta">Anytime Mailbox locations are independently run, so storage and fees are shown on each location's plan details <Src href={S.atmFaq} />. See <a href="/anytime-mailbox-pricing/">Anytime Mailbox pricing</a>.</p>
+
+  <h2>Why a PO Box can't do this</h2>
+  <p>Virtual Post Mail puts it simply: "A regular PO box only allows you to accept parcels from USPS itself" <Src href={S.vpmCouriers} />. Some Post Offices offer a street-address option for PO Boxes; see <a href="/virtual-mailbox-vs-po-box/">virtual mailbox vs PO Box</a> for how that works.</p>
+
+  <h2>Addressing a package so it isn't refused</h2>
+  <ul>
+    <li><strong>Your name plus the mailbox number</strong> on every label. USGM: "be sure the sender includes your name and mailbox number on the label" <Src href={S.usgmPackages} />. Traveling Mailbox says to replace the placeholder with your real mailbox number and use an authorized recipient name <Src href={S.tmbPkgWhere} />.</li>
+    <li><strong>Only names on your Form 1583.</strong> If a CMRA has no Form 1583 on file for the addressee, USPS rules say it must return the mail marked "No Authorization to Receive Mail for this Addressee" <Src href={S.dmm508} label="DMM 508.1.8" />. See <a href="/form-1583-for-business/">Form 1583 for a business</a> for adding names.</li>
+    <li><strong>Check the format</strong> (PMB, # or Suite) in <a href="/how-to-write-virtual-mailbox-address/">how to write a virtual mailbox address</a>.</li>
+  </ul>
+
+  <h2>Large and heavy items</h2>
+  <ul>
+    <li><strong>Traveling Mailbox:</strong> if an item "must arrive through a freight service, it is not eligible for delivery," and it asks you to check the seller's shipping method first. It doesn't repack <Src href={S.tmbPkgSize} />.</li>
+    <li><strong>PostScan Mail:</strong> accepts oversized boxes, with a $0.25 per lb surcharge over 25 lbs or 110 inches in length and girth <Src href={S.psm} />.</li>
+    <li><strong>iPostal1:</strong> big boxes get less free storage: 5 days at or over 24×17×12 inches, versus 30 days under 12×12×12 <Src href={S.ipVma} />.</li>
+  </ul>
+
+  <h2>What a package costs to hold: one example</h2>
+  <p>A 10 lb box left 10 days past the free period costs 10 × $0.10 × 10 = <strong>$10</strong> at US Global Mail, PostScan Mail or Traveling Mailbox, which all charge $0.10 per lb per day <Src href={S.usgmStorageFees} label="USGM" /> <Src href={S.psm} label="PostScan" /> <Src href={S.tmbPkgHold} label="TMB" />. The difference is when that clock starts: day 4 at PostScan on a monthly plan, day 31 at Traveling Mailbox. For letters too, see <a href="/virtual-mailbox-storage-fees/">how long mail is kept</a>.</p>
+
+  <h2>Links</h2>
+  <ul>
+    <li><Aff id="usglobalmail" href="https://www.usglobalmail.com/?via=michelle" text="US Global Mail" /></li>
+    <li><Aff id="travelingmailbox" href="https://travelingmailbox.com/?ref=3953" text="Traveling Mailbox" /></li>
+    <li><Aff id="virtualpostmail" href="https://refer.virtualpostmail.com/l/13ELDJ264/" text="Virtual Post Mail" /></li>
+    <li><Aff id="ipostal1" href="https://ipostal1.com/" text="iPostal1" /></li>
+    <li><Aff id="postscanmail" href="https://www.postscanmail.com/" text="PostScan Mail" /></li>
+  </ul>
+  <p>More: <a href="/virtual-mailbox-in-person-pickup/">in-person pickup</a> · <a href="/virtual-mailbox-from-abroad/">virtual mailbox from abroad</a> · <a href="/virtual-mailbox-pricing-comparison/">all providers compared</a> · <a href="/">Mailbox Atlas home</a></p>
+</Base>

@@ -1,0 +1,72 @@
+---
+import Base from '../layouts/Base.astro';
+import Src from '../components/Src.astro';
+import Aff from '../components/Aff.astro';
+import { S } from '../data/sources.js';
+const title = 'Monthly vs Annual Virtual Mailbox Plans: What the Yearly Price Actually Saves';
+const description = 'Paying yearly saves $20.88 on iPostal1\'s $9.99 plan, $48 to $360 at US Global Mail, $120 to $192 at Stable and $20 to $60 at PostScan Mail. Traveling Mailbox gives 2 months free and prorates refunds; US Global Mail and Stable don\'t refund after 30 days. Break-even months and refund rules, checked Nov 27, 2026.';
+const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-27"};
+---
+<Base title={title} description={description} updated="2026-11-27" schema={schema}>
+  <h1>Monthly vs annual virtual mailbox billing</h1>
+  <div class="answer"><p><strong>Short answer:</strong> A yearly plan usually costs about ten months' worth of the monthly price, so it pays off only if you keep the mailbox at least 10 or 11 months. Before you prepay, check the refund rule: US Global Mail gives no refund for unused time after 30 days <Src href={S.usgmRefund} label="USGM" />, Stable gives none after 30 days from the first invoice <Src href={S.stableCancelPolicy} label="Stable" />, while Traveling Mailbox prorates annual refunds monthly <Src href={S.tmbAnnualRefund} label="TMB" />.</p></div>
+  <p class="lede">Most providers advertise "2 months free" or a percentage off for paying a year up front. Here's the dollar saving at each provider that publishes both prices, how many months you need to stay to come out ahead, and what happens if you cancel early. Prices from each provider's own page, checked November 27, 2026.</p>
+
+  <h2>Yearly savings by provider</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Provider and plan</th><th>Monthly billing, 12 months</th><th>Annual billing</th><th>You save</th><th>Annual wins if you stay</th></tr></thead>
+    <tbody>
+      <tr><td>iPostal1, 30 items <Src href={S.ipVma} /></td><td>$9.99 × 12 = $119.88</td><td>$99.00</td><td>$20.88</td><td>10+ months</td></tr>
+      <tr><td>iPostal1, 60 items <Src href={S.ipVma} /></td><td>$14.99 × 12 = $179.88</td><td>$149.00</td><td>$30.88</td><td>10+ months</td></tr>
+      <tr><td>US Global Mail Occasional <Src href={S.usgm} /></td><td>$25 × 12 = $300</td><td>$21/mo = $252</td><td>$48</td><td>11+ months</td></tr>
+      <tr><td>US Global Mail Scale <Src href={S.usgm} /></td><td>$65 × 12 = $780</td><td>$49/mo = $588</td><td>$192</td><td>10+ months</td></tr>
+      <tr><td>US Global Mail Teams <Src href={S.usgm} /></td><td>$129 × 12 = $1,548</td><td>$99/mo = $1,188</td><td>$360</td><td>10+ months</td></tr>
+      <tr><td>Stable Grow <Src href={S.stable} /></td><td>$59 × 12 = $708</td><td>$49/mo = $588</td><td>$120</td><td>10+ months</td></tr>
+      <tr><td>Stable Scale <Src href={S.stable} /></td><td>$99 × 12 = $1,188</td><td>$83/mo = $996</td><td>$192</td><td>11+ months</td></tr>
+      <tr><td>PostScan Mail Starter, lowest-priced address <Src href={S.psm} /></td><td>$10 × 12 = $120</td><td>$100</td><td>$20</td><td>10+ months</td></tr>
+      <tr><td>PostScan Mail Standard, lowest-priced address <Src href={S.psm} /></td><td>$20 × 12 = $240</td><td>$200</td><td>$40</td><td>10+ months</td></tr>
+      <tr><td>PostScan Mail Premium, lowest-priced address <Src href={S.psm} /></td><td>$30 × 12 = $360</td><td>$300</td><td>$60</td><td>10+ months</td></tr>
+      <tr><td>Traveling Mailbox Basic <Src href={S.tmb} /></td><td>$15 × 12 = $180</td><td>—</td><td>"2 months free"</td><td>—</td></tr>
+      <tr><td>PhysicalAddress.com Plan 30 <Src href={S.paPricing} /></td><td>From $7.98 × 12 = $95.76</td><td>—</td><td>"20% Off Annual Plans"</td><td>—</td></tr>
+      <tr><td>Virtual Post Mail Starter <Src href={S.vpmPricing} /></td><td>$20 × 12 = $240</td><td>—</td><td>—</td><td>—</td></tr>
+    </tbody>
+  </table></div>
+  <p class="meta">"Annual wins if you stay" is the first month at which the monthly bills add up to at least the annual price, e.g. 9 months of USGM Scale is $585 and 10 is $650, against $588 up front. iPostal1 prices are for Standard locations; Select, Premium and Prestige addresses cost more <Src href={S.ipVma} />. US Global Mail prices are marked "*varies by address" <Src href={S.usgm} />. PostScan's prices rise with the address tier, up to $45, $55 and $65 a month <Src href={S.psm} />. Traveling Mailbox and PhysicalAddress.com describe the annual discount but don't print an annual dollar price on their pricing pages; Virtual Post Mail lists monthly prices only.</p>
+
+  <h2>Annual plans that include more, not just less</h2>
+  <ul>
+    <li><strong>PostScan Mail</strong> gives annual plans more: Starter 2 recipients instead of 1, Standard 10 free open-and-scans and 3 recipients instead of 5 and 2, Premium 20 and 6 instead of 10 and 4 <Src href={S.psm} />. Free letter storage goes from 14 to 30 days and free package storage from 3 to 7 days <Src href={S.psm} />.</li>
+    <li><strong>Stable</strong> shows "Save 16%" on yearly billing <Src href={S.stable} />, and offers 50% off Grow for businesses under $1 million in annual revenue or those using a Stable address to incorporate <Src href={S.stable} />.</li>
+  </ul>
+
+  <h2>If you cancel before the year is up</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Provider</th><th>First 30 days</th><th>After 30 days</th></tr></thead>
+    <tbody>
+      <tr><td>US Global Mail</td><td>Full refund: "30-day money-back guarantee on all plans" <Src href={S.usgmRefund} /></td><td>"We do not offer refunds for unused time." USGM itself suggests a monthly plan "if you're unsure about long-term needs" <Src href={S.usgmRefund} /></td></tr>
+      <tr><td>Stable</td><td>Full refund within 30 days of your first invoice, base subscription and one seat only <Src href={S.stableCancelPolicy} /></td><td>No refund; access continues to the end of the billing cycle <Src href={S.stableCancelPolicy} /></td></tr>
+      <tr><td>Traveling Mailbox</td><td>—</td><td>Prorated refunds "handled on a monthly schedule"; contact support for the amount <Src href={S.tmbAnnualRefund} /></td></tr>
+      <tr><td>iPostal1</td><td>"Full refund within first 30 days upon request, if account not used" <Src href={S.ipVma} /></td><td>Plans renew unless canceled before the billing date <Src href={S.ipVma} /></td></tr>
+      <tr><td>Virtual Post Mail</td><td>30-day money-back guarantee <Src href={S.vpmPricing} /></td><td>—</td></tr>
+    </tbody>
+  </table></div>
+  <p>Traveling Mailbox is the one provider here that publishes a partial refund on annual plans after the first month, which makes its yearly plan the lowest-risk prepay. More on closing an account in <a href="/cancel-virtual-mailbox/">how to cancel a virtual mailbox</a>.</p>
+
+  <h2>Which to choose</h2>
+  <ol>
+    <li><strong>Start monthly</strong> if you're not sure of your mail volume. Traveling Mailbox, for one, lets you "Change Plans Anytime" <Src href={S.tmb} />, and a wrong-sized plan can cost more in overage fees than the annual discount saves. Size it first with the <a href="/virtual-mailbox-chooser/">virtual mailbox chooser</a>.</li>
+    <li><strong>Switch to annual after a month or two</strong> once you know the plan fits. USGM says you can "start off with the Monthly plan and upgrade at any time" <Src href={S.usgmPayTerms} />.</li>
+    <li><strong>Prepay right away</strong> only if you're sure you'll keep the address for a year, for example an LLC address already on state filings. See <a href="/virtual-mailbox-for-llc/">virtual mailbox for an LLC</a>.</li>
+  </ol>
+
+  <h2>Links</h2>
+  <ul>
+    <li><Aff id="travelingmailbox" href="https://travelingmailbox.com/?ref=3953" text="Traveling Mailbox" /></li>
+    <li><Aff id="usglobalmail" href="https://www.usglobalmail.com/?via=michelle" text="US Global Mail" /></li>
+    <li><Aff id="virtualpostmail" href="https://refer.virtualpostmail.com/l/13ELDJ264/" text="Virtual Post Mail" /></li>
+    <li><Aff id="ipostal1" href="https://ipostal1.com/" text="iPostal1" /></li>
+    <li><Aff id="stable" href="https://www.usestable.com/" text="Stable" /></li>
+    <li><Aff id="postscanmail" href="https://www.postscanmail.com/" text="PostScan Mail" /></li>
+  </ul>
+  <p>More: <a href="/cheapest-virtual-mailbox/">the cheapest virtual mailbox</a> · <a href="/traveling-mailbox-pricing/">Traveling Mailbox pricing</a> · <a href="/virtual-mailbox-pricing-comparison/">all providers compared</a> · <a href="/">Mailbox Atlas home</a></p>
+</Base>
