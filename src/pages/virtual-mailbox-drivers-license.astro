@@ -1,0 +1,53 @@
+---
+import Base from '../layouts/Base.astro';
+import Src from '../components/Src.astro';
+import Aff from '../components/Aff.astro';
+import { S } from '../data/sources.js';
+const title = 'Can You Put a Virtual Mailbox Address on Your Driver\'s License? Texas, Florida and South Dakota Rules';
+const description = 'A REAL ID license needs two documents showing your principal residence, so a virtual mailbox usually can\'t be your license address. Texas wants a Texas residence address and rejects mail with a forwarding label; Florida wants two documents with a Florida residential address; South Dakota accepts a mail-forwarding PMB for full-time travelers with an affidavit. Checked Nov 27, 2026.';
+const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-27"};
+---
+<Base title={title} description={description} updated="2026-11-27" schema={schema}>
+  <h1>Virtual mailbox addresses on a driver's license</h1>
+  <div class="answer"><p><strong>Short answer:</strong> Usually only as a mailing address. Federal REAL ID rules require "at least two documents ... that include the individual's name and principal residence" <Src href={S.realId3711} label="6 CFR 37.11" />, and states ask for a residential address. Texas says "A business address is not acceptable" <Src href={S.txTac1525} label="37 TAC 15.25" />, and Florida asks for two documents with your Florida residential address <Src href={S.flWhatToBring} label="FLHSMV" />. South Dakota is the main exception: full-time travelers can use a South Dakota mail-forwarding address with a residency affidavit <Src href={S.sdDlManual} label="SD DPS" />.</p></div>
+  <p class="lede">Mailbox companies often say customers use their address at the DMV. iPostal1's FAQ says "the vast majority of states permit this, but the laws vary by state" <Src href={S.ipFaq} label="iPostal1" />, and US Global Mail says "Many of our customers have used their US Global Mail addresses for their driver's licenses" <Src href={S.usgmUse} label="USGM" />. The states' own pages are stricter. Here is what the federal rule and three states with clear published rules say. Checked November 27, 2026. Rules change, so confirm with the licensing office before you go.</p>
+
+  <h2>The federal baseline: REAL ID</h2>
+  <ul>
+    <li><strong>Proof of address:</strong> "To document the address of principal residence, a person must present at least two documents of the State's choice that include the individual's name and principal residence" <Src href={S.realId3711} label="6 CFR 37.11(f)" />.</li>
+    <li><strong>What's printed on the card:</strong> the "Address of principal residence," except where state law or DMV procedure allows an alternative address, or for people in address confidentiality programs and a few other listed groups <Src href={S.realId3717} label="6 CFR 37.17(f)" />.</li>
+  </ul>
+  <p>So a mailbox address can only be printed where a state has chosen to allow an alternative address, and you still prove where you actually live.</p>
+
+  <h2>State by state</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>State</th><th>Residence address</th><th>Where a mailbox address fits</th><th>Rule on forwarded mail</th></tr></thead>
+    <tbody>
+      <tr><td>Texas</td><td>"The applicant's Texas residence address must be given. A business address is not acceptable" <Src href={S.txTac1525} label="37 TAC 15.25" />. Two documents with your name and Texas residential address, one showing 30 days in Texas <Src href={S.txDpsResidency} label="Texas DPS" /></td><td>As a separate mailing address "in addition to a Texas residence address" <Src href={S.txTac1525} label="37 TAC 15.25" /></td><td>"Mail addressed with a forwarding label or address label affixed to the envelope or contents is not acceptable" <Src href={S.txTac1549} label="37 TAC 15.49(g)" /></td></tr>
+      <tr><td>Florida</td><td>Two different documents "with their Florida residential address," such as a lease, utility bill or bank statement (most dated within 60 days) <Src href={S.flWhatToBring} label="FLHSMV" /></td><td>The application asks for both a "mailing address" and "proof of residential address" <Src href={S.fl32208} label="Fla. Stat. 322.08" /></td><td>—</td></tr>
+      <tr><td>South Dakota</td><td>Full-time travelers using "a South Dakota mail forwarding address" complete a Residency Affidavit <Src href={S.sdDlManual} label="SD DPS" /></td><td>The PMB itself, with a PMB contract, one document under a year old showing the PMB address, and a receipt for one night's stay in South Dakota within the last year <Src href={S.sdDlManual} label="SD DPS" /></td><td>The affidavit says your PMB "is a mail forwarding service, and not a virtual only mail service" <Src href={S.sdAffidavit} label="SD affidavit" /></td></tr>
+    </tbody>
+  </table></div>
+  <p class="meta">Texas exceptions: DPS waives the residency requirement for groups such as Address Confidentiality Program participants, judges and active-duty military <Src href={S.txDpsResidency} label="Texas DPS" />. Florida CDL applicants have stricter lists, and those without a List A document need a Declaration of Domicile filed with the clerk of court <Src href={S.flWhatToBring} label="FLHSMV" />.</p>
+
+  <h2>Texas: why forwarded mail fails</h2>
+  <p>Texas accepts bank, credit card and government statements as proof, but they must show your residential address <Src href={S.txDpsResidency} label="Texas DPS" />. A statement sent to your mailbox shows the mailbox address, and anything re-addressed with a forwarding label is rejected outright <Src href={S.txTac1549} label="37 TAC 15.49(g)" />. If you can't produce two documents, DPS says you "may be eligible to complete a Texas Residency Affidavit" <Src href={S.txDpsResidency} label="Texas DPS" />.</p>
+
+  <h2>South Dakota: the full-timer route</h2>
+  <p>South Dakota is the one state here that publishes a path for a PMB address, but only if you don't keep a home elsewhere: "if you maintain a residence in another state, you do not qualify as a full-time traveler" <Src href={S.sdDlManual} label="SD DPS" />. The affidavit also says a South Dakota license means jury duty notices from South Dakota <Src href={S.sdAffidavit} label="SD affidavit" />. Our <a href="/virtual-mailbox-for-rvers/">mail guide for full-time RVers</a> covers which providers have South Dakota addresses and the open question of what counts as "virtual only."</p>
+
+  <h2>What to do</h2>
+  <ol>
+    <li><strong>Keep your residence address on the license</strong> and use the mailbox for everything that only needs a mailing address. See <a href="/change-address-to-virtual-mailbox/">changing your address to a virtual mailbox</a>.</li>
+    <li><strong>For Form 1583</strong>, a driver's license is one of the accepted IDs; see <a href="/usps-form-1583-online-notarization/">Form 1583 and online notary</a>.</li>
+    <li><strong>Full-time travelers</strong> who want South Dakota should read the affidavit wording before choosing a provider, and ask SD DPS if unsure.</li>
+  </ol>
+
+  <h2>Links</h2>
+  <ul>
+    <li><Aff id="travelingmailbox" href="https://travelingmailbox.com/?ref=3953" text="Traveling Mailbox" /></li>
+    <li><Aff id="usglobalmail" href="https://www.usglobalmail.com/?via=michelle" text="US Global Mail" /></li>
+    <li><Aff id="ipostal1" href="https://ipostal1.com/" text="iPostal1" /></li>
+  </ul>
+  <p>More: <a href="/virtual-mailbox-from-abroad/">virtual mailbox from abroad</a> · <a href="/virtual-mailbox-for-bank-account/">virtual mailbox for a bank account</a> · <a href="/virtual-mailbox-pricing-comparison/">all providers compared</a> · <a href="/">Mailbox Atlas home</a></p>
+</Base>

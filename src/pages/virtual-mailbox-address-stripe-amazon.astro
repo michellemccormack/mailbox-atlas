@@ -1,0 +1,62 @@
+---
+import Base from '../layouts/Base.astro';
+import Src from '../components/Src.astro';
+import Aff from '../components/Aff.astro';
+import { S } from '../data/sources.js';
+const title = 'Can You Use a Virtual Mailbox Address for Stripe or Amazon Seller Verification?';
+const description = 'Stripe asks for the physical place where most of your business activity happens and says private mailboxes are not accepted; Issuing, Treasury and Opal screen out mailbox and virtual addresses automatically. Amazon wants the address on your business license plus proof of a residential address. What each actually says, checked Nov 27, 2026.';
+const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-27"};
+---
+<Base title={title} description={description} updated="2026-11-27" schema={schema}>
+  <h1>Virtual mailbox addresses on Stripe and Amazon seller accounts</h1>
+  <div class="answer"><p><strong>Short answer:</strong> Not as your verified business address. Stripe's U.S. account rules ask for "the address of the physical location where the majority of your business activity is carried out," and its address-change page says "PO Boxes, HCs, and Private Mailboxes will not be accepted" <Src href={S.stripeUsReq} label="Stripe" /> <Src href={S.stripeUpdateAddr} label="Stripe" />. A virtual mailbox address is a private mailbox in USPS terms <Src href={S.dmm508} label="DMM 508.1.8" />. Amazon asks for the registered business address on your business license plus proof of your residential address <Src href={S.amzRegGuide} label="Amazon" />. Use the mailbox for mail, not for these verification fields.</p></div>
+  <p class="lede">People often get a virtual mailbox so their home address stays off a payment or marketplace account, then hit a verification wall. Here's what Stripe and Amazon publish about addresses, and where a mailbox address can still help. Checked November 27, 2026. This is a summary of the companies' own help pages, not legal advice, and each company makes its own review decisions.</p>
+
+  <h2>Stripe: three different rules</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Stripe product or field</th><th>What Stripe says</th><th>Mailbox address OK?</th></tr></thead>
+    <tbody>
+      <tr><td>Business address, any U.S. account</td><td>"All businesses must provide the address of the physical location where the majority of your business activity is carried out (PO Boxes are not accepted)" <Src href={S.stripeUsReq} />. When you edit it: "It must be a valid US address. PO Boxes, HCs, and Private Mailboxes will not be accepted" <Src href={S.stripeUpdateAddr} /></td><td>No</td></tr>
+      <tr><td>Issuing, Treasury and Opal (since July 1, 2025)</td><td>Stripe screens the business and account representative addresses and no longer allows "addresses associated with mailbox services and virtual address services" <Src href={S.stripePhysical} />. Its docs name UPS Stores, FedEx Office locations and "virtual mail services" as CMRA addresses it blocks, along with registered agent addresses <Src href={S.stripeAddrValidation} /></td><td>No, and the check is automatic</td></tr>
+      <tr><td>Stripe Atlas companies</td><td>For "Stripe payments: You can use a physical or virtual U.S. address," and Atlas points people without a U.S. address to its partner Stable <Src href={S.stripeAtlasAddr} />. For Issuing, Treasury or Opal, an Atlas company still needs a physical U.S. address that "can't be your Atlas registered agent, nor can it be a mailbox or virtual address service" <Src href={S.stripePhysical} /></td><td>Payments only, per the Atlas article</td></tr>
+    </tbody>
+  </table></div>
+  <p>The two Stripe articles don't fully agree: the Atlas article allows a virtual U.S. address for payments, while the business-address page rejects private mailboxes. If you formed through Atlas, follow the Atlas article and keep your formation documents handy; everyone else should expect a private mailbox to be rejected.</p>
+
+  <h3>What happens if Stripe flags the address</h3>
+  <ul>
+    <li><strong>Payments keep working.</strong> Accounts with a mailbox or registered agent address lose Issuing, Treasury and Opal, but "will still be able to use Stripe for payment processing and other products" <Src href={S.stripePhysical} />.</li>
+    <li><strong>Existing money-management accounts get 30 days.</strong> Stripe notifies them and gives "a 30-day grace period," then disables those capabilities until a valid address is added <Src href={S.stripeAddrValidation} />.</li>
+    <li><strong>The error says so plainly:</strong> "The address you provided appears to be associated with a mailbox or virtual address service, which we can't accept" <Src href={S.stripeAddrValidation} />.</li>
+    <li><strong>To appeal</strong>, Stripe says to update to "a physical location where you operate," or, if the address really is your location, submit a proof of address document <Src href={S.stripeAddrValidation} />. For business-address checks it accepts a signed lease, utility bills, federal or state tax returns, or Articles of Incorporation showing the business or owner's name <Src href={S.stripeVerifyAddr} />.</li>
+  </ul>
+
+  <h2>Amazon seller registration</h2>
+  <p>Amazon's registration guide asks for two different addresses <Src href={S.amzRegGuide} />:</p>
+  <ul>
+    <li><strong>Registered business address:</strong> "Enter the address that appears on your business license." <Src href={S.amzRegGuide} /></li>
+    <li><strong>Proof of residential address:</strong> a document "dated from the last 180 days, like a bank or credit card statement," uploaded with a government-issued ID, followed by a photo check or a video call where you bring the ID and proof of residential address <Src href={S.amzRegGuide} />.</li>
+  </ul>
+  <p>A mailbox address isn't a residence, so it can't fill the second field. Whether it can be the first depends on what's on your business license, and an LLC's state filing often needs a street address for the registered office anyway; see <a href="/virtual-mailbox-for-llc/">virtual mailbox for an LLC</a>. Amazon's guide says identity verification "usually takes three business days or less" <Src href={S.amzRegGuide} />.</p>
+
+  <h2>What the mailbox providers say</h2>
+  <ul>
+    <li><strong>US Global Mail:</strong> most banks and card issuers accept its address, but "some banks have recently started asking for a personal address, which is not a CMRA" address; customers then give a personal address and use the USGM address for mail <Src href={S.usgmUse} />.</li>
+    <li><strong>PostScan Mail:</strong> its pricing page warns, "A mail center is not ideal for use with financial institutions and/or business registration" <Src href={S.psm} />.</li>
+    <li><strong>Virtual Post Mail:</strong> its pricing page says "The mailbox address is not a physical address" and points to TruLease, a leased office address it calls "ideal for satisfying compliance requirements for bank accounts, Amazon Store, and more" <Src href={S.vpmPricing} /> <Src href={S.vpmTruLease} label="TruLease" />. Costs are on our <a href="/virtual-post-mail-pricing/">VPM pricing</a> page. Whether Stripe or Amazon accepts a particular leased address is their call, not VPM's.</li>
+  </ul>
+
+  <h2>Where a virtual mailbox still fits</h2>
+  <ol>
+    <li><strong>Mailing address on your accounts and invoices.</strong> Keep the physical address in the verification field and route paper mail (1099s, notices, checks) to the mailbox.</li>
+    <li><strong>Formation and IRS mail.</strong> A mailbox can go on IRS Form SS-4's mailing address line <Src href={S.irsSs4} />. See <a href="/virtual-mailbox-for-bank-account/">virtual mailbox for a bank account</a> for which bank fields take a PMB.</li>
+  </ol>
+
+  <h2>Links</h2>
+  <ul>
+    <li><Aff id="usglobalmail" href="https://www.usglobalmail.com/?via=michelle" text="US Global Mail" /></li>
+    <li><Aff id="virtualpostmail" href="https://refer.virtualpostmail.com/l/13ELDJ264/" text="Virtual Post Mail (TruLease)" /></li>
+    <li><Aff id="stable" href="https://www.usestable.com/" text="Stable" /></li>
+  </ul>
+  <p>More: <a href="/virtual-mailbox-google-business-profile/">virtual mailbox for a Google Business Profile</a> · <a href="/virtual-office-vs-virtual-mailbox/">virtual office vs virtual mailbox</a> · <a href="/virtual-mailbox-pricing-comparison/">all providers compared</a> · <a href="/">Mailbox Atlas home</a></p>
+</Base>
