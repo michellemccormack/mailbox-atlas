@@ -92,6 +92,24 @@ Published pages must not show internal notes: no "unverified" or "affiliate link
 - Stable support article 8292017 mentions a "$29.50/month" plan; not used (may be outdated vs pricing page).
 - VPM custom pricing details page: $20 service fee + postage to ship mail after a mailbox is closed (not used on page; conflicts with VPM no-remail article).
 
+## Done (2026-11-27; all five live-verified HTTP 200 on mailboxatlas.com, no banned text)
+- [x] /virtual-mailbox-address-stripe-amazon/ (queue #31). Stripe support articles (US account requirements, update business address, verifying business address, physical presence FAQ, Atlas address), Stripe docs address validation (CMRA/registered agent screening, 30-day grace), sell.amazon.com registration guide (business-license address + proof of residential address within 180 days). Stripe's Atlas article ("physical or virtual U.S. address" for payments) and its business-address page (private mailboxes not accepted) disagree; both shown. Amazon Seller Central help pages are JS-only (not used).
+- [x] /virtual-mailbox-drivers-license/ (queue #37, merged with #41 and #43). 6 CFR 37.11(f)/37.17(f) (eCFR), Texas DPS residency page, 37 TAC 15.25 and 15.49(g) (LII text; texreg.sos.state.tx.us and statutes.capitol.texas.gov time out from the box), FLHSMV What to Bring, Fla. Stat. 322.08, SD DPS DL manual + Residency Affidavit (re-read 11-27). No claims about other states.
+- [x] /virtual-mailbox-google-business-profile/ (queue #51). Google Business Profile guidelines (answer 3038177) and service-area help (answer 9157481); Anytime Mailbox FAQ. Google verification article returned 429 (not used).
+- [x] /virtual-mailbox-packages/ (queue #52). Carrier, storage and size rules from USGM help (packages, processing schedule, storage fees), iPostal1 VMA pricing (storage by cubic size), Anytime FAQ, PostScan pricing (oversized $0.25/lb over 25 lbs/110 in) + FAQ, TMB KB (no freight, Sanford package address, 30 days then $0.10/lb/day), VPM help (couriers, perishables) + pricing (15/30 days), Stable pricing, PhysicalAddress pricing/RA page.
+- [x] /virtual-mailbox-annual-vs-monthly/ (queue #54). iPostal1, USGM, Stable, PostScan published both prices; TMB ("2 months free"), PhysicalAddress ("20% Off Annual Plans") print no annual dollar price (dash); VPM monthly only. Refund rules: USGM, Stable, TMB prorated-annual KB article, iPostal1, VPM.
+- [~] Queue #36 (nonprofit/church) DEFERRED: no provider publishes nonprofit-specific pricing or rules on the pages checked; address rules are the same as /virtual-mailbox-for-llc/. Build only with a distinct official source (e.g. IRS Form 1023/990 address instructions).
+- [~] Queue #39 (state tax residency) DEFERRED: needs official state domicile guidance that addresses mailing addresses directly; not researched tonight.
+- [~] Queue #44 and #45 SKIPPED: near-duplicates of /virtual-mailbox-for-llc/ (its table and "one bill" section already compare iPostal1 $99/yr, Stable $25/mo per state, VPM and PhysicalAddress.com free registered agents).
+- Also: homepage cards for all five; More/Related links from bank, storage, forwarding, RVers, cancel, comparison, LLC and virtual office pages.
+
+## Data notes (2026-11-27)
+- Stripe support pages render via JS; the article markdown is in the page's embedded JSON (extract with python from the raw HTML).
+- VPM registered agent page now says "Included FREE with all virtual mailbox plans" and the mailbox must be in the same state as the RA need (the VPM pricing page summary "free RA in 5 states" may need a refresh).
+- VPM help article 105 says 60 days free storage (updated May 2024), while the pricing page shows 15/30 days for packages; pricing page used.
+- USGM storage help: Scale 30 days, Teams 60 days free (letters and packages); $0.05 per letter, $0.10 per lb per day for packages.
+- iPostal1 Virtual Mailing Address yearly prices: $99 / $149 / $249 / $399 (30/60/120/240 items), Standard locations.
+
 ## Next (ranked)
 1. ~~iPostal1 vs Anytime Mailbox~~ DONE 2026-11-20 (both from $9.99; location-set pricing)
 2. ~~iPostal1 pricing explained~~ DONE 2026-11-20: what the $9.99 plan includes, by location
@@ -123,31 +141,39 @@ Published pages must not show internal notes: no "unverified" or "affiliate link
 28. ~~How to change your address to a virtual mailbox~~ DONE 2026-11-24 (/change-address-to-virtual-mailbox/)
 29. ~~Form 1583 for a business~~ DONE 2026-11-24 (/form-1583-for-business/)
 30. ~~Form 1583 rejected: common reasons and fixes~~ DONE 2026-11-24 (/form-1583-rejected/)
-31. Virtual mailbox for Amazon seller / Stripe verification (CMRA rejection risk)
+31. ~~Virtual mailbox for Amazon seller / Stripe verification~~ DONE 2026-11-27 (/virtual-mailbox-address-stripe-amazon/)
 32. ~~Virtual Post Mail pricing~~ DONE 2026-11-22 (/virtual-post-mail-pricing/)
 33. ~~iPostal1 vs Traveling Mailbox~~ DONE 2026-11-25 (/ipostal1-vs-traveling-mailbox/)
 34. ~~Anytime Mailbox vs PostScan Mail~~ DONE 2026-11-25 (/anytime-mailbox-vs-postscan-mail/)
 35. ~~How to cancel a virtual mailbox and what happens to mail after~~ DONE 2026-11-25 (/cancel-virtual-mailbox/, merged with #48) (note: /virtual-mailbox-storage-fees/ has a short "When you cancel" section with DMM 508.1.8; build this as the full provider-by-provider cancellation guide, merge with #48)
-36. Virtual mailbox for a nonprofit or church
-37. Can I use a virtual mailbox address on my driver's license? (state DMV rules on CMRA/PMB addresses)
+36. Virtual mailbox for a nonprofit or church (DEFERRED 2026-11-27: needs a distinct official source, e.g. IRS 1023/990 address instructions; otherwise near-duplicate of the LLC page)
+37. ~~Can I use a virtual mailbox address on my driver's license?~~ DONE 2026-11-27 (/virtual-mailbox-drivers-license/, merged with #41 and #43)
 38. ~~How to write a virtual mailbox address correctly~~ DONE 2026-11-25 (/how-to-write-virtual-mailbox-address/) (PMB vs # vs Suite, USPS addressing rules)
-39. Does a virtual mailbox address change your state tax residency? (official state residency/domicile guidance only)
+39. Does a virtual mailbox address change your state tax residency? (official state residency/domicile guidance only) (DEFERRED 2026-11-27)
 40. ~~Earth Class Mail check deposit subscription vs per-check~~ MERGED into /earth-class-mail-pricing/ and /virtual-mailbox-check-deposit-fees/ (2026-11-21); do not build separately
-41. South Dakota mail-forwarding addresses for full-timers: what SD DPS accepts, provider by provider (needs SD DPS confirmation of "virtual only" vs "mail forwarding"; official sources only)
+41. ~~South Dakota mail-forwarding addresses for full-timers~~ MERGED 2026-11-27 into /virtual-mailbox-drivers-license/ (and /virtual-mailbox-for-rvers/)
 42. ~~USPS Premium Forwarding vs a virtual mailbox~~ SKIPPED 2026-11-25 (covered by /virtual-mailbox-for-rvers/ and /virtual-mailbox-forwarding-fees/) for a 3-to-12-month trip: cost by trip length (usps.com PFS fees vs provider plans)
-43. Texas and Florida driver's license rules for mail-forwarding (PMB) addresses (official DPS/FLHSMV pages only)
-44. LegalZoom Virtual Mail vs Stable registered agent + mailbox bundles (needs LegalZoom RA price from its own page)
-45. iPostal1 registered agent ($99/yr) vs Stable ($25/mo) vs VPM (free): which states each covers and the yearly cost (provider pages only)
+43. ~~Texas and Florida driver's license rules for PMB addresses~~ MERGED 2026-11-27 into /virtual-mailbox-drivers-license/
+44. ~~LegalZoom Virtual Mail vs Stable registered agent + mailbox bundles~~ SKIPPED 2026-11-27 (near-duplicate of /virtual-mailbox-for-llc/; LegalZoom RA price still not on its own page)
+45. ~~iPostal1 registered agent vs Stable vs VPM~~ SKIPPED 2026-11-27 (near-duplicate of /virtual-mailbox-for-llc/ table and "one bill" section)
 46. TruLease vs a coworking membership for a business bank address: what VPM's lease includes (VPM pages only; no bank-outcome claims)
 47. Virtual mailbox for receiving debit and credit cards: forwarding and pickup rules by provider
 48. ~~Mail storage after cancellation~~ DONE 2026-11-25 (merged into /cancel-virtual-mailbox/): what each provider does for 6 months (CMRA rule, provider FAQs)
 49. ~~Virtual mailbox with in-person pickup~~ DONE 2026-11-25 (/virtual-mailbox-in-person-pickup/): which providers allow it, pickup fees, and ID rules (provider pages only)
 50. ~~Extra recipients and business names on a virtual mailbox~~ SKIPPED 2026-11-25 (covered by /form-1583-for-business/): included names and per-name fees by provider (each name needs its own Form 1583)
-51. Can I use a virtual mailbox for a Google Business Profile? (Google's own Business Profile guidelines on virtual offices/mailboxes; provider FAQs, e.g. Anytime says Google "may not recognize the address")
-52. Receiving Amazon, UPS and FedEx packages at a virtual mailbox: carrier acceptance, package fees and size limits by provider (provider pages only)
+51. ~~Can I use a virtual mailbox for a Google Business Profile?~~ DONE 2026-11-27 (/virtual-mailbox-google-business-profile/)
+52. ~~Receiving Amazon, UPS and FedEx packages at a virtual mailbox~~ DONE 2026-11-27 (/virtual-mailbox-packages/)
 53. Can I register to vote or get jury mail at a virtual mailbox address? (official state election office pages only; pick states with clear published rules)
-54. Monthly vs annual billing: what each provider's yearly plan actually saves (provider pricing pages)
+54. ~~Monthly vs annual billing~~ DONE 2026-11-27 (/virtual-mailbox-annual-vs-monthly/)
 55. Refund windows and money-back guarantees by provider (30-day rules, "if unused" conditions, annual-plan refunds). Note: /cancel-virtual-mailbox/ already has a short refund list for 6 providers; build only if it adds real depth (trials, prorating, add-on refunds)
 56. How long Form 1583 approval takes at each provider (provider help pages; USPS CMRA database rules)
 57. Shopping U.S. stores from abroad: international package forwarding fees and consolidation by provider (USGM, iPostal1, TMB, Stable)
 58. Virtual mailbox for a trust or estate: Form 1583 for trust names and what providers require (PS 1583, USGM trust-name rules)
+59. Using a virtual mailbox address on a DBA / assumed-name filing (official state or county DBA filing instructions; pick 3 states with clear published address rules)
+60. Virtual mailbox for landlords and property managers: receiving rent checks and tenant notices (USGM property-management page, check-deposit rules by provider)
+61. Who opens your mail? Mail-scanning security and privacy by provider (USGM SOC 2/compliance page, VPM security, PostScan security, TMB security pages only)
+62. Can I use a virtual mailbox as the mailing address on a U.S. passport application or renewal? (travel.state.gov DS-11/DS-82 instructions only)
+63. Virtual mailbox for military families and PCS moves (TMB military discount, provider pages; USPS military mail pages)
+64. What happens if your virtual mailbox location closes or you switch locations (USGM change-address article, VPM changing-locations article 196, DMM 508.1.8 termination rules)
+65. Mail shredding fees and policies by provider (TMB free shredding, iPostal1 shred orders, PostScan $1/item, PhysicalAddress free shredding)
+66. Virtual mailbox plans with a phone number or fax: what iPostal1's phone/fax plans add and cost vs mailbox-only plans (provider pages only)
