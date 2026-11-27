@@ -96,7 +96,7 @@ const schema = [
       virtualpostmail:function(q){var T=[['Starter',20,25,10,2,10],['Plus',35,1e9,50,5,10],['Business',60,1e9,100,10,10],['Premium',90,1e9,150,20,5]];var best=null;
         var ex=q.pg>30?(q.pg-30)*0.25:0; var chk=q.c?10+(q.c-1)*1.5:0;
         T.forEach(function(t){var c=t[1]+over(q.m,t[2])*0.5+over(q.o,t[3])*(3+ex)+over(q.r,t[4])*t[5]+chk;
-          if(!best||c<best.cost)best={cost:c,plan:t[0]+' ($'+t[1]+')',parts:[t[2]<1e9&&over(q.m,t[2])?over(q.m,t[2])+' extra pieces × $0.50':'',over(q.o,t[3])?over(q.o,t[3])+' extra content scans × $3':'',over(q.r,t[4])?over(q.r,t[4])+' extra names × $'+t[5]:'',q.c?'check deposit $10 + $1.50 per extra check':''],notes:['Free registered agent on every plan.']};});
+          if(!best||c<best.cost)best={cost:c,plan:t[0]+' ($'+t[1]+')',parts:[t[2]<1e9&&over(q.m,t[2])?over(q.m,t[2])+' extra pieces × $0.50':'',over(q.o,t[3])?over(q.o,t[3])+' extra content scans × $3':'',over(q.r,t[4])?over(q.r,t[4])+' extra names × $'+t[5]:'',q.c?'check deposit $10 + $1.50 per extra check':''],notes:['Free registered agent with every plan (CA, DE, FL, NV, TX, same state as your mailbox)']};});
         return best;},
       postscanmail:function(q){var T=[['Starter',10,30,0,1],['Standard',20,60,5,2],['Premium',30,120,10,4]];var best=null;var per=2+(q.pg>10?(q.pg-10)*0.25:0);
         T.forEach(function(t){var c=t[1]+over(q.m,t[2])*0.5+over(q.o,t[3])*per+over(q.r,t[4])*5;
