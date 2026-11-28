@@ -1,0 +1,74 @@
+---
+import Base from '../layouts/Base.astro';
+import Src from '../components/Src.astro';
+import Aff from '../components/Aff.astro';
+import { S } from '../data/sources.js';
+const title = 'Who Opens Your Mail at a Virtual Mailbox? Security and Privacy by Provider';
+const description = 'Who handles your mail, when envelopes get opened, where shredding happens, and how accounts are protected at US Global Mail, Traveling Mailbox, Virtual Post Mail, Stable, LegalZoom Virtual Mail, PostScan Mail, Anytime Mailbox and iPostal1. From each provider\'s own security pages, checked Nov 28, 2026.';
+const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-28"};
+---
+<Base title={title} description={description} updated="2026-11-28" schema={schema}>
+  <h1>Who opens your mail? Virtual mailbox security and privacy</h1>
+  <div class="answer"><p><strong>Short answer:</strong> Staff at the mail center handle every piece and scan the outside of each envelope. They open a letter only when you ask for a content scan, or when an auto-scan setting you turned on covers it. Who those staff are depends on the model. Providers that run their own facilities, like Traveling Mailbox, Virtual Post Mail and US Global Mail's own locations, describe background-checked employees and on-site shredding. Network providers, like Anytime Mailbox, iPostal1 and US Global Mail's partner locations, have your mail handled by a local business.</p></div>
+  <p class="lede">Every claim below comes from the provider's own security, FAQ or help pages, read November 28, 2026. These are the providers' descriptions of themselves; we haven't audited them.</p>
+
+  <h2>When is your mail opened?</h2>
+  <ul>
+    <li><strong>Traveling Mailbox:</strong> "We scan the outside first. We open a letter when you request a scan or when your automatic scanning settings apply. You can also ask us to forward it unopened" <Src href={S.tmbSecurity} />.</li>
+    <li><strong>iPostal1:</strong> "We open your letter mail only if you specifically request us to scan the contents." Packages are opened only for a content photo or "to ensure compliance with shipping regulations" <Src href={S.ipFaq} />.</li>
+    <li><strong>Virtual Post Mail:</strong> "By default, we do not open and scan the content of mail arriving at our facility." For private contents it suggests skipping scans and having mail shipped instead <Src href={S.vpmMailSecure} />.</li>
+    <li><strong>Anytime Mailbox:</strong> you choose open and scan, shred, forward or pickup for each item <Src href={S.atmFaq} />.</li>
+  </ul>
+
+  <h2>Who handles it, provider by provider</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Provider</th><th>Who handles physical mail</th><th>Facility security</th><th>Shredding</th></tr></thead>
+    <tbody>
+      <tr><td>US Global Mail</td><td>At its own facilities, "only trained and background-checked employees", "no third-party contractors" <Src href={S.usgmWhoAccess} />. Outside its owned locations in CA, NY, LV and TX, mail is handled "at the designated location or a Channel Partner" contracted to follow its protocols <Src href={S.usgmProtected} /></td><td>HD surveillance, electronic doors, restricted access; every item barcoded and logged <Src href={S.usgmProtected} /></td><td>Free shred and recycle <Src href={S.usgm} /></td></tr>
+      <tr><td>Traveling Mailbox</td><td>Its own team at its Sanford, NC facility; "background checks and ongoing security training" <Src href={S.tmbSecurity} /></td><td>Access controls, video surveillance, not open to the public; envelopes barcoded <Src href={S.tmbProtectKb} /></td><td>Free, at its facility <Src href={S.tmbSecurity} /></td></tr>
+      <tr><td>Virtual Post Mail</td><td>"Mail processing is done exclusively by VPM staff"; "never stored or processed by any third-party facility" <Src href={S.vpmChangeLoc} /></td><td>24/7 security monitoring; only authorized people in storage and scanning rooms <Src href={S.vpmMailSecure} /></td><td>On site by a mobile shredding service; free <Src href={S.vpmMailSecure} /> <Src href={S.vpmPricing} label="pricing" /></td></tr>
+      <tr><td>LegalZoom Virtual Mail (Earth Class Mail)</td><td>"Background-checked technicians" <Src href={S.lzVm} /></td><td>"Secure, access-controlled facilities" <Src href={S.lzVm} /></td><td>Shredded and recycled on site; free <Src href={S.lzVm} /></td></tr>
+      <tr><td>Anytime Mailbox</td><td>Local "operator mailing partners" <Src href={S.atmFaq} /></td><td>—</td><td>Recycling by default; shredding offered as an option <Src href={S.atmFaq} /></td></tr>
+      <tr><td>iPostal1</td><td>The mail center at the address you choose; most are retail pack-and-ship stores or coworking centers <Src href={S.ipFaq} /></td><td>—</td><td>$2.25 per shred order <Src href={S.ipVma} /></td></tr>
+      <tr><td>PostScan Mail</td><td>—</td><td>Its security page covers data (AWS) security, not the mail facility <Src href={S.psmSecurity} /></td><td>$1 per item <Src href={S.psm} /></td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>Account and data security</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Provider</th><th>Two-factor sign-in</th><th>Audits and encryption, as stated</th></tr></thead>
+    <tbody>
+      <tr><td>US Global Mail</td><td>Yes <Src href={S.usgmProtected} /></td><td>"SOC 2 audited and HIPAA compliant"; card payments handled by Stripe, not stored by USGM <Src href={S.usgmProtected} /></td></tr>
+      <tr><td>Virtual Post Mail</td><td>—</td><td>"Fully SOC2 Type II certified"; mail data on AWS U.S. East, encrypted at rest with AES-256; audit reports "available upon request"; breach notice within 30 days of confirmation <Src href={S.vpmMailSecure} /></td></tr>
+      <tr><td>Traveling Mailbox</td><td>Yes, by authenticator app or text; Face ID in the iOS app <Src href={S.tmbSecurity} /></td><td>Encrypted connection; customer data encrypted with multiple copies <Src href={S.tmbSecurity} /></td></tr>
+      <tr><td>Stable</td><td>—</td><td>SOC 2 security listed on the pricing page <Src href={S.stable} /></td></tr>
+      <tr><td>PostScan Mail</td><td>Yes <Src href={S.psmSecurity} /></td><td>Hosted on AWS; data encrypted at rest with 256-bit AES <Src href={S.psmSecurity} /></td></tr>
+      <tr><td>Anytime Mailbox</td><td>—</td><td>2048-bit SSL; mail images are left out of email notifications on purpose, so they're only viewable in the portal <Src href={S.atmFaq} /></td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>Who else sees your mail data</h2>
+  <ul>
+    <li><strong>Virtual Post Mail</strong> doesn't share personal information "unless we are served with proper documentation such as a subpoena or court order", and uses outside services such as AWS, CRM and email systems to run its service <Src href={S.vpmMailSecure} />.</li>
+    <li><strong>Traveling Mailbox</strong>: "We don't sell or share personal information for third-party marketing," apart from limited sharing with service providers like payment processors <Src href={S.tmbSecurity} />.</li>
+    <li><strong>USPS</strong> requires every mailbox company to keep your Form 1583 and ID on file and in the USPS CMRA Customer Registration Database <Src href={S.dmm508} label="DMM 508.1.8" />. That's the law, not a provider choice. See <a href="/usps-form-1583-online-notarization/">Form 1583</a>.</li>
+  </ul>
+
+  <h2>How to keep sensitive mail private</h2>
+  <ol>
+    <li><strong>Leave auto-scan off</strong> for personal mail and choose open-and-scan one item at a time <Src href={S.tmbSecurity} label="TMB" />.</li>
+    <li><strong>Ship sensitive items unopened.</strong> Traveling Mailbox ("Ship to Me") and VPM both suggest this <Src href={S.tmbSecurity} label="TMB" /> <Src href={S.vpmMailSecure} label="VPM" />.</li>
+    <li><strong>Turn on two-factor sign-in</strong> where it's offered.</li>
+    <li><strong>Shred, don't just discard</strong>, anything with account numbers. See <a href="/virtual-mailbox-mail-shredding/">shredding fees and policies</a>.</li>
+    <li><strong>For patient mail</strong>, you need a Business Associate Agreement. See <a href="/hipaa-compliant-virtual-mailbox/">HIPAA-compliant virtual mailboxes</a>.</li>
+  </ol>
+
+  <h2>Links</h2>
+  <ul>
+    <li><Aff id="usglobalmail" href="https://www.usglobalmail.com/?via=michelle" text="US Global Mail" /></li>
+    <li><Aff id="travelingmailbox" href="https://travelingmailbox.com/" text="Traveling Mailbox" /></li>
+    <li><Aff id="virtualpostmail" href="https://refer.virtualpostmail.com/l/13ELDJ264/" text="Virtual Post Mail" /></li>
+    <li><Aff id="stable" href="https://www.usestable.com/" text="Stable" /></li>
+  </ul>
+  <p>More: <a href="/switch-virtual-mailbox-location/">switching mailbox locations</a> · <a href="/virtual-mailbox-pricing-comparison/">all providers compared</a> · <a href="/">Mailbox Atlas home</a></p>
+</Base>

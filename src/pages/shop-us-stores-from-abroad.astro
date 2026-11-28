@@ -1,0 +1,65 @@
+---
+import Base from '../layouts/Base.astro';
+import Src from '../components/Src.astro';
+import Aff from '../components/Aff.astro';
+import { S } from '../data/sources.js';
+const title = 'Shopping U.S. Stores From Abroad With a Virtual Mailbox: Package Consolidation and Forwarding Fees';
+const description = 'Ship U.S. online orders to a virtual mailbox and have them repacked into one international box. Consolidation fees: Traveling Mailbox $0 (postage + $2 per shipment), US Global Mail $5 per box, iPostal1 $1.95 per package, Virtual Post Mail $3.75 per package handling. Customs rules and what gets opened. Checked Nov 28, 2026.';
+const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-28"};
+---
+<Base title={title} description={description} updated="2026-11-28" schema={schema}>
+  <h1>Shopping U.S. stores from abroad: consolidation and forwarding fees</h1>
+  <div class="answer"><p><strong>Short answer:</strong> Have your orders delivered to a U.S. mailbox address, let several packages pile up, then ask the provider to combine them into one box and ship it to you. Consolidating usually saves postage, but the repack fee varies: Traveling Mailbox charges nothing extra (postage + $2 per shipment), iPostal1 $1.95 per package, US Global Mail $5 per box, and Virtual Post Mail $3.75 per package handling. You fill out the customs declaration, and the provider may open boxes to check what's inside.</p></div>
+  <p class="lede">This page is about packages, meaning things you buy. For forwarding letters overseas and getting a mailbox with a foreign ID, see <a href="/virtual-mailbox-from-abroad/">getting a U.S. virtual mailbox while living abroad</a>. Every fee below is from the provider's own page, read November 28, 2026. Postage is always extra and depends on weight, size and destination.</p>
+
+  <h2>Consolidation and international package fees</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Provider</th><th>Consolidation / repack</th><th>Forwarding fee (plus postage)</th><th>Insurance</th><th>Other package services</th></tr></thead>
+    <tbody>
+      <tr><td>Traveling Mailbox</td><td>"We can consolidate at no extra charge" <Src href={S.tmb} /></td><td>$2 per shipment, not per piece; USPS, FedEx or UPS <Src href={S.tmb} /></td><td>—</td><td>Receives "any size package" and forwards it "anywhere in the world"; 30 days free package storage, then $0.10/lb/day <Src href={S.tmb} /></td></tr>
+      <tr><td>US Global Mail</td><td>$5 per box, $2 per letter <Src href={S.usgmFeatures} /></td><td>No handling fee ("No Handling Fees") <Src href={S.usgmFeatures} /></td><td>First $100 of package value free <Src href={S.usgmFeatures} /> <Src href={S.usgmProtected} /></td><td>You can ask that packages ship "as received unless you request inspection", and add packing instructions <Src href={S.usgmFeatures} /></td></tr>
+      <tr><td>iPostal1</td><td>Letters free; $1.95 per package or letter-pack consolidated; $1.95 for any number of magazines <Src href={S.ipVma} /></td><td>Live carrier rates; "International shipping not available at all locations" <Src href={S.ipVma} /></td><td>$4 per $100 requested <Src href={S.ipVma} /></td><td>Commercial invoice prepared at no extra cost; photos of invoice $2.95, contents $3.95, both $5.95 <Src href={S.ipVma} /></td></tr>
+      <tr><td>Virtual Post Mail</td><td>Multiple packages are combined into one box by default <Src href={S.vpmConsolidate} /></td><td>Handling $3.75 per package, $0.50 per mail piece; postage marked up 10% to 20% <Src href={S.vpmShipPrices} /></td><td>—</td><td>Packing slips removed from international boxes; you declare items and values <Src href={S.vpmConsolidate} /></td></tr>
+      <tr><td>PostScan Mail (Package Locker)</td><td>—</td><td>Basic Locker $4.95/mo: $3 processing + $2 forwarding per item. Premium Locker $9.95/mo: $2 + $1 per item <Src href={S.psm} /></td><td>—</td><td>Package storage 7 days free (Basic) or 14 days (Premium), then $0.10/lb/day <Src href={S.psm} /></td></tr>
+      <tr><td>Stable</td><td>"Can also combine mail and packages going to the same address" <Src href={S.stable} /></td><td>Postage only, shipped "anywhere in the world" <Src href={S.stable} /></td><td>—</td><td>—</td></tr>
+      <tr><td>Anytime Mailbox</td><td>—</td><td>Set by each mail center; ships internationally <Src href={S.atmFaq} /></td><td>—</td><td>"There may be taxes or duty fees involved depending on the contents" <Src href={S.atmFaq} /></td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>Worked example: four orders in one box</h2>
+  <p>Four small packages arrive from four U.S. stores, and you ship them together in one box. Repack and handling fees only, with postage left out:</p>
+  <ul>
+    <li>Traveling Mailbox: <strong>$2</strong> (one shipment, consolidation free) <Src href={S.tmb} /></li>
+    <li>US Global Mail: <strong>$5</strong> (one consolidated box) <Src href={S.usgmFeatures} /></li>
+    <li>iPostal1: 4 × $1.95 = <strong>$7.80</strong> <Src href={S.ipVma} /></li>
+    <li>PostScan Mail Basic Locker: 4 × ($3 + $2) = <strong>$20</strong>, plus the $4.95 monthly locker fee <Src href={S.psm} /></li>
+  </ul>
+  <p>Virtual Post Mail is left out because its help page lists handling as "$3.75 / package" without saying whether that's per package received or per box shipped <Src href={S.vpmShipPrices} />. The bigger number is usually postage. Combining four boxes into one is what lowers it, and Virtual Post Mail notes that shipping boxes unopened inside an "overpack" box "may increase the shipping cost" because of the extra weight <Src href={S.vpmOriginalBox} />.</p>
+
+  <h2>Customs: you're the one declaring</h2>
+  <ul>
+    <li><strong>You declare contents and value.</strong> Virtual Post Mail: "we are not a customs broker", and "it is your responsibility to ensure that what you ship is acceptable for the destination country" <Src href={S.vpmNotBroker} />. Vague descriptions like "bag" "can result in the shipment being returned by Customs" <Src href={S.vpmDeclare} />.</li>
+    <li><strong>Europe needs more data.</strong> VPM says most European countries now require a harmonized (HS) code for each declared item <Src href={S.vpmDeclare} />. It also says EU customs began requiring an HS code plus product identifiers on shipments to non-VAT-registered recipients from November 1, 2026 <Src href={S.vpmEuPid} />.</li>
+    <li><strong>Boxes may be opened.</strong> VPM reserves the right to open packages to check for hazardous, illegal or customs-restricted items <Src href={S.vpmOriginalBox} />. iPostal1 opens packages "to ensure compliance with shipping regulations" <Src href={S.ipFaq} />.</li>
+    <li><strong>Batteries slow things down.</strong> Lithium batteries are hazardous materials to carriers. VPM pauses those shipments, and as a re-shipper it can't sign a Dangerous Goods Form for you <Src href={S.vpmBatteries} />.</li>
+    <li><strong>Duties are on you.</strong> Anytime Mailbox warns of taxes or duty fees depending on contents <Src href={S.atmFaq} />.</li>
+  </ul>
+
+  <h2>Before you start ordering</h2>
+  <ol>
+    <li><strong>Pick a location that ships internationally.</strong> At iPostal1 it isn't available everywhere <Src href={S.ipVma} />.</li>
+    <li><strong>Mind the storage clock</strong> while packages accumulate: 30 days free at Traveling Mailbox <Src href={S.tmb} />, 7 or 14 days on PostScan lockers <Src href={S.psm} />. See <a href="/virtual-mailbox-storage-fees/">storage fees by provider</a>.</li>
+    <li><strong>Check size limits</strong> before buying furniture or anything large. See <a href="/virtual-mailbox-packages/">receiving packages</a>.</li>
+    <li><strong>Keep receipts</strong> for the declared value, and insure anything expensive.</li>
+  </ol>
+
+  <h2>Links</h2>
+  <ul>
+    <li><Aff id="travelingmailbox" href="https://travelingmailbox.com/" text="Traveling Mailbox" /></li>
+    <li><Aff id="usglobalmail" href="https://www.usglobalmail.com/?via=michelle" text="US Global Mail" /></li>
+    <li><Aff id="virtualpostmail" href="https://refer.virtualpostmail.com/l/13ELDJ264/" text="Virtual Post Mail" /></li>
+    <li><Aff id="ipostal1" href="https://ipostal1.com/" text="iPostal1" /></li>
+    <li><Aff id="postscanmail" href="https://www.postscanmail.com/" text="PostScan Mail" /></li>
+  </ul>
+  <p>More: <a href="/virtual-mailbox-forwarding-fees/">mail forwarding fees</a> · <a href="/us-global-mail-vs-traveling-mailbox/">US Global Mail vs Traveling Mailbox</a> · <a href="/">Mailbox Atlas home</a></p>
+</Base>
