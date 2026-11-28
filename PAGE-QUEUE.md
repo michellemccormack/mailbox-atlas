@@ -110,6 +110,20 @@ Published pages must not show internal notes: no "unverified" or "affiliate link
 - USGM storage help: Scale 30 days, Teams 60 days free (letters and packages); $0.05 per letter, $0.10 per lb per day for packages.
 - iPostal1 Virtual Mailing Address yearly prices: $99 / $149 / $249 / $399 (30/60/120/240 items), Standard locations.
 
+## Done (2026-11-28; all five live-verified HTTP 200 on mailboxatlas.com, no banned text)
+- [x] /virtual-mailbox-mail-shredding/ (queue #65). TMB free + 30-day auto-shred ($1/envelope/mo hold), USGM free shred & recycle, VPM free (pricing FAQ) + on-site mobile shredding (help 161), Stable included + shred after 30 days, LegalZoom free, PhysicalAddress free, iPostal1 $2.25/order (bundles 5/$10, 10/$18, 20/$30; free discard), PostScan $1/item first 10 pages then $0.15/page, Anytime operator-set (recycle by default).
+- [x] /virtual-mailbox-passport-application/ (queue #62). DS-11 and DS-82 (04-2025, eforms.state.gov PDFs): item 8 mailing address + "In Care Of", permanent address (DS-11 #19 / DS-82 #18, "Do not list a P.O. Box", read from rendered page images), no mail to private addresses outside US/Canada, separate mailings, NPIC. Online renewal rule from usps.com/international/passports.htm (travel.state.gov returns 403 to curl and WebFetch). No claim that PMBs are accepted or rejected.
+- [x] /switch-virtual-mailbox-location/ (queue #64). DMM 508.1.8 (no COA on termination; 6-month remail), USGM 14009887 + 11272138, TMB switch page + two KB articles, VPM 196/348 (Walnut-to-Covina move)/248/91, iPostal1 FAQ (transfer on request, new notarized 1583), Anytime renter FAQ. USGM says to set up USPS forwarding to the new address while VPM/Anytime say COA isn't possible from a mailbox; only the provider statements were used, not reconciled.
+- [x] /virtual-mailbox-security-privacy/ (queue #61). USGM 11250327 + 11022398 (own facilities in CA/NY/LV/TX vs Channel Partners), TMB secure-solutions + KB, VPM 161 + 196, LegalZoom overview, Anytime FAQ, iPostal1 FAQ, PostScan security page (data only), Stable pricing (SOC 2). Framed as providers' own statements.
+- [x] /shop-us-stores-from-abroad/ (queue #57). TMB pricing (free consolidation, $2/shipment), USGM features 11022318 ($5/box, $2/letter repack; $100 free insurance), iPostal1 VMA ($1.95/package consolidation, $4/$100 insurance, invoice/content photos, intl not at all locations), VPM help 62/56/129/362/368/556/548, PostScan Package Locker ($4.95: $3+$2/item; $9.95: $2+$1/item), Stable pricing, Anytime FAQ. VPM $3.75 "/ package" handling left out of the worked example (unclear if per package received or per box shipped).
+- Also: homepage cards for all five; More links from storage, from-abroad, cancel, HIPAA, change-address, junk, packages, how-to-write and driver's-license pages.
+
+## Data notes (2026-11-28)
+- travel.state.gov returns a Cloudflare block to curl and 403 to WebFetch; eforms.state.gov PDFs download fine (labels on DS-11 page 6 / DS-82 page 6 are vector text; render with pdftoppm to read them).
+- PostScan pricing page has a "Package Locker" tab (Basic $4.95/mo, Premium $9.95/mo) in static HTML.
+- VPM help 556: EU customs requires HS code + product identifiers on shipments to non-VAT-registered EU recipients from Nov 1, 2026 (VPM's statement).
+- USGM Freemium (free 30-day plan) mentioned in help 11272138 (address change only after 30 days or on a paid plan); useful for queue #69.
+
 ## Next (ranked)
 1. ~~iPostal1 vs Anytime Mailbox~~ DONE 2026-11-20 (both from $9.99; location-set pricing)
 2. ~~iPostal1 pricing explained~~ DONE 2026-11-20: what the $9.99 plan includes, by location
@@ -167,13 +181,17 @@ Published pages must not show internal notes: no "unverified" or "affiliate link
 54. ~~Monthly vs annual billing~~ DONE 2026-11-27 (/virtual-mailbox-annual-vs-monthly/)
 55. Refund windows and money-back guarantees by provider (30-day rules, "if unused" conditions, annual-plan refunds). Note: /cancel-virtual-mailbox/ already has a short refund list for 6 providers; build only if it adds real depth (trials, prorating, add-on refunds)
 56. How long Form 1583 approval takes at each provider (provider help pages; USPS CMRA database rules)
-57. Shopping U.S. stores from abroad: international package forwarding fees and consolidation by provider (USGM, iPostal1, TMB, Stable)
+57. ~~Shopping U.S. stores from abroad: international package forwarding fees and consolidation by provider (USGM, iPostal1, TMB, Stable)~~ DONE 2026-11-28 (/shop-us-stores-from-abroad/)
 58. Virtual mailbox for a trust or estate: Form 1583 for trust names and what providers require (PS 1583, USGM trust-name rules)
 59. Using a virtual mailbox address on a DBA / assumed-name filing (official state or county DBA filing instructions; pick 3 states with clear published address rules)
 60. Virtual mailbox for landlords and property managers: receiving rent checks and tenant notices (USGM property-management page, check-deposit rules by provider)
-61. Who opens your mail? Mail-scanning security and privacy by provider (USGM SOC 2/compliance page, VPM security, PostScan security, TMB security pages only)
-62. Can I use a virtual mailbox as the mailing address on a U.S. passport application or renewal? (travel.state.gov DS-11/DS-82 instructions only)
+61. ~~Who opens your mail? Mail-scanning security and privacy by provider (USGM SOC 2/compliance page, VPM security, PostScan security, TMB security pages only)~~ DONE 2026-11-28 (/virtual-mailbox-security-privacy/)
+62. ~~Can I use a virtual mailbox as the mailing address on a U.S. passport application or renewal? (travel.state.gov DS-11/DS-82 instructions only)~~ DONE 2026-11-28 (/virtual-mailbox-passport-application/)
 63. Virtual mailbox for military families and PCS moves (TMB military discount, provider pages; USPS military mail pages)
-64. What happens if your virtual mailbox location closes or you switch locations (USGM change-address article, VPM changing-locations article 196, DMM 508.1.8 termination rules)
-65. Mail shredding fees and policies by provider (TMB free shredding, iPostal1 shred orders, PostScan $1/item, PhysicalAddress free shredding)
+64. ~~What happens if your virtual mailbox location closes or you switch locations (USGM change-address article, VPM changing-locations article 196, DMM 508.1.8 termination rules)~~ DONE 2026-11-28 (/switch-virtual-mailbox-location/)
+65. ~~Mail shredding fees and policies by provider (TMB free shredding, iPostal1 shred orders, PostScan $1/item, PhysicalAddress free shredding)~~ DONE 2026-11-28 (/virtual-mailbox-mail-shredding/)
 66. Virtual mailbox plans with a phone number or fax: what iPostal1's phone/fax plans add and cost vs mailbox-only plans (provider pages only)
+67. Can you register a car (vehicle registration and title) at a virtual mailbox address? (official DMV pages only: TX, FL, SD; no other states)
+68. Auto open-and-scan settings: which providers open every letter automatically vs only on request, and how to turn it off (TMB, Stable, USGM, VPM provider pages)
+69. Virtual mailbox free trials and money-back windows at signup (USGM Freemium 30-day plan, provider pages only; do not duplicate the refund list on /cancel-virtual-mailbox/)
+70. Using a virtual mailbox as the return or business address for Etsy, eBay or Shopify sellers (each platform's own help pages only)
