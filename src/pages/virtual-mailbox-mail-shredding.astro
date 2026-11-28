@@ -1,0 +1,67 @@
+---
+import Base from '../layouts/Base.astro';
+import Src from '../components/Src.astro';
+import Aff from '../components/Aff.astro';
+import { S } from '../data/sources.js';
+const title = 'Virtual Mailbox Shredding Fees and Policies by Provider';
+const description = 'Shredding is free at Traveling Mailbox, US Global Mail, Virtual Post Mail, Stable, LegalZoom Virtual Mail and PhysicalAddress.com. iPostal1 charges $2.25 per shred order and PostScan Mail $1 per item. Some providers also shred mail automatically after 30 days. Checked Nov 28, 2026.';
+const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-28"};
+---
+<Base title={title} description={description} updated="2026-11-28" schema={schema}>
+  <h1>Mail shredding at virtual mailboxes: fees and policies</h1>
+  <div class="answer"><p><strong>Short answer:</strong> Most providers shred for free. Traveling Mailbox, US Global Mail, Virtual Post Mail, Stable, LegalZoom Virtual Mail (Earth Class Mail) and PhysicalAddress.com all list free shredding. iPostal1 charges $2.25 per shred order, with cheaper bundles, and PostScan Mail charges $1 per item. Some providers also shred paper you haven't acted on once free storage ends, so check that rule before you rely on them to keep originals.</p></div>
+  <p class="lede">A virtual mailbox scans the outside of each envelope, and then you decide what happens to it: open and scan, forward, or destroy. If you plan to throw away most of your mail, the shredding fee and the auto-disposal rule matter more than the plan price. Here's what each provider publishes, checked November 28, 2026.</p>
+
+  <h2>Shredding by provider</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Provider</th><th>Shred fee</th><th>What happens to mail you don't act on</th></tr></thead>
+    <tbody>
+      <tr><td>Traveling Mailbox</td><td><strong>Free</strong>, on site <Src href={S.tmb} /> <Src href={S.tmbSecurity} label="security" /></td><td>Envelopes are kept free for 30 days, then "automatically" shredded on site unless you put an item on hold ($1 per envelope per month) <Src href={S.tmb} /></td></tr>
+      <tr><td>US Global Mail</td><td><strong>Free</strong> ("Free Shred &amp; Recycle mail") <Src href={S.usgm} /></td><td>30 days of free physical storage on Occasional and Scale, 60 on Teams, then $0.05 per letter per day <Src href={S.usgm} /></td></tr>
+      <tr><td>Virtual Post Mail</td><td><strong>Free</strong>: "There is no additional fee for mail shredding" <Src href={S.vpmPricing} /></td><td>Free 30-day physical storage is listed on every plan <Src href={S.vpmPricing} /></td></tr>
+      <tr><td>Stable</td><td><strong>Included</strong> on every plan (scan, ship, shred are listed as basic mail actions) <Src href={S.stable} /></td><td>Mail you don't forward is stored for 30 days, then "securely shredded" <Src href={S.stable} /></td></tr>
+      <tr><td>LegalZoom Virtual Mail (Earth Class Mail)</td><td><strong>Free</strong> ("Secure shredding: Free") <Src href={S.lzVm} /></td><td>Letters stored up to 30 days, packages 10 days <Src href={S.lzPersonal} /></td></tr>
+      <tr><td>PhysicalAddress.com</td><td><strong>Free</strong> secure shredding <Src href={S.paPricing} /></td><td>Envelopes, magazines and postcards stored free for 90 days <Src href={S.paPricing} /></td></tr>
+      <tr><td>iPostal1</td><td><strong>$2.25</strong> per order (1 envelope, up to 10 pages), then $0.25 per page. Bundles of scan or shred orders: 5 for $10, 10 for $18, 20 for $30 <Src href={S.ipVma} /></td><td>30 days free for letters, then $1.10 per item per month. A separate "discard mail items" service is included in every plan <Src href={S.ipVma} /></td></tr>
+      <tr><td>PostScan Mail</td><td><strong>$1.00</strong> per item for the first 10 pages, then $0.15 per page <Src href={S.psm} /></td><td>You can choose to recycle, shred or store each item <Src href={S.psmFaq} /></td></tr>
+      <tr><td>Anytime Mailbox</td><td>Set by each mail center <Src href={S.atmFaq} /></td><td>Disposed mail is recycled; shredding is offered "as an additional option" for sensitive documents <Src href={S.atmFaq} /></td></tr>
+    </tbody>
+  </table></div>
+  <p class="meta">Prices from each provider's own pricing page or FAQ, checked November 28, 2026. Anytime Mailbox locations are run by independent operators, so the shred fee, if any, is on each location's plan details.</p>
+
+  <h2>Shredding vs recycling vs discarding</h2>
+  <p>Some providers offer two ways to get rid of mail. Anytime Mailbox says its operators "recycle all mail that is disposed of", and shredding is the option for "documents containing sensitive information" <Src href={S.atmFaq} />. iPostal1 includes a free "discard mail items" service, while a shred order costs $2.25 <Src href={S.ipVma} />. PostScan Mail lets you choose recycle or shred for each item <Src href={S.psmFaq} />. Anything with an account number, Social Security number or signature belongs in the shred pile.</p>
+
+  <h2>Where the shredding happens</h2>
+  <ul>
+    <li><strong>Traveling Mailbox</strong>: "Our team destroys the paper original at our processing facility" in Sanford, North Carolina <Src href={S.tmbSecurity} /> <Src href={S.tmbProtectKb} label="KB" />.</li>
+    <li><strong>Virtual Post Mail</strong>: mail is "shredded on-site using a mobile shredding service", so it "does not leave our facility for shredding" <Src href={S.vpmMailSecure} />.</li>
+    <li><strong>LegalZoom Virtual Mail</strong>: unwanted mail "is securely shredded and recycled on-site" <Src href={S.lzVm} />.</li>
+  </ul>
+
+  <h2>What 20 shredded letters a month costs</h2>
+  <p>Say 20 letters a month arrive that you never want opened, each under 10 pages:</p>
+  <ul>
+    <li>Traveling Mailbox, US Global Mail, Virtual Post Mail, Stable, LegalZoom, PhysicalAddress.com: <strong>$0</strong> in shred fees <Src href={S.tmb} label="TMB" /> <Src href={S.usgm} label="USGM" /> <Src href={S.vpmPricing} label="VPM" /> <Src href={S.stable} label="Stable" /> <Src href={S.lzVm} label="LZ" /> <Src href={S.paPricing} label="PA" />.</li>
+    <li>PostScan Mail: 20 × $1.00 = <strong>$20</strong> <Src href={S.psm} />.</li>
+    <li>iPostal1: 20 × $2.25 = <strong>$45</strong> as single orders, or <strong>$30</strong> with a 20-order bundle <Src href={S.ipVma} />. Using the free discard service instead costs nothing <Src href={S.ipVma} />.</li>
+  </ul>
+  <p>Shredded items still count as received mail on plans with a monthly item limit, unless the provider excludes junk. See <a href="/virtual-mailbox-junk-mail/">does junk mail count?</a></p>
+
+  <h2>Don't lose an original you need</h2>
+  <ol>
+    <li><strong>Know the auto-shred clock.</strong> At Traveling Mailbox and Stable, paper you leave alone is shredded after 30 days <Src href={S.tmb} label="TMB" /> <Src href={S.stable} label="Stable" />. Put a hold on, or forward, anything you need to keep, like a car title, a birth certificate or a new passport.</li>
+    <li><strong>Save scans before you close an account.</strong> At US Global Mail, mail that arrives after you close an old account "will be securely shredded" <Src href={S.usgmNewLocation} />.</li>
+    <li><strong>Request shredding carefully.</strong> Traveling Mailbox advises saving any digital copies or originals you want "before choosing a disposal action" <Src href={S.tmbProtectKb} />.</li>
+  </ol>
+
+  <h2>Links</h2>
+  <ul>
+    <li><Aff id="travelingmailbox" href="https://travelingmailbox.com/" text="Traveling Mailbox" /></li>
+    <li><Aff id="usglobalmail" href="https://www.usglobalmail.com/?via=michelle" text="US Global Mail" /></li>
+    <li><Aff id="virtualpostmail" href="https://refer.virtualpostmail.com/l/13ELDJ264/" text="Virtual Post Mail" /></li>
+    <li><Aff id="ipostal1" href="https://ipostal1.com/" text="iPostal1" /></li>
+    <li><Aff id="postscanmail" href="https://www.postscanmail.com/" text="PostScan Mail" /></li>
+  </ul>
+  <p>More: <a href="/virtual-mailbox-storage-fees/">how long mail is kept</a> · <a href="/virtual-mailbox-security-privacy/">who handles your mail</a> · <a href="/virtual-mailbox-pricing-comparison/">all providers compared</a> · <a href="/">Mailbox Atlas home</a></p>
+</Base>

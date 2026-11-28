@@ -1,0 +1,51 @@
+---
+import Base from '../layouts/Base.astro';
+import Src from '../components/Src.astro';
+import Aff from '../components/Aff.astro';
+import { S } from '../data/sources.js';
+const title = 'Can You Use a Virtual Mailbox Address on a U.S. Passport Application or Renewal?';
+const description = 'What the DS-11 and DS-82 passport forms say about the mailing address and the permanent address, the online-renewal address rule, and how to receive a new passport at a virtual mailbox without it being opened or shredded. Checked Nov 28, 2026.';
+const schema = {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"dateModified":"2026-11-28"};
+---
+<Base title={title} description={description} updated="2026-11-28" schema={schema}>
+  <h1>Using a virtual mailbox address on a passport application</h1>
+  <div class="answer"><p><strong>Short answer:</strong> The passport forms treat two addresses differently. The <strong>mailing address</strong> (item 8) is where the State Department sends your passport. It can be a street address or a P.O. Box, and the form expects that you may not live there. The <strong>permanent address</strong> is for where you actually live: "Do not list a P.O. Box." So a mailbox address can go in item 8, but your home goes in the permanent-address box. The forms don't mention private mailboxes (PMBs) either way. To be certain, ask the National Passport Information Center (NPIC) at 1-877-487-2778.</p></div>
+  <p class="lede">Below is the exact wording from the current DS-11 (first passport, in person) and DS-82 (renewal by mail), both the 04-2025 editions, plus the USPS summary of the online renewal rules. All read November 28, 2026.</p>
+
+  <h2>What the forms say</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Field</th><th>Form instructions</th><th>What it means for a mailbox address</th></tr></thead>
+    <tbody>
+      <tr><td>Item 8: Mailing Address</td><td>"For line 1 enter applicant's Street/RFD #, or P.O. Box or URB." For line 2, "if you do not live at the address listed in this field, put the name of the person who lives at this address and mark it 'In Care Of'" <Src href={S.ds11} label="DS-11" /> <Src href={S.ds82} label="DS-82" />. On the DS-82, line 2 is labeled "Include Apartment, Suite, In Care Of or Attention if applicable" <Src href={S.ds82} label="DS-82" /></td><td>The form accepts addresses you don't live at, including P.O. Boxes. Nobody lives at a mailbox company, so the "In Care Of" wording doesn't really fit. The line-2 label lists "Suite", which is where a mailbox or PMB number would go</td></tr>
+      <tr><td>Permanent Address (item 19 on the DS-11, item 18 on the DS-82)</td><td>"Complete if P.O. Box is listed under Mailing Address or if residence is different from Mailing Address. Do not list a P.O. Box." The field asks for "Street/RFD # or URB" <Src href={S.ds11} label="DS-11" /> <Src href={S.ds82} label="DS-82" /></td><td>If your mailing address is a mailbox, you fill this in with your actual home address</td></tr>
+      <tr><td>Delivery abroad</td><td>"We will not mail a U.S. passport to a private address outside the United States or Canada" <Src href={S.ds11} label="DS-11" /> <Src href={S.ds82} label="DS-82" /></td><td>A U.S. mailbox address is inside the United States</td></tr>
+      <tr><td>Address changes</td><td>"If your mailing address changes prior to receipt of your new passport, please contact NPIC" <Src href={S.ds11} label="DS-11" /> <Src href={S.ds82} label="DS-82" /></td><td>If you close or switch mailboxes mid-application, call NPIC</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>Renewing online</h2>
+  <p>USPS lists the State Department's online renewal requirements. One of them: "You have a mailing address in a U.S. state or territory. You cannot renew online using an Army, Fleet, or Diplomatic Post Office address" <Src href={S.uspsPassports} label="USPS" />. Online renewal is routine service only, and if you need expedited service you must renew by mail <Src href={S.uspsPassports} label="USPS" />. The rule names APO, FPO and DPO addresses as the exclusions. It doesn't mention commercial mailbox addresses.</p>
+
+  <h2>If you live abroad</h2>
+  <p>The DS-82 says "U.S. citizens residing outside the United States and Canada cannot submit this form to the domestic addresses listed above" and must follow their U.S. embassy or consulate's procedures <Src href={S.ds82} label="DS-82" />. The DS-11 says that in most countries you must apply in person at an embassy or consulate <Src href={S.ds11} label="DS-11" />. A U.S. mailbox doesn't change where you apply from. For setting up a mailbox from overseas, see <a href="/virtual-mailbox-from-abroad/">getting a U.S. virtual mailbox while living abroad</a>.</p>
+
+  <h2>Expect two or three envelopes</h2>
+  <p>Both forms say: "You may receive your newly issued U.S. passport book and/or card and your citizenship evidence in two separate mailings. If you are applying for both a book and card, you may receive three separate mailings" <Src href={S.ds11} label="DS-11" /> <Src href={S.ds82} label="DS-82" />. Citizenship evidence can mean your original birth certificate. At a mailbox, each envelope shows up as its own item.</p>
+
+  <h2>Receiving a passport at your mailbox safely</h2>
+  <ol>
+    <li><strong>Use the exact mailbox address</strong>, including the box or suite number, and the name on your Form 1583. See <a href="/how-to-write-virtual-mailbox-address/">how to write a virtual mailbox address</a>.</li>
+    <li><strong>Turn off automatic open-and-scan</strong> if your provider has it on, so the envelope is forwarded unopened. At Traveling Mailbox, automatic scanning "tells our team to open and scan incoming letters covered by that setting" <Src href={S.tmbSecurity} />.</li>
+    <li><strong>Forward it with tracking, or pick it up.</strong> Ship it as soon as it arrives, or collect it if your location allows pickup (<a href="/virtual-mailbox-in-person-pickup/">pickup rules by provider</a>).</li>
+    <li><strong>Watch the auto-shred clock.</strong> At Traveling Mailbox and Stable, paper you don't act on is shredded after 30 days <Src href={S.tmb} label="TMB" /> <Src href={S.stable} label="Stable" />. See <a href="/virtual-mailbox-mail-shredding/">shredding policies</a>.</li>
+  </ol>
+  <p>US Global Mail says it logs, tracks and verifies "every single item" with a barcoding system: "Whether you're receiving a check or a passport, it's handled with care and documented at every stage" <Src href={S.usgmProtected} />.</p>
+
+  <h2>Links</h2>
+  <ul>
+    <li><a href={S.ds11} target="_blank" rel="noopener">Form DS-11 (State Department)</a> · <a href={S.ds82} target="_blank" rel="noopener">Form DS-82 (State Department)</a></li>
+    <li><Aff id="usglobalmail" href="https://www.usglobalmail.com/?via=michelle" text="US Global Mail" /></li>
+    <li><Aff id="travelingmailbox" href="https://travelingmailbox.com/" text="Traveling Mailbox" /></li>
+  </ul>
+  <p>More: <a href="/virtual-mailbox-drivers-license/">mailbox on a driver's license?</a> · <a href="/virtual-mailbox-for-bank-account/">mailbox for a bank account?</a> · <a href="/virtual-mailbox-forwarding-fees/">forwarding fees</a> · <a href="/">Mailbox Atlas home</a></p>
+</Base>
